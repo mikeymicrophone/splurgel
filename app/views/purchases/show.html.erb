@@ -1,0 +1,33 @@
+<p>
+  <b>User:</b>
+  <%=h @purchase.user_id %>
+</p>
+
+<p>
+  <b>Offering:</b>
+  <%=h @purchase.offering_id %>
+</p>
+
+<p>
+  <b>Credit card:</b>
+  <%=h @purchase.credit_card_id %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @purchase.address_id %>
+</p>
+
+<p>
+  <b>Approved:</b>
+  <%=h @purchase.approved %>
+</p>
+
+<p>
+  <b>Complete:</b>
+  <%=h @purchase.complete %>
+</p>
+
+
+<%= link_to 'Edit', edit_purchase_path(@purchase) %> |
+<%= link_to 'Back', purchases_path %>

@@ -1,0 +1,35 @@
+<h1>New credit_card</h1>
+
+<% form_for(@credit_card) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :address_id %><br />
+    <%= f.text_field :address_id %>
+  </p>
+  <p>
+    <%= f.label :card_number %><br />
+    <%= f.text_field :card_number %>
+  </p>
+  <p>
+    <%= f.label :expiration_month %><br />
+    <%= f.text_field :expiration_month %>
+  </p>
+  <p>
+    <%= f.label :expiration_year %><br />
+    <%= f.text_field :expiration_year %>
+  </p>
+  <p>
+    <%= f.label :security_code %><br />
+    <%= f.text_field :security_code %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', credit_cards_path %>

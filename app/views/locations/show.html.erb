@@ -1,0 +1,23 @@
+<p>
+  <b>Phone:</b>
+  <%=h @location.phone %>
+</p>
+
+<p>
+  <b>Store:</b>
+  <%=h @location.store_id %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%=h @location.schedule_id %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @location.address_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>

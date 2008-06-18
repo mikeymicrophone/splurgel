@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  offering_id: 1
+  sale: false
+  end_date: 2008-06-14 15:58:22
+
+two:
+  offering_id: 1
+  sale: false
+  end_date: 2008-06-14 15:58:22

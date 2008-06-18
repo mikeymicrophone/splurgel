@@ -1,0 +1,35 @@
+<h1>New purchase</h1>
+
+<% form_for(@purchase) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :offering_id %><br />
+    <%= f.text_field :offering_id %>
+  </p>
+  <p>
+    <%= f.label :credit_card_id %><br />
+    <%= f.text_field :credit_card_id %>
+  </p>
+  <p>
+    <%= f.label :address_id %><br />
+    <%= f.text_field :address_id %>
+  </p>
+  <p>
+    <%= f.label :approved %><br />
+    <%= f.check_box :approved %>
+  </p>
+  <p>
+    <%= f.label :complete %><br />
+    <%= f.check_box :complete %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', purchases_path %>

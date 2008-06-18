@@ -1,0 +1,2 @@
+module ImageUsesHelper
+end

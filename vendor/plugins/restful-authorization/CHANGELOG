@@ -1,0 +1,20 @@
+* 0.04 - 04/29/2008
+  - Fixed issue with access_denied not playing right with restful_authentication's.
+    Since they really serve a different purpose, I simply renamed it. authorization_denied
+    also now caches the call to next_authorized_url?
+
+* 0.03 - 04/28/2008
+  - Added :only_if_logged_in? key since logged_in? can't be tested via :if (scoping)
+  - Added generator option --library-only to allow for "safe" library updating
+  - Documented and enabled --skip-migration option
+
+* 0.02 - 04/25/2008
+  - Fixed documentation problems (require_foo instead of authorize_foo leftovers)
+  - Correctly failing users who aren't logged in for all conditions
+  - Fixed issue with has_role? leftover from role_requirement
+
+*	0.01 - 04/21/2008
+
+  - Initial release
+  - Migrated from svn to git (Google Code -> GitHub)
+  

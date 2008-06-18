@@ -1,0 +1,18 @@
+<p>
+  <b>Offering:</b>
+  <%=h @price.offering_id %>
+</p>
+
+<p>
+  <b>Sale:</b>
+  <%=h @price.sale %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%=h @price.end_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_price_path(@price) %> |
+<%= link_to 'Back', prices_path %>

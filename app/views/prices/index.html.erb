@@ -1,0 +1,24 @@
+<h1>Listing prices</h1>
+
+<table>
+  <tr>
+    <th>Offering</th>
+    <th>Sale</th>
+    <th>End date</th>
+  </tr>
+
+<% for price in @prices %>
+  <tr>
+    <td><%=h price.offering_id %></td>
+    <td><%=h price.sale %></td>
+    <td><%=h price.end_date %></td>
+    <td><%= link_to 'Show', price %></td>
+    <td><%= link_to 'Edit', edit_price_path(price) %></td>
+    <td><%= link_to 'Destroy', price, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New price', new_price_path %>

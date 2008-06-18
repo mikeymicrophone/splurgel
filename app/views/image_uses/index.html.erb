@@ -1,0 +1,24 @@
+<h1>Listing image_uses</h1>
+
+<table>
+  <tr>
+    <th>Image</th>
+    <th>Target type</th>
+    <th>Target</th>
+  </tr>
+
+<% for image_use in @image_uses %>
+  <tr>
+    <td><%=h image_use.image_id %></td>
+    <td><%=h image_use.target_type %></td>
+    <td><%=h image_use.target_id %></td>
+    <td><%= link_to 'Show', image_use %></td>
+    <td><%= link_to 'Edit', edit_image_use_path(image_use) %></td>
+    <td><%= link_to 'Destroy', image_use, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New image_use', new_image_use_path %>

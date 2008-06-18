@@ -1,0 +1,28 @@
+<p>
+  <b>Body:</b>
+  <%=h @comment.body %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @comment.user_id %>
+</p>
+
+<p>
+  <b>Reply:</b>
+  <%=h @comment.reply_id %>
+</p>
+
+<p>
+  <b>Target type:</b>
+  <%=h @comment.target_type %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%=h @comment.target_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

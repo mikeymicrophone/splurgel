@@ -1,0 +1,138 @@
+Restful Authorization Generator
+===============================
+
+restful-authorization is a generator designed to extend Rick Olson's
+restful_authentication.
+
+It provides a mechanism for custom authorization based access control,
+as well as a redirection system capable of allowing users to follow
+complex workflows that extend beyond simple authentication.
+
+Programmatically, it collects all of the authorization requirements
+given for a particular controller and creates a single before_filter
+to handle them.
+
+This plugin is a descendent of Tim C Harper's role_requirement, and
+none of this would be possible without his code base, or his willingness
+to allow me to make changes to a production ready generator.
+
+To begin using restful-authorization, run:
+
+  ./script/generate authorization role user
+  
+where role is your intended Role model name and user is the name of your
+User model in restful_authentication.
+
+The generator takes two additional options:
+  --skip-migration only skips the migration
+  --library_only only regenerates the library
+
+Syntax
+======
+
+restful-authorization is called like this:
+  
+  authorize_foo "value", [optional keys], [redirect or render]
+
+where value is what authorize_foo is attempting to validate, [optional keys] are
+limiting methods, and [render or redirect] handle authorization failures.
+
+Basic Use
+=========
+
+restful-authorization uses method_missing to provide easy customization.
+
+Out of the box, it has two methods that can be called at the top of your
+controllers:
+  
+  authorize_role "role"
+  authorize_state "state"
+  
+restful-authorization catches any method called authorize_foo as long
+as it has a corresponding foo_is_authorized? method that returns true
+or false.
+
+An example foo_is_authorized? might look like this:
+
+  def foo_is_authorized?(user, value)
+    user.foo == value
+  end
+  
+authorize_role uses the built in role system inherited from role_requirement,
+while authorize_state matches the state field from your user model. Out of
+the box, this example was designed for acts_as_state_machine.
+
+Both of these methods live in the AuthorizationSecurityClassMethods module.
+Once generated, authorized_system.rb can be edited directly to add new methods,
+or you can extend AuthorizationSecurityClassMethods elsewhere.
+
+Order of execution is directly related to placement in the controller. In
+the example above, the user will be checked for the role "role" and then
+the state "state." If the user fails to meet either condition, they will
+be directed as necessary with role issues handled before state issues.
+
+Limiting Methods
+================
+
+Individual authorization requirements can be limited via a number of keys:
+
+  * Restrict only the create and new actions
+    :only => [:create, :new]
+  
+  * Restrict only the create and new actions for users who are logged_in?
+    These will continue to be accessible to users who aren't logged_in?
+    :only_if_logged_in? => [:create, :new]
+  
+  * Restrict all actions except index and show  
+    :except => [:index, :show]
+  
+  * Restrict if this condition is met. The condition is a Proc or a string.  
+    :if => Proc.new { condition == true }
+  
+  * The inverse of :if  
+    :unless => Proc.new { condition == true }
+    
+    
+Workflow Management
+===================
+
+Workflow can be managed in two different ways:
+
+  * URL Redirection sends the user to a new URL that can be a string, a hash
+    of parameters, or a named route passed as a symbol (:named_route_path)
+    
+    :redirect_url => "/session/new"
+    
+  * Status Control displays the contents of :render_url, which is a hash
+    of parameters for render, with the provided status code (404, 500).
+    This is useful for preventing prying eyes from seeing things that
+    shouldn't be available to the public.
+    
+    :render_url => { :file => "#{RAILS_ROOT}/public/404.html" }, :status => "404"
+    
+If :redirect_url is not specified, restful_authentication's access_denied will
+handle url redirections. If :render_url is not specified, but :status is, a 
+blank page will be rendered with the given status.
+
+Forward flow is managed using restful_authentication's redirect_back_or_default
+method rather than redirect_to. Upon completion of a form, instead of doing a
+redirect_to object_path, call redirect_back_or_default(object_path).
+
+If this is unrelated to the authorization mechanism of the site, the user will
+be redirected to the show view. If it's part of a more complex workflow, the user
+will be redirected to the page that previously sent them here for failing
+authorization.
+
+A simple workflow for a shopping cart might go as follows:
+
+  1.  Quentin, a user without an account, locates items and adds them to his cart
+  
+  2.  He attempts to checkout, which fails authorization and redirects him to
+      the registration page.
+      
+  3.  After registering, he's redirected to the checkout page, which fails on a new
+      condition and redirects him to the account activation page. Quentin activates
+      and is now forwarded back to the checkout page.
+      
+  4.  Quentin is now able to complete his transaction and purchase the items
+  

@@ -1,0 +1,22 @@
+<h1>Listing network_memberships</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Network</th>
+  </tr>
+
+<% for network_membership in @network_memberships %>
+  <tr>
+    <td><%=h network_membership.user_id %></td>
+    <td><%=h network_membership.network_id %></td>
+    <td><%= link_to 'Show', network_membership %></td>
+    <td><%= link_to 'Edit', edit_network_membership_path(network_membership) %></td>
+    <td><%= link_to 'Destroy', network_membership, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New network_membership', new_network_membership_path %>

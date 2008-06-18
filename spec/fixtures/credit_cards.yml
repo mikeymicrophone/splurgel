@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  address_id: 1
+  card_number: 1
+  expiration_month: 1
+  expiration_year: 1
+  security_code: 1
+  user_id: 1
+
+two:
+  address_id: 1
+  card_number: 1
+  expiration_month: 1
+  expiration_year: 1
+  security_code: 1
+  user_id: 1

@@ -1,0 +1,30 @@
+<h1>Listing listings</h1>
+
+<table>
+  <tr>
+    <th>List type</th>
+    <th>Product</th>
+    <th>Brand</th>
+    <th>Store</th>
+    <th>User</th>
+    <th>Private</th>
+  </tr>
+
+<% for listing in @listings %>
+  <tr>
+    <td><%=h listing.list_type %></td>
+    <td><%=h listing.product_id %></td>
+    <td><%=h listing.brand_id %></td>
+    <td><%=h listing.store_id %></td>
+    <td><%=h listing.user_id %></td>
+    <td><%=h listing.private %></td>
+    <td><%= link_to 'Show', listing %></td>
+    <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+    <td><%= link_to 'Destroy', listing, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New listing', new_listing_path %>

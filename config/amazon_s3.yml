@@ -1,0 +1,14 @@
+development:
+  bucket_name: splurgel_development
+  access_key_id: 1QNSZZFD90243N9WS1G2
+  secret_access_key: vEpa2oOL1GlDB/cHQ/L94QikIcGilanAVCuzdj6X 
+
+test:
+  bucket_name: splurgel_test
+  access_key_id: 1QNSZZFD90243N9WS1G2
+  secret_access_key: vEpa2oOL1GlDB/cHQ/L94QikIcGilanAVCuzdj6X 
+
+production:
+  bucket_name: splurgel
+  access_key_id: 1QNSZZFD90243N9WS1G2
+  secret_access_key: vEpa2oOL1GlDB/cHQ/L94QikIcGilanAVCuzdj6X 

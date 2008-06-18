@@ -1,0 +1,24 @@
+<h1>Editing offering</h1>
+
+<% form_for(@offering) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :product_id %><br />
+    <%= f.text_field :product_id %>
+  </p>
+  <p>
+    <%= f.label :location_id %><br />
+    <%= f.text_field :location_id %>
+  </p>
+  <p>
+    <%= f.label :stock %><br />
+    <%= f.text_field :stock %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @offering %> |
+<%= link_to 'Back', offerings_path %>

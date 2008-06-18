@@ -1,0 +1,18 @@
+<p>
+  <b>Product:</b>
+  <%=h @offering.product_id %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @offering.location_id %>
+</p>
+
+<p>
+  <b>Stock:</b>
+  <%=h @offering.stock %>
+</p>
+
+
+<%= link_to 'Edit', edit_offering_path(@offering) %> |
+<%= link_to 'Back', offerings_path %>

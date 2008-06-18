@@ -1,0 +1,11 @@
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <% %w[address_uses addresses brands cities comments credit_cards followings groups image_uses images listings locations memberships messages network_memberships networks offerings prices products purchases schedules states stores taggings tags uses website_uses website].each do |resource| %>
+      <%= link_to resource, "/#{resource}" %> <%= link_to '(cr8)', "/#{resource}/new" %>|
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

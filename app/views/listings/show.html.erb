@@ -1,0 +1,33 @@
+<p>
+  <b>List type:</b>
+  <%=h @listing.list_type %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%=h @listing.product_id %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%=h @listing.brand_id %>
+</p>
+
+<p>
+  <b>Store:</b>
+  <%=h @listing.store_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @listing.user_id %>
+</p>
+
+<p>
+  <b>Private:</b>
+  <%=h @listing.private %>
+</p>
+
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

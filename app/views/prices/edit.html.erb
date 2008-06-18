@@ -1,0 +1,24 @@
+<h1>Editing price</h1>
+
+<% form_for(@price) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :offering_id %><br />
+    <%= f.text_field :offering_id %>
+  </p>
+  <p>
+    <%= f.label :sale %><br />
+    <%= f.check_box :sale %>
+  </p>
+  <p>
+    <%= f.label :end_date %><br />
+    <%= f.datetime_select :end_date %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @price %> |
+<%= link_to 'Back', prices_path %>

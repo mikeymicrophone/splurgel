@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id: 1
+  offering_id: 1
+  credit_card_id: 1
+  address_id: 1
+  approved: false
+  complete: false
+
+two:
+  user_id: 1
+  offering_id: 1
+  credit_card_id: 1
+  address_id: 1
+  approved: false
+  complete: false

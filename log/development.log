@@ -1,0 +1,1417 @@
+  [4;36;1mSQL (0.000455)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.008148)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.002822)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002522)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000684)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000443)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000165)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000079)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000079)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000078)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000078)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000077)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000091)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000078)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000078)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000077)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000077)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000119)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000084)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000079)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000080)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20080614192830)
+  [4;35;1mSQL (0.000079)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000167)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002732)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40) DEFAULT NULL NULL, "name" varchar(100) DEFAULT '' NULL, "interests" text DEFAULT NULL NULL, "hobbies" text DEFAULT NULL NULL, "persona" text DEFAULT NULL NULL, "primary_address_id" integer DEFAULT NULL NULL, "phone" varchar(255) DEFAULT NULL NULL, "email" varchar(100) DEFAULT NULL NULL, "crypted_password" varchar(40) DEFAULT NULL NULL, "salt" varchar(40) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "remember_token" varchar(40) DEFAULT NULL NULL, "remember_token_expires_at" datetime DEFAULT NULL NULL, "activation_code" varchar(40) DEFAULT NULL NULL, "activated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002550)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.002599)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614192830')[0m
+Migrating to CreateStores (20080614195028)
+  [4;35;1mSQL (0.000507)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003856)[0m   [0;1mCREATE TABLE "stores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "administrator_id" integer DEFAULT NULL NULL, "primary_image_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002861)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614195028')[0m
+Migrating to CreateStates (20080614195108)
+  [4;36;1mSQL (0.000768)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002926)[0m   [0mCREATE TABLE "states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002285)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614195108')[0m
+Migrating to CreateCities (20080614195127)
+  [4;35;1mSQL (0.000556)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002838)[0m   [0;1mCREATE TABLE "cities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "state_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.003661)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614195127')[0m
+Migrating to CreateLocations (20080614195148)
+  [4;36;1mSQL (0.000702)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003305)[0m   [0mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone" varchar(255) DEFAULT NULL NULL, "store_id" integer DEFAULT NULL NULL, "schedule_id" integer DEFAULT NULL NULL, "address_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002195)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614195148')[0m
+Migrating to CreateBrands (20080614195205)
+  [4;35;1mSQL (0.000784)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002941)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "phone" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002438)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614195205')[0m
+Migrating to CreateProducts (20080614195220)
+  [4;36;1mSQL (0.000850)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002576)[0m   [0mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "brand_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002556)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614195220')[0m
+Migrating to CreateOfferings (20080614195755)
+  [4;35;1mSQL (0.000961)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.004039)[0m   [0;1mCREATE TABLE "offerings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer DEFAULT NULL NULL, "location_id" integer DEFAULT NULL NULL, "stock" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.003204)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614195755')[0m
+Migrating to CreatePrices (20080614195822)
+  [4;36;1mSQL (0.001138)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002786)[0m   [0mCREATE TABLE "prices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "offering_id" integer DEFAULT NULL NULL, "sale" boolean DEFAULT NULL NULL, "end_date" datetime DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002976)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614195822')[0m
+Migrating to CreateSchedules (20080614195840)
+  [4;35;1mSQL (0.001106)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003757)[0m   [0;1mCREATE TABLE "schedules" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sunday_open" time DEFAULT NULL NULL, "sunday_close" time DEFAULT NULL NULL, "monday_open" time DEFAULT NULL NULL, "monday_close" time DEFAULT NULL NULL, "tuesday_open" time DEFAULT NULL NULL, "tuesday_close" time DEFAULT NULL NULL, "wednesday_open" time DEFAULT NULL NULL, "wednesday_close" time DEFAULT NULL NULL, "thursday_open" time DEFAULT NULL NULL, "thursday_close" time DEFAULT NULL NULL, "friday_open" time DEFAULT NULL NULL, "friday_close" time DEFAULT NULL NULL, "saturday_open" time DEFAULT NULL NULL, "saturday_close" time DEFAULT NULL NULL, "holidays" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002103)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614195840')[0m
+Migrating to CreateListings (20080614195906)
+  [4;36;1mSQL (0.001178)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003505)[0m   [0mCREATE TABLE "listings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "list_type" integer DEFAULT NULL NULL, "product_id" integer DEFAULT NULL NULL, "brand_id" integer DEFAULT NULL NULL, "store_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "private" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002597)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614195906')[0m
+Migrating to CreateGroups (20080614200131)
+  [4;35;1mSQL (0.001333)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003354)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "administrator_id" integer DEFAULT NULL NULL, "group_type" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002690)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200131')[0m
+Migrating to CreateMemberships (20080614200145)
+  [4;36;1mSQL (0.001531)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002920)[0m   [0mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "group_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002688)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200145')[0m
+Migrating to CreateTags (20080614200210)
+  [4;35;1mSQL (0.001759)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002692)[0m   [0;1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002728)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200210')[0m
+Migrating to CreateTaggings (20080614200226)
+  [4;36;1mSQL (0.001847)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003010)[0m   [0mCREATE TABLE "taggings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002691)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200226')[0m
+Migrating to CreateFollowings (20080614200258)
+  [4;35;1mSQL (0.002859)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003481)[0m   [0;1mCREATE TABLE "followings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "follower_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002637)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200258')[0m
+Migrating to CreateImages (20080614200336)
+  [4;36;1mSQL (0.002058)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003200)[0m   [0mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "size" integer DEFAULT NULL NULL, "content_type" varchar(255) DEFAULT NULL NULL, "filename" varchar(255) DEFAULT NULL NULL, "height" integer DEFAULT NULL NULL, "width" integer DEFAULT NULL NULL, "parent_id" integer DEFAULT NULL NULL, "thumbnail" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.003191)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200336')[0m
+Migrating to CreateImageUses (20080614200353)
+  [4;35;1mSQL (0.002022)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002899)[0m   [0;1mCREATE TABLE "image_uses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image_id" integer DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002711)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200353')[0m
+Migrating to CreateWebsites (20080614200536)
+  [4;36;1mSQL (0.002764)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.004527)[0m   [0mCREATE TABLE "websites" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "href" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002452)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200536')[0m
+Migrating to CreateWebsiteUses (20080614200600)
+  [4;35;1mSQL (0.001602)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002427)[0m   [0;1mCREATE TABLE "website_uses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "website_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002074)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200600')[0m
+Migrating to CreateComments (20080614200615)
+  [4;36;1mSQL (0.001932)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002845)[0m   [0mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "reply_id" integer DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.003056)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200615')[0m
+Migrating to CreateMessages (20080614200637)
+  [4;35;1mSQL (0.001693)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003294)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "reply_id" integer DEFAULT NULL NULL, "read_on" datetime DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002435)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200637')[0m
+Migrating to CreatePurchases (20080614200653)
+  [4;36;1mSQL (0.002753)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003207)[0m   [0mCREATE TABLE "purchases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "offering_id" integer DEFAULT NULL NULL, "credit_card_id" integer DEFAULT NULL NULL, "address_id" integer DEFAULT NULL NULL, "approved" boolean DEFAULT NULL NULL, "complete" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002421)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200653')[0m
+Migrating to CreateAddresses (20080614200715)
+  [4;35;1mSQL (0.002152)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003790)[0m   [0;1mCREATE TABLE "addresses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "latitude" varchar(255) DEFAULT NULL NULL, "longitude" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "alternate_names" varchar(255) DEFAULT NULL NULL, "street" varchar(255) DEFAULT NULL NULL, "street2" varchar(255) DEFAULT NULL NULL, "city" varchar(255) DEFAULT NULL NULL, "state" varchar(255) DEFAULT NULL NULL, "city_id" integer DEFAULT NULL NULL, "state_id" integer DEFAULT NULL NULL, "zip" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002620)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200715')[0m
+Migrating to CreateCreditCards (20080614200750)
+  [4;36;1mSQL (0.002356)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003184)[0m   [0mCREATE TABLE "credit_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address_id" integer DEFAULT NULL NULL, "card_number" integer DEFAULT NULL NULL, "expiration_month" integer DEFAULT NULL NULL, "expiration_year" integer DEFAULT NULL NULL, "security_code" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.003107)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200750')[0m
+Migrating to CreateNetworks (20080614200809)
+  [4;35;1mSQL (0.002518)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003834)[0m   [0;1mCREATE TABLE "networks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "city_id" integer DEFAULT NULL NULL, "state_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002547)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200809')[0m
+Migrating to CreateNetworkMemberships (20080614200821)
+  [4;36;1mSQL (0.002384)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003176)[0m   [0mCREATE TABLE "network_memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "network_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002672)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200821')[0m
+Migrating to AddUserIds (20080614200841)
+  [4;35;1mSQL (0.002786)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003389)[0m   [0;1mALTER TABLE "brands" ADD "administrator_id" integer[0m
+  [4;35;1mSQL (0.035560)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.004413)[0m   [0;1mALTER TABLE "brands" ADD "user_id" integer[0m
+  [4;35;1mSQL (0.017455)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.003848)[0m   [0;1mALTER TABLE "products" ADD "user_id" integer[0m
+  [4;35;1mSQL (0.013636)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.002913)[0m   [0;1mALTER TABLE "offerings" ADD "user_id" integer[0m
+  [4;35;1mSQL (0.013207)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.004836)[0m   [0;1mALTER TABLE "prices" ADD "user_id" integer[0m
+  [4;35;1mSQL (0.019235)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.004255)[0m   [0;1mALTER TABLE "tags" ADD "user_id" integer[0m
+  [4;35;1mSQL (0.018992)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.004548)[0m   [0;1mALTER TABLE "taggings" ADD "user_id" integer[0m
+  [4;35;1mSQL (0.018522)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.004334)[0m   [0;1mALTER TABLE "images" ADD "user_id" integer[0m
+  [4;35;1mSQL (0.018270)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.004786)[0m   [0;1mALTER TABLE "image_uses" ADD "user_id" integer[0m
+  [4;35;1mSQL (0.023488)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.005365)[0m   [0;1mALTER TABLE "website_uses" ADD "user_id" integer[0m
+  [4;35;1mSQL (0.019725)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.004474)[0m   [0;1mALTER TABLE "addresses" ADD "user_id" integer[0m
+  [4;35;1mSQL (0.016799)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mSQLite3::SQLException: no such table: address_uses: ALTER TABLE "address_uses" ADD "user_id" integer[0m
+  [4;36;1mSQL (0.002340)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001249)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001128)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001146)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001123)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001156)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001143)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001171)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001145)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001129)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001143)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001125)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001109)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001147)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001117)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001125)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001265)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001123)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001117)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001141)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001131)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001147)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001114)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001163)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001110)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001107)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001131)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001156)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20080614192830)
+  [4;36;1mSQL (0.001111)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStores (20080614195028)
+  [4;35;1mSQL (0.001103)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStates (20080614195108)
+  [4;36;1mSQL (0.001117)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateCities (20080614195127)
+  [4;35;1mSQL (0.001194)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLocations (20080614195148)
+  [4;36;1mSQL (0.001129)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateBrands (20080614195205)
+  [4;35;1mSQL (0.001147)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20080614195220)
+  [4;36;1mSQL (0.001159)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateOfferings (20080614195755)
+  [4;35;1mSQL (0.001147)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePrices (20080614195822)
+  [4;36;1mSQL (0.001398)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateSchedules (20080614195840)
+  [4;35;1mSQL (0.001150)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateListings (20080614195906)
+  [4;36;1mSQL (0.001196)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateGroups (20080614200131)
+  [4;35;1mSQL (0.001119)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMemberships (20080614200145)
+  [4;36;1mSQL (0.001133)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateTags (20080614200210)
+  [4;35;1mSQL (0.001109)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTaggings (20080614200226)
+  [4;36;1mSQL (0.001175)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateFollowings (20080614200258)
+  [4;35;1mSQL (0.001201)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20080614200336)
+  [4;36;1mSQL (0.001160)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateImageUses (20080614200353)
+  [4;35;1mSQL (0.001125)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateWebsites (20080614200536)
+  [4;36;1mSQL (0.001132)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateWebsiteUses (20080614200600)
+  [4;35;1mSQL (0.001146)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateComments (20080614200615)
+  [4;36;1mSQL (0.001158)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateMessages (20080614200637)
+  [4;35;1mSQL (0.001156)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePurchases (20080614200653)
+  [4;36;1mSQL (0.001182)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAddresses (20080614200715)
+  [4;35;1mSQL (0.001183)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCreditCards (20080614200750)
+  [4;36;1mSQL (0.001164)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateNetworks (20080614200809)
+  [4;35;1mSQL (0.001109)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateNetworkMemberships (20080614200821)
+  [4;36;1mSQL (0.001147)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to AddUserIds (20080614200841)
+  [4;35;1mSQL (0.001208)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mSQLite3::SQLException: duplicate column name: administrator_id: ALTER TABLE "brands" ADD "administrator_id" integer[0m
+  [4;36;1mSQL (0.002477)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001238)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001121)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001114)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001108)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001118)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001218)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001119)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001115)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001106)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001111)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001152)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001140)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001126)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001252)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001126)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001111)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001113)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001106)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001109)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001109)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001110)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001120)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001413)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001250)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001141)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001119)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001139)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20080614192830)
+  [4;36;1mSQL (0.001177)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStores (20080614195028)
+  [4;35;1mSQL (0.001267)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStates (20080614195108)
+  [4;36;1mSQL (0.001258)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateCities (20080614195127)
+  [4;35;1mSQL (0.001219)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLocations (20080614195148)
+  [4;36;1mSQL (0.001151)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateBrands (20080614195205)
+  [4;35;1mSQL (0.001112)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20080614195220)
+  [4;36;1mSQL (0.001259)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateOfferings (20080614195755)
+  [4;35;1mSQL (0.001635)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePrices (20080614195822)
+  [4;36;1mSQL (0.001146)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateSchedules (20080614195840)
+  [4;35;1mSQL (0.001154)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateListings (20080614195906)
+  [4;36;1mSQL (0.001205)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateGroups (20080614200131)
+  [4;35;1mSQL (0.001112)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMemberships (20080614200145)
+  [4;36;1mSQL (0.001128)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateTags (20080614200210)
+  [4;35;1mSQL (0.001106)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTaggings (20080614200226)
+  [4;36;1mSQL (0.001218)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateFollowings (20080614200258)
+  [4;35;1mSQL (0.001123)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20080614200336)
+  [4;36;1mSQL (0.001138)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateImageUses (20080614200353)
+  [4;35;1mSQL (0.001157)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateWebsites (20080614200536)
+  [4;36;1mSQL (0.001582)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateWebsiteUses (20080614200600)
+  [4;35;1mSQL (0.001395)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateComments (20080614200615)
+  [4;36;1mSQL (0.001164)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateMessages (20080614200637)
+  [4;35;1mSQL (0.001124)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePurchases (20080614200653)
+  [4;36;1mSQL (0.001131)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAddresses (20080614200715)
+  [4;35;1mSQL (0.001206)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCreditCards (20080614200750)
+  [4;36;1mSQL (0.001138)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateNetworks (20080614200809)
+  [4;35;1mSQL (0.001110)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateNetworkMemberships (20080614200821)
+  [4;36;1mSQL (0.001188)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to AddUserIds (20080614200841)
+  [4;35;1mSQL (0.001163)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002877)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200841')[0m
+Migrating to CreateAddressUses (20080614202316)
+  [4;35;1mSQL (0.002142)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000186)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.002754)[0m   [0mCREATE TABLE "address_uses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "address_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.003124)[0m   [0;1mALTER TABLE "networks" ADD "user_id" integer[0m
+  [4;35;1mSQL (0.015926)[0m   [0mVACUUM[0m
+  [4;36;1mSQL (0.003889)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614202316')[0m
+  [4;35;1mSQL (0.002278)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001763)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000048)[0m   [0mPRAGMA index_list("address_uses")[0m
+  [4;36;1mSQL (0.000047)[0m   [0;1mPRAGMA index_list("addresses")[0m
+  [4;35;1mSQL (0.000079)[0m   [0mPRAGMA index_list("brands")[0m
+  [4;36;1mSQL (0.000048)[0m   [0;1mPRAGMA index_list("cities")[0m
+  [4;35;1mSQL (0.000048)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.000049)[0m   [0;1mPRAGMA index_list("credit_cards")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("followings")[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mPRAGMA index_list("groups")[0m
+  [4;35;1mSQL (0.000042)[0m   [0mPRAGMA index_list("image_uses")[0m
+  [4;36;1mSQL (0.000046)[0m   [0;1mPRAGMA index_list("images")[0m
+  [4;35;1mSQL (0.000067)[0m   [0mPRAGMA index_list("listings")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("locations")[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list("memberships")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.000043)[0m   [0mPRAGMA index_list("network_memberships")[0m
+  [4;36;1mSQL (0.000046)[0m   [0;1mPRAGMA index_list("networks")[0m
+  [4;35;1mSQL (0.000046)[0m   [0mPRAGMA index_list("offerings")[0m
+  [4;36;1mSQL (0.000054)[0m   [0;1mPRAGMA index_list("prices")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("products")[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mPRAGMA index_list("purchases")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("schedules")[0m
+  [4;36;1mSQL (0.000053)[0m   [0;1mPRAGMA index_list("states")[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list("stores")[0m
+  [4;36;1mSQL (0.000051)[0m   [0;1mPRAGMA index_list("taggings")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("tags")[0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.000129)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("website_uses")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("websites")[0m
+
+
+Processing StoresController#index (for 127.0.0.1 at 2008-06-14 16:34:07) [GET]
+  Session ID: 2328776f6ad9a5cef5b63b3b03280218
+  Parameters: {"action"=>"index", "controller"=>"stores"}
+  [4;36;1mStore Load (0.002030)[0m   [0;1mSELECT * FROM "stores" [0m
+Rendering stores/index
+Completed in 0.01319 (75 reqs/sec) | Rendering: 0.00220 (16%) | DB: 0.00203 (15%) | 200 OK [http://localhost/stores]
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2008-06-14 16:34:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1bd8c658ed1c45db7b1fbc93f9a75e4fcbcb7a22
+  Parameters: {"action"=>"index", "controller"=>"images"}
+  [4;35;1mImage Load (0.001236)[0m   [0mSELECT * FROM "images" [0m
+Rendering images/index
+Completed in 0.07622 (13 reqs/sec) | Rendering: 0.00155 (2%) | DB: 0.00124 (1%) | 200 OK [http://localhost/images]
+
+
+Processing LocationsController#index (for 127.0.0.1 at 2008-06-14 16:34:23) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1bd8c658ed1c45db7b1fbc93f9a75e4fcbcb7a22
+  Parameters: {"action"=>"index", "controller"=>"locations"}
+  [4;36;1mLocation Load (0.001224)[0m   [0;1mSELECT * FROM "locations" [0m
+Rendering locations/index
+Completed in 0.01066 (93 reqs/sec) | Rendering: 0.00133 (12%) | DB: 0.00122 (11%) | 200 OK [http://localhost/locations]
+  [4;36;1mSQL (0.002460)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001222)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000192)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.001264)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001354)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000046)[0m   [0mPRAGMA index_list("address_uses")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("addresses")[0m
+  [4;35;1mSQL (0.000043)[0m   [0mPRAGMA index_list("brands")[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mPRAGMA index_list("cities")[0m
+  [4;35;1mSQL (0.000049)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.000056)[0m   [0;1mPRAGMA index_list("credit_cards")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("followings")[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mPRAGMA index_list("groups")[0m
+  [4;35;1mSQL (0.000043)[0m   [0mPRAGMA index_list("image_uses")[0m
+  [4;36;1mSQL (0.000046)[0m   [0;1mPRAGMA index_list("images")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("listings")[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mPRAGMA index_list("locations")[0m
+  [4;35;1mSQL (0.000043)[0m   [0mPRAGMA index_list("memberships")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.000048)[0m   [0mPRAGMA index_list("network_memberships")[0m
+  [4;36;1mSQL (0.000047)[0m   [0;1mPRAGMA index_list("networks")[0m
+  [4;35;1mSQL (0.000046)[0m   [0mPRAGMA index_list("offerings")[0m
+  [4;36;1mSQL (0.000046)[0m   [0;1mPRAGMA index_list("prices")[0m
+  [4;35;1mSQL (0.000049)[0m   [0mPRAGMA index_list("products")[0m
+  [4;36;1mSQL (0.000048)[0m   [0;1mPRAGMA index_list("purchases")[0m
+  [4;35;1mSQL (0.000048)[0m   [0mPRAGMA index_list("schedules")[0m
+  [4;36;1mSQL (0.000048)[0m   [0;1mPRAGMA index_list("states")[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list("stores")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("taggings")[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list("tags")[0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.000120)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mPRAGMA index_list("website_uses")[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list("websites")[0m
+  [4;36;1mSQL (0.000186)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000282)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002602)[0m   [0;1mCREATE TABLE "address_uses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "address_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000453)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002780)[0m   [0;1mCREATE TABLE "addresses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "latitude" varchar(255) DEFAULT NULL NULL, "longitude" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "alternate_names" varchar(255) DEFAULT NULL NULL, "street" varchar(255) DEFAULT NULL NULL, "street2" varchar(255) DEFAULT NULL NULL, "city" varchar(255) DEFAULT NULL NULL, "state" varchar(255) DEFAULT NULL NULL, "city_id" integer DEFAULT NULL NULL, "state_id" integer DEFAULT NULL NULL, "zip" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000503)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002777)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "phone" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "administrator_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000603)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002370)[0m   [0;1mCREATE TABLE "cities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "state_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000699)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002879)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "reply_id" integer DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000812)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002927)[0m   [0;1mCREATE TABLE "credit_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address_id" integer DEFAULT NULL NULL, "card_number" integer DEFAULT NULL NULL, "expiration_month" integer DEFAULT NULL NULL, "expiration_year" integer DEFAULT NULL NULL, "security_code" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000792)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002873)[0m   [0;1mCREATE TABLE "followings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "follower_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000878)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003231)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "administrator_id" integer DEFAULT NULL NULL, "group_type" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000944)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002895)[0m   [0;1mCREATE TABLE "image_uses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image_id" integer DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001018)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003722)[0m   [0;1mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "size" integer DEFAULT NULL NULL, "content_type" varchar(255) DEFAULT NULL NULL, "filename" varchar(255) DEFAULT NULL NULL, "height" integer DEFAULT NULL NULL, "width" integer DEFAULT NULL NULL, "parent_id" integer DEFAULT NULL NULL, "thumbnail" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000977)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002599)[0m   [0;1mCREATE TABLE "listings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "list_type" integer DEFAULT NULL NULL, "product_id" integer DEFAULT NULL NULL, "brand_id" integer DEFAULT NULL NULL, "store_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "private" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001115)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003266)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone" varchar(255) DEFAULT NULL NULL, "store_id" integer DEFAULT NULL NULL, "schedule_id" integer DEFAULT NULL NULL, "address_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001177)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003041)[0m   [0;1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "group_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001270)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003029)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "reply_id" integer DEFAULT NULL NULL, "read_on" datetime DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001445)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003742)[0m   [0;1mCREATE TABLE "network_memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "network_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001803)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002961)[0m   [0;1mCREATE TABLE "networks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "city_id" integer DEFAULT NULL NULL, "state_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001545)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003076)[0m   [0;1mCREATE TABLE "offerings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer DEFAULT NULL NULL, "location_id" integer DEFAULT NULL NULL, "stock" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001632)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003138)[0m   [0;1mCREATE TABLE "prices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "offering_id" integer DEFAULT NULL NULL, "sale" boolean DEFAULT NULL NULL, "end_date" datetime DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001654)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002781)[0m   [0;1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "brand_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001689)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003060)[0m   [0;1mCREATE TABLE "purchases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "offering_id" integer DEFAULT NULL NULL, "credit_card_id" integer DEFAULT NULL NULL, "address_id" integer DEFAULT NULL NULL, "approved" boolean DEFAULT NULL NULL, "complete" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001796)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003279)[0m   [0;1mCREATE TABLE "schedules" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sunday_open" time DEFAULT NULL NULL, "sunday_close" time DEFAULT NULL NULL, "monday_open" time DEFAULT NULL NULL, "monday_close" time DEFAULT NULL NULL, "tuesday_open" time DEFAULT NULL NULL, "tuesday_close" time DEFAULT NULL NULL, "wednesday_open" time DEFAULT NULL NULL, "wednesday_close" time DEFAULT NULL NULL, "thursday_open" time DEFAULT NULL NULL, "thursday_close" time DEFAULT NULL NULL, "friday_open" time DEFAULT NULL NULL, "friday_close" time DEFAULT NULL NULL, "saturday_open" time DEFAULT NULL NULL, "saturday_close" time DEFAULT NULL NULL, "holidays" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001970)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002389)[0m   [0;1mCREATE TABLE "states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001896)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002616)[0m   [0;1mCREATE TABLE "stores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "administrator_id" integer DEFAULT NULL NULL, "primary_image_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001882)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002510)[0m   [0;1mCREATE TABLE "taggings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002268)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003097)[0m   [0;1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002188)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002869)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40) DEFAULT NULL NULL, "name" varchar(100) DEFAULT '' NULL, "interests" text DEFAULT NULL NULL, "hobbies" text DEFAULT NULL NULL, "persona" text DEFAULT NULL NULL, "primary_address_id" integer DEFAULT NULL NULL, "phone" varchar(255) DEFAULT NULL NULL, "email" varchar(100) DEFAULT NULL NULL, "crypted_password" varchar(40) DEFAULT NULL NULL, "salt" varchar(40) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "remember_token" varchar(40) DEFAULT NULL NULL, "remember_token_expires_at" datetime DEFAULT NULL NULL, "activation_code" varchar(40) DEFAULT NULL NULL, "activated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002654)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.002132)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.004030)[0m   [0mCREATE TABLE "website_uses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "website_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002170)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002911)[0m   [0mCREATE TABLE "websites" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "href" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002927)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002789)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.002816)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002323)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000207)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.002585)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614202316')[0m
+  [4;36;1mSQL (0.002664)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614192830')[0m
+  [4;35;1mSQL (0.003198)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195028')[0m
+  [4;36;1mSQL (0.002878)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195108')[0m
+  [4;35;1mSQL (0.002589)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195127')[0m
+  [4;36;1mSQL (0.003238)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195148')[0m
+  [4;35;1mSQL (0.002923)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195205')[0m
+  [4;36;1mSQL (0.003034)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195220')[0m
+  [4;35;1mSQL (0.002912)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195755')[0m
+  [4;36;1mSQL (0.002934)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195822')[0m
+  [4;35;1mSQL (0.002907)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195840')[0m
+  [4;36;1mSQL (0.002504)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195906')[0m
+  [4;35;1mSQL (0.002592)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200131')[0m
+  [4;36;1mSQL (0.002824)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200145')[0m
+  [4;35;1mSQL (0.002817)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200210')[0m
+  [4;36;1mSQL (0.002291)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200226')[0m
+  [4;35;1mSQL (0.002268)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200258')[0m
+  [4;36;1mSQL (0.003112)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200336')[0m
+  [4;35;1mSQL (0.002804)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200353')[0m
+  [4;36;1mSQL (0.002395)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200536')[0m
+  [4;35;1mSQL (0.002530)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200600')[0m
+  [4;36;1mSQL (0.002976)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200615')[0m
+  [4;35;1mSQL (0.002627)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200637')[0m
+  [4;36;1mSQL (0.002245)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200653')[0m
+  [4;35;1mSQL (0.002495)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200715')[0m
+  [4;36;1mSQL (0.003221)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200750')[0m
+  [4;35;1mSQL (0.002889)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200809')[0m
+  [4;36;1mSQL (0.002982)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200821')[0m
+  [4;35;1mSQL (0.002782)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200841')[0m
+  [4;36;1mSQL (0.002396)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001241)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000196)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.001237)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001244)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list("address_uses")[0m
+  [4;36;1mSQL (0.000045)[0m   [0;1mPRAGMA index_list("addresses")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("brands")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("cities")[0m
+  [4;35;1mSQL (0.000046)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.000060)[0m   [0;1mPRAGMA index_list("credit_cards")[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list("followings")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("groups")[0m
+  [4;35;1mSQL (0.000043)[0m   [0mPRAGMA index_list("image_uses")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("images")[0m
+  [4;35;1mSQL (0.000051)[0m   [0mPRAGMA index_list("listings")[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mPRAGMA index_list("locations")[0m
+  [4;35;1mSQL (0.000043)[0m   [0mPRAGMA index_list("memberships")[0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list("network_memberships")[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mPRAGMA index_list("networks")[0m
+  [4;35;1mSQL (0.000043)[0m   [0mPRAGMA index_list("offerings")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("prices")[0m
+  [4;35;1mSQL (0.000043)[0m   [0mPRAGMA index_list("products")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("purchases")[0m
+  [4;35;1mSQL (0.000046)[0m   [0mPRAGMA index_list("schedules")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("states")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("stores")[0m
+  [4;36;1mSQL (0.000045)[0m   [0;1mPRAGMA index_list("taggings")[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list("tags")[0m
+  [4;36;1mSQL (0.000122)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.000119)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mPRAGMA index_list("website_uses")[0m
+  [4;35;1mSQL (0.000043)[0m   [0mPRAGMA index_list("websites")[0m
+  [4;36;1mSQL (0.000166)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000198)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002335)[0m   [0;1mCREATE TABLE "address_uses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "address_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000406)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002283)[0m   [0;1mCREATE TABLE "addresses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "latitude" varchar(255) DEFAULT NULL NULL, "longitude" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "alternate_names" varchar(255) DEFAULT NULL NULL, "street" varchar(255) DEFAULT NULL NULL, "street2" varchar(255) DEFAULT NULL NULL, "city" varchar(255) DEFAULT NULL NULL, "state" varchar(255) DEFAULT NULL NULL, "city_id" integer DEFAULT NULL NULL, "state_id" integer DEFAULT NULL NULL, "zip" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000443)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002385)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "phone" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "administrator_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000650)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002612)[0m   [0;1mCREATE TABLE "cities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "state_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000664)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002263)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "reply_id" integer DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000665)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002834)[0m   [0;1mCREATE TABLE "credit_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address_id" integer DEFAULT NULL NULL, "card_number" integer DEFAULT NULL NULL, "expiration_month" integer DEFAULT NULL NULL, "expiration_year" integer DEFAULT NULL NULL, "security_code" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000897)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002803)[0m   [0;1mCREATE TABLE "followings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "follower_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000887)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003057)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "administrator_id" integer DEFAULT NULL NULL, "group_type" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000923)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002718)[0m   [0;1mCREATE TABLE "image_uses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image_id" integer DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000944)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003449)[0m   [0;1mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "size" integer DEFAULT NULL NULL, "content_type" varchar(255) DEFAULT NULL NULL, "filename" varchar(255) DEFAULT NULL NULL, "height" integer DEFAULT NULL NULL, "width" integer DEFAULT NULL NULL, "parent_id" integer DEFAULT NULL NULL, "thumbnail" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000980)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002237)[0m   [0;1mCREATE TABLE "listings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "list_type" integer DEFAULT NULL NULL, "product_id" integer DEFAULT NULL NULL, "brand_id" integer DEFAULT NULL NULL, "store_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "private" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001077)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003168)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone" varchar(255) DEFAULT NULL NULL, "store_id" integer DEFAULT NULL NULL, "schedule_id" integer DEFAULT NULL NULL, "address_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001222)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002954)[0m   [0;1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "group_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001441)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002631)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "reply_id" integer DEFAULT NULL NULL, "read_on" datetime DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001339)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003580)[0m   [0;1mCREATE TABLE "network_memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "network_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001629)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002841)[0m   [0;1mCREATE TABLE "networks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "city_id" integer DEFAULT NULL NULL, "state_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001619)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002664)[0m   [0;1mCREATE TABLE "offerings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer DEFAULT NULL NULL, "location_id" integer DEFAULT NULL NULL, "stock" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001741)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003132)[0m   [0;1mCREATE TABLE "prices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "offering_id" integer DEFAULT NULL NULL, "sale" boolean DEFAULT NULL NULL, "end_date" datetime DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001959)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003019)[0m   [0;1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "brand_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001824)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003155)[0m   [0;1mCREATE TABLE "purchases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "offering_id" integer DEFAULT NULL NULL, "credit_card_id" integer DEFAULT NULL NULL, "address_id" integer DEFAULT NULL NULL, "approved" boolean DEFAULT NULL NULL, "complete" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001759)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003562)[0m   [0;1mCREATE TABLE "schedules" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sunday_open" time DEFAULT NULL NULL, "sunday_close" time DEFAULT NULL NULL, "monday_open" time DEFAULT NULL NULL, "monday_close" time DEFAULT NULL NULL, "tuesday_open" time DEFAULT NULL NULL, "tuesday_close" time DEFAULT NULL NULL, "wednesday_open" time DEFAULT NULL NULL, "wednesday_close" time DEFAULT NULL NULL, "thursday_open" time DEFAULT NULL NULL, "thursday_close" time DEFAULT NULL NULL, "friday_open" time DEFAULT NULL NULL, "friday_close" time DEFAULT NULL NULL, "saturday_open" time DEFAULT NULL NULL, "saturday_close" time DEFAULT NULL NULL, "holidays" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001845)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002821)[0m   [0;1mCREATE TABLE "states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001915)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003652)[0m   [0;1mCREATE TABLE "stores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "administrator_id" integer DEFAULT NULL NULL, "primary_image_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001830)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002653)[0m   [0;1mCREATE TABLE "taggings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002034)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003189)[0m   [0;1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001829)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003526)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40) DEFAULT NULL NULL, "name" varchar(100) DEFAULT '' NULL, "interests" text DEFAULT NULL NULL, "hobbies" text DEFAULT NULL NULL, "persona" text DEFAULT NULL NULL, "primary_address_id" integer DEFAULT NULL NULL, "phone" varchar(255) DEFAULT NULL NULL, "email" varchar(100) DEFAULT NULL NULL, "crypted_password" varchar(40) DEFAULT NULL NULL, "salt" varchar(40) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "remember_token" varchar(40) DEFAULT NULL NULL, "remember_token_expires_at" datetime DEFAULT NULL NULL, "activation_code" varchar(40) DEFAULT NULL NULL, "activated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002963)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.002059)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.003293)[0m   [0mCREATE TABLE "website_uses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "website_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002255)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002901)[0m   [0mCREATE TABLE "websites" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "href" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.003015)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002642)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.003234)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002414)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000172)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.002623)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614202316')[0m
+  [4;36;1mSQL (0.003718)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614192830')[0m
+  [4;35;1mSQL (0.001990)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195028')[0m
+  [4;36;1mSQL (0.002918)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195108')[0m
+  [4;35;1mSQL (0.002727)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195127')[0m
+  [4;36;1mSQL (0.003060)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195148')[0m
+  [4;35;1mSQL (0.003174)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195205')[0m
+  [4;36;1mSQL (0.003096)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195220')[0m
+  [4;35;1mSQL (0.002986)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195755')[0m
+  [4;36;1mSQL (0.003066)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195822')[0m
+  [4;35;1mSQL (0.002331)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195840')[0m
+  [4;36;1mSQL (0.002870)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195906')[0m
+  [4;35;1mSQL (0.002506)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200131')[0m
+  [4;36;1mSQL (0.002485)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200145')[0m
+  [4;35;1mSQL (0.002098)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200210')[0m
+  [4;36;1mSQL (0.002434)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200226')[0m
+  [4;35;1mSQL (0.004248)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200258')[0m
+  [4;36;1mSQL (0.002461)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200336')[0m
+  [4;35;1mSQL (0.002981)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200353')[0m
+  [4;36;1mSQL (0.002788)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200536')[0m
+  [4;35;1mSQL (0.002964)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200600')[0m
+  [4;36;1mSQL (0.002765)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200615')[0m
+  [4;35;1mSQL (0.002788)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200637')[0m
+  [4;36;1mSQL (0.002788)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200653')[0m
+  [4;35;1mSQL (0.002787)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200715')[0m
+  [4;36;1mSQL (0.002355)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200750')[0m
+  [4;35;1mSQL (0.003101)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200809')[0m
+  [4;36;1mSQL (0.002841)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200821')[0m
+  [4;35;1mSQL (0.002823)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200841')[0m
+
+
+Processing ImagesController#index (for 127.0.0.1 at 2008-06-14 19:53:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1bd8c658ed1c45db7b1fbc93f9a75e4fcbcb7a22
+  Parameters: {"action"=>"index", "controller"=>"images"}
+  [4;35;1mImage Load (0.001205)[0m   [0mSELECT * FROM "images" [0m
+Rendering images/index
+Completed in 0.00816 (122 reqs/sec) | Rendering: 0.00033 (4%) | DB: 0.00120 (14%) | 200 OK [http://localhost/images]
+
+
+Processing ImagesController#new (for 127.0.0.1 at 2008-06-14 19:53:19) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1bd8c658ed1c45db7b1fbc93f9a75e4fcbcb7a22
+  Parameters: {"action"=>"new", "controller"=>"images"}
+Rendering images/new
+Completed in 0.08268 (12 reqs/sec) | Rendering: 0.00581 (7%) | DB: 0.00000 (0%) | 200 OK [http://localhost/images/new]
+
+
+Processing ImagesController#create (for 127.0.0.1 at 2008-06-14 19:53:43) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--a72612e9ae4f2968f2f3bafb8fdf2991d6e8a38c
+  Parameters: {"commit"=>"Create", "action"=>"create", "authenticity_token"=>"84d375dcaf32451049e649383d52e99eb93b4d10", "controller"=>"images", "image"=>{"content_type"=>"happy", "thumbnail"=>"", "size"=>"45", "height"=>"3", "filename"=>"sin", "parent_id"=>"", "width"=>"2"}}
+  [4;36;1mImage Create (0.000702)[0m   [0;1mINSERT INTO "images" ("content_type", "size", "thumbnail", "updated_at", "filename", "height", "user_id", "parent_id", "width", "created_at") VALUES('happy', 45, '', '2008-06-14 23:53:43', 'sin', 3, NULL, NULL, 2, '2008-06-14 23:53:43')[0m
+Redirected to http://localhost:3000/images/1
+Completed in 0.01576 (63 reqs/sec) | DB: 0.00070 (4%) | 302 Found [http://localhost/images]
+
+
+Processing ImagesController#show (for 127.0.0.1 at 2008-06-14 19:53:43) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRJbWFnZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHRg==--c16e0fd96626e0f75dfd19d7ccfd11e26d9d918a
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"images"}
+  [4;35;1mImage Load (0.000281)[0m   [0mSELECT * FROM "images" WHERE ("images"."id" = 1) [0m
+Rendering images/show
+Completed in 0.01180 (84 reqs/sec) | Rendering: 0.00276 (23%) | DB: 0.00028 (2%) | 200 OK [http://localhost/images/1]
+
+
+Processing BrandsController#index (for 127.0.0.1 at 2008-06-14 19:54:00) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRJbWFnZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHVA==--95cf1b1033deee3d43a6378ae57b43f52eca5e5c
+  Parameters: {"action"=>"index", "controller"=>"brands"}
+  [4;36;1mBrand Load (0.001264)[0m   [0;1mSELECT * FROM "brands" [0m
+Rendering brands/index
+Completed in 0.00970 (103 reqs/sec) | Rendering: 0.00119 (12%) | DB: 0.00126 (13%) | 200 OK [http://localhost/brands]
+
+
+Processing BrandsController#new (for 127.0.0.1 at 2008-06-14 19:54:02) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--a72612e9ae4f2968f2f3bafb8fdf2991d6e8a38c
+  Parameters: {"action"=>"new", "controller"=>"brands"}
+Rendering brands/new
+Completed in 0.01132 (88 reqs/sec) | Rendering: 0.00291 (25%) | DB: 0.00000 (0%) | 200 OK [http://localhost/brands/new]
+
+
+Processing BrandsController#create (for 127.0.0.1 at 2008-06-14 19:54:05) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--a72612e9ae4f2968f2f3bafb8fdf2991d6e8a38c
+  Parameters: {"brand"=>{"name"=>"Nike", "phone"=>""}, "commit"=>"Create", "action"=>"create", "authenticity_token"=>"84d375dcaf32451049e649383d52e99eb93b4d10", "controller"=>"brands"}
+  [4;35;1mBrand Create (0.000394)[0m   [0mINSERT INTO "brands" ("name", "updated_at", "administrator_id", "phone", "user_id", "created_at") VALUES('Nike', '2008-06-14 23:54:05', NULL, '', NULL, '2008-06-14 23:54:05')[0m
+Redirected to http://localhost:3000/brands/1
+Completed in 0.01383 (72 reqs/sec) | DB: 0.00039 (2%) | 302 Found [http://localhost/brands]
+
+
+Processing BrandsController#show (for 127.0.0.1 at 2008-06-14 19:54:05) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRCcmFuZCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHRg==--cab9f14397c72101b87ae9a48b59b1f622531556
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"brands"}
+  [4;36;1mBrand Load (0.000246)[0m   [0;1mSELECT * FROM "brands" WHERE ("brands"."id" = 1) [0m
+Rendering brands/show
+Completed in 0.01156 (86 reqs/sec) | Rendering: 0.00191 (16%) | DB: 0.00025 (2%) | 200 OK [http://localhost/brands/1]
+
+
+Processing ImageUsesController#index (for 127.0.0.1 at 2008-06-14 19:54:11) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIiRCcmFuZCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu
+BjoKQHVzZWR7BjsHVA==--40934601b7cd259aedfecc543cda296998dd1527
+  Parameters: {"action"=>"index", "controller"=>"image_uses"}
+  [4;35;1mImageUse Load (0.001185)[0m   [0mSELECT * FROM "image_uses" [0m
+Rendering image_uses/index
+Completed in 0.00853 (117 reqs/sec) | Rendering: 0.00124 (14%) | DB: 0.00118 (13%) | 200 OK [http://localhost/image_uses]
+
+
+Processing ImageUsesController#new (for 127.0.0.1 at 2008-06-14 19:54:13) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--a72612e9ae4f2968f2f3bafb8fdf2991d6e8a38c
+  Parameters: {"action"=>"new", "controller"=>"image_uses"}
+Rendering image_uses/new
+Completed in 0.01101 (90 reqs/sec) | Rendering: 0.00335 (30%) | DB: 0.00000 (0%) | 200 OK [http://localhost/image_uses/new]
+
+
+Processing ImageUsesController#create (for 127.0.0.1 at 2008-06-14 19:54:21) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--a72612e9ae4f2968f2f3bafb8fdf2991d6e8a38c
+  Parameters: {"commit"=>"Create", "image_use"=>{"target_id"=>"1", "target_type"=>"Brand", "image_id"=>"1"}, "action"=>"create", "authenticity_token"=>"84d375dcaf32451049e649383d52e99eb93b4d10", "controller"=>"image_uses"}
+  [4;36;1mImageUse Create (0.000421)[0m   [0;1mINSERT INTO "image_uses" ("updated_at", "target_id", "target_type", "user_id", "image_id", "created_at") VALUES('2008-06-14 23:54:21', 1, 'Brand', NULL, 1, '2008-06-14 23:54:21')[0m
+Redirected to http://localhost:3000/image_uses/1
+Completed in 0.01286 (77 reqs/sec) | DB: 0.00042 (3%) | 302 Found [http://localhost/image_uses]
+
+
+Processing ImageUsesController#show (for 127.0.0.1 at 2008-06-14 19:54:21) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidJbWFnZVVzZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHRg==--85bbc1ab15afffd959eab3cd49c428822d11c660
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"image_uses"}
+  [4;35;1mImageUse Load (0.000241)[0m   [0mSELECT * FROM "image_uses" WHERE ("image_uses"."id" = 1) [0m
+Rendering image_uses/show
+Completed in 0.01038 (96 reqs/sec) | Rendering: 0.00201 (19%) | DB: 0.00024 (2%) | 200 OK [http://localhost/image_uses/1]
+  [4;36;1mBrand Load (0.000258)[0m   [0;1mSELECT * FROM "brands" WHERE ("brands"."id" = 1) [0m
+  [4;35;1mImage Load (0.000619)[0m   [0mSELECT "images".* FROM "images" INNER JOIN image_uses ON images.id = image_uses.image_id WHERE (("image_uses".target_id = 1) AND ("image_uses".target_type = 'Brand')) [0m
+  [4;36;1mImage Load (0.000306)[0m   [0;1mSELECT * FROM "images" WHERE ("images"."id" = 1) [0m
+  [4;36;1mImage Load (0.000299)[0m   [0;1mSELECT * FROM "images" WHERE ("images"."id" = 1) [0m
+  [4;36;1mImage Load (0.000299)[0m   [0;1mSELECT * FROM "images" WHERE ("images"."id" = 1) [0m
+  [4;36;1mImage Load (0.000295)[0m   [0;1mSELECT * FROM "images" WHERE ("images"."id" = 1) [0m
+  [4;36;1mImage Load (0.000327)[0m   [0;1mSELECT * FROM "images" WHERE ("images"."id" = 1) [0m
+  [4;36;1mImage Load (0.000293)[0m   [0;1mSELECT * FROM "images" WHERE ("images"."id" = 1) [0m
+  [4;35;1mImage Load (0.000688)[0m   [0mSELECT "images".* FROM "images" INNER JOIN image_uses ON images.id = image_uses.target_id WHERE (("image_uses".image_id = 1) AND ((image_uses.target_type = 'Brand'))) [0m
+  [4;36;1mImage Load (0.000307)[0m   [0;1mSELECT * FROM "images" WHERE ("images"."id" = 1) [0m
+  [4;35;1mBrand Load (0.000614)[0m   [0mSELECT "brands".* FROM "brands" INNER JOIN image_uses ON brands.id = image_uses.target_id WHERE (("image_uses".image_id = 1) AND ((image_uses.target_type = 'Brand'))) [0m
+  [4;36;1mSQL (0.002252)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002250)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mBrand Load (0.000507)[0m   [0;1mSELECT * FROM "brands" WHERE ("brands"."id" = 1) [0m
+  [4;36;1mBrand Load (0.000246)[0m   [0;1mSELECT * FROM "brands" WHERE ("brands"."id" = 1) [0m
+  [4;35;1mBrand Load (0.000504)[0m   [0mSELECT * FROM "brands" WHERE ("brands"."id" = 1) [0m
+  [4;36;1mImage Load (0.000565)[0m   [0;1mSELECT "images".* FROM "images" INNER JOIN image_uses ON images.id = image_uses.image_id WHERE (("image_uses".target_id = 1) AND ("image_uses".target_type = 'Brand') AND ((image_uses.target_type = 'Brand'))) [0m
+  [4;35;1mImage Load (0.000713)[0m   [0mSELECT * FROM "images" WHERE ("images"."id" = 1) [0m
+  [4;36;1mBrand Load (0.000462)[0m   [0;1mSELECT "brands".* FROM "brands" INNER JOIN image_uses ON brands.id = image_uses.target_id WHERE (("image_uses".image_id = 1) AND ((image_uses.target_type = 'Brand'))) [0m
+  [4;36;1mSQL (0.002507)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.001330)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001191)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001193)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001288)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001210)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001196)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001208)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001251)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001190)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001283)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001229)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001187)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001253)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001184)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001187)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001218)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001192)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001199)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001307)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001336)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001203)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001192)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001190)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001228)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001220)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001231)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001247)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001283)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.001211)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20080614192830)
+  [4;36;1mSQL (0.001199)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateStores (20080614195028)
+  [4;35;1mSQL (0.001231)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateStates (20080614195108)
+  [4;36;1mSQL (0.001226)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateCities (20080614195127)
+  [4;35;1mSQL (0.001194)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLocations (20080614195148)
+  [4;36;1mSQL (0.001201)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateBrands (20080614195205)
+  [4;35;1mSQL (0.001340)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20080614195220)
+  [4;36;1mSQL (0.001329)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateOfferings (20080614195755)
+  [4;35;1mSQL (0.001256)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePrices (20080614195822)
+  [4;36;1mSQL (0.001209)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateSchedules (20080614195840)
+  [4;35;1mSQL (0.001195)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateListings (20080614195906)
+  [4;36;1mSQL (0.001204)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateGroups (20080614200131)
+  [4;35;1mSQL (0.001199)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMemberships (20080614200145)
+  [4;36;1mSQL (0.001251)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateTags (20080614200210)
+  [4;35;1mSQL (0.001396)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateTaggings (20080614200226)
+  [4;36;1mSQL (0.001264)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateFollowings (20080614200258)
+  [4;35;1mSQL (0.001216)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateImages (20080614200336)
+  [4;36;1mSQL (0.001196)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateImageUses (20080614200353)
+  [4;35;1mSQL (0.001187)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateWebsites (20080614200536)
+  [4;36;1mSQL (0.001195)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateWebsiteUses (20080614200600)
+  [4;35;1mSQL (0.001226)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateComments (20080614200615)
+  [4;36;1mSQL (0.001272)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateMessages (20080614200637)
+  [4;35;1mSQL (0.001295)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePurchases (20080614200653)
+  [4;36;1mSQL (0.001263)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateAddresses (20080614200715)
+  [4;35;1mSQL (0.001304)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateCreditCards (20080614200750)
+  [4;36;1mSQL (0.001239)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateNetworks (20080614200809)
+  [4;35;1mSQL (0.001239)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateNetworkMemberships (20080614200821)
+  [4;36;1mSQL (0.001425)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to AddUserIds (20080614200841)
+  [4;35;1mSQL (0.001316)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateAddressUses (20080614202316)
+  [4;36;1mSQL (0.001310)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to FollowAnything (20080615192044)
+  [4;35;1mSQL (0.001360)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000125)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.001219)[0m   [0mCREATE TEMPORARY TABLE "altered_followings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "target_id" integer DEFAULT NULL NULL, "follower_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.000048)[0m   [0;1mPRAGMA index_list("followings")[0m
+  [4;35;1mSQL (0.000436)[0m   [0mDROP TABLE "followings"[0m
+  [4;36;1mSQL (0.000230)[0m   [0;1mCREATE TABLE "followings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "target_id" integer DEFAULT NULL NULL, "follower_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000042)[0m   [0mPRAGMA index_list("altered_followings")[0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mDROP TABLE "altered_followings"[0m
+  [4;35;1mSQL (0.002820)[0m   [0mALTER TABLE "followings" ADD "target_type" varchar(255)[0m
+  [4;36;1mSQL (0.021327)[0m   [0;1mVACUUM[0m
+  [4;35;1mSQL (0.004155)[0m   [0mALTER TABLE "followings" ADD "follower_type" varchar(255)[0m
+  [4;36;1mSQL (0.020045)[0m   [0;1mVACUUM[0m
+  [4;35;1mSQL (0.004702)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080615192044')[0m
+Migrating to MessageRecipients (20080615192902)
+  [4;36;1mSQL (0.002697)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002884)[0m   [0mALTER TABLE "messages" ADD "recipient_id" integer[0m
+  [4;36;1mSQL (0.013219)[0m   [0;1mVACUUM[0m
+  [4;35;1mSQL (0.004681)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080615192902')[0m
+  [4;36;1mSQL (0.002418)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002329)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000147)[0m   [0;1mPRAGMA index_list("address_uses")[0m
+  [4;35;1mSQL (0.000180)[0m   [0mPRAGMA index_list("addresses")[0m
+  [4;36;1mSQL (0.000060)[0m   [0;1mPRAGMA index_list("brands")[0m
+  [4;35;1mSQL (0.000050)[0m   [0mPRAGMA index_list("cities")[0m
+  [4;36;1mSQL (0.000048)[0m   [0;1mPRAGMA index_list("comments")[0m
+  [4;35;1mSQL (0.000052)[0m   [0mPRAGMA index_list("credit_cards")[0m
+  [4;36;1mSQL (0.000050)[0m   [0;1mPRAGMA index_list("followings")[0m
+  [4;35;1mSQL (0.000046)[0m   [0mPRAGMA index_list("groups")[0m
+  [4;36;1mSQL (0.000047)[0m   [0;1mPRAGMA index_list("image_uses")[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list("images")[0m
+  [4;36;1mSQL (0.000047)[0m   [0;1mPRAGMA index_list("listings")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("locations")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("memberships")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("messages")[0m
+  [4;36;1mSQL (0.000052)[0m   [0;1mPRAGMA index_list("network_memberships")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("networks")[0m
+  [4;36;1mSQL (0.000047)[0m   [0;1mPRAGMA index_list("offerings")[0m
+  [4;35;1mSQL (0.000126)[0m   [0mPRAGMA index_list("prices")[0m
+  [4;36;1mSQL (0.000045)[0m   [0;1mPRAGMA index_list("products")[0m
+  [4;35;1mSQL (0.000046)[0m   [0mPRAGMA index_list("purchases")[0m
+  [4;36;1mSQL (0.000053)[0m   [0;1mPRAGMA index_list("schedules")[0m
+  [4;35;1mSQL (0.000062)[0m   [0mPRAGMA index_list("states")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("stores")[0m
+  [4;35;1mSQL (0.000055)[0m   [0mPRAGMA index_list("taggings")[0m
+  [4;36;1mSQL (0.000045)[0m   [0;1mPRAGMA index_list("tags")[0m
+  [4;35;1mSQL (0.000129)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000128)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list("website_uses")[0m
+  [4;36;1mSQL (0.000052)[0m   [0;1mPRAGMA index_list("websites")[0m
+
+
+Processing ImageUsesController#show (for 127.0.0.1 at 2008-06-15 18:06:58) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7BjoLbm90aWNlIidJbWFnZVVzZSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0
+ZWQuBjoKQHVzZWR7BjsHVA==--a46327ebc65c209bc234020d95b6e32bcbe0b071
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"image_uses"}
+  [4;36;1mImageUse Load (0.000420)[0m   [0;1mSELECT * FROM "image_uses" WHERE ("image_uses"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering image_uses/show
+Completed in 0.03177 (31 reqs/sec) | Rendering: 0.00400 (12%) | DB: 0.00042 (1%) | 200 OK [http://localhost/image_uses/1]
+
+
+Processing ImageUsesController#show (for 127.0.0.1 at 2008-06-15 18:07:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--a72612e9ae4f2968f2f3bafb8fdf2991d6e8a38c
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"image_uses"}
+  [4;35;1mImageUse Load (0.000288)[0m   [0mSELECT * FROM "image_uses" WHERE ("image_uses"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering image_uses/show
+Completed in 0.01204 (83 reqs/sec) | Rendering: 0.00250 (20%) | DB: 0.00029 (2%) | 200 OK [http://localhost/image_uses/1]
+
+
+Processing ImageUsesController#show (for 127.0.0.1 at 2008-06-15 18:08:04) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNzcxZDkxN2Y4MTA2NGI2ZDUzODM4NTVjZmU4OWIy
+YzMiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--a72612e9ae4f2968f2f3bafb8fdf2991d6e8a38c
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"image_uses"}
+  [4;36;1mImageUse Load (0.000241)[0m   [0;1mSELECT * FROM "image_uses" WHERE ("image_uses"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering image_uses/show
+Completed in 0.01283 (77 reqs/sec) | Rendering: 0.00288 (22%) | DB: 0.00024 (1%) | 200 OK [http://localhost/image_uses/1]
+  [4;36;1mSQL (0.009648)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002362)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000245)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.002264)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002142)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000134)[0m   [0mPRAGMA index_list("address_uses")[0m
+  [4;36;1mSQL (0.000189)[0m   [0;1mPRAGMA index_list("addresses")[0m
+  [4;35;1mSQL (0.000078)[0m   [0mPRAGMA index_list("brands")[0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mPRAGMA index_list("cities")[0m
+  [4;35;1mSQL (0.000066)[0m   [0mPRAGMA index_list("comments")[0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mPRAGMA index_list("credit_cards")[0m
+  [4;35;1mSQL (0.000056)[0m   [0mPRAGMA index_list("followings")[0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mPRAGMA index_list("groups")[0m
+  [4;35;1mSQL (0.000061)[0m   [0mPRAGMA index_list("image_uses")[0m
+  [4;36;1mSQL (0.000053)[0m   [0;1mPRAGMA index_list("images")[0m
+  [4;35;1mSQL (0.000051)[0m   [0mPRAGMA index_list("listings")[0m
+  [4;36;1mSQL (0.000051)[0m   [0;1mPRAGMA index_list("locations")[0m
+  [4;35;1mSQL (0.000052)[0m   [0mPRAGMA index_list("memberships")[0m
+  [4;36;1mSQL (0.000051)[0m   [0;1mPRAGMA index_list("messages")[0m
+  [4;35;1mSQL (0.000046)[0m   [0mPRAGMA index_list("network_memberships")[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mPRAGMA index_list("networks")[0m
+  [4;35;1mSQL (0.000045)[0m   [0mPRAGMA index_list("offerings")[0m
+  [4;36;1mSQL (0.000043)[0m   [0;1mPRAGMA index_list("prices")[0m
+  [4;35;1mSQL (0.000042)[0m   [0mPRAGMA index_list("products")[0m
+  [4;36;1mSQL (0.000042)[0m   [0;1mPRAGMA index_list("purchases")[0m
+  [4;35;1mSQL (0.000048)[0m   [0mPRAGMA index_list("schedules")[0m
+  [4;36;1mSQL (0.000044)[0m   [0;1mPRAGMA index_list("states")[0m
+  [4;35;1mSQL (0.000042)[0m   [0mPRAGMA index_list("stores")[0m
+  [4;36;1mSQL (0.000051)[0m   [0;1mPRAGMA index_list("taggings")[0m
+  [4;35;1mSQL (0.000044)[0m   [0mPRAGMA index_list("tags")[0m
+  [4;36;1mSQL (0.000132)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.000118)[0m   [0mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.000042)[0m   [0;1mPRAGMA index_list("website_uses")[0m
+  [4;35;1mSQL (0.000050)[0m   [0mPRAGMA index_list("websites")[0m
+  [4;36;1mSQL (0.000356)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000206)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002858)[0m   [0;1mCREATE TABLE "address_uses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "address_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000439)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003154)[0m   [0;1mCREATE TABLE "addresses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "latitude" varchar(255) DEFAULT NULL NULL, "longitude" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "alternate_names" varchar(255) DEFAULT NULL NULL, "street" varchar(255) DEFAULT NULL NULL, "street2" varchar(255) DEFAULT NULL NULL, "city" varchar(255) DEFAULT NULL NULL, "state" varchar(255) DEFAULT NULL NULL, "city_id" integer DEFAULT NULL NULL, "state_id" integer DEFAULT NULL NULL, "zip" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000498)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003386)[0m   [0;1mCREATE TABLE "brands" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "phone" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "administrator_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000515)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003010)[0m   [0;1mCREATE TABLE "cities" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "state_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000685)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003065)[0m   [0;1mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "reply_id" integer DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000992)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003150)[0m   [0;1mCREATE TABLE "credit_cards" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "address_id" integer DEFAULT NULL NULL, "card_number" integer DEFAULT NULL NULL, "expiration_month" integer DEFAULT NULL NULL, "expiration_year" integer DEFAULT NULL NULL, "security_code" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000671)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003144)[0m   [0;1mCREATE TABLE "followings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "target_id" integer DEFAULT NULL NULL, "follower_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "follower_type" varchar(255) DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001108)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003371)[0m   [0;1mCREATE TABLE "groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "administrator_id" integer DEFAULT NULL NULL, "group_type" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000834)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003139)[0m   [0;1mCREATE TABLE "image_uses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "image_id" integer DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001075)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.004212)[0m   [0;1mCREATE TABLE "images" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "size" integer DEFAULT NULL NULL, "content_type" varchar(255) DEFAULT NULL NULL, "filename" varchar(255) DEFAULT NULL NULL, "height" integer DEFAULT NULL NULL, "width" integer DEFAULT NULL NULL, "parent_id" integer DEFAULT NULL NULL, "thumbnail" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001069)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002621)[0m   [0;1mCREATE TABLE "listings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "list_type" integer DEFAULT NULL NULL, "product_id" integer DEFAULT NULL NULL, "brand_id" integer DEFAULT NULL NULL, "store_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "private" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001105)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.004188)[0m   [0;1mCREATE TABLE "locations" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "phone" varchar(255) DEFAULT NULL NULL, "store_id" integer DEFAULT NULL NULL, "schedule_id" integer DEFAULT NULL NULL, "address_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001254)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002957)[0m   [0;1mCREATE TABLE "memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "group_id" integer DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001318)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002945)[0m   [0;1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "reply_id" integer DEFAULT NULL NULL, "read_on" datetime DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "recipient_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001426)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003580)[0m   [0;1mCREATE TABLE "network_memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "network_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001502)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002243)[0m   [0;1mCREATE TABLE "networks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "city_id" integer DEFAULT NULL NULL, "state_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001476)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002662)[0m   [0;1mCREATE TABLE "offerings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer DEFAULT NULL NULL, "location_id" integer DEFAULT NULL NULL, "stock" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001900)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003406)[0m   [0;1mCREATE TABLE "prices" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "offering_id" integer DEFAULT NULL NULL, "sale" boolean DEFAULT NULL NULL, "end_date" datetime DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001664)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003086)[0m   [0;1mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "brand_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001650)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003578)[0m   [0;1mCREATE TABLE "purchases" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer DEFAULT NULL NULL, "offering_id" integer DEFAULT NULL NULL, "credit_card_id" integer DEFAULT NULL NULL, "address_id" integer DEFAULT NULL NULL, "approved" boolean DEFAULT NULL NULL, "complete" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001460)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003049)[0m   [0;1mCREATE TABLE "schedules" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "sunday_open" time DEFAULT NULL NULL, "sunday_close" time DEFAULT NULL NULL, "monday_open" time DEFAULT NULL NULL, "monday_close" time DEFAULT NULL NULL, "tuesday_open" time DEFAULT NULL NULL, "tuesday_close" time DEFAULT NULL NULL, "wednesday_open" time DEFAULT NULL NULL, "wednesday_close" time DEFAULT NULL NULL, "thursday_open" time DEFAULT NULL NULL, "thursday_close" time DEFAULT NULL NULL, "friday_open" time DEFAULT NULL NULL, "friday_close" time DEFAULT NULL NULL, "saturday_open" time DEFAULT NULL NULL, "saturday_close" time DEFAULT NULL NULL, "holidays" boolean DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001807)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002832)[0m   [0;1mCREATE TABLE "states" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.001964)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003540)[0m   [0;1mCREATE TABLE "stores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "administrator_id" integer DEFAULT NULL NULL, "primary_image_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002122)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002705)[0m   [0;1mCREATE TABLE "taggings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer DEFAULT NULL NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002200)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003262)[0m   [0;1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002099)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003833)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40) DEFAULT NULL NULL, "name" varchar(100) DEFAULT '' NULL, "interests" text DEFAULT NULL NULL, "hobbies" text DEFAULT NULL NULL, "persona" text DEFAULT NULL NULL, "primary_address_id" integer DEFAULT NULL NULL, "phone" varchar(255) DEFAULT NULL NULL, "email" varchar(100) DEFAULT NULL NULL, "crypted_password" varchar(40) DEFAULT NULL NULL, "salt" varchar(40) DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "remember_token" varchar(40) DEFAULT NULL NULL, "remember_token_expires_at" datetime DEFAULT NULL NULL, "activation_code" varchar(40) DEFAULT NULL NULL, "activated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.002747)[0m   [0mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;36;1mSQL (0.002159)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.003159)[0m   [0mCREATE TABLE "website_uses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "target_type" varchar(255) DEFAULT NULL NULL, "target_id" integer DEFAULT NULL NULL, "website_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002068)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002817)[0m   [0mCREATE TABLE "websites" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "href" varchar(255) DEFAULT NULL NULL, "name" varchar(255) DEFAULT NULL NULL, "user_id" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;36;1mSQL (0.002569)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.002804)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (0.003265)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.002778)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.000166)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
+  [4;35;1mSQL (0.003164)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080615192902')[0m
+  [4;36;1mSQL (0.002874)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614192830')[0m
+  [4;35;1mSQL (0.002767)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195028')[0m
+  [4;36;1mSQL (0.002703)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195108')[0m
+  [4;35;1mSQL (0.002924)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195127')[0m
+  [4;36;1mSQL (0.003278)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195148')[0m
+  [4;35;1mSQL (0.002766)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195205')[0m
+  [4;36;1mSQL (0.002259)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195220')[0m
+  [4;35;1mSQL (0.002558)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195755')[0m
+  [4;36;1mSQL (0.003090)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195822')[0m
+  [4;35;1mSQL (0.002597)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614195840')[0m
+  [4;36;1mSQL (0.002504)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614195906')[0m
+  [4;35;1mSQL (0.002867)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200131')[0m
+  [4;36;1mSQL (0.002655)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200145')[0m
+  [4;35;1mSQL (0.002675)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200210')[0m
+  [4;36;1mSQL (0.002697)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200226')[0m
+  [4;35;1mSQL (0.002631)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200258')[0m
+  [4;36;1mSQL (0.002858)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200336')[0m
+  [4;35;1mSQL (0.002613)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200353')[0m
+  [4;36;1mSQL (0.002254)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200536')[0m
+  [4;35;1mSQL (0.002478)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200600')[0m
+  [4;36;1mSQL (0.002960)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200615')[0m
+  [4;35;1mSQL (0.002785)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200637')[0m
+  [4;36;1mSQL (0.002748)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200653')[0m
+  [4;35;1mSQL (0.003635)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200715')[0m
+  [4;36;1mSQL (0.003142)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200750')[0m
+  [4;35;1mSQL (0.002835)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200809')[0m
+  [4;36;1mSQL (0.003026)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614200821')[0m
+  [4;35;1mSQL (0.003142)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080614200841')[0m
+  [4;36;1mSQL (0.002803)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080614202316')[0m
+  [4;35;1mSQL (0.002899)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080615192044')[0m

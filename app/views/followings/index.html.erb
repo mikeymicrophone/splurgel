@@ -1,0 +1,22 @@
+<h1>Listing followings</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Follower</th>
+  </tr>
+
+<% for following in @followings %>
+  <tr>
+    <td><%=h following.user_id %></td>
+    <td><%=h following.follower_id %></td>
+    <td><%= link_to 'Show', following %></td>
+    <td><%= link_to 'Edit', edit_following_path(following) %></td>
+    <td><%= link_to 'Destroy', following, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New following', new_following_path %>

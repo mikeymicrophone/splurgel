@@ -1,0 +1,48 @@
+<h1>Listing schedules</h1>
+
+<table>
+  <tr>
+    <th>Sunday open</th>
+    <th>Sunday close</th>
+    <th>Monday open</th>
+    <th>Monday close</th>
+    <th>Tuesday open</th>
+    <th>Tuesday close</th>
+    <th>Wednesday open</th>
+    <th>Wednesday close</th>
+    <th>Thursday open</th>
+    <th>Thursday close</th>
+    <th>Friday open</th>
+    <th>Friday close</th>
+    <th>Saturday open</th>
+    <th>Saturday close</th>
+    <th>Holidays</th>
+  </tr>
+
+<% for schedule in @schedules %>
+  <tr>
+    <td><%=h schedule.sunday_open %></td>
+    <td><%=h schedule.sunday_close %></td>
+    <td><%=h schedule.monday_open %></td>
+    <td><%=h schedule.monday_close %></td>
+    <td><%=h schedule.tuesday_open %></td>
+    <td><%=h schedule.tuesday_close %></td>
+    <td><%=h schedule.wednesday_open %></td>
+    <td><%=h schedule.wednesday_close %></td>
+    <td><%=h schedule.thursday_open %></td>
+    <td><%=h schedule.thursday_close %></td>
+    <td><%=h schedule.friday_open %></td>
+    <td><%=h schedule.friday_close %></td>
+    <td><%=h schedule.saturday_open %></td>
+    <td><%=h schedule.saturday_close %></td>
+    <td><%=h schedule.holidays %></td>
+    <td><%= link_to 'Show', schedule %></td>
+    <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
+    <td><%= link_to 'Destroy', schedule, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New schedule', new_schedule_path %>

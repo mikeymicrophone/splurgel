@@ -1,0 +1,13 @@
+<p>
+  <b>User:</b>
+  <%=h @network_membership.user_id %>
+</p>
+
+<p>
+  <b>Network:</b>
+  <%=h @network_membership.network_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_network_membership_path(@network_membership) %> |
+<%= link_to 'Back', network_memberships_path %>
