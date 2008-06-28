@@ -17,7 +17,7 @@ class Website < ActiveRecord::Base
   has_many :stores, :through => :website_uses, :source => :store, :conditions => "website_uses.target_type = 'Store'"
   has_many :taggings, :through => :website_uses, :source => :tagging, :conditions => "website_uses.target_type = 'Tagging'"
   has_many :users, :through => :website_uses, :source => :user, :conditions => "website_uses.target_type = 'User'"
-  has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Website' and followings.follower_type = 'User'"
-  has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Website' and followings.follower_type = 'Group'"
-  has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Website' and followings.follower_type = 'Location'"
+  has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Website' and followings.follower_type = 'User'", :as => :target
+  has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Website' and followings.follower_type = 'Group'", :as => :target
+  has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Website' and followings.follower_type = 'Location'", :as => :target
 end

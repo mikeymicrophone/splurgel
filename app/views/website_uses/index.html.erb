@@ -1,4 +1,4 @@
-<h1>Listing website_uses</h1>
+<h1>website_uses keep track of which websites are attached to which objects</h1>
 
 <table>
   <tr>
@@ -10,10 +10,10 @@
 <% for website_use in @website_uses %>
   <tr>
     <td><%=h website_use.target_type %></td>
-    <td><%=h website_use.target_id %></td>
-    <td><%=h website_use.website_id %></td>
-    <td><%= link_to 'Show', website_use %></td>
-    <td><%= link_to 'Edit', edit_website_use_path(website_use) %></td>
+    <td><%= link_to 'here', website_use.target %></td>
+    <td><%=h website_use.website.name %></td>
+    <td><%= link_to 'show', website_use %></td>
+    <td><%= link_to 'edit', edit_website_use_path(website_use) %></td>
     <td><%= link_to 'Destroy', website_use, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -21,4 +21,4 @@
 
 <br />
 
-<%= link_to 'New website_use', new_website_use_path %>
+<%= link_to 'new website_use', new_website_use_path %>

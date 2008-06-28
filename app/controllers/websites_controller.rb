@@ -1,8 +1,6 @@
 class WebsitesController < ApplicationController
-  # GET /websites
-  # GET /websites.xml
   def index
-    @websites = Website.find(:all)
+    @websites = Website.find :all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +8,8 @@ class WebsitesController < ApplicationController
     end
   end
 
-  # GET /websites/1
-  # GET /websites/1.xml
   def show
-    @website = Website.find(params[:id])
+    @website = Website.find params[:id]
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,8 +17,6 @@ class WebsitesController < ApplicationController
     end
   end
 
-  # GET /websites/new
-  # GET /websites/new.xml
   def new
     @website = Website.new
 
@@ -32,20 +26,17 @@ class WebsitesController < ApplicationController
     end
   end
 
-  # GET /websites/1/edit
   def edit
-    @website = Website.find(params[:id])
+    @website = Website.find params[:id]
   end
 
-  # POST /websites
-  # POST /websites.xml
   def create
-    @website = Website.new(params[:website])
+    @website = Website.new params[:website]
 
     respond_to do |format|
       if @website.save
         flash[:notice] = 'Website was successfully created.'
-        format.html { redirect_to(@website) }
+        format.html { redirect_to @website }
         format.xml  { render :xml => @website, :status => :created, :location => @website }
       else
         format.html { render :action => "new" }
@@ -54,15 +45,13 @@ class WebsitesController < ApplicationController
     end
   end
 
-  # PUT /websites/1
-  # PUT /websites/1.xml
   def update
-    @website = Website.find(params[:id])
+    @website = Website.find params[:id]
 
     respond_to do |format|
-      if @website.update_attributes(params[:website])
+      if @website.update_attributes params[:website]
         flash[:notice] = 'Website was successfully updated.'
-        format.html { redirect_to(@website) }
+        format.html { redirect_to @website }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -71,14 +60,12 @@ class WebsitesController < ApplicationController
     end
   end
 
-  # DELETE /websites/1
-  # DELETE /websites/1.xml
   def destroy
-    @website = Website.find(params[:id])
+    @website = Website.find params[:id]
     @website.destroy
 
     respond_to do |format|
-      format.html { redirect_to(websites_url) }
+      format.html { redirect_to websites_url }
       format.xml  { head :ok }
     end
   end

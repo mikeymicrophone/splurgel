@@ -1,4 +1,4 @@
-<h1>Listing purchases</h1>
+<h1>purchases</h1>
 
 <table>
   <tr>
@@ -12,14 +12,14 @@
 
 <% for purchase in @purchases %>
   <tr>
-    <td><%=h purchase.user_id %></td>
-    <td><%=h purchase.offering_id %></td>
+    <td><%= link_to purchase.user.name, purchase.user %></td>
+    <td><%= link_to purchase.offering.product.name, purchase.product.offering %> from <%= link_to purchase.offering.location.store.name, purchase.offering.location.store %></td>
     <td><%=h purchase.credit_card_id %></td>
     <td><%=h purchase.address_id %></td>
     <td><%=h purchase.approved %></td>
     <td><%=h purchase.complete %></td>
-    <td><%= link_to 'Show', purchase %></td>
-    <td><%= link_to 'Edit', edit_purchase_path(purchase) %></td>
+    <td><%= link_to 'show', purchase %></td>
+    <td><%= link_to 'edit', edit_purchase_path(purchase) %></td>
     <td><%= link_to 'Destroy', purchase, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -27,4 +27,4 @@
 
 <br />
 
-<%= link_to 'New purchase', new_purchase_path %>
+<%= link_to 'new purchase', new_purchase_path %>

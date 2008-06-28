@@ -1,4 +1,4 @@
-<h1>Listing groups</h1>
+<h1>groups</h1>
 
 <table>
   <tr>
@@ -9,11 +9,10 @@
 
 <% for group in @groups %>
   <tr>
-    <td><%=h group.name %></td>
-    <td><%=h group.administrator_id %></td>
+    <td><%= link_to group.name, group %></td>
+    <td><%= link_to group.administrator.name, group.administrator %></td>
     <td><%=h group.group_type %></td>
-    <td><%= link_to 'Show', group %></td>
-    <td><%= link_to 'Edit', edit_group_path(group) %></td>
+    <td><%= link_to 'edit', edit_group_path(group) %></td>
     <td><%= link_to 'Destroy', group, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -21,4 +20,4 @@
 
 <br />
 
-<%= link_to 'New group', new_group_path %>
+<%= link_to 'new group', new_group_path %>

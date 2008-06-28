@@ -1,17 +1,15 @@
-<h1>Listing followings</h1>
+<h1>followings keep track of who is following who and which groups and locations</h1>
 
 <table>
   <tr>
-    <th>User</th>
     <th>Follower</th>
   </tr>
 
 <% for following in @followings %>
   <tr>
-    <td><%=h following.user_id %></td>
-    <td><%=h following.follower_id %></td>
-    <td><%= link_to 'Show', following %></td>
-    <td><%= link_to 'Edit', edit_following_path(following) %></td>
+    <td><%= link_to 'follower', following.follower %> following <%= link_to 'followed', follower.target %></td>
+    <td><%= link_to 'show', following %></td>
+    <td><%= link_to 'edit', edit_following_path(following) %></td>
     <td><%= link_to 'Destroy', following, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -19,4 +17,4 @@
 
 <br />
 
-<%= link_to 'New following', new_following_path %>
+<%= link_to 'new following', new_following_path %>

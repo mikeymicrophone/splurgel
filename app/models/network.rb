@@ -8,4 +8,6 @@ class Network < ActiveRecord::Base
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses, :source => :website, :conditions => "website_uses.target_type = 'Network'"
   has_many :comments, :as => :target
+  belongs_to :city
+  belongs_to :state
 end

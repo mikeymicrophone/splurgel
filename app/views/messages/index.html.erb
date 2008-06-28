@@ -1,4 +1,4 @@
-<h1>Listing messages</h1>
+<h1>messages</h1>
 
 <table>
   <tr>
@@ -11,11 +11,11 @@
 <% for message in @messages %>
   <tr>
     <td><%=h message.body %></td>
-    <td><%=h message.user_id %></td>
-    <td><%=h message.reply_id %></td>
+    <td><%= link_to message.user.name, message.user %> to <%= link_to message.recipient.name, message.recipient %></td>
+    <td><%= link_to message.reply.subject, message.reply if message.reply %></td>
     <td><%=h message.read_on %></td>
-    <td><%= link_to 'Show', message %></td>
-    <td><%= link_to 'Edit', edit_message_path(message) %></td>
+    <td><%= link_to 'show', message %></td>
+    <td><%= link_to 'edit', edit_message_path(message) %></td>
     <td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -23,4 +23,4 @@
 
 <br />
 
-<%= link_to 'New message', new_message_path %>
+<%= link_to 'new message', new_message_path %>

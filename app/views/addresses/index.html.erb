@@ -1,4 +1,4 @@
-<h1>Listing addresses</h1>
+<h1>addresses</h1>
 
 <table>
   <tr>
@@ -8,8 +8,6 @@
     <th>Alternate names</th>
     <th>Street</th>
     <th>Street2</th>
-    <th>City</th>
-    <th>State</th>
     <th>City</th>
     <th>State</th>
     <th>Zip</th>
@@ -23,13 +21,11 @@
     <td><%=h address.alternate_names %></td>
     <td><%=h address.street %></td>
     <td><%=h address.street2 %></td>
-    <td><%=h address.city %></td>
-    <td><%=h address.state %></td>
-    <td><%=h address.city_id %></td>
-    <td><%=h address.state_id %></td>
+    <td><%=h address.city.name %></td>
+    <td><%=h address.state.name %></td>
     <td><%=h address.zip %></td>
-    <td><%= link_to 'Show', address %></td>
-    <td><%= link_to 'Edit', edit_address_path(address) %></td>
+    <td><%= link_to 'show', address %></td>
+    <td><%= link_to 'edit', edit_address_path(address) %></td>
     <td><%= link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -37,4 +33,4 @@
 
 <br />
 
-<%= link_to 'New address', new_address_path %>
+<%= link_to 'new address', new_address_path %>

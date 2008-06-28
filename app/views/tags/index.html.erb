@@ -1,4 +1,4 @@
-<h1>Listing tags</h1>
+<h1>tags</h1>
 
 <table>
   <tr>
@@ -8,8 +8,8 @@
 <% for tag in @tags %>
   <tr>
     <td><%=h tag.name %></td>
-    <td><%= link_to 'Show', tag %></td>
-    <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
+    <td><%= link_to 'show', tag %></td>
+    <td><%= link_to 'edit', edit_tag_path(tag) %></td>
     <td><%= link_to 'Destroy', tag, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -17,4 +17,4 @@
 
 <br />
 
-<%= link_to 'New tag', new_tag_path %>
+<%= link_to 'new tag', new_tag_path %>

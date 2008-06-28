@@ -1,4 +1,4 @@
-<h1>Listing address_uses</h1>
+<h1>address_uses keep track of which people and places use which addresses</h1>
 
 <table>
   <tr>
@@ -12,8 +12,8 @@
     <td><%=h address_use.target_type %></td>
     <td><%=h address_use.target_id %></td>
     <td><%=h address_use.address_id %></td>
-    <td><%= link_to 'Show', address_use %></td>
-    <td><%= link_to 'Edit', edit_address_use_path(address_use) %></td>
+    <td><%= link_to 'show', address_use %></td>
+    <td><%= link_to 'edit', edit_address_use_path(address_use) %></td>
     <td><%= link_to 'Destroy', address_use, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -21,4 +21,4 @@
 
 <br />
 
-<%= link_to 'New address_use', new_address_use_path %>
+<%= link_to 'new address_use', new_address_use_path %>

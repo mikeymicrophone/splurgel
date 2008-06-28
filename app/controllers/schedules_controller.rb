@@ -1,8 +1,6 @@
 class SchedulesController < ApplicationController
-  # GET /schedules
-  # GET /schedules.xml
   def index
-    @schedules = Schedule.find(:all)
+    @schedules = Schedule.find :all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +8,8 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # GET /schedules/1
-  # GET /schedules/1.xml
   def show
-    @schedule = Schedule.find(params[:id])
+    @schedule = Schedule.find params[:id]
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,8 +17,6 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # GET /schedules/new
-  # GET /schedules/new.xml
   def new
     @schedule = Schedule.new
 
@@ -32,20 +26,17 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # GET /schedules/1/edit
   def edit
-    @schedule = Schedule.find(params[:id])
+    @schedule = Schedule.find params[:id]
   end
 
-  # POST /schedules
-  # POST /schedules.xml
   def create
-    @schedule = Schedule.new(params[:schedule])
+    @schedule = Schedule.new params[:schedule]
 
     respond_to do |format|
       if @schedule.save
         flash[:notice] = 'Schedule was successfully created.'
-        format.html { redirect_to(@schedule) }
+        format.html { redirect_to @schedule }
         format.xml  { render :xml => @schedule, :status => :created, :location => @schedule }
       else
         format.html { render :action => "new" }
@@ -54,15 +45,13 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # PUT /schedules/1
-  # PUT /schedules/1.xml
   def update
-    @schedule = Schedule.find(params[:id])
+    @schedule = Schedule.find params[:id]
 
     respond_to do |format|
-      if @schedule.update_attributes(params[:schedule])
+      if @schedule.update_attributes params[:schedule]
         flash[:notice] = 'Schedule was successfully updated.'
-        format.html { redirect_to(@schedule) }
+        format.html { redirect_to @schedule }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -71,14 +60,12 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # DELETE /schedules/1
-  # DELETE /schedules/1.xml
   def destroy
-    @schedule = Schedule.find(params[:id])
+    @schedule = Schedule.find params[:id]
     @schedule.destroy
 
     respond_to do |format|
-      format.html { redirect_to(schedules_url) }
+      format.html { redirect_to schedules_url }
       format.xml  { head :ok }
     end
   end

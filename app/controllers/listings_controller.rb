@@ -1,8 +1,6 @@
 class ListingsController < ApplicationController
-  # GET /listings
-  # GET /listings.xml
   def index
-    @listings = Listing.find(:all)
+    @listings = Listing.find :all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +8,8 @@ class ListingsController < ApplicationController
     end
   end
 
-  # GET /listings/1
-  # GET /listings/1.xml
   def show
-    @listing = Listing.find(params[:id])
+    @listing = Listing.find params[:id]
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,8 +17,6 @@ class ListingsController < ApplicationController
     end
   end
 
-  # GET /listings/new
-  # GET /listings/new.xml
   def new
     @listing = Listing.new
 
@@ -32,20 +26,17 @@ class ListingsController < ApplicationController
     end
   end
 
-  # GET /listings/1/edit
   def edit
-    @listing = Listing.find(params[:id])
+    @listing = Listing.find params[:id]
   end
 
-  # POST /listings
-  # POST /listings.xml
   def create
-    @listing = Listing.new(params[:listing])
+    @listing = Listing.new params[:listing]
 
     respond_to do |format|
       if @listing.save
         flash[:notice] = 'Listing was successfully created.'
-        format.html { redirect_to(@listing) }
+        format.html { redirect_to @listing }
         format.xml  { render :xml => @listing, :status => :created, :location => @listing }
       else
         format.html { render :action => "new" }
@@ -54,15 +45,13 @@ class ListingsController < ApplicationController
     end
   end
 
-  # PUT /listings/1
-  # PUT /listings/1.xml
   def update
-    @listing = Listing.find(params[:id])
+    @listing = Listing.find params[:id]
 
     respond_to do |format|
-      if @listing.update_attributes(params[:listing])
+      if @listing.update_attributes params[:listing]
         flash[:notice] = 'Listing was successfully updated.'
-        format.html { redirect_to(@listing) }
+        format.html { redirect_to @listing }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -71,14 +60,12 @@ class ListingsController < ApplicationController
     end
   end
 
-  # DELETE /listings/1
-  # DELETE /listings/1.xml
   def destroy
-    @listing = Listing.find(params[:id])
+    @listing = Listing.find params[:id]
     @listing.destroy
 
     respond_to do |format|
-      format.html { redirect_to(listings_url) }
+      format.html { redirect_to listings_url }
       format.xml  { head :ok }
     end
   end

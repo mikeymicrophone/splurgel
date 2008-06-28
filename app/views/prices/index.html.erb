@@ -1,4 +1,4 @@
-<h1>Listing prices</h1>
+<h1>prices are specific to a given location</h1>
 
 <table>
   <tr>
@@ -9,11 +9,11 @@
 
 <% for price in @prices %>
   <tr>
-    <td><%=h price.offering_id %></td>
+    <td><%= link_to price.offering.product.name, price.offering %></td>
     <td><%=h price.sale %></td>
     <td><%=h price.end_date %></td>
-    <td><%= link_to 'Show', price %></td>
-    <td><%= link_to 'Edit', edit_price_path(price) %></td>
+    <td><%= link_to 'show', price %></td>
+    <td><%= link_to 'edit', edit_price_path(price) %></td>
     <td><%= link_to 'Destroy', price, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -21,4 +21,4 @@
 
 <br />
 
-<%= link_to 'New price', new_price_path %>
+<%= link_to 'new price', new_price_path %>

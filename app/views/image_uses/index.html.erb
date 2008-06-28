@@ -1,4 +1,4 @@
-<h1>Listing image_uses</h1>
+<h1>image_uses keep track of what images are used for</h1>
 
 <table>
   <tr>
@@ -9,11 +9,11 @@
 
 <% for image_use in @image_uses %>
   <tr>
-    <td><%=h image_use.image_id %></td>
+    <td><%= link_to image_use.image.filename, image_use.image %></td>
     <td><%=h image_use.target_type %></td>
-    <td><%=h image_use.target_id %></td>
-    <td><%= link_to 'Show', image_use %></td>
-    <td><%= link_to 'Edit', edit_image_use_path(image_use) %></td>
+    <td><%= link_to 'here', image_use.target %></td>
+    <td><%= link_to 'show', image_use %></td>
+    <td><%= link_to 'edit', edit_image_use_path(image_use) %></td>
     <td><%= link_to 'Destroy', image_use, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -21,4 +21,4 @@
 
 <br />
 
-<%= link_to 'New image_use', new_image_use_path %>
+<%= link_to 'new image_use', new_image_use_path %>

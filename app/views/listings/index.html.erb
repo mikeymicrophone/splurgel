@@ -1,4 +1,4 @@
-<h1>Listing listings</h1>
+<h1>listings keep track of which items are on have and want and like lists</h1>
 
 <table>
   <tr>
@@ -13,13 +13,13 @@
 <% for listing in @listings %>
   <tr>
     <td><%=h listing.list_type %></td>
-    <td><%=h listing.product_id %></td>
-    <td><%=h listing.brand_id %></td>
-    <td><%=h listing.store_id %></td>
-    <td><%=h listing.user_id %></td>
+    <td><%= link_to listing.product.name, listing.product %></td>
+    <td><%= link_to listing.brand.name, listing.brand %></td>
+    <td><%= link_to listing.store.name, listing.store %></td>
+    <td><%= link_to listing.user.name, listing.user %></td>
     <td><%=h listing.private %></td>
-    <td><%= link_to 'Show', listing %></td>
-    <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+    <td><%= link_to 'show', listing %></td>
+    <td><%= link_to 'edit', edit_listing_path(listing) %></td>
     <td><%= link_to 'Destroy', listing, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -27,4 +27,4 @@
 
 <br />
 
-<%= link_to 'New listing', new_listing_path %>
+<%= link_to 'new listing', new_listing_path %>

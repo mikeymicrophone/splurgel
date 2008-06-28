@@ -1,8 +1,6 @@
 class ProductsController < ApplicationController
-  # GET /products
-  # GET /products.xml
   def index
-    @products = Product.find(:all)
+    @products = Product.find :all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +8,8 @@ class ProductsController < ApplicationController
     end
   end
 
-  # GET /products/1
-  # GET /products/1.xml
   def show
-    @product = Product.find(params[:id])
+    @product = Product.find params[:id]
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,8 +17,6 @@ class ProductsController < ApplicationController
     end
   end
 
-  # GET /products/new
-  # GET /products/new.xml
   def new
     @product = Product.new
 
@@ -32,20 +26,17 @@ class ProductsController < ApplicationController
     end
   end
 
-  # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
+    @product = Product.find params[:id]
   end
 
-  # POST /products
-  # POST /products.xml
   def create
-    @product = Product.new(params[:product])
+    @product = Product.new params[:product]
 
     respond_to do |format|
       if @product.save
         flash[:notice] = 'Product was successfully created.'
-        format.html { redirect_to(@product) }
+        format.html { redirect_to @product }
         format.xml  { render :xml => @product, :status => :created, :location => @product }
       else
         format.html { render :action => "new" }
@@ -54,15 +45,13 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PUT /products/1
-  # PUT /products/1.xml
   def update
-    @product = Product.find(params[:id])
+    @product = Product.find params[:id]
 
     respond_to do |format|
-      if @product.update_attributes(params[:product])
+      if @product.update_attributes params[:product]
         flash[:notice] = 'Product was successfully updated.'
-        format.html { redirect_to(@product) }
+        format.html { redirect_to @product }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -71,14 +60,12 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1
-  # DELETE /products/1.xml
   def destroy
-    @product = Product.find(params[:id])
+    @product = Product.find params[:id]
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to(products_url) }
+      format.html { redirect_to products_url }
       format.xml  { head :ok }
     end
   end

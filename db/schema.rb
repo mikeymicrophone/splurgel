@@ -9,13 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080615192902) do
+ActiveRecord::Schema.define(:version => 20080628043414) do
 
   create_table "address_uses", :force => true do |t|
     t.string   "target_type"
-    t.integer  "target_id"
-    t.integer  "address_id"
-    t.integer  "user_id"
+    t.integer  "target_id",   :limit => 11
+    t.integer  "address_id",  :limit => 11
+    t.integer  "user_id",     :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -27,14 +27,12 @@ ActiveRecord::Schema.define(:version => 20080615192902) do
     t.string   "alternate_names"
     t.string   "street"
     t.string   "street2"
-    t.string   "city"
-    t.string   "state"
-    t.integer  "city_id"
-    t.integer  "state_id"
-    t.integer  "zip"
+    t.integer  "city_id",         :limit => 11
+    t.integer  "state_id",        :limit => 11
+    t.integer  "zip",             :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer  "user_id",         :limit => 11
   end
 
   create_table "brands", :force => true do |t|
@@ -42,41 +40,41 @@ ActiveRecord::Schema.define(:version => 20080615192902) do
     t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "administrator_id"
-    t.integer  "user_id"
+    t.integer  "administrator_id", :limit => 11
+    t.integer  "user_id",          :limit => 11
   end
 
   create_table "cities", :force => true do |t|
     t.string   "name"
-    t.integer  "state_id"
+    t.integer  "state_id",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "comments", :force => true do |t|
     t.text     "body"
-    t.integer  "user_id"
-    t.integer  "reply_id"
+    t.integer  "user_id",     :limit => 11
+    t.integer  "reply_id",    :limit => 11
     t.string   "target_type"
-    t.integer  "target_id"
+    t.integer  "target_id",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "credit_cards", :force => true do |t|
-    t.integer  "address_id"
-    t.integer  "card_number"
-    t.integer  "expiration_month"
-    t.integer  "expiration_year"
-    t.integer  "security_code"
-    t.integer  "user_id"
+    t.integer  "address_id",       :limit => 11
+    t.integer  "card_number",      :limit => 11
+    t.integer  "expiration_month", :limit => 11
+    t.integer  "expiration_year",  :limit => 11
+    t.integer  "security_code",    :limit => 11
+    t.integer  "user_id",          :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "followings", :force => true do |t|
-    t.integer  "target_id"
-    t.integer  "follower_id"
+    t.integer  "target_id",     :limit => 11
+    t.integer  "follower_id",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "target_type"
@@ -85,118 +83,118 @@ ActiveRecord::Schema.define(:version => 20080615192902) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
-    t.integer  "administrator_id"
-    t.integer  "group_type"
+    t.integer  "administrator_id", :limit => 11
+    t.integer  "group_type",       :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "image_uses", :force => true do |t|
-    t.integer  "image_id"
+    t.integer  "image_id",    :limit => 11
     t.string   "target_type"
-    t.integer  "target_id"
+    t.integer  "target_id",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer  "user_id",     :limit => 11
   end
 
   create_table "images", :force => true do |t|
-    t.integer  "size"
+    t.integer  "size",         :limit => 11
     t.string   "content_type"
     t.string   "filename"
-    t.integer  "height"
-    t.integer  "width"
-    t.integer  "parent_id"
+    t.integer  "height",       :limit => 11
+    t.integer  "width",        :limit => 11
+    t.integer  "parent_id",    :limit => 11
     t.string   "thumbnail"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer  "user_id",      :limit => 11
   end
 
   create_table "listings", :force => true do |t|
-    t.integer  "list_type"
-    t.integer  "product_id"
-    t.integer  "brand_id"
-    t.integer  "store_id"
-    t.integer  "user_id"
-    t.integer  "private"
+    t.integer  "list_type",  :limit => 11
+    t.integer  "product_id", :limit => 11
+    t.integer  "brand_id",   :limit => 11
+    t.integer  "store_id",   :limit => 11
+    t.integer  "user_id",    :limit => 11
+    t.integer  "private",    :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "locations", :force => true do |t|
     t.string   "phone"
-    t.integer  "store_id"
-    t.integer  "schedule_id"
-    t.integer  "address_id"
+    t.integer  "store_id",    :limit => 11
+    t.integer  "schedule_id", :limit => 11
+    t.integer  "address_id",  :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "memberships", :force => true do |t|
-    t.integer  "group_id"
-    t.integer  "user_id"
+    t.integer  "group_id",   :limit => 11
+    t.integer  "user_id",    :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "messages", :force => true do |t|
     t.text     "body"
-    t.integer  "user_id"
-    t.integer  "reply_id"
+    t.integer  "user_id",      :limit => 11
+    t.integer  "reply_id",     :limit => 11
     t.datetime "read_on"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "recipient_id"
+    t.integer  "recipient_id", :limit => 11
   end
 
   create_table "network_memberships", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "network_id"
+    t.integer  "user_id",    :limit => 11
+    t.integer  "network_id", :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "networks", :force => true do |t|
     t.string   "name"
-    t.integer  "city_id"
-    t.integer  "state_id"
+    t.integer  "city_id",    :limit => 11
+    t.integer  "state_id",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer  "user_id",    :limit => 11
   end
 
   create_table "offerings", :force => true do |t|
-    t.integer  "product_id"
-    t.integer  "location_id"
+    t.integer  "product_id",  :limit => 11
+    t.integer  "location_id", :limit => 11
     t.string   "stock"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer  "user_id",     :limit => 11
   end
 
   create_table "prices", :force => true do |t|
-    t.integer  "offering_id"
+    t.integer  "offering_id", :limit => 11
     t.boolean  "sale"
     t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer  "user_id",     :limit => 11
   end
 
   create_table "products", :force => true do |t|
     t.string   "name"
-    t.integer  "brand_id"
+    t.integer  "brand_id",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer  "user_id",    :limit => 11
   end
 
   create_table "purchases", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "offering_id"
-    t.integer  "credit_card_id"
-    t.integer  "address_id"
+    t.integer  "user_id",        :limit => 11
+    t.integer  "offering_id",    :limit => 11
+    t.integer  "credit_card_id", :limit => 11
+    t.integer  "address_id",     :limit => 11
     t.boolean  "approved"
     t.boolean  "complete"
     t.datetime "created_at"
@@ -231,26 +229,26 @@ ActiveRecord::Schema.define(:version => 20080615192902) do
 
   create_table "stores", :force => true do |t|
     t.string   "name"
-    t.integer  "administrator_id"
-    t.integer  "primary_image_id"
+    t.integer  "administrator_id", :limit => 11
+    t.integer  "primary_image_id", :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "taggings", :force => true do |t|
-    t.integer  "tag_id"
+    t.integer  "tag_id",      :limit => 11
     t.string   "target_type"
-    t.integer  "target_id"
+    t.integer  "target_id",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer  "user_id",     :limit => 11
   end
 
   create_table "tags", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer  "user_id",    :limit => 11
   end
 
   create_table "users", :force => true do |t|
@@ -259,7 +257,7 @@ ActiveRecord::Schema.define(:version => 20080615192902) do
     t.text     "interests"
     t.text     "hobbies"
     t.text     "persona"
-    t.integer  "primary_address_id"
+    t.integer  "primary_address_id",        :limit => 11
     t.string   "phone"
     t.string   "email",                     :limit => 100
     t.string   "crypted_password",          :limit => 40
@@ -276,17 +274,17 @@ ActiveRecord::Schema.define(:version => 20080615192902) do
 
   create_table "website_uses", :force => true do |t|
     t.string   "target_type"
-    t.integer  "target_id"
-    t.integer  "website_id"
+    t.integer  "target_id",   :limit => 11
+    t.integer  "website_id",  :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer  "user_id",     :limit => 11
   end
 
   create_table "websites", :force => true do |t|
     t.string   "href"
     t.string   "name"
-    t.integer  "user_id"
+    t.integer  "user_id",    :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
   end

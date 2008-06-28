@@ -1,0 +1,69 @@
+Story: following a group
+  As a user of Spurgel
+  I want to follow groups
+  So that I can observe the way people like to interact and what they like to share
+  
+  Scenario: starting to follow a group
+  
+    Given a user named Sandy
+    And a group called Animals
+    And Sandy is viewing the Animals group's page
+    When Sandy clicks the follow link
+    Then Sandy should be following Animals
+    
+  Scenario: stopping following a group
+  
+    Given a user named Sandy
+    And a group called Animals
+    And Sandy is following Animals
+    And Sandy is viewing the Animals group's page
+    When Sandy clicks the stop-following link
+    Then Sandy should not be following Animals
+    
+  Scenario: viewing followed groups
+  
+    Given a user named Sandy
+    And a group called Animals
+    And Sandy is following Animals
+    When Sandy views her followed groups
+    Then Animals should be in the list
+    
+  Scenario: being notified of a new member to a group
+  
+    Given a user named Sandy
+    And a group called Animals
+    And Sandy is following Animals
+    When a new member Erika joins Animals
+    Then Sandy should be notified of Erika's memberhsip
+    
+  Scenario: being notified of a new listing by the group (not yet implemented that groups can have lists)
+  
+    Given a user named Sandy
+    And a group called Animals
+    And Sandy is following Animals
+    And a user named Erika
+    And Erika is a member of Animals
+    When Erika adds an item HondaMoped to the want list of Animals
+    Then Sandy should be notified of the listing of HondaMoped
+    
+  Scenario: a group being aware of its followers
+  
+    Given a user named Sandy
+    And a group called Animals
+    And Sandy is following Animals
+    And a user named Erika
+    And Erika is a member of Animals
+    When Erika views the list of followers of Animals
+    Then Sandy should be on the list
+    
+  Scenario: a private listing
+  
+    Given a user named Sandy
+    And a group called Animals
+    And Sandy is following Animals
+    And a user named Erika
+    And Erika is a member of Animals
+    And Erika has added an item TrekBicycle to the group's want list
+    And marked it as a private listing
+    When Sandy visits her feed
+    Then Sandy should not be able to see that the item TrekBicycle to the want list of Animals by Erika

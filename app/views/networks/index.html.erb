@@ -1,4 +1,4 @@
-<h1>Listing networks</h1>
+<h1>networks</h1>
 
 <table>
   <tr>
@@ -9,11 +9,10 @@
 
 <% for network in @networks %>
   <tr>
-    <td><%=h network.name %></td>
-    <td><%=h network.city_id %></td>
-    <td><%=h network.state_id %></td>
-    <td><%= link_to 'Show', network %></td>
-    <td><%= link_to 'Edit', edit_network_path(network) %></td>
+    <td><%= link_to network.name, network %></td>
+    <td><%= link_to network.city.name, network.city %></td>
+    <td><%= link_to network.state.name, network.state %></td>
+    <td><%= link_to 'edit', edit_network_path(network) %></td>
     <td><%= link_to 'Destroy', network, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -21,4 +20,4 @@
 
 <br />
 
-<%= link_to 'New network', new_network_path %>
+<%= link_to 'new network', new_network_path %>

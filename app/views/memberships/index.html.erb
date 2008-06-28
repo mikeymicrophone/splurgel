@@ -1,4 +1,4 @@
-<h1>Listing memberships</h1>
+<h1>memberships keep track of who is in which groups</h1>
 
 <table>
   <tr>
@@ -8,10 +8,10 @@
 
 <% for membership in @memberships %>
   <tr>
-    <td><%=h membership.group_id %></td>
-    <td><%=h membership.user_id %></td>
-    <td><%= link_to 'Show', membership %></td>
-    <td><%= link_to 'Edit', edit_membership_path(membership) %></td>
+    <td><%= link_to membership.group.name, membership.group %></td>
+    <td><%= link_to membership.user.name, membership.user %></td>
+    <td><%= link_to 'show', membership %></td>
+    <td><%= link_to 'edit', edit_membership_path(membership) %></td>
     <td><%= link_to 'Destroy', membership, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -19,4 +19,4 @@
 
 <br />
 
-<%= link_to 'New membership', new_membership_path %>
+<%= link_to 'new membership', new_membership_path %>

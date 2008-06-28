@@ -1,8 +1,6 @@
 class StatesController < ApplicationController
-  # GET /states
-  # GET /states.xml
   def index
-    @states = State.find(:all)
+    @states = State.find :all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +8,8 @@ class StatesController < ApplicationController
     end
   end
 
-  # GET /states/1
-  # GET /states/1.xml
   def show
-    @state = State.find(params[:id])
+    @state = State.find params[:id]
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,8 +17,6 @@ class StatesController < ApplicationController
     end
   end
 
-  # GET /states/new
-  # GET /states/new.xml
   def new
     @state = State.new
 
@@ -32,20 +26,17 @@ class StatesController < ApplicationController
     end
   end
 
-  # GET /states/1/edit
   def edit
-    @state = State.find(params[:id])
+    @state = State.find params[:id]
   end
 
-  # POST /states
-  # POST /states.xml
   def create
-    @state = State.new(params[:state])
+    @state = State.new params[:state]
 
     respond_to do |format|
       if @state.save
         flash[:notice] = 'State was successfully created.'
-        format.html { redirect_to(@state) }
+        format.html { redirect_to @state }
         format.xml  { render :xml => @state, :status => :created, :location => @state }
       else
         format.html { render :action => "new" }
@@ -54,15 +45,13 @@ class StatesController < ApplicationController
     end
   end
 
-  # PUT /states/1
-  # PUT /states/1.xml
   def update
-    @state = State.find(params[:id])
+    @state = State.find params[:id]
 
     respond_to do |format|
-      if @state.update_attributes(params[:state])
+      if @state.update_attributes params[:state]
         flash[:notice] = 'State was successfully updated.'
-        format.html { redirect_to(@state) }
+        format.html { redirect_to @state }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -71,14 +60,12 @@ class StatesController < ApplicationController
     end
   end
 
-  # DELETE /states/1
-  # DELETE /states/1.xml
   def destroy
-    @state = State.find(params[:id])
+    @state = State.find params[:id]
     @state.destroy
 
     respond_to do |format|
-      format.html { redirect_to(states_url) }
+      format.html { redirect_to states_url }
       format.xml  { head :ok }
     end
   end

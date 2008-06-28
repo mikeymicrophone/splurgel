@@ -1,0 +1,56 @@
+Story: following a user
+  As a member of Splurgel
+  I want to follow a user
+  So that I can be informed about their activity and enlightened by their choices
+  
+  Scenario: beginning to follow someone
+    
+    Given a user named Sophie
+    And a user named Billy
+    And Sophie is looking at Billy's profile
+    When Sophie clicks the follow link
+    Then Sophie should be following Billy
+    
+  Scenario: stopping following someone
+  
+    Given a user named Sophie
+    And a user named Billy
+    And Sophie is following Billy
+    And Sophie is looking at Billy's profile
+    When Sophie clicks the stop-following link
+    Then Sophie should not be following Billy
+    
+  Scenario: receiving updates about followed people's purchases
+  
+    Given a user named Sophie
+    And a user named Billy
+    And Sophie is following Billy
+    When Billy makes a purchase
+    Sophie should receive a notification
+    
+  Scenario: receiving updates about followed people's listings
+  
+    Given a user named Sophie
+    And a user named Billy
+    And Sophie is following Billy
+    When Billy adds an item to his want list
+    Sophie should receive a notification
+    
+  Scenario: not receiving updates about private listings
+  
+    Given a user named Sophie
+    And a user named Billy
+    And Sophie is following Billy
+    When Billy adds an item to his want list
+    And the listing is marked private
+    Sophie should not receive a notification
+    
+  Scenario: knowing your followers
+  
+    Given a user named Sophie
+    And a user named Billy
+    And Sophie is following Billy
+    When Billy views his followers
+    Sophie should be in the list
+    
+  

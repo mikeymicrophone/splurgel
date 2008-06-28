@@ -1,4 +1,4 @@
-<h1>Listing products</h1>
+<h1>products</h1>
 
 <table>
   <tr>
@@ -8,10 +8,9 @@
 
 <% for product in @products %>
   <tr>
-    <td><%=h product.name %></td>
-    <td><%=h product.brand_id %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
+    <td><%= link_to product.name, product %></td>
+    <td><%= link_to product.brand.name, product.brand %></td>
+    <td><%= link_to 'edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -19,4 +18,4 @@
 
 <br />
 
-<%= link_to 'New product', new_product_path %>
+<%= link_to 'new product', new_product_path %>

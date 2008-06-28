@@ -12,4 +12,9 @@ class Brand < ActiveRecord::Base
   has_many :comments, :as => :target
   has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Brand' and followings.follower_type = 'User'"
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Brand' and followings.follower_type = 'Group'"
+  
+  def stores
+    products.map(&:offerings).flatten.map(&:location).uniq.map(&:store).uniq
+  end
+  
 end

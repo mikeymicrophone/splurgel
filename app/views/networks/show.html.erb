@@ -5,14 +5,14 @@
 
 <p>
   <b>City:</b>
-  <%=h @network.city_id %>
+  <%=h @network.city.name %>
 </p>
 
 <p>
   <b>State:</b>
-  <%=h @network.state_id %>
+  <%=h @network.state.name %>
 </p>
 
 
-<%= link_to 'Edit', edit_network_path(@network) %> |
+<%= link_to 'edit', edit_network_path(@network) %> |
 <%= link_to 'Back', networks_path %>

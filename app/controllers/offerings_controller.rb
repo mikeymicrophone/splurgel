@@ -1,8 +1,6 @@
 class OfferingsController < ApplicationController
-  # GET /offerings
-  # GET /offerings.xml
   def index
-    @offerings = Offering.find(:all)
+    @offerings = Offering.find :all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +8,8 @@ class OfferingsController < ApplicationController
     end
   end
 
-  # GET /offerings/1
-  # GET /offerings/1.xml
   def show
-    @offering = Offering.find(params[:id])
+    @offering = Offering.find params[:id]
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,8 +17,6 @@ class OfferingsController < ApplicationController
     end
   end
 
-  # GET /offerings/new
-  # GET /offerings/new.xml
   def new
     @offering = Offering.new
 
@@ -32,20 +26,17 @@ class OfferingsController < ApplicationController
     end
   end
 
-  # GET /offerings/1/edit
   def edit
-    @offering = Offering.find(params[:id])
+    @offering = Offering.find params[:id]
   end
 
-  # POST /offerings
-  # POST /offerings.xml
   def create
-    @offering = Offering.new(params[:offering])
+    @offering = Offering.new params[:offering]
 
     respond_to do |format|
       if @offering.save
         flash[:notice] = 'Offering was successfully created.'
-        format.html { redirect_to(@offering) }
+        format.html { redirect_to @offering }
         format.xml  { render :xml => @offering, :status => :created, :location => @offering }
       else
         format.html { render :action => "new" }
@@ -54,15 +45,13 @@ class OfferingsController < ApplicationController
     end
   end
 
-  # PUT /offerings/1
-  # PUT /offerings/1.xml
   def update
-    @offering = Offering.find(params[:id])
+    @offering = Offering.find params[:id]
 
     respond_to do |format|
-      if @offering.update_attributes(params[:offering])
+      if @offering.update_attributes params[:offering]
         flash[:notice] = 'Offering was successfully updated.'
-        format.html { redirect_to(@offering) }
+        format.html { redirect_to @offering }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -71,14 +60,12 @@ class OfferingsController < ApplicationController
     end
   end
 
-  # DELETE /offerings/1
-  # DELETE /offerings/1.xml
   def destroy
-    @offering = Offering.find(params[:id])
+    @offering = Offering.find params[:id]
     @offering.destroy
 
     respond_to do |format|
-      format.html { redirect_to(offerings_url) }
+      format.html { redirect_to offerings_url }
       format.xml  { head :ok }
     end
   end

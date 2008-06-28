@@ -153,7 +153,7 @@ Example in view:
 
 Example in controller:
   def create
-    @attachable_file = AttachmentMetadataModel.new(params[:attachable])
+    @attachable_file = AttachmentMetadataModel.new params[:attachable]
     if @attachable_file.save
       flash[:notice] = 'Attachment was successfully created.'
       redirect_to attachable_url(@attachable_file)     

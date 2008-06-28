@@ -1,8 +1,6 @@
 class PurchasesController < ApplicationController
-  # GET /purchases
-  # GET /purchases.xml
   def index
-    @purchases = Purchase.find(:all)
+    @purchases = Purchase.find :all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +8,8 @@ class PurchasesController < ApplicationController
     end
   end
 
-  # GET /purchases/1
-  # GET /purchases/1.xml
   def show
-    @purchase = Purchase.find(params[:id])
+    @purchase = Purchase.find params[:id]
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,8 +17,6 @@ class PurchasesController < ApplicationController
     end
   end
 
-  # GET /purchases/new
-  # GET /purchases/new.xml
   def new
     @purchase = Purchase.new
 
@@ -32,20 +26,17 @@ class PurchasesController < ApplicationController
     end
   end
 
-  # GET /purchases/1/edit
   def edit
-    @purchase = Purchase.find(params[:id])
+    @purchase = Purchase.find params[:id]
   end
 
-  # POST /purchases
-  # POST /purchases.xml
   def create
-    @purchase = Purchase.new(params[:purchase])
+    @purchase = Purchase.new params[:purchase]
 
     respond_to do |format|
       if @purchase.save
         flash[:notice] = 'Purchase was successfully created.'
-        format.html { redirect_to(@purchase) }
+        format.html { redirect_to @purchase }
         format.xml  { render :xml => @purchase, :status => :created, :location => @purchase }
       else
         format.html { render :action => "new" }
@@ -54,15 +45,13 @@ class PurchasesController < ApplicationController
     end
   end
 
-  # PUT /purchases/1
-  # PUT /purchases/1.xml
   def update
-    @purchase = Purchase.find(params[:id])
+    @purchase = Purchase.find params[:id]
 
     respond_to do |format|
-      if @purchase.update_attributes(params[:purchase])
+      if @purchase.update_attributes params[:purchase]
         flash[:notice] = 'Purchase was successfully updated.'
-        format.html { redirect_to(@purchase) }
+        format.html { redirect_to @purchase }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -71,14 +60,12 @@ class PurchasesController < ApplicationController
     end
   end
 
-  # DELETE /purchases/1
-  # DELETE /purchases/1.xml
   def destroy
-    @purchase = Purchase.find(params[:id])
+    @purchase = Purchase.find params[:id]
     @purchase.destroy
 
     respond_to do |format|
-      format.html { redirect_to(purchases_url) }
+      format.html { redirect_to purchases_url }
       format.xml  { head :ok }
     end
   end

@@ -1,4 +1,4 @@
-<h1>Listing websites</h1>
+<h1>websites</h1>
 
 <table>
   <tr>
@@ -9,11 +9,10 @@
 
 <% for website in @websites %>
   <tr>
-    <td><%=h website.href %></td>
-    <td><%=h website.name %></td>
-    <td><%=h website.user_id %></td>
-    <td><%= link_to 'Show', website %></td>
-    <td><%= link_to 'Edit', edit_website_path(website) %></td>
+    <td><%= link_to website.name, website.href %></td>
+    <td><%= link_to website.user.name, website.user %></td>
+    <td><%= link_to 'show', website %></td>
+    <td><%= link_to 'edit', edit_website_path(website) %></td>
     <td><%= link_to 'Destroy', website, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -21,4 +20,4 @@
 
 <br />
 
-<%= link_to 'New website', new_website_path %>
+<%= link_to 'new website', new_website_path %>

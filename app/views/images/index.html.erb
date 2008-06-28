@@ -1,4 +1,4 @@
-<h1>Listing images</h1>
+<h1>images</h1>
 
 <table>
   <tr>
@@ -20,8 +20,8 @@
     <td><%=h image.width %></td>
     <td><%=h image.parent_id %></td>
     <td><%=h image.thumbnail %></td>
-    <td><%= link_to 'Show', image %></td>
-    <td><%= link_to 'Edit', edit_image_path(image) %></td>
+    <td><%= link_to 'show', image %></td>
+    <td><%= link_to 'edit', edit_image_path(image) %></td>
     <td><%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -29,4 +29,4 @@
 
 <br />
 
-<%= link_to 'New image', new_image_path %>
+<%= link_to 'new image', new_image_path %>

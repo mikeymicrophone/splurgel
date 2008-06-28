@@ -1,4 +1,4 @@
-<h1>Listing taggings</h1>
+<h1>taggings keep track of which tags are on which objects</h1>
 
 <table>
   <tr>
@@ -9,11 +9,11 @@
 
 <% for tagging in @taggings %>
   <tr>
-    <td><%=h tagging.tag_id %></td>
+    <td><%=h tagging.tag.name %></td>
     <td><%=h tagging.target_type %></td>
-    <td><%=h tagging.target_id %></td>
-    <td><%= link_to 'Show', tagging %></td>
-    <td><%= link_to 'Edit', edit_tagging_path(tagging) %></td>
+    <td><%= link_to 'here' tagging.target %></td>
+    <td><%= link_to 'show', tagging %></td>
+    <td><%= link_to 'edit', edit_tagging_path(tagging) %></td>
     <td><%= link_to 'Destroy', tagging, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
@@ -21,4 +21,4 @@
 
 <br />
 
-<%= link_to 'New tagging', new_tagging_path %>
+<%= link_to 'new tagging', new_tagging_path %>

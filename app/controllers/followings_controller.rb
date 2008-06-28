@@ -1,8 +1,6 @@
 class FollowingsController < ApplicationController
-  # GET /followings
-  # GET /followings.xml
   def index
-    @followings = Following.find(:all)
+    @followings = Following.find :all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +8,8 @@ class FollowingsController < ApplicationController
     end
   end
 
-  # GET /followings/1
-  # GET /followings/1.xml
   def show
-    @following = Following.find(params[:id])
+    @following = Following.find params[:id]
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,8 +17,6 @@ class FollowingsController < ApplicationController
     end
   end
 
-  # GET /followings/new
-  # GET /followings/new.xml
   def new
     @following = Following.new
 
@@ -32,20 +26,17 @@ class FollowingsController < ApplicationController
     end
   end
 
-  # GET /followings/1/edit
   def edit
-    @following = Following.find(params[:id])
+    @following = Following.find params[:id]
   end
 
-  # POST /followings
-  # POST /followings.xml
   def create
-    @following = Following.new(params[:following])
+    @following = Following.new params[:following]
 
     respond_to do |format|
       if @following.save
         flash[:notice] = 'Following was successfully created.'
-        format.html { redirect_to(@following) }
+        format.html { redirect_to @following }
         format.xml  { render :xml => @following, :status => :created, :location => @following }
       else
         format.html { render :action => "new" }
@@ -54,15 +45,13 @@ class FollowingsController < ApplicationController
     end
   end
 
-  # PUT /followings/1
-  # PUT /followings/1.xml
   def update
-    @following = Following.find(params[:id])
+    @following = Following.find params[:id]
 
     respond_to do |format|
-      if @following.update_attributes(params[:following])
+      if @following.update_attributes params[:following]
         flash[:notice] = 'Following was successfully updated.'
-        format.html { redirect_to(@following) }
+        format.html { redirect_to @following }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -71,14 +60,12 @@ class FollowingsController < ApplicationController
     end
   end
 
-  # DELETE /followings/1
-  # DELETE /followings/1.xml
   def destroy
-    @following = Following.find(params[:id])
+    @following = Following.find params[:id]
     @following.destroy
 
     respond_to do |format|
-      format.html { redirect_to(followings_url) }
+      format.html { redirect_to followings_url }
       format.xml  { head :ok }
     end
   end

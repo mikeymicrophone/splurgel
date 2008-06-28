@@ -1,4 +1,17 @@
 class UsersController < ApplicationController
+  
+  def show
+    @user = User.find params[:id]
+  end
+  
+  def index
+    @users = User.find :all
+  end
+  
+  def home
+    
+  end
+  
   # render new.rhtml
   def new
     @user = User.new
@@ -6,7 +19,7 @@ class UsersController < ApplicationController
  
   def create
     logout_keeping_session!
-    @user = User.new(params[:user])
+    @user = User.new params[:user]
     success = @user && @user.save
     if success && @user.errors.empty?
             redirect_back_or_default('/')
