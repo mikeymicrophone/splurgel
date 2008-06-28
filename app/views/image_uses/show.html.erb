@@ -1,18 +1,6 @@
-<p>
-  <b>Image:</b>
-  <%=h @image_use.image_id %>
-</p>
-
-<p>
-  <b>Target type:</b>
-  <%=h @image_use.target_type %>
-</p>
-
-<p>
-  <b>Target:</b>
-  <%=h @image_use.target_id %>
-</p>
-
+  <%= link_to 'this image' @image_use.image %> is connected to 
+  <%=h @image_use.target_type %> 
+  <%= link_to_name @image_use.target %><br>
 
 <%= link_to 'edit', edit_image_use_path(@image_use) %> |
 <%= link_to 'image_uses', image_uses_path %>

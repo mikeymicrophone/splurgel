@@ -1,18 +1,6 @@
-<p>
-  <b>Target type:</b>
-  <%=h @website_use.target_type %>
-</p>
-
-<p>
-  <b>Target:</b>
-  <%=h @website_use.target_id %>
-</p>
-
-<p>
-  <b>Website:</b>
-  <%=h @website_use.website_id %>
-</p>
-
+  [<%=h @website_use.target_type %>]
+  <%= link_to_name @website_use.target %> made use of 
+  <%= link_to_name @website_use.website %><br>
 
 <%= link_to 'edit', edit_website_use_path(@website_use) %> |
 <%= link_to 'website_uses', website_uses_path %>

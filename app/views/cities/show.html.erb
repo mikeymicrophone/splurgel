@@ -1,13 +1,5 @@
-<p>
-  <b>Name:</b>
-  <%=h @city.name %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%=h @city.state_id %>
-</p>
-
+  <%=h @city.name %><br>
+  <%=h @city.state.name %>
 
 <%= link_to 'edit', edit_city_path(@city) %> |
 <%= link_to 'cities', cities_path %>

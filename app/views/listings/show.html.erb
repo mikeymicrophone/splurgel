@@ -1,33 +1,14 @@
-<p>
-  <b>List type:</b>
-  <%=h @listing.list_type %>
-</p>
-
-<p>
-  <b>Product:</b>
-  <%=h @listing.product_id %>
-</p>
-
-<p>
-  <b>Brand:</b>
-  <%=h @listing.brand_id %>
-</p>
-
-<p>
-  <b>Store:</b>
-  <%=h @listing.store_id %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%=h @listing.user_id %>
-</p>
-
-<p>
-  <b>Private:</b>
-  <%=h @listing.private %>
-</p>
-
+<% unless @listing.private %>
+  <%= link_to_name @listing.user %> added <%= link_to_name @listing.product %>
+  <%= ' by ' if @listing.product && @listing.brand %><%= link_to_name @listing.brand %>
+  <%= ' at ' if @listing.store && (@listing.product || @listing.brand) %>
+  <%= link_to_name @listing.store %> to his/her 
+  <%= {1 => 'want', 2 => 'have', 3 => 'like'}[@listing.list_type] %> list 
+  <%= time_ago_in_words @listing.create_at %><br>
+  
+<% else %>
+  yo! listing private.
+<% end %>
 
 <%= link_to 'edit', edit_listing_path(@listing) %> |
 <%= link_to 'listings', listings_path %>

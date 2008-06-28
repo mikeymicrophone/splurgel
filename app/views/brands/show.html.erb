@@ -1,12 +1,8 @@
-<p>
-  <b>Name:</b>
-  <%=h @brand.name %>
-</p>
 
-<p>
-  <b>Phone:</b>
-  <%=h @brand.phone %>
-</p>
+  <%=h @brand.name %>
+  <%=h @brand.phone %><br>
+
+  <%= @brand.products.count %> products
 
 
 <%= link_to 'edit', edit_brand_path(@brand) %> |

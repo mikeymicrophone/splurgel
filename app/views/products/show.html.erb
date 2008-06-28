@@ -1,13 +1,5 @@
-<p>
-  <b>Name:</b>
-  <%=h @product.name %>
-</p>
-
-<p>
-  <b>Brand:</b>
-  <%=h @product.brand_id %>
-</p>
-
+  <%=h @product.name %><br>
+  <%= link_to_name @product.brand %><br>
 
 <%= link_to 'edit', edit_product_path(@product) %> |
 <%= link_to 'products', products_path %>

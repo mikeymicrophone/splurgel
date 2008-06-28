@@ -1,48 +1,7 @@
-<p>
-  <b>Latitude:</b>
-  <%=h @address.latitude %>
-</p>
-
-<p>
-  <b>Longitude:</b>
-  <%=h @address.longitude %>
-</p>
-
-<p>
-  <b>Name:</b>
   <%=h @address.name %>
-</p>
-
-<p>
-  <b>Alternate names:</b>
+alternate names
   <%=h @address.alternate_names %>
-</p>
-
-<p>
-  <b>Street:</b>
-  <%=h @address.street %>
-</p>
-
-<p>
-  <b>Street2:</b>
-  <%=h @address.street2 %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%=h @address.city.name %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%=h @address.state.name %>
-</p>
-
-<p>
-  <b>Zip:</b>
-  <%=h @address.zip %>
-</p>
-
+<%= @address.display %>
 
 <%= link_to 'edit', edit_address_path(@address) %> |
 <%= link_to 'addresses', addresses_path %>

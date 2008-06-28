@@ -1,19 +1,7 @@
-<p>
-  <b>Name:</b>
-  <%=h @group.name %>
-</p>
+  <%=h @group.name %>!<br>
+administered by  <%= link_to_name @group.administrator %><br><br>
 
-<p>
-  <b>Administrator:</b>
-  <%= link_to @group.administrator.name, @group.administrator %>
-</p>
-
-<p>
-  <b>Group type:</b>
-  <%=h @group.group_type %>
-</p>
-
-
+  <%= @group.members.count %> members!<br>
 <%= link_to 'edit', edit_group_path(@group) %> |
 <%= link_to 'groups', groups_path %>
 <%= link_to_backup %>

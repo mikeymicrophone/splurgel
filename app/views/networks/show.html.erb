@@ -1,18 +1,7 @@
-<p>
-  <b>Name:</b>
-  <%=h @network.name %>
-</p>
-
-<p>
-  <b>City:</b>
-  <%=h @network.city.name %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%=h @network.state.name %>
-</p>
-
+<%=h @network.name %><br>
+  <%=h @network.city.name %><%= ', ' if @network.city && @network.state %><%=h @network.state.name %><br>
+  
+  <%= @network.network_memberships.count %> members!
 
 <%= link_to 'edit', edit_network_path(@network) %> |
 <%= link_to 'networks', networks_path %>

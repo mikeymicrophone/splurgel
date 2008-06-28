@@ -1,18 +1,4 @@
-<p>
-  <b>Tag:</b>
-  <%=h @tagging.tag_id %>
-</p>
-
-<p>
-  <b>Target type:</b>
-  <%=h @tagging.target_type %>
-</p>
-
-<p>
-  <b>Target:</b>
-  <%=h @tagging.target_id %>
-</p>
-
+<%= link_to_name @tagging.target %>  [<%=h @tagging.target_type %>] was tagged with <%=h @tagging.tag %><br>
 
 <%= link_to 'edit', edit_tagging_path(@tagging) %> |
 <%= link_to 'taggings', taggings_path %>

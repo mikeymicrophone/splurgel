@@ -1,18 +1,6 @@
-<p>
-  <b>Href:</b>
-  <%=h @website.href %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%=h @website.name %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%=h @website.user_id %>
-</p>
-
+  <%=h @website.name %><br>
+  <%= link_to @website.href %><br>
+  <%= link_to_name @website.user %><br>
 
 <%= link_to 'edit', edit_website_path(@website) %> |
 <%= link_to 'websites', websites_path %>

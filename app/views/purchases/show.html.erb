@@ -1,33 +1,4 @@
-<p>
-  <b>User:</b>
-  <%=h @purchase.user_id %>
-</p>
-
-<p>
-  <b>Offering:</b>
-  <%=h @purchase.offering_id %>
-</p>
-
-<p>
-  <b>Credit card:</b>
-  <%=h @purchase.credit_card_id %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%=h @purchase.address_id %>
-</p>
-
-<p>
-  <b>Approved:</b>
-  <%=h @purchase.approved %>
-</p>
-
-<p>
-  <b>Complete:</b>
-  <%=h @purchase.complete %>
-</p>
-
+  <%= link_to_name @purchase.user %> purchased <%= link_to_name @purchase.offering %> <%= time_ago_in_words @purchase.created_at %><br>
 
 <%= link_to 'edit', edit_purchase_path(@purchase) %> |
 <%= link_to 'purchases', purchases_path %>

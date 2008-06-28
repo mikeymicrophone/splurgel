@@ -5,7 +5,12 @@ module ApplicationHelper
   end
   
   def link_to_name obj
-    link_to obj.name, obj, :class => "name #{obj.class.name.downcase}"
+    return '' if obj.nil?
+    if obj.respond_to(:name)
+      link_to obj.name, obj, :class => "name #{obj.class.name.downcase}"
+    else
+      link_to 'here', obj, :class => obj.class.name.downcase
+    end
   end
   
   def link_to_resource obj

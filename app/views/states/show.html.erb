@@ -1,8 +1,8 @@
-<p>
-  <b>Name:</b>
-  <%=h @state.name %>
-</p>
+<%=h @state.name %><br>
 
+<% @state.cities.each do |c| %>
+  <%= link_to_name c %> --~~-- 
+<% end %><br>
 
 <%= link_to 'edit', edit_state_path(@state) %> |
 <%= link_to 'states', states_path %>

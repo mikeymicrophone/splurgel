@@ -1,18 +1,7 @@
-<p>
-  <b>Target type:</b>
   <%=h @address_use.target_type %>
-</p>
-
-<p>
-  <b>Target:</b>
-  <%=h @address_use.target_id %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%=h @address_use.address_id %>
-</p>
-
+  <%= link_to_name @address_use.target %>
+  <b>address-</b>
+  <%=h @address_use.address.display %>
 
 <%= link_to 'edit', edit_address_use_path(@address_use) %> |
 <%= link_to 'address_uses', address_uses_path %>

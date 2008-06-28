@@ -19,4 +19,6 @@ class Image < ActiveRecord::Base
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses, :source => :website, :conditions => "website_uses.target_type = 'Image'"
   has_many :comments, :as => :target
+  
+  has_attachment :storage => :s3
 end

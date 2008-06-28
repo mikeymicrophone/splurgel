@@ -1,21 +1,8 @@
-<p>
-  <b>Phone:</b>
-  <%=h @location.phone %>
-</p>
+<%= link_to_name @location.store %><br>
+<%= schedule_display @location.schedule if @location.schedule %><br>
 
-<p>
-  <b>Store:</b>
-  <%=h @location.store_id %>
-</p>
-
-  <%= schedule_display @location.schedule if @location.schedule_id %>
-
-<p>
-  <b>Address:</b>
-  <%=h @location.address_id %>
-</p>
-
-
+<%=h @location.address.display %><br>
+<%=h @location.phone %><br>
 <%= link_to 'edit', edit_location_path(@location) %> |
 <%= link_to 'locations', locations_path %>
 <%= link_to_backup %>

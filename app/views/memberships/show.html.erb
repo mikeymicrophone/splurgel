@@ -1,13 +1,4 @@
-<p>
-  <b>Group:</b>
-  <%=h @membership.group_id %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%=h @membership.user_id %>
-</p>
-
+<%= link_to_name @membership.user %> is a member of <%= link_to_name @membership.group %> since <%= time_ago_in_words @membership.created_at %><br>
 
 <%= link_to 'edit', edit_membership_path(@membership) %> |
 <%= link_to 'memberships', memberships_path %>

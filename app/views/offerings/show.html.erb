@@ -1,18 +1,11 @@
-<p>
-  <b>Product:</b>
-  <%=h @offering.product_id %>
-</p>
+  <%= link_to_name @offering.location %> is offering <%= link_to_name @offering.product %>
+  <%= ' by ' + link_to_name @offering.product.brand if @offering.product.brand %><br>
 
-<p>
-  <b>Location:</b>
-  <%=h @offering.location_id %>
-</p>
+  <% price = @offering.prices.select { |p| p.end_date > Time.now }.first %>
+  <%= price.point if price %><br>
+  <%= '[sale]' if price && price.sale %><br>
 
-<p>
-  <b>Stock:</b>
-  <%=h @offering.stock %>
-</p>
-
+  <%=h @offering.stock + ' in stock' if @offering.stock %>
 
 <%= link_to 'edit', edit_offering_path(@offering) %> |
 <%= link_to 'offerings', offerings_path %>

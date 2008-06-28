@@ -1,33 +1,9 @@
-<p>
-  <b>Address:</b>
-  <%=h @credit_card.address_id %>
-</p>
+  <%=h @credit_card.card_number[-4..-1] %><br>
+  <%=h @credit_card.address.display %>
 
-<p>
-  <b>Card number:</b>
-  <%=h @credit_card.card_number %>
-</p>
-
-<p>
-  <b>Expiration month:</b>
-  <%=h @credit_card.expiration_month %>
-</p>
-
-<p>
-  <b>Expiration year:</b>
-  <%=h @credit_card.expiration_year %>
-</p>
-
-<p>
-  <b>Security code:</b>
-  <%=h @credit_card.security_code %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%=h @credit_card.user_id %>
-</p>
-
+  <%=h @credit_card.expiration_month %>/
+  <%=h @credit_card.expiration_year %>, 
+  <%= link_to_name @credit_card.user %>
 
 <%= link_to 'edit', edit_credit_card_path(@credit_card) %> |
 <%= link_to 'credit_cards', credit_cards_path %>

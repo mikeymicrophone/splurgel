@@ -1,24 +1,12 @@
-<p>
-  <b>Body:</b>
-  <%=h @message.body %>
-</p>
+  <blockquote><%=h @message.body %></blockquote><br>
+  from <%= link_to_name @message.user %> to <% link_to_name @message.recipient %><br>
+  <%= 'this is a reply to ' + link_to_name @message.reply + '<br>' if @message.reply_id %>
 
-<p>
-  <b>User:</b>
-  <%=h @message.user_id %>
-</p>
-
-<p>
-  <b>Reply:</b>
-  <%=h @message.reply_id %>
-</p>
-
-<p>
-  <b>Read on:</b>
-  <%=h @message.read_on %>
-</p>
-
-
+<% if @message.read_on.blank? %>
+  unread by recipient as of yet.
+<% else %>
+  read <%= time_ago_in_words @message.read_on %>
+<% end %>
 <%= link_to 'edit', edit_message_path(@message) %> |
 <%= link_to 'messages', messages_path %>
 <%= link_to_backup %>
