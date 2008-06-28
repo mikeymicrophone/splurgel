@@ -8,10 +8,7 @@
   <%=h @location.store_id %>
 </p>
 
-<p>
-  <b>Schedule:</b>
-  <%=h @location.schedule_id %>
-</p>
+  <%= schedule_display @location.schedule if @location.schedule_id %>
 
 <p>
   <b>Address:</b>
@@ -20,4 +17,5 @@
 
 
 <%= link_to 'edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<%= link_to 'locations', locations_path %>
+<%= link_to_backup %>

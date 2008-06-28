@@ -1,18 +1,13 @@
-<p>
-  <b>Name:</b>
+
   <%=h @store.name %>
-</p>
+  administered by <%= link_to @store.administrator.name, @store.administrator %>
 
-<p>
-  <b>Administrator:</b>
-  <%=h @store.administrator_id %>
-</p>
-
-<p>
-  <b>Primary image:</b>
   <%=h @store.primary_image_id %>
-</p>
-
+  
+  <% @store.locations.each do |l| %>
+    <%= link_to l.street + ' ' + l.city, l %>
+  <% end %>
 
 <%= link_to 'edit', edit_store_path(@store) %> |
-<%= link_to 'Back', stores_path %>
+<%= link_to 'stores', stores_path %>
+<%= link_to_backup %>

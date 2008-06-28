@@ -1,0 +1,15 @@
+a {
+	color: #886622;
+}
+
+a:hover {
+	color: #fff;
+	background-color: #886622;
+	/* #eeeedd; */
+	text-decoration: none;
+}
+
+a#profile {
+	text-align: center;
+	font-size: 2em;
+}
