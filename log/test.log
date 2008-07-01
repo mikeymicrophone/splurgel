@@ -24627,3 +24627,2139 @@ Rendering template within layouts/application
 Rendering address_uses/index
 Completed in 0.00060 (1669 reqs/sec) | Rendering: 0.00019 (32%) | DB: 0.00000 (0%) | 200 OK [http://test.host/address_uses]
 Rendering /address_uses/show.html.erb
+  [4;36;1mSQL (0.000383)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login IS NULL) [0m
+  [4;36;1mSQL (0.000121)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000197)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000252)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000130)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000114)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000191)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000231)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000120)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000182)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000204)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email IS NULL) [0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mUser Load (0.000336)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.000079)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quentin' AND "users".id <> 1) [0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quentin@example.com' AND "users".id <> 1) [0m
+  [4;35;1mUser Update (0.000303)[0m   [0mUPDATE "users" SET "crypted_password" = '88c68dd5399d8e86633d21f9e494bc6640eb5203', "updated_at" = '2008-06-29 16:36:39' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000366)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.000083)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quentin2' AND "users".id <> 1) [0m
+  [4;35;1mSQL (0.000073)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quentin@example.com' AND "users".id <> 1) [0m
+  [4;36;1mUser Update (0.000536)[0m   [0;1mUPDATE "users" SET "login" = 'quentin2', "updated_at" = '2008-06-29 16:36:39' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000341)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin2' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000383)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000296)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.000401)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000353)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.000403)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'old_password_holder' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000344)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000319)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000304)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000311)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000310)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000307)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000311)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000309)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000381)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000369)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000333)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000317)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000307)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000310)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000355)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000313)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000345)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000386)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000324)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000434)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000309)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000309)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000320)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000310)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000333)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000324)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000310)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000343)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000315)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000314)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000310)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000313)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000314)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000332)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000316)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000313)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000325)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000317)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000315)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000327)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000330)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000315)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000339)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000328)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000314)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000317)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000327)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000330)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000315)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000324)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000331)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000336)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000316)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000326)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000325)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000331)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000324)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000315)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000318)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000313)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000316)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000316)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000316)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000318)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000319)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000317)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000316)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000316)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000317)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000330)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000322)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000319)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000342)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000372)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000329)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000330)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000345)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000317)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000318)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000324)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000319)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000315)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000318)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000318)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000326)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000318)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000316)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000318)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000327)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000318)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000337)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000347)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000322)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000314)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000315)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000327)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000316)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000327)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000353)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.000360)[0m   [0;1mUPDATE "users" SET "remember_token" = '89f310e93980baaf4e107443777a26fbb1d43c53', "remember_token_expires_at" = '2008-07-13 16:36:39', "updated_at" = '2008-06-29 16:36:39' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000797)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.000390)[0m   [0;1mUPDATE "users" SET "remember_token" = '0b3c034d2bb829de05fa03c249f2248d6af05f71', "remember_token_expires_at" = '2008-07-13 16:36:39', "updated_at" = '2008-06-29 16:36:39' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.000125)[0m   [0mUPDATE "users" SET "remember_token" = NULL, "remember_token_expires_at" = NULL, "updated_at" = '2008-06-29 16:36:39' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000804)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.000506)[0m   [0mUPDATE "users" SET "remember_token" = 'c4fd4d584f61c86edbcf422eb733c06cab0569ac', "remember_token_expires_at" = '2008-07-06 16:36:39', "updated_at" = '2008-06-29 16:36:39' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000751)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.000363)[0m   [0mUPDATE "users" SET "remember_token" = '9b566408efca59cc10261280aee83b59ea6dfffd', "remember_token_expires_at" = '2008-07-06 16:36:39', "updated_at" = '2008-06-29 16:36:39' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000786)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.000439)[0m   [0mUPDATE "users" SET "remember_token" = 'd23090eb5ed933ae754036949c1498d3377c370e', "remember_token_expires_at" = '2008-07-13 16:36:39', "updated_at" = '2008-06-29 16:36:39' WHERE "id" = 1[0m
+  [4;36;1mSQL (0.000263)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000255)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000449)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '9f70e958916be3a2ad5a2e680f3b173c919570a3', '2008-06-29 16:36:39', NULL, '39fe17429770a77fb5b87cec7db736007bc1e663', NULL, NULL, '884e44cf15efc9ac028e95022554ecc6e4f577b3', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:36:39')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/884e44cf15efc9ac028e95022554ecc6e4f577b3
+  [4;35;1mSQL (0.000153)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'sammy') [0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'halpert@gendle.com') [0m
+  [4;35;1mUser Create (0.000124)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '745023740d71ae4256794a21f2700d0dd554dc38', '2008-06-29 16:36:39', NULL, '44f67057a72ffa4016fa6c09b8f964165ec777e3', NULL, NULL, 'be7cf89dcb30bc54f59976ad7c10e34ec457af74', NULL, NULL, NULL, 'sammy', NULL, NULL, 'halpert@gendle.com', '2008-06-29 16:36:39')[0m
+Sent mail to halpert@gendle.com
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: halpert@gendle.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: sammy
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/be7cf89dcb30bc54f59976ad7c10e34ec457af74
+  [4;36;1mFollowing Create (0.000230)[0m   [0;1mINSERT INTO "followings" ("updated_at", "target_id", "follower_id", "target_type", "follower_type", "created_at") VALUES('2008-06-29 16:36:39', 4, 5, 'User', 'User', '2008-06-29 16:36:39')[0m
+  [4;35;1mSQL (0.000345)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000120)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000458)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '253c642ae6f05efaa359ac838d3624f1c6948dd9', '2008-06-29 16:36:39', NULL, '52d4e92039a4afaab631022d0a96f4724cb922c7', NULL, NULL, 'f77131d5749b5f83723c25a556b52294b4fa8386', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:36:39')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/f77131d5749b5f83723c25a556b52294b4fa8386
+  [4;35;1mSQL (0.000219)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000285)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '15eda6aa59824a0f0aeff9d90ea1704789cc6c4c', '2008-06-29 16:36:39', NULL, '40b9b712285743ea3b8048b10ce730fc21873fdb', NULL, NULL, '781f38dbf48f1206c6771bbebc961c7435603022', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:36:39')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/781f38dbf48f1206c6771bbebc961c7435603022
+  [4;35;1mUser Load (0.000404)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mSQL (0.000207)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000084)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = '123') [0m
+  [4;36;1mSQL (0.000067)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000315)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '7c12d7ad846c7d1bd33af1b7c051700e2d9d591a', '2008-06-29 16:36:39', NULL, 'e4f7332006ca4609cd128a3c8cd01d4a5c2587af', NULL, NULL, 'f605d9c2d2e050532867338746113f37b93ff455', NULL, NULL, NULL, '123', NULL, NULL, 'quire@example.com', '2008-06-29 16:36:39')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: 123
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/f605d9c2d2e050532867338746113f37b93ff455
+  [4;36;1mSQL (0.000166)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000196)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = '1234567890_234567890_234567890_234567890') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000305)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '34ef3e7f4868ebeae629d9607684177d3ac7dcbf', '2008-06-29 16:36:39', NULL, '93c6c0002e24612cdeba7b50047c805ba2f1407b', NULL, NULL, '9049805408466d95263d4e67e359919d3f55e821', NULL, NULL, NULL, '1234567890_234567890_234567890_234567890', NULL, NULL, 'quire@example.com', '2008-06-29 16:36:39')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: 1234567890_234567890_234567890_234567890
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/9049805408466d95263d4e67e359919d3f55e821
+  [4;35;1mSQL (0.000151)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000170)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000081)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'hello.-_there@funnychar.com') [0m
+  [4;36;1mSQL (0.000067)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000327)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '137234fc7ed8f17bf0bb36bb4387471de411bd55', '2008-06-29 16:36:39', NULL, '2b0b79dfed09da5f6e70ecf48cd581522fa7b5cf', NULL, NULL, '3503ec51888356a9d43ec208801baa134c48e090', NULL, NULL, NULL, 'hello.-_there@funnychar.com', NULL, NULL, 'quire@example.com', '2008-06-29 16:36:39')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: hello.-_there@funnychar.com
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/3503ec51888356a9d43ec208801baa134c48e090
+  [4;36;1mSQL (0.000163)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000198)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000090)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = '12') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000148)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = '1234567890_234567890_234567890_234567890_') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000141)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'tab	') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000150)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000090)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'newline
+') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000140)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000093)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'iñtërnâtiônàlizætiøn hasn''t happened to ruby 1.8 yet') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000161)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'semicolon;') [0m
+  [4;35;1mSQL (0.000072)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000141)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quote"') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000135)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000100)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'tick''') [0m
+  [4;35;1mSQL (0.000072)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000114)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000141)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'backtick`') [0m
+  [4;35;1mSQL (0.000065)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000135)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'percent%') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000107)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000133)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'plus+') [0m
+  [4;35;1mSQL (0.000064)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000106)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000143)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'space ') [0m
+  [4;35;1mSQL (0.000073)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000106)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000161)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@bar.com') [0m
+  [4;36;1mUser Create (0.000357)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'c42fcdef31c7ed4c5788512dfab51e6c0cd9c6b7', '2008-06-29 16:36:39', NULL, 'eccd5592b8fa9f62a52b78d74d675588ea49ad3e', NULL, NULL, '322ad02706480c44d5cb04b184c5ec9cd20bc734', NULL, NULL, NULL, 'quire', NULL, NULL, 'foo@bar.com', '2008-06-29 16:36:39')[0m
+Sent mail to foo@bar.com
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: foo@bar.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/322ad02706480c44d5cb04b184c5ec9cd20bc734
+  [4;35;1mSQL (0.000161)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000370)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@newskool-tld.museum') [0m
+  [4;35;1mUser Create (0.000473)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'd5ea2256ba9b5881c7232271f916ddff9c5b7a86', '2008-06-29 16:36:39', NULL, 'f6ac88932641c18b81720c8d6948bf5049cb20c3', NULL, NULL, 'f8b5b1f2571b8f2fcf718c8382e637f246a8b6a0', NULL, NULL, NULL, 'quire', NULL, NULL, 'foo@newskool-tld.museum', '2008-06-29 16:36:39')[0m
+Sent mail to foo@newskool-tld.museum
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: foo@newskool-tld.museum
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/f8b5b1f2571b8f2fcf718c8382e637f246a8b6a0
+  [4;36;1mSQL (0.000292)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000324)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000148)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@twoletter-tld.de') [0m
+  [4;36;1mUser Create (0.000405)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'e5b4f031f5b406c30cbfc72d15766c24bb972208', '2008-06-29 16:36:39', NULL, '0318314a08fe3e9dfb68baacf02cb5ead3fc5169', NULL, NULL, '1460377d27c76eab11a05aaad39775ac861a1305', NULL, NULL, NULL, 'quire', NULL, NULL, 'foo@twoletter-tld.de', '2008-06-29 16:36:39')[0m
+Sent mail to foo@twoletter-tld.de
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: foo@twoletter-tld.de
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/1460377d27c76eab11a05aaad39775ac861a1305
+  [4;35;1mSQL (0.000216)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000199)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000086)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000067)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@nonexistant-tld.qq') [0m
+  [4;35;1mUser Create (0.000285)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '2be4fc6e8404a2ea97b8c18323963fd2a5b296b9', '2008-06-29 16:36:39', NULL, 'ec4ea329626dfbbe3c02133fa96c18bbaaa0299c', NULL, NULL, '9c6bfaf345611f70700c7dd5760d423e4df5bca9', NULL, NULL, NULL, 'quire', NULL, NULL, 'foo@nonexistant-tld.qq', '2008-06-29 16:36:39')[0m
+Sent mail to foo@nonexistant-tld.qq
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: foo@nonexistant-tld.qq
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/9c6bfaf345611f70700c7dd5760d423e4df5bca9
+  [4;36;1mSQL (0.000145)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000395)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000130)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000177)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'r@a.wk') [0m
+  [4;36;1mUser Create (0.000505)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '5c6a592f5d24c4799690a93370b48fea46cc4309', '2008-06-29 16:36:39', NULL, 'd89c6fa8930bad48960acdb5a543e5925f73f73a', NULL, NULL, '4c7fd133ed6eccab2fbf204ae6c1b23e6c1741e3', NULL, NULL, NULL, 'quire', NULL, NULL, 'r@a.wk', '2008-06-29 16:36:39')[0m
+Sent mail to r@a.wk
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: r@a.wk
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/4c7fd133ed6eccab2fbf204ae6c1b23e6c1741e3
+  [4;35;1mSQL (0.000222)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000376)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = '1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com') [0m
+  [4;35;1mUser Create (0.000541)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '3cce191c470c1808191df48d0a56de721c3a26e8', '2008-06-29 16:36:39', NULL, 'f1faf411eb15e70d63c37a2a9cd1acb49f84639e', NULL, NULL, '68241d020d19827ba4ac629a922524427b313cb0', NULL, NULL, NULL, 'quire', NULL, NULL, '1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com', '2008-06-29 16:36:39')[0m
+Sent mail to 1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: 1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/68241d020d19827ba4ac629a922524427b313cb0
+  [4;36;1mSQL (0.000228)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000451)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000130)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000112)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'hello.-_there@funnychar.com') [0m
+  [4;36;1mUser Create (0.000473)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'a25f995c345b2bcf2c9fee5f2a3fbd47e4000dfb', '2008-06-29 16:36:39', NULL, '71bce14c41f76c81bcbe95f958a84b680747b05a', NULL, NULL, '7f24b4fa8c246cc19bb19b98c0daeeb61c3d6c5d', NULL, NULL, NULL, 'quire', NULL, NULL, 'hello.-_there@funnychar.com', '2008-06-29 16:36:39')[0m
+Sent mail to hello.-_there@funnychar.com
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: hello.-_there@funnychar.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/7f24b4fa8c246cc19bb19b98c0daeeb61c3d6c5d
+  [4;35;1mSQL (0.000298)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000328)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000133)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'uucp%addr@gmail.com') [0m
+  [4;35;1mUser Create (0.000484)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '7a842a9051977b93072d1b9ef0c8f846517bf107', '2008-06-29 16:36:39', NULL, '186b3a93019edf88d8da5477b7c8a34e410574f4', NULL, NULL, '0ddb5f524e7cbfd333d51927b45878655d7db06d', NULL, NULL, NULL, 'quire', NULL, NULL, 'uucp%addr@gmail.com', '2008-06-29 16:36:39')[0m
+Sent mail to uucp%addr@gmail.com
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: uucp%addr@gmail.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/0ddb5f524e7cbfd333d51927b45878655d7db06d
+  [4;36;1mSQL (0.000227)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000283)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000114)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'hello+routing-str@gmail.com') [0m
+  [4;36;1mUser Create (0.000509)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'bf8431b46213586d0adb5c345cd8c68a0d5f5a1b', '2008-06-29 16:36:39', NULL, '454c089951fcdf1f65244dd7864a487ebce859b2', NULL, NULL, 'abfe3492c56f832ccd2a66142ff338415026b160', NULL, NULL, NULL, 'quire', NULL, NULL, 'hello+routing-str@gmail.com', '2008-06-29 16:36:39')[0m
+Sent mail to hello+routing-str@gmail.com
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: hello+routing-str@gmail.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/abfe3492c56f832ccd2a66142ff338415026b160
+  [4;35;1mSQL (0.000222)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000334)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000135)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'domain@can.haz.many.sub.doma.in') [0m
+  [4;35;1mUser Create (0.000490)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '68007800690dcaab0bf0bc05e76cccd7312d6fee', '2008-06-29 16:36:39', NULL, '5f32b09eb5afdf0588d638a2eea69db62b3f7815', NULL, NULL, '89656b4f1fde8e574a306b54b52fe3b4933b627a', NULL, NULL, NULL, 'quire', NULL, NULL, 'domain@can.haz.many.sub.doma.in', '2008-06-29 16:36:39')[0m
+Sent mail to domain@can.haz.many.sub.doma.in
+
+Date: Sun, 29 Jun 2008 12:36:39 -0400
+From: ADMINEMAIL
+To: domain@can.haz.many.sub.doma.in
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/89656b4f1fde8e574a306b54b52fe3b4933b627a
+  [4;36;1mSQL (0.000268)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000294)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000125)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000099)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = '!!@nobadchars.com') [0m
+  [4;36;1mSQL (0.000145)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000146)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000075)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@no-rep-dots..com') [0m
+  [4;36;1mSQL (0.000125)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000142)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000097)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@badtld.xxx') [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000064)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@toolongtld.abcdefg') [0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000065)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'iñtërnâtiônàlizætiøn@hasnt.happened.to.email') [0m
+  [4;36;1mSQL (0.000205)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000071)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'need.domain.and.tld@de') [0m
+  [4;36;1mSQL (0.000105)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000135)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000065)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'tab	') [0m
+  [4;36;1mSQL (0.000121)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000142)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000065)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'newline
+') [0m
+  [4;36;1mSQL (0.000110)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000136)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'r@.wk') [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000145)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = '1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail2.com') [0m
+  [4;36;1mSQL (0.000106)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000141)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000064)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'uucp!addr@gmail.com') [0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000064)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'semicolon;@gmail.com') [0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000135)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quote"@gmail.com') [0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000065)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'tick''@gmail.com') [0m
+  [4;36;1mSQL (0.000105)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000143)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'backtick`@gmail.com') [0m
+  [4;36;1mSQL (0.000132)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000159)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000065)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'space @gmail.com') [0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000098)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000065)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'bracket<@gmail.com') [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'bracket>@gmail.com') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000172)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000160)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000357)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('Andre The Giant (7''4", 520 lb.) -- has a posse', '716ec80c34c79ec4cbc8c36dbac2e79ec812de30', '2008-06-29 16:36:39', NULL, '389ad1b32fdd8b74aa58a0f5ef2ee01df0e68b45', NULL, NULL, '1c46669dbdc6903251442333247371b8083c5256', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:36:39')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:36:40 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/1c46669dbdc6903251442333247371b8083c5256
+  [4;35;1mSQL (0.000150)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000365)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000134)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000499)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'bad6fcc28ca0270508877c210a5659e276ff6549', '2008-06-29 16:36:40', NULL, '05a29d8da9704293a60140ca00a9a06bfa15b617', NULL, NULL, 'b84c6eab74a498271a7ee14ed44c22121ad10500', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:36:40')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:36:40 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/b84c6eab74a498271a7ee14ed44c22121ad10500
+  [4;36;1mSQL (0.000226)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000398)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000162)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000510)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('1234567890_234567890_234567890_234567890_234567890_234567890_234567890_234567890_234567890_234567890', '08832a925e6b209cd873287a470faf56201240a0', '2008-06-29 16:36:40', NULL, 'ba363b421d99187f79d68bb8e6ef6d1e7ad70162', NULL, NULL, '845d4c207c6b830bb5f7fda85e525ac84c2a38b4', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:36:40')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:36:40 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/845d4c207c6b830bb5f7fda85e525ac84c2a38b4
+  [4;35;1mSQL (0.000240)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000391)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000200)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000252)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000125)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000239)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000251)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000113)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000198)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000365)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000179)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login IS NULL) [0m
+  [4;36;1mSQL (0.000123)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000207)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000252)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000126)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000193)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000232)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000123)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000099)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000167)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000203)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000107)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email IS NULL) [0m
+  [4;35;1mSQL (0.000152)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mUser Load (0.000451)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.000160)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quentin' AND "users".id <> 1) [0m
+  [4;36;1mSQL (0.000085)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quentin@example.com' AND "users".id <> 1) [0m
+  [4;35;1mUser Update (0.000572)[0m   [0mUPDATE "users" SET "crypted_password" = '88c68dd5399d8e86633d21f9e494bc6640eb5203', "updated_at" = '2008-06-29 16:38:09' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000420)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000756)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quentin2' AND "users".id <> 1) [0m
+  [4;35;1mSQL (0.000124)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quentin@example.com' AND "users".id <> 1) [0m
+  [4;36;1mUser Update (0.000715)[0m   [0;1mUPDATE "users" SET "login" = 'quentin2', "updated_at" = '2008-06-29 16:38:09' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000538)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin2' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000683)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000512)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.000583)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000510)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.000582)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'old_password_holder' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000601)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000616)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000540)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000533)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000531)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000534)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000545)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000580)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000552)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000529)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000466)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000461)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000472)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000468)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000473)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000424)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000417)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000508)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000334)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000312)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000324)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000326)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000314)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000313)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000334)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000314)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000310)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000317)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000391)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000316)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000330)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000330)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000319)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000326)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000352)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000372)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000435)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000333)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000331)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000377)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000392)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000363)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000320)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000320)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000321)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000322)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000317)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000318)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000317)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000320)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000318)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000320)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000317)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000324)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000339)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000322)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000321)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000327)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000331)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000320)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000319)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000315)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000320)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000334)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000325)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000318)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000331)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000322)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000323)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000320)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000316)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000317)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000370)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000340)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000320)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000324)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000325)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000371)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000354)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000348)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000322)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000324)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000330)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000323)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000324)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000371)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000332)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000336)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000331)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000323)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000331)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000320)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000319)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000317)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000317)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000319)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000355)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.000312)[0m   [0;1mUPDATE "users" SET "remember_token" = '1c82712e9269a5fa0f97e559a89358d590fccad6', "remember_token_expires_at" = '2008-07-13 16:38:09', "updated_at" = '2008-06-29 16:38:09' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.001079)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.000372)[0m   [0;1mUPDATE "users" SET "remember_token" = 'd1cb290193fbf6b45439b2cef4637c4aaea9a91e', "remember_token_expires_at" = '2008-07-13 16:38:09', "updated_at" = '2008-06-29 16:38:09' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.000141)[0m   [0mUPDATE "users" SET "remember_token" = NULL, "remember_token_expires_at" = NULL, "updated_at" = '2008-06-29 16:38:09' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000712)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.000391)[0m   [0mUPDATE "users" SET "remember_token" = '3e5f6f823ed5d2843f226b18400fb1b79649c4af', "remember_token_expires_at" = '2008-07-06 16:38:09', "updated_at" = '2008-06-29 16:38:09' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000995)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.000446)[0m   [0mUPDATE "users" SET "remember_token" = '1e02a75c5adf11b51d9aef39688b4ac782887d47', "remember_token_expires_at" = '2008-07-06 16:38:09', "updated_at" = '2008-06-29 16:38:09' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000847)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.000393)[0m   [0mUPDATE "users" SET "remember_token" = '3ca354d63f685fe6f7af875df44f186860c92ff5', "remember_token_expires_at" = '2008-07-13 16:38:09', "updated_at" = '2008-06-29 16:38:09' WHERE "id" = 1[0m
+  [4;36;1mSQL (0.000284)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000106)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000506)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'c546b37e8b752c516406beac105ac0142ebfac4b', '2008-06-29 16:38:09', NULL, '71e2cd72f54a85e2c607f0b1c90dd7d1bd43142d', NULL, NULL, 'e7a0711ec9d41d439b40b2bb2b1d72b457e9c5c4', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:38:09')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/e7a0711ec9d41d439b40b2bb2b1d72b457e9c5c4
+  [4;35;1mSQL (0.000141)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'sammy') [0m
+  [4;36;1mSQL (0.000070)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'halpert@gendle.com') [0m
+  [4;35;1mUser Create (0.000129)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'ad9d55aad88cc336a7e6dab5e498fb9667405213', '2008-06-29 16:38:09', NULL, 'd7c64aeb172c02f879081b75b38753bc1c1e3f21', NULL, NULL, 'b1ebcc8e1dc647d292c3f52e6035551a8859eb63', NULL, NULL, NULL, 'sammy', NULL, NULL, 'halpert@gendle.com', '2008-06-29 16:38:09')[0m
+Sent mail to halpert@gendle.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: halpert@gendle.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: sammy
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/b1ebcc8e1dc647d292c3f52e6035551a8859eb63
+  [4;36;1mFollowing Create (0.000148)[0m   [0;1mINSERT INTO "followings" ("updated_at", "target_id", "follower_id", "target_type", "follower_type", "created_at") VALUES('2008-06-29 16:38:09', 4, 5, 'User', 'User', '2008-06-29 16:38:09')[0m
+  [4;35;1mSQL (0.000344)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000091)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000409)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'eccbe7e35a0fc0bf9241964f3f7cc5e9f8ca3e44', '2008-06-29 16:38:09', NULL, '0722d28386849038738c4beadb3f9aa94132b542', NULL, NULL, 'e780fdab45d453f20452aab7f6423295356586e7', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:38:09')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/e780fdab45d453f20452aab7f6423295356586e7
+  [4;35;1mSQL (0.000239)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000282)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000149)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000448)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'd214c4def26c070f7704b419fc9663c44a9345be', '2008-06-29 16:38:09', NULL, '9b66192fb55865685a12c0bae5570c09358962e8', NULL, NULL, 'e68e10b73a1bb5cc0b688416abcb532054fbf047', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:38:09')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/e68e10b73a1bb5cc0b688416abcb532054fbf047
+  [4;35;1mUser Load (0.000571)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mSQL (0.000330)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000228)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = '123') [0m
+  [4;36;1mSQL (0.000121)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000522)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '6660395411a909c0f906f4daf089e11a3111f58c', '2008-06-29 16:38:09', NULL, 'd50d750840bb67d9d0a7750af34886ef83d8c55b', NULL, NULL, '8a7ba785554aecc1a7fcb212988e3ecdbfae276a', NULL, NULL, NULL, '123', NULL, NULL, 'quire@example.com', '2008-06-29 16:38:09')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: 123
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/8a7ba785554aecc1a7fcb212988e3ecdbfae276a
+  [4;36;1mSQL (0.000249)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000318)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000150)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = '1234567890_234567890_234567890_234567890') [0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000464)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '6553e24d70be14f44ebccc21369943277621d750', '2008-06-29 16:38:09', NULL, 'f336676593547b7c2980159075663043c403b7a3', NULL, NULL, 'd4a90928bbe809ff490d723fc7d7bb676653149e', NULL, NULL, NULL, '1234567890_234567890_234567890_234567890', NULL, NULL, 'quire@example.com', '2008-06-29 16:38:09')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: 1234567890_234567890_234567890_234567890
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/d4a90928bbe809ff490d723fc7d7bb676653149e
+  [4;35;1mSQL (0.000197)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000377)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'hello.-_there@funnychar.com') [0m
+  [4;36;1mSQL (0.000114)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000485)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'ef9f4394e0cb8d109c2d78ace1abdfbfaeda7e4d', '2008-06-29 16:38:09', NULL, '4b8814d686464e2ae2194871f4efb12d64737f69', NULL, NULL, 'd0b7e0b2e532a813170d01c0c409441a3500a02c', NULL, NULL, NULL, 'hello.-_there@funnychar.com', NULL, NULL, 'quire@example.com', '2008-06-29 16:38:09')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: hello.-_there@funnychar.com
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/d0b7e0b2e532a813170d01c0c409441a3500a02c
+  [4;36;1mSQL (0.000217)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000316)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000152)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = '12') [0m
+  [4;35;1mSQL (0.000250)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000202)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000241)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000127)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = '1234567890_234567890_234567890_234567890_') [0m
+  [4;35;1mSQL (0.000114)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000186)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000240)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'tab	') [0m
+  [4;35;1mSQL (0.000099)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000164)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'newline
+') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'iñtërnâtiônàlizætiøn hasn''t happened to ruby 1.8 yet') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000136)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'semicolon;') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quote"') [0m
+  [4;35;1mSQL (0.000071)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'tick''') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000165)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'backtick`') [0m
+  [4;35;1mSQL (0.000076)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000122)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000146)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'percent%') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'plus+') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000209)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'space ') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000208)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000089)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@bar.com') [0m
+  [4;36;1mUser Create (0.000356)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '5561cf7c9812822cea1c383ca94fe1ac82e88ca1', '2008-06-29 16:38:09', NULL, 'ed90555a711f9d2a5e8d75e7d876919a58809f15', NULL, NULL, '4e7483d5f83312f4b4bf2f202befb997a13d43e7', NULL, NULL, NULL, 'quire', NULL, NULL, 'foo@bar.com', '2008-06-29 16:38:09')[0m
+Sent mail to foo@bar.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: foo@bar.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/4e7483d5f83312f4b4bf2f202befb997a13d43e7
+  [4;35;1mSQL (0.000246)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000365)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000114)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@newskool-tld.museum') [0m
+  [4;35;1mUser Create (0.000510)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '19da14ee147587abad556c482ff1cd77546be6f0', '2008-06-29 16:38:09', NULL, '1d2a94212b3d64a821b2bdb1734e526c17473162', NULL, NULL, '4b09d933bbb4a79e25a56f3fb00461641b4ba3b2', NULL, NULL, NULL, 'quire', NULL, NULL, 'foo@newskool-tld.museum', '2008-06-29 16:38:09')[0m
+Sent mail to foo@newskool-tld.museum
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: foo@newskool-tld.museum
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/4b09d933bbb4a79e25a56f3fb00461641b4ba3b2
+  [4;36;1mSQL (0.000260)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000460)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000147)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@twoletter-tld.de') [0m
+  [4;36;1mUser Create (0.000477)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '82f637989886919c661d02d0aea23f7819f87a66', '2008-06-29 16:38:09', NULL, 'fdec067a83414182a9d56a5b34c452bb0c8be8b5', NULL, NULL, '9e627d8f5576dd70f30e7db24d8469e3bb6ed102', NULL, NULL, NULL, 'quire', NULL, NULL, 'foo@twoletter-tld.de', '2008-06-29 16:38:09')[0m
+Sent mail to foo@twoletter-tld.de
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: foo@twoletter-tld.de
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/9e627d8f5576dd70f30e7db24d8469e3bb6ed102
+  [4;35;1mSQL (0.000261)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000348)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000145)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000122)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@nonexistant-tld.qq') [0m
+  [4;35;1mUser Create (0.000467)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '4d320450f9d3273358185a50695be902ace39f3d', '2008-06-29 16:38:09', NULL, '91272e000ed1af70b084c966b0062451894d6773', NULL, NULL, '8a72a998ac03f9b0226eb207ed3c3efa051c7267', NULL, NULL, NULL, 'quire', NULL, NULL, 'foo@nonexistant-tld.qq', '2008-06-29 16:38:09')[0m
+Sent mail to foo@nonexistant-tld.qq
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: foo@nonexistant-tld.qq
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/8a72a998ac03f9b0226eb207ed3c3efa051c7267
+  [4;36;1mSQL (0.000239)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000332)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000138)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'r@a.wk') [0m
+  [4;36;1mUser Create (0.000471)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '07870c420425e9b58b4eeef6879cd125acce91b2', '2008-06-29 16:38:09', NULL, 'f7a115c11498466b88e595a9273d75e80f21d20c', NULL, NULL, '8aa2313a1ae9c982e8ad9e881c8c056abcb7d996', NULL, NULL, NULL, 'quire', NULL, NULL, 'r@a.wk', '2008-06-29 16:38:09')[0m
+Sent mail to r@a.wk
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: r@a.wk
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/8aa2313a1ae9c982e8ad9e881c8c056abcb7d996
+  [4;35;1mSQL (0.000359)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000352)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000153)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = '1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com') [0m
+  [4;35;1mUser Create (0.000707)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'af74e50267f1a58a227f8f6c4d144dc19f27e7af', '2008-06-29 16:38:09', NULL, '6cb20e2cea948252b2f51ed7c056a84c80075c44', NULL, NULL, 'b175240652043c6eea387c2300cea774434fbd5e', NULL, NULL, NULL, 'quire', NULL, NULL, '1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com', '2008-06-29 16:38:09')[0m
+Sent mail to 1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: 1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/b175240652043c6eea387c2300cea774434fbd5e
+  [4;36;1mSQL (0.000222)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000289)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000133)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000120)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'hello.-_there@funnychar.com') [0m
+  [4;36;1mUser Create (0.000457)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '581ef294bbcb3fcadb0e7ff6bb575713476f9432', '2008-06-29 16:38:09', NULL, '6efb1c2f25d78c4320fc40997868e4d9285f57f3', NULL, NULL, '27390f8bfc5e94aac5c8953634ef422ebaf6c37e', NULL, NULL, NULL, 'quire', NULL, NULL, 'hello.-_there@funnychar.com', '2008-06-29 16:38:09')[0m
+Sent mail to hello.-_there@funnychar.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: hello.-_there@funnychar.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/27390f8bfc5e94aac5c8953634ef422ebaf6c37e
+  [4;35;1mSQL (0.000330)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000495)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'uucp%addr@gmail.com') [0m
+  [4;35;1mUser Create (0.000473)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '6ef233e63b2132402258728c3c80ab189406ce85', '2008-06-29 16:38:09', NULL, '9e300ae4ee6ae2329fce15244d446235bae97d89', NULL, NULL, '5377276b1c7c15fb838d437fc77a40e7160f2464', NULL, NULL, NULL, 'quire', NULL, NULL, 'uucp%addr@gmail.com', '2008-06-29 16:38:09')[0m
+Sent mail to uucp%addr@gmail.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: uucp%addr@gmail.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/5377276b1c7c15fb838d437fc77a40e7160f2464
+  [4;36;1mSQL (0.000257)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000352)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'hello+routing-str@gmail.com') [0m
+  [4;36;1mUser Create (0.000460)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'bfaa8ff4be48c985f10062359c2eb55d8b1feef1', '2008-06-29 16:38:09', NULL, 'f192cc5660e5dd2e0284fd3007b091d30f719e27', NULL, NULL, '03b23373eecc530034dc84a8bee63e3bf8403142', NULL, NULL, NULL, 'quire', NULL, NULL, 'hello+routing-str@gmail.com', '2008-06-29 16:38:09')[0m
+Sent mail to hello+routing-str@gmail.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: hello+routing-str@gmail.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/03b23373eecc530034dc84a8bee63e3bf8403142
+  [4;35;1mSQL (0.000253)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000352)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000145)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'domain@can.haz.many.sub.doma.in') [0m
+  [4;35;1mUser Create (0.000481)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '0479468b7ca5c1cd7a36b8af27986a234f318688', '2008-06-29 16:38:09', NULL, 'd85c804556ae635f8a347e5022fc61ba604c2473', NULL, NULL, '53001a332d611960f15020db1ebfec15d20ba2ff', NULL, NULL, NULL, 'quire', NULL, NULL, 'domain@can.haz.many.sub.doma.in', '2008-06-29 16:38:09')[0m
+Sent mail to domain@can.haz.many.sub.doma.in
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: domain@can.haz.many.sub.doma.in
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/53001a332d611960f15020db1ebfec15d20ba2ff
+  [4;36;1mSQL (0.000253)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000414)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000155)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = '!!@nobadchars.com') [0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@no-rep-dots..com') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@badtld.xxx') [0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000188)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000111)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@toolongtld.abcdefg') [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000150)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'iñtërnâtiônàlizætiøn@hasnt.happened.to.email') [0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000103)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'need.domain.and.tld@de') [0m
+  [4;36;1mSQL (0.000114)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000074)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'tab	') [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'newline
+') [0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'r@.wk') [0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = '1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail2.com') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'uucp!addr@gmail.com') [0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000135)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'semicolon;@gmail.com') [0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000136)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quote"@gmail.com') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000890)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000125)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'tick''@gmail.com') [0m
+  [4;36;1mSQL (0.000123)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000150)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000114)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'backtick`@gmail.com') [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000143)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000069)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'space @gmail.com') [0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000141)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'bracket<@gmail.com') [0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'bracket>@gmail.com') [0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000159)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000191)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000081)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000387)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('Andre The Giant (7''4", 520 lb.) -- has a posse', 'bdbfab4d10c7f381e54ba94fd392ede14c635aef', '2008-06-29 16:38:09', NULL, 'cda226e4baa0105fbc0752886d0c627ba5314541', NULL, NULL, '908679d74d7cc39b1c2f2a51118563618a15ec28', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:38:09')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/908679d74d7cc39b1c2f2a51118563618a15ec28
+  [4;35;1mSQL (0.000163)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000176)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000092)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000298)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'dafbed3eddda413431d3d52de7751fd216cc823b', '2008-06-29 16:38:09', NULL, '3e69e296e3779ab7ecd140d2876dd0074565fe8c', NULL, NULL, '81c9b9bd52e839f8ad32961f3e181d52dfda502e', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:38:09')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/81c9b9bd52e839f8ad32961f3e181d52dfda502e
+  [4;36;1mSQL (0.000248)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000182)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000092)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000294)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('1234567890_234567890_234567890_234567890_234567890_234567890_234567890_234567890_234567890_234567890', '9cc0682c1a991b49c44bf5289b9ad40a96ddd587', '2008-06-29 16:38:09', NULL, '1b3d6781353c51ac9382828bd5921cdc4715ce46', NULL, NULL, 'a58c90c46f47896ce9bc046f252dc40276e68ffc', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:38:09')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:38:09 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/a58c90c46f47896ce9bc046f252dc40276e68ffc
+  [4;35;1mSQL (0.000179)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000319)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000156)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000127)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000203)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000247)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000171)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000296)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000086)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000121)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000366)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000162)[0m   [0mSELECT "login" FROM "users" WHERE ("users".login IS NULL) [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000161)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000203)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000098)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000080)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000133)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000160)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000087)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000087)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000123)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000146)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000092)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000061)[0m   [0;1mSELECT "email" FROM "users" WHERE ("users".email IS NULL) [0m
+  [4;35;1mSQL (0.000118)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mUser Load (0.000364)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mSQL (0.000081)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quentin' AND "users".id <> 1) [0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quentin@example.com' AND "users".id <> 1) [0m
+  [4;35;1mUser Update (0.000285)[0m   [0mUPDATE "users" SET "crypted_password" = '88c68dd5399d8e86633d21f9e494bc6640eb5203', "updated_at" = '2008-06-29 16:39:33' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000330)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000411)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quentin2' AND "users".id <> 1) [0m
+  [4;35;1mSQL (0.000084)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quentin@example.com' AND "users".id <> 1) [0m
+  [4;36;1mUser Update (0.000509)[0m   [0;1mUPDATE "users" SET "login" = 'quentin2', "updated_at" = '2008-06-29 16:39:33' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.000333)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin2' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000772)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000513)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.000581)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000513)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Load (0.000570)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'old_password_holder' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000571)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000474)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000470)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000449)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000411)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000416)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000415)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000365)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000361)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000329)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000305)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000320)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000312)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000313)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000307)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000366)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000335)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000431)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000313)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000324)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000319)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000326)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000314)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000310)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000312)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000310)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000308)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000313)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000312)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000313)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000315)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000325)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000319)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000370)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000342)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000325)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000318)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000318)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000341)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000320)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000320)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000328)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000385)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000330)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000331)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000336)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000325)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000321)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000327)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000326)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000336)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000356)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000336)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000323)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000327)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000323)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000363)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000321)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000320)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000319)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000326)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000317)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000338)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000334)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000324)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000319)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000324)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000331)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000323)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000322)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000319)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000316)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000319)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000319)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000319)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000327)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000322)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000321)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000329)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000324)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000367)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000321)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000328)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000322)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000321)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000321)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000318)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000317)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000317)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000317)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000318)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000320)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000316)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000328)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000332)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000326)[0m   [0mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;36;1mUser Load (0.000316)[0m   [0;1mSELECT * FROM "users" WHERE (login = 'quentin' and activated_at IS NOT NULL) LIMIT 1[0m
+  [4;35;1mUser Load (0.000369)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.000322)[0m   [0;1mUPDATE "users" SET "remember_token" = 'e0e8d554f1acd405902b4f4a5e0de8aee5e32ef2', "remember_token_expires_at" = '2008-07-13 16:39:33', "updated_at" = '2008-06-29 16:39:33' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.001151)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;36;1mUser Update (0.000385)[0m   [0;1mUPDATE "users" SET "remember_token" = '707074310e3b80331b4c23a076311b7e29cc7b15', "remember_token_expires_at" = '2008-07-13 16:39:33', "updated_at" = '2008-06-29 16:39:33' WHERE "id" = 1[0m
+  [4;35;1mUser Update (0.000132)[0m   [0mUPDATE "users" SET "remember_token" = NULL, "remember_token_expires_at" = NULL, "updated_at" = '2008-06-29 16:39:33' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000752)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.000440)[0m   [0mUPDATE "users" SET "remember_token" = 'c2f104a2ab28992ddbb24a18ce4d441f1753239a', "remember_token_expires_at" = '2008-07-06 16:39:33', "updated_at" = '2008-06-29 16:39:33' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000809)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.000417)[0m   [0mUPDATE "users" SET "remember_token" = 'e4fb618ea40ab779e106f203400862e51be21077', "remember_token_expires_at" = '2008-07-06 16:39:33', "updated_at" = '2008-06-29 16:39:33' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.000743)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+  [4;35;1mUser Update (0.000438)[0m   [0mUPDATE "users" SET "remember_token" = '69587eb9c31fd464e128531f1fc6fbf850e4e069', "remember_token_expires_at" = '2008-07-13 16:39:33', "updated_at" = '2008-06-29 16:39:33' WHERE "id" = 1[0m
+  [4;36;1mSQL (0.000252)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000118)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000461)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '48b4522ca964df690ce425b139e248c4adc2b5bc', '2008-06-29 16:39:33', NULL, '41bfaa57bf337e425dcfdfc875b47cb009962748', NULL, NULL, '315daad778debd2ee66b73dc5d4b4ec85c09b499', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:39:33')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/315daad778debd2ee66b73dc5d4b4ec85c09b499
+  [4;35;1mSQL (0.000144)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'sammy') [0m
+  [4;36;1mSQL (0.000100)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'halpert@gendle.com') [0m
+  [4;35;1mUser Create (0.000148)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '0c718204406b47ab19d36f08946d7d902be70c28', '2008-06-29 16:39:34', NULL, '382a0f898c6d95d664b793b464cc9555ee35e656', NULL, NULL, '8300b01290a21f0584d3fa61ce91082b5dc131b9', NULL, NULL, NULL, 'sammy', NULL, NULL, 'halpert@gendle.com', '2008-06-29 16:39:34')[0m
+Sent mail to halpert@gendle.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: halpert@gendle.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: sammy
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/8300b01290a21f0584d3fa61ce91082b5dc131b9
+  [4;36;1mFollowing Create (0.000185)[0m   [0;1mINSERT INTO "followings" ("updated_at", "target_id", "follower_id", "target_type", "follower_type", "created_at") VALUES('2008-06-29 16:39:34', 4, 5, 'User', 'User', '2008-06-29 16:39:34')[0m
+  [4;35;1mSQL (0.000371)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000134)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000114)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000512)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'b2170084663bcefe64fd3de1c9c58c7b89673854', '2008-06-29 16:39:34', NULL, 'b02e07efbc1451378ae582d5bbd0d86331d634b5', NULL, NULL, 'e6388d44e9b2f66c17975f9abed1a5698faf8872', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:39:34')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/e6388d44e9b2f66c17975f9abed1a5698faf8872
+  [4;35;1mSQL (0.000212)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000241)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000570)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'd978a945357fdb19afd7303297dc990a4f7f6b7e', '2008-06-29 16:39:34', NULL, '34979891c1932fc78821e05a9300a0d0f6996e66', NULL, NULL, 'e8bb34e1434d089f468241e8e8b25ecaeccab336', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:39:34')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/e8bb34e1434d089f468241e8e8b25ecaeccab336
+  [4;35;1mUser Load (0.000584)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 4) [0m
+  [4;36;1mSQL (0.000324)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000222)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = '123') [0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000513)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '7c4a797a0281f698734c7731e926ed29448812fc', '2008-06-29 16:39:34', NULL, 'b7eeee26d99f379f3e1dd612b939e4866151e986', NULL, NULL, 'b149fafd2ef2c285ec2dd67610873bbc71e02e49', NULL, NULL, NULL, '123', NULL, NULL, 'quire@example.com', '2008-06-29 16:39:34')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: 123
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/b149fafd2ef2c285ec2dd67610873bbc71e02e49
+  [4;36;1mSQL (0.000252)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000417)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000141)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = '1234567890_234567890_234567890_234567890') [0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000488)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'fa5d7fffcc26bba8ed5b590b17d95d78e87e8984', '2008-06-29 16:39:34', NULL, '0cdaf4f8dd7903800d56a9b4e5d79771541d05e4', NULL, NULL, '70084a64cc69be9e63549b7f8f53895ee724939d', NULL, NULL, NULL, '1234567890_234567890_234567890_234567890', NULL, NULL, 'quire@example.com', '2008-06-29 16:39:34')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: 1234567890_234567890_234567890_234567890
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/70084a64cc69be9e63549b7f8f53895ee724939d
+  [4;35;1mSQL (0.000239)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000342)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000132)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'hello.-_there@funnychar.com') [0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000494)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '4aec7f1aa8178e8921db6a3d562be0411906814f', '2008-06-29 16:39:34', NULL, '67d01e446e131fe71c74b2a66aee2654b783ea98', NULL, NULL, 'fe2d323287392b238d11556c4ab5c6e293348772', NULL, NULL, NULL, 'hello.-_there@funnychar.com', NULL, NULL, 'quire@example.com', '2008-06-29 16:39:34')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: hello.-_there@funnychar.com
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/fe2d323287392b238d11556c4ab5c6e293348772
+  [4;36;1mSQL (0.000214)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000295)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000121)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = '12') [0m
+  [4;35;1mSQL (0.000112)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000178)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000192)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000101)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = '1234567890_234567890_234567890_234567890_') [0m
+  [4;35;1mSQL (0.000089)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000145)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000206)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'tab	') [0m
+  [4;35;1mSQL (0.000075)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000166)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000107)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'newline
+') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000146)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'iñtërnâtiônàlizætiøn hasn''t happened to ruby 1.8 yet') [0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000142)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'semicolon;') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000143)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000072)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quote"') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000142)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'tick''') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'backtick`') [0m
+  [4;35;1mSQL (0.000066)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000135)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000084)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'percent%') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000117)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000141)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'plus+') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'space ') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000170)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@bar.com') [0m
+  [4;36;1mUser Create (0.000411)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '9726958c1b868016842aaa8f586cb4f73a6d1e4f', '2008-06-29 16:39:34', NULL, '12f87e69b127ba4634daee280292e2b8dbe43495', NULL, NULL, '322f375a8e6c19a7f63bd2bfe44781b0e18e0516', NULL, NULL, NULL, 'quire', NULL, NULL, 'foo@bar.com', '2008-06-29 16:39:34')[0m
+Sent mail to foo@bar.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: foo@bar.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/322f375a8e6c19a7f63bd2bfe44781b0e18e0516
+  [4;35;1mSQL (0.000159)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000380)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000168)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@newskool-tld.museum') [0m
+  [4;35;1mUser Create (0.000688)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'eeb6a975e3fd632945dd4f6b40c28118372a9022', '2008-06-29 16:39:34', NULL, 'cc1fbb2d99a35d5fe851fbcc3303047e368724a4', NULL, NULL, 'ec6806f52be5a9dd41b84977ae523340317a137d', NULL, NULL, NULL, 'quire', NULL, NULL, 'foo@newskool-tld.museum', '2008-06-29 16:39:34')[0m
+Sent mail to foo@newskool-tld.museum
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: foo@newskool-tld.museum
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/ec6806f52be5a9dd41b84977ae523340317a137d
+  [4;36;1mSQL (0.000242)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000337)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000189)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000117)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@twoletter-tld.de') [0m
+  [4;36;1mUser Create (0.000498)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '0e7b343af443ff1ee369555b91be262d56f46896', '2008-06-29 16:39:34', NULL, 'a5691e6d434707e81393f82a49d1d54f457404a2', NULL, NULL, 'ce486e6ec8cc3f2bc3ba79fb7c366a66e725ecd8', NULL, NULL, NULL, 'quire', NULL, NULL, 'foo@twoletter-tld.de', '2008-06-29 16:39:34')[0m
+Sent mail to foo@twoletter-tld.de
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: foo@twoletter-tld.de
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/ce486e6ec8cc3f2bc3ba79fb7c366a66e725ecd8
+  [4;35;1mSQL (0.000236)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000353)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000140)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@nonexistant-tld.qq') [0m
+  [4;35;1mUser Create (0.000495)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '7d8b3ec48a0b33e9cd5effdfd6e820e42cbb5203', '2008-06-29 16:39:34', NULL, '019381901e4128b7bb75992571cfa2d4640900a5', NULL, NULL, '4c4fefd531aea6dd96b5318b9011800b8b110143', NULL, NULL, NULL, 'quire', NULL, NULL, 'foo@nonexistant-tld.qq', '2008-06-29 16:39:34')[0m
+Sent mail to foo@nonexistant-tld.qq
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: foo@nonexistant-tld.qq
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/4c4fefd531aea6dd96b5318b9011800b8b110143
+  [4;36;1mSQL (0.000262)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000377)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000177)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000253)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'r@a.wk') [0m
+  [4;36;1mUser Create (0.000476)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '8ec63a9a83a0539418e26ed2a8394fcc576c3d3a', '2008-06-29 16:39:34', NULL, '199893ea7660716d6968a5ad2a81cf284cb32927', NULL, NULL, 'a54e0b5aca93602c6f332399be768048009e354b', NULL, NULL, NULL, 'quire', NULL, NULL, 'r@a.wk', '2008-06-29 16:39:34')[0m
+Sent mail to r@a.wk
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: r@a.wk
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/a54e0b5aca93602c6f332399be768048009e354b
+  [4;35;1mSQL (0.000244)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000210)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000085)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000069)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = '1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com') [0m
+  [4;35;1mUser Create (0.000362)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '6571aa34220849494a82fd691268ff99a57b6d3c', '2008-06-29 16:39:34', NULL, 'fa41e6ad5d6fd2cbea9e583d0b6c9ee1517592a6', NULL, NULL, 'fea13ce08d3fbdbb1ff7590c1b09fbdc3484d87f', NULL, NULL, NULL, 'quire', NULL, NULL, '1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com', '2008-06-29 16:39:34')[0m
+Sent mail to 1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: 1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/fea13ce08d3fbdbb1ff7590c1b09fbdc3484d87f
+  [4;36;1mSQL (0.000163)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000384)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000135)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000116)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'hello.-_there@funnychar.com') [0m
+  [4;36;1mUser Create (0.000556)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'e8488b1b0ac1d1dac571298c40dc9b9c2fcf5f1b', '2008-06-29 16:39:34', NULL, '708c9be6fce0127b214ffb647d9597869b1d36e5', NULL, NULL, '285212a80495d21944d77d71be8dd12eeae7d7df', NULL, NULL, NULL, 'quire', NULL, NULL, 'hello.-_there@funnychar.com', '2008-06-29 16:39:34')[0m
+Sent mail to hello.-_there@funnychar.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: hello.-_there@funnychar.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/285212a80495d21944d77d71be8dd12eeae7d7df
+  [4;35;1mSQL (0.000242)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000365)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000190)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000140)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'uucp%addr@gmail.com') [0m
+  [4;35;1mUser Create (0.000489)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '0f37411f48351b47a8ec6bdcab39b9fef6b6b74f', '2008-06-29 16:39:34', NULL, '2ea927e4155c8e7f511139b8e1b1d7f40553f10b', NULL, NULL, '4585f6e15ad25f2b2acd20b826399dea63d0b6be', NULL, NULL, NULL, 'quire', NULL, NULL, 'uucp%addr@gmail.com', '2008-06-29 16:39:34')[0m
+Sent mail to uucp%addr@gmail.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: uucp%addr@gmail.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/4585f6e15ad25f2b2acd20b826399dea63d0b6be
+  [4;36;1mSQL (0.000246)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000341)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000139)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000126)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'hello+routing-str@gmail.com') [0m
+  [4;36;1mUser Create (0.000495)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '90ab2446a9e94660e401dd90a38271e8fb340262', '2008-06-29 16:39:34', NULL, '268a67062d1be3636dd1264b08efc38127409ed7', NULL, NULL, '6671a534a6b45c5dc393add958049edc1507fa9c', NULL, NULL, NULL, 'quire', NULL, NULL, 'hello+routing-str@gmail.com', '2008-06-29 16:39:34')[0m
+Sent mail to hello+routing-str@gmail.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: hello+routing-str@gmail.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/6671a534a6b45c5dc393add958049edc1507fa9c
+  [4;35;1mSQL (0.000250)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000352)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000133)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000124)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'domain@can.haz.many.sub.doma.in') [0m
+  [4;35;1mUser Create (0.000459)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', 'ecab6e00be9caf2cbb964ff5a645c3a05181a3a2', '2008-06-29 16:39:34', NULL, '9bdea2c280fea9ef653890a72f4386e475424eba', NULL, NULL, '17a866979bb611b2e1867bb3ab31390a0c206847', NULL, NULL, NULL, 'quire', NULL, NULL, 'domain@can.haz.many.sub.doma.in', '2008-06-29 16:39:34')[0m
+Sent mail to domain@can.haz.many.sub.doma.in
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: domain@can.haz.many.sub.doma.in
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/17a866979bb611b2e1867bb3ab31390a0c206847
+  [4;36;1mSQL (0.000288)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000388)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000159)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000115)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = '!!@nobadchars.com') [0m
+  [4;36;1mSQL (0.000202)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000239)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000123)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000114)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@no-rep-dots..com') [0m
+  [4;36;1mSQL (0.000183)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000228)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000123)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000113)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@badtld.xxx') [0m
+  [4;36;1mSQL (0.000171)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000205)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000107)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000095)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'foo@toolongtld.abcdefg') [0m
+  [4;36;1mSQL (0.000146)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000187)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000097)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000081)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'iñtërnâtiônàlizætiøn@hasnt.happened.to.email') [0m
+  [4;36;1mSQL (0.000136)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000647)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000094)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000070)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'need.domain.and.tld@de') [0m
+  [4;36;1mSQL (0.000118)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000150)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000075)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'tab	') [0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000143)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'newline
+') [0m
+  [4;36;1mSQL (0.000110)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'r@.wk') [0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000165)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000099)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = '1234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890-234567890@gmail2.com') [0m
+  [4;36;1mSQL (0.000200)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000145)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000077)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000085)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'uucp!addr@gmail.com') [0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000137)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000111)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'semicolon;@gmail.com') [0m
+  [4;36;1mSQL (0.000115)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quote"@gmail.com') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000139)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000074)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'tick''@gmail.com') [0m
+  [4;36;1mSQL (0.000120)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000157)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000078)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'backtick`@gmail.com') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000138)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000073)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'space @gmail.com') [0m
+  [4;36;1mSQL (0.000111)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000145)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000079)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'bracket<@gmail.com') [0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000141)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000076)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000067)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'bracket>@gmail.com') [0m
+  [4;36;1mSQL (0.000110)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000190)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000085)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000068)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000358)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('Andre The Giant (7''4", 520 lb.) -- has a posse', 'a9215f7a3b3db0b301dde3c2c277be74cb02f10e', '2008-06-29 16:39:34', NULL, '9d78d8e8f1ce67f1eeb70bed7ff5924bfe5ce703', NULL, NULL, '1e454472f76f4f7d7d3e510fc32ec2bb05b368bf', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:39:34')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/1e454472f76f4f7d7d3e510fc32ec2bb05b368bf
+  [4;35;1mSQL (0.000217)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000179)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000092)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000081)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mUser Create (0.000330)[0m   [0mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('', '201485df226f885278674c2b794bc9ae652c24f1', '2008-06-29 16:39:34', NULL, 'f8681818a077cd5e85b5cff06e4209a9f647dd39', NULL, NULL, 'bc538a283bd5ad4e8fb9208420b684a4de62497f', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:39:34')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/bc538a283bd5ad4e8fb9208420b684a4de62497f
+  [4;36;1mSQL (0.000244)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000478)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000207)[0m   [0;1mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;35;1mSQL (0.000118)[0m   [0mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;36;1mUser Create (0.000468)[0m   [0;1mINSERT INTO "users" ("name", "salt", "updated_at", "activated_at", "crypted_password", "primary_address_id", "remember_token_expires_at", "activation_code", "persona", "phone", "remember_token", "login", "interests", "hobbies", "email", "created_at") VALUES('1234567890_234567890_234567890_234567890_234567890_234567890_234567890_234567890_234567890_234567890', 'f64579434d38c03f9ff69787cd15a9fc7d2abc6c', '2008-06-29 16:39:34', NULL, 'c3b6119da28f3cf055532599e106418fb4177559', NULL, NULL, '26216f3523c660b3be9e8cfdf9d75fcc7fe5972b', NULL, NULL, NULL, 'quire', NULL, NULL, 'quire@example.com', '2008-06-29 16:39:34')[0m
+Sent mail to quire@example.com
+
+Date: Sun, 29 Jun 2008 12:39:34 -0400
+From: ADMINEMAIL
+To: quire@example.com
+Subject: [YOURSITE] Please activate your new account
+Mime-Version: 1.0
+Content-Type: text/plain; charset=utf-8
+
+Your account has been created.
+
+  Username: quire
+  Password: quire69
+
+Visit this url to activate your account:
+
+  http://YOURSITE/activate/26216f3523c660b3be9e8cfdf9d75fcc7fe5972b
+  [4;35;1mSQL (0.000265)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000331)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000147)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000295)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000255)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000129)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000158)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000198)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.000260)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mSQL (0.000113)[0m   [0mSELECT "login" FROM "users" WHERE (LOWER("users".login) = 'quire') [0m
+  [4;36;1mSQL (0.000112)[0m   [0;1mSELECT "email" FROM "users" WHERE (LOWER("users".email) = 'quire@example.com') [0m
+  [4;35;1mSQL (0.000176)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m

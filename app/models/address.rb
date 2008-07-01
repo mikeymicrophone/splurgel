@@ -19,4 +19,8 @@ class Address < ActiveRecord::Base
     address += state.name if state
     address += ', ' + zip if zip
   end
+  
+  def name
+    street + ' ' + street2
+  end
 end

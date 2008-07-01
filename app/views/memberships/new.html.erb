@@ -5,14 +5,10 @@
 
   <p>
     <%= f.label :group_id %><br />
-    <%= f.text_field :group_id %>
+    <%= f.select :group_id, Group.map_name_and_id %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
+    <%= f.submit 'join up' %>
   </p>
 <% end %>
 

@@ -3,10 +3,22 @@ require File.dirname(__FILE__) + '/../spec_helper'
 
 # Be sure to include AuthenticatedTestHelper in spec/spec_helper.rb instead.
 # Then, you can remove it from this and the functional test.
-include AuthenticatedTestHelper
+
 
 describe User do
   fixtures :users
+
+  describe 'retrieving followers' do
+    before do
+      @user = create_user
+      @follower = create_user(:login => 'sammy', :email => 'halpert@gendle.com')
+      Following.create(:follower => @follower, :target => @user)
+    end
+    
+    it 'should be able to find its followers' do
+      @user.followers.should_not be_nil
+    end
+  end
 
   describe 'being created' do
     before do

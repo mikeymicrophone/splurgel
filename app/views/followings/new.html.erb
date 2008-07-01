@@ -4,15 +4,24 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.label :follower_type %>
+    <%= f.select :follower_type, [['me', 'User'], ['one of my groups', 'Group'], ['a store location', 'Location']] %>
   </p>
+
   <p>
     <%= f.label :follower_id %><br />
     <%= f.text_field :follower_id %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.label :target_type %>
+    <%= f.select :target_type, ['User', 'Brand', 'Store', 'Location', 'Group', 'City', 'Product', 'Offering', 'Comment', 'Membership', 'Tag', 'Website'] %>
+  </p>
+  <p>
+    <%= f.label :target_id %><br />
+    <%= f.text_field :target_id %>
+  </p>
+  <p>
+    <%= f.submit :inform %>
   </p>
 <% end %>
 

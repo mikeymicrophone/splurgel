@@ -8,23 +8,19 @@
     <%= f.text_area :body %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
     <%= f.label :reply_id %><br />
     <%= f.text_field :reply_id %>
   </p>
   <p>
     <%= f.label :target_type %><br />
-    <%= f.text_field :target_type %>
+    <%= f.select :target_type, ['Product', 'Store', 'Brand', 'Location', 'User', 'Group', 'Price', 'Listing', 'Image', 'Comment', 'Offering', 'State', 'City', 'Website', 'WebsiteUse', 'ImageUse', 'Message', 'Network', 'Purchase', 'Tag', 'Tagging'] # omitted: following, membership, %>
   </p>
   <p>
     <%= f.label :target_id %><br />
     <%= f.text_field :target_id %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit :speak %>
   </p>
 <% end %>
 

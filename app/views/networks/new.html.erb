@@ -9,14 +9,14 @@
   </p>
   <p>
     <%= f.label :city_id %><br />
-    <%= f.text_field :city_id %>
+    <%= f.select :city_id, City.map_name_and_id %>
   </p>
   <p>
     <%= f.label :state_id %><br />
-    <%= f.text_field :state_id %>
+    <%= f.text_field :state_id, State.map_name_and_id %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit :special %>
   </p>
 <% end %>
 

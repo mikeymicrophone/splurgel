@@ -1,22 +1,22 @@
-<h1>New offering</h1>
+<h1>new offering</h1>
 
 <% form_for(@offering) do |f| %>
   <%= f.error_messages %>
 
   <p>
     <%= f.label :product_id %><br />
-    <%= f.text_field :product_id %>
+    <%= f.select :product_id, Product.map_name_and_id %>
   </p>
   <p>
     <%= f.label :location_id %><br />
-    <%= f.text_field :location_id %>
+    <%= f.select :location_id, Location.map_name_and_id %>
   </p>
   <p>
-    <%= f.label :stock %><br />
-    <%= f.text_field :stock %>
+    <%= f.label 'how many in stock' %><br />
+    <%= f.text_field :stock, :length => 8 %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit 'done-zo' %>
   </p>
 <% end %>
 

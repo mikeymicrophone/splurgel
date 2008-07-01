@@ -6567,3 +6567,67 @@ WARNING: You're using the Ruby-based MySQL library that ships with Rails. This l
   [4;36;1mSQL (0.002429)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080615192044')[0m
   [4;35;1mSQL (0.002454)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20080615192902')[0m
   [4;36;1mSQL (0.002574)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080628043414')[0m
+
+
+Processing UsersController#home (for 127.0.0.1 at 2008-07-01 01:19:10) [GET]
+  Session ID: a38f06d93688a369900066140ec162c8
+  Parameters: {"action"=>"home", "controller"=>"users"}
+WARNING: You're using the Ruby-based MySQL library that ships with Rails. This library is not suited for production. Please install the C-based MySQL library instead (gem install mysql).
+  [4;36;1mSQL (0.000171)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+Rendering template within layouts/application
+Rendering users/home
+Completed in 0.03739 (26 reqs/sec) | Rendering: 0.03470 (92%) | DB: 0.00017 (0%) | 200 OK [http://localhost/]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2008-07-01 01:19:17) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1bd8c658ed1c45db7b1fbc93f9a75e4fcbcb7a22
+  Parameters: {"action"=>"index", "controller"=>"products"}
+  [4;35;1mProduct Load (0.001112)[0m   [0mSELECT * FROM `products` [0m
+Rendering template within layouts/application
+Rendering products/index
+Completed in 0.06184 (16 reqs/sec) | Rendering: 0.02287 (36%) | DB: 0.00111 (1%) | 200 OK [http://localhost/products]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2008-07-01 01:19:21) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--1bd8c658ed1c45db7b1fbc93f9a75e4fcbcb7a22
+  Parameters: {"action"=>"new", "controller"=>"products"}
+  [4;36;1mProduct Columns (0.003986)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/application
+Rendering products/new
+Completed in 0.04993 (20 reqs/sec) | Rendering: 0.02939 (58%) | DB: 0.00399 (7%) | 200 OK [http://localhost/products/new]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2008-07-01 01:19:52) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNjFjNzk0N2I4MzIyZmFiMmJlY2U3NjYxNmY0NzY1
+MWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--8f0e30dc6db631403f9b4d0545c65b02ddba2d93
+  Parameters: {"action"=>"new", "controller"=>"products"}
+  [4;35;1mProduct Columns (0.003364)[0m   [0mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/application
+Rendering products/new
+  [4;36;1mBrand Load (0.001166)[0m   [0;1mSELECT * FROM `brands` [0m
+  [4;35;1mBrand Columns (0.003718)[0m   [0mSHOW FIELDS FROM `brands`[0m
+Completed in 0.08236 (12 reqs/sec) | Rendering: 0.06031 (73%) | DB: 0.00825 (10%) | 200 OK [http://localhost/products/new]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2008-07-01 01:20:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlNjFjNzk0N2I4MzIyZmFiMmJlY2U3NjYxNmY0NzY1
+MWQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--8f0e30dc6db631403f9b4d0545c65b02ddba2d93
+  Parameters: {"action"=>"new", "controller"=>"products"}
+  [4;36;1mProduct Columns (0.004298)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+Rendering template within layouts/application
+Rendering products/new
+  [4;35;1mBrand Load (0.000724)[0m   [0mSELECT * FROM `brands` [0m
+  [4;36;1mBrand Columns (0.004073)[0m   [0;1mSHOW FIELDS FROM `brands`[0m
+Completed in 0.05121 (19 reqs/sec) | Rendering: 0.02488 (48%) | DB: 0.00909 (17%) | 200 OK [http://localhost/products/new]
+WARNING: You're using the Ruby-based MySQL library that ships with Rails. This library is not suited for production. Please install the C-based MySQL library instead (gem install mysql).
+  [4;36;1mSQL (0.000165)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mProduct Load (0.001396)[0m   [0mSELECT * FROM `products` [0m
+  [4;36;1mSQL (0.001417)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mBrand Columns (0.004443)[0m   [0mSHOW FIELDS FROM `brands`[0m
+  [4;36;1mBrand Load (0.000933)[0m   [0;1mSELECT * FROM `brands` [0m
+  [4;35;1mBrand Columns (0.005041)[0m   [0mSHOW FIELDS FROM `brands`[0m
+  [4;36;1mBrand Load (0.000744)[0m   [0;1mSELECT * FROM `brands` [0m

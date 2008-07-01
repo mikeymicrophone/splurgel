@@ -5,22 +5,22 @@
 
   <p>
     <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
+    <%= f.text_field :phone, :size => 13 %>
   </p>
   <p>
     <%= f.label :store_id %><br />
-    <%= f.text_field :store_id %>
+    <%= f.select :store_id, Store.map_name_and_id %>
   </p>
   <p>
     <%= f.label :schedule_id %><br />
-    <%= f.text_field :schedule_id %>
+    <%= f.select :schedule_id, Schedule.map_name_and_id %>
   </p>
   <p>
     <%= f.label :address_id %><br />
-    <%= f.text_field :address_id %>
+    <%= f.select :address_id, Address.map_name_and_id('display') %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit :locate %>
   </p>
 <% end %>
 

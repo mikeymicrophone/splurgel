@@ -9,14 +9,14 @@
   </p>
   <p>
     <%= f.label :administrator_id %><br />
-    <%= f.text_field :administrator_id %>
+    <%= f.select :administrator_id, User.map_name_and_id %>
   </p>
   <p>
     <%= f.label :group_type %><br />
-    <%= f.text_field :group_type %>
+    <%= f.select :group_type, [['personal', 1], ['private', 2], ['unconsensual', 3], ['consensual', 4]] %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit :gather %>
   </p>
 <% end %>
 

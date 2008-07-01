@@ -13,7 +13,7 @@
   </p>
   <p>
     <%= f.label :address_id %><br />
-    <%= f.text_field :address_id %>
+    <%= f.text_field :address_id, Address.map_name_and_id %>
   </p>
   <p>
     <%= f.submit "Create" %>

@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :address_id %><br />
-    <%= f.text_field :address_id %>
+    <%= f.select :address_id, Address.map_name_and_id %>
   </p>
   <p>
     <%= f.label :card_number %><br />
@@ -13,22 +13,18 @@
   </p>
   <p>
     <%= f.label :expiration_month %><br />
-    <%= f.text_field :expiration_month %>
+    <%= f.text_field :expiration_month, :length => 2 %>
   </p>
   <p>
     <%= f.label :expiration_year %><br />
-    <%= f.text_field :expiration_year %>
+    <%= f.text_field :expiration_year, :length => 2 %>
   </p>
   <p>
     <%= f.label :security_code %><br />
-    <%= f.text_field :security_code %>
+    <%= f.text_field :security_code, :length => 6 %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
+    <%= f.submit :empower %>
   </p>
 <% end %>
 
