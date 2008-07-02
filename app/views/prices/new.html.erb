@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :offering_id %><br />
-    <%= f.text_field :offering_id %>
+    <%= f.select :offering_id, Offering.map_name_and_id %>
   </p>
   <p>
     <%= f.label :sale %><br />
@@ -16,7 +16,7 @@
     <%= f.datetime_select :end_date %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit :evaluate %>
   </p>
 <% end %>
 

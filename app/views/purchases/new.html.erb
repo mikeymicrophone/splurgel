@@ -2,22 +2,17 @@
 
 <% form_for(@purchase) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
   <p>
     <%= f.label :offering_id %><br />
-    <%= f.text_field :offering_id %>
+    <%= f.text_field :offering_id, Offering.map_name_and_id %>
   </p>
   <p>
     <%= f.label :credit_card_id %><br />
-    <%= f.text_field :credit_card_id %>
+    <%= f.text_field :credit_card_id, CreditCard.map_name_and_id %>
   </p>
   <p>
     <%= f.label :address_id %><br />
-    <%= f.text_field :address_id %>
+    <%= f.select :address_id, Address.map_name_and_id %>
   </p>
   <p>
     <%= f.label :approved %><br />

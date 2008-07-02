@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :tag_id %><br />
-    <%= f.text_field :tag_id %>
+    <%= f.select :tag_id, Tag.map_name_and_id %>
   </p>
   <p>
     <%= f.label :target_type %><br />

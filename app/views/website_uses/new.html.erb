@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :target_type %><br />
-    <%= f.text_field :target_type %>
+    <%= f.select :target_type, ['Brand', 'City', 'Comment', 'Group', 'Image', 'Location', 'Message', 'Network', 'Offering', 'Product', 'State', 'Store', 'Tagging', 'User'] %>
   </p>
   <p>
     <%= f.label :target_id %><br />
@@ -13,7 +13,7 @@
   </p>
   <p>
     <%= f.label :website_id %><br />
-    <%= f.text_field :website_id %>
+    <%= f.text_field :website_id, Website.map_name_and_id %>
   </p>
   <p>
     <%= f.submit "Create" %>
