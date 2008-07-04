@@ -136,6 +136,7 @@ ActiveRecord::Schema.define(:version => 20080704022846) do
     t.datetime "updated_at"
     t.integer  "user_id",          :limit => 11
     t.integer  "administrator_id", :limit => 11
+    t.string   "name"
   end
 
   create_table "memberships", :force => true do |t|

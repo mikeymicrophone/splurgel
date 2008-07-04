@@ -11,12 +11,27 @@ describe User do
   describe 'retrieving followers' do
     before do
       @user = create_user
-      @follower = create_user(:login => 'sammy', :email => 'halpert@gendle.com')
-      Following.create(:follower => @follower, :target => @user)
+      @sammy = create_user(:login => 'sammy', :email => 'halpert@gendle.com')
+      @sindacated = Group.create(:name => 'sindacated')
+      @simply = Location.create(:name => 'simple')
+      Following.create(:follower => @sammy, :target => @user)
+      Following.create(:follower => @sindacated, :target => @user)
+      Following.create(:follower => @simply, :target => @user)
     end
     
     it 'should be able to find its followers' do
       @user.followers.should_not be_nil
+      @user.followers.first.should be_kind_of(User)
+    end
+    
+    it 'should be able to find its following groups' do
+      @user.follower_groups.should_not be_nil
+      @user.follower_groups.first.should be_kind_of(Group)
+    end
+    
+    it 'should be able to find its following locations' do
+      @user.follower_locations.should_not be_nil
+      @user.follower_locations.first.should be_kind_of(Location)
     end
   end
 
