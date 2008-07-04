@@ -22,7 +22,7 @@ class ActiveRecord::Base
   end
   
   def current_user_id
-    current_user.id
+    current_user.id if current_user
   end
   
   def credit_creator
@@ -30,7 +30,9 @@ class ActiveRecord::Base
   end
   
   def self.map_name_and_id(method = 'display_for_select')
-    if respond_to?(:name)
+    if method != 'display_for_select'
+      all.map { |r| [r.send(method), r.id] }
+    elsif respond_to?(:name)
       all.map { |r| [r.name, r.id] }
     else
       all.map { |r| [r.send(method), r.id] }

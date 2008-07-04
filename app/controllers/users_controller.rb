@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.find :all
+    @users = User.all
   end
   
   def home
@@ -28,6 +28,16 @@ class UsersController < ApplicationController
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again, or contact an admin (link is above)."
       render :action => 'new'
     end
+  end
+  
+  def edit
+    @user = User.find params[:id]
+  end
+  
+  def update
+    @user = User.find params[:id]
+    @user.update_attributes params[:user]
+    redirect_to @user
   end
 
   def activate

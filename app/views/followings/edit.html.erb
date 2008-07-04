@@ -4,15 +4,15 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.label :target_id %><br />
+    <%= f.select :target_id, @following.target_type.constantize.send('map_name_and_id'), :id => 'target_select' %>
   </p>
   <p>
     <%= f.label :follower_id %><br />
-    <%= f.text_field :follower_id %>
+    <%= f.select :follower_id, @following.follower_type.constantize.send('map_name_and_id'), :id => 'follower_select' %>
   </p>
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit :sure? %>
   </p>
 <% end %>
 

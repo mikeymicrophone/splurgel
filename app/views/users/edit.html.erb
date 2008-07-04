@@ -1,0 +1,9 @@
+<% form_for @user do |f| %>
+  <%= f.text_field :name %>name<br>
+  <%= f.text_area :interests %>you're interested in what?<br>
+  <%= f.text_area :hobbies %>hobbiez<br>
+  <%= f.text_area :persona %>persona<br>
+  <%= f.text_field :phone %>phone<br>
+  <%= f.select :primary_address_id, @user.addresses.map_name_and_id, :include_blank => true %><br>primary address
+  <%= f.submit :word %>
+<% end %>
