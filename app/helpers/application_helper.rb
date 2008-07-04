@@ -4,12 +4,16 @@ module ApplicationHelper
     link_to current_user.login, current_user, :id => 'profile'
   end
   
-  def link_to_name obj
+  def link_to_name obj, method = nil
     return '' if obj.nil?
-    if obj.respond_to?(:name)
-      link_to obj.name, obj, :class => "name #{obj.class.name.downcase}"
+    unless method
+      if obj.respond_to?(:name)
+        link_to obj.name, obj, :class => "name #{obj.class.name.downcase}"
+      else
+        link_to 'here', obj, :class => obj.class.name.downcase
+      end
     else
-      link_to 'here', obj, :class => obj.class.name.downcase
+      link_to obj.send(method), obj, :class => obj.class.name.downcase
     end
   end
   

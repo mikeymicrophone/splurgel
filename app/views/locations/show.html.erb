@@ -1,5 +1,5 @@
 <%= link_to_name @location.store %><br>
-<%= schedule_display @location.schedule if @location.schedule %><br>
+<%= @location.schedule.display if @location.schedule %><br>
 
 <%=h @location.address.display %><br>
 <%=h @location.phone %><br>

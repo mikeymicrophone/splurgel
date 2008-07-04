@@ -1,4 +1,4 @@
-<h1>Editing website</h1>
+<h1> website</h1>
 
 <% form_for(@website) do |f| %>
   <%= f.error_messages %>
@@ -12,11 +12,7 @@
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
+    <%= f.submit :repair %>
   </p>
 <% end %>
 

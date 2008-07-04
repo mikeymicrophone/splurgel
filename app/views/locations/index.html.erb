@@ -11,12 +11,11 @@
 <% for location in @locations %>
   <tr>
     <td><%=h location.phone %></td>
-    <td><%= link_to location.store.name, location.store %></td>
-    <td><%=h location.schedule_id %></td>
-    <td><%=h location.address_id %></td>
+    <td><%= link_to_name location.store %></td>
+    <td><%=h location.schedule.display %></td>
+    <td><%= link_to_name location.address %></td>
     <td><%= link_to 'show', location %></td>
-    <td><%= link_to 'edit', edit_location_path(location) %></td>
-    <td><%= link_to 'Destroy', location, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'edit', edit_location_path(location) if logged_in? && current_user.administers?(location) %></td>
   </tr>
 <% end %>
 </table>

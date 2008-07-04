@@ -1,20 +1,30 @@
-<h1>New image_use</h1>
+<h1> image_use</h1>
 
 <% form_for(@image_use) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :image_id %><br />
-    <%= f.select :image_id, Image.map_name_and_id('filename') %>
-  </p>
-  <p>
-    <%= f.label :target_type %><br />
-    <%= f.text_field :target_type %>
-  </p>
-  <p>
-    <%= f.label :target_id %><br />
-    <%= f.text_field :target_id %>
-  </p>
+  <% if @image_use.image_id %>
+    <%= f.hidden_field :image_id %>
+  <% else %>
+    <p>
+      <%= f.label :image_id %><br />
+      <%= f.select :image_id, Image.map_name_and_id('filename') %>
+    </p>
+  <% end %>
+  
+  <% if @image_use.target_id %>
+    <%= f.hidden_field :target_type %>
+    <%= f.hidden_field :target_id %>
+  <% else %>
+    <p>
+      <%= f.label :target_type %><br />
+      <%= f.text_field :target_type %>
+    </p>
+    <p>
+      <%= f.label :target_id %><br />
+      <%= f.text_field :target_id  %>
+    </p>
+  <% end %>
   <p>
     <%= f.submit :use %>
   </p>

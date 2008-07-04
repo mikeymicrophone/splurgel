@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080628223148) do
+ActiveRecord::Schema.define(:version => 20080704015500) do
 
   create_table "address_uses", :force => true do |t|
     t.string   "target_type"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20080628223148) do
     t.integer  "state_id",   :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",    :limit => 11
   end
 
   create_table "comments", :force => true do |t|
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(:version => 20080628223148) do
     t.datetime "updated_at"
     t.string   "target_type"
     t.string   "follower_type"
+    t.integer  "user_id",       :limit => 11
   end
 
   create_table "groups", :force => true do |t|
@@ -87,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20080628223148) do
     t.integer  "group_type",       :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",          :limit => 11
   end
 
   create_table "image_uses", :force => true do |t|
@@ -124,11 +127,13 @@ ActiveRecord::Schema.define(:version => 20080628223148) do
 
   create_table "locations", :force => true do |t|
     t.string   "phone"
-    t.integer  "store_id",    :limit => 11
-    t.integer  "schedule_id", :limit => 11
-    t.integer  "address_id",  :limit => 11
+    t.integer  "store_id",         :limit => 11
+    t.integer  "schedule_id",      :limit => 11
+    t.integer  "address_id",       :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",          :limit => 11
+    t.integer  "administrator_id", :limit => 11
   end
 
   create_table "memberships", :force => true do |t|
@@ -157,11 +162,12 @@ ActiveRecord::Schema.define(:version => 20080628223148) do
 
   create_table "networks", :force => true do |t|
     t.string   "name"
-    t.integer  "city_id",    :limit => 11
-    t.integer  "state_id",   :limit => 11
+    t.integer  "city_id",          :limit => 11
+    t.integer  "state_id",         :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",    :limit => 11
+    t.integer  "user_id",          :limit => 11
+    t.integer  "administrator_id", :limit => 11
   end
 
   create_table "offerings", :force => true do |t|
@@ -220,12 +226,14 @@ ActiveRecord::Schema.define(:version => 20080628223148) do
     t.boolean  "holidays"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",         :limit => 11
   end
 
   create_table "states", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",    :limit => 11
   end
 
   create_table "stores", :force => true do |t|
@@ -234,6 +242,7 @@ ActiveRecord::Schema.define(:version => 20080628223148) do
     t.integer  "primary_image_id", :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",          :limit => 11
   end
 
   create_table "taggings", :force => true do |t|

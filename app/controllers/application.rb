@@ -1,12 +1,30 @@
 class ApplicationController < ActionController::Base
   helper :all
   include AuthenticatedSystem
-  helper_method :logged_in?
+  helper_method :logged_in?, :current_user?
   protect_from_forgery
   filter_parameter_logging :password
 
   def load_user_id_into_ar
     ActiveRecord::Base.instance_variable_set('@current_user', current_user) if logged_in?
+  end
+  
+  def current_user_id
+    @current_user_id ||= (current_user ? current_user.id : nil)
+  end
+  
+  def current_user? user
+    current_user_id == if user.is_a? Integer
+      user
+    elsif user.is_a? User
+      user.id
+    elsif user.kind_of? ActiveRecord::Base
+      if user.respond_to?(:user)
+        user.user_id
+      else
+        # put custom behavior for certain models here
+      end
+    end
   end
   
   before_filter :load_user_id_into_ar

@@ -12,12 +12,12 @@ class Address < ActiveRecord::Base
   
   def display
     address = ''
-    address += street + '\n'
-    address += street2 + '\n' unless street2.blank?
+    address += street + ' '
+    address += street2 + ' ' unless street2.blank?
     address += city.name if city
     address += ', ' if city && state
     address += state.name if state
-    address += ', ' + zip if zip
+    address += ', ' + zip.to_s if zip
   end
   
   def name

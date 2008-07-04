@@ -1,15 +1,9 @@
 <h1>states</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-  </tr>
-
 <% for state in @states %>
   <tr>
-    <td><%= link_to state.name, state %></td>
-    <td><%= link_to 'edit', edit_state_path(state) %></td>
-    <td><%= link_to 'Destroy', state, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to_name, state %></td>
   </tr>
 <% end %>
 </table>

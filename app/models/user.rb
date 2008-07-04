@@ -20,6 +20,10 @@ class User < ActiveRecord::Base
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'User' and followings.follower_type = 'Location'", :as => :target
   has_many :incoming_messages, :class_name => 'Message', :foreign_key => :recipient_id
   
+  def administers? thing
+    thing.administrator_id == id # refactor when I implement multiple administrators per thing
+  end
+  
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken

@@ -10,7 +10,10 @@ class MessagesController < ApplicationController
 
   def show
     @message = Message.find params[:id]
-
+    redirect_to messages_path unless current_user.id == @message.recipient_id || current_user.id == @message.user_id
+    
+    @message.read_on ||= DateTime.now && @message.save if current_user.id == @message.recipient_id
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @message }

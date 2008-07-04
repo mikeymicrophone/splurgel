@@ -1,4 +1,5 @@
 class Website < ActiveRecord::Base
+  belongs_to :user
   has_many :taggings, :as => :target
   has_many :tags, :through => :taggings, :source => :tag, :conditions => "taggings.target_type = 'Website'"
   has_many :comments, :as => :target

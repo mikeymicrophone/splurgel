@@ -18,7 +18,7 @@ class ImageUsesController < ApplicationController
   end
 
   def new
-    @image_use = ImageUse.new
+    @image_use = ImageUse.new params[:image_use]
 
     respond_to do |format|
       format.html # new.html.erb
