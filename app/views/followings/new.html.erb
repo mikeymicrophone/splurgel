@@ -2,7 +2,14 @@
 
 <% form_for(@following) do |f| %>
   <%= f.error_messages %>
-
+  <% if @following.follower_id %>
+    <%= f.hidden_field :follower_type %>
+    <%= f.hidden_field :follower_id %>
+  <% elsif @following.follower_type %>
+    <%= f.hidden_field :follower_type %>
+    <%= f.label :follower_id %>
+    <%= f.select :follower_id, @following.follower_type.constantize.send('map_name_and_id') %>
+  <% else %>
   <p>
     <%= f.label :follower_type %>
     <%= f.select :follower_type, [['me', 'User'], ['one of my groups', 'Group'], ['a store location', 'Location']] %>
@@ -12,13 +19,23 @@
     <%= f.label :follower_id %><br />
     <%= f.text_field :follower_id %>
   </p>
+  <% end %>
   <p>
-    <%= f.label :target_type %>
-    <%= f.select :target_type, ['User', 'Brand', 'Store', 'Location', 'Group', 'City', 'Product', 'Offering', 'Comment', 'Membership', 'Tag', 'Website'] %>
-  </p>
-  <p>
-    <%= f.label :target_id %><br />
-    <%= f.text_field :target_id %>
+  <% if @following.target_id %>
+    <%= f.hidden_field :follower_type %>
+    <%= f.hidden_field :follower_id %>
+  <% elsif @following.target_type %>
+    <%= f.hidden_field :follower_type %>
+    <%= f.label :follower_id %>
+    <%= f.select :follower_id, @following.target_type.constantize.send('map_name_and_id') %>
+  <% else %>
+      <%= f.label :target_type %>
+      <%= f.select :target_type, Following.targets %>
+    </p>
+    <p>
+      <%= f.label :target_id %><br />
+      <%= f.text_field :target_id %>
+  <% end %>
   </p>
   <p>
     <%= f.submit :inform %>

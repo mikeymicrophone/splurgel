@@ -31,6 +31,7 @@ class FollowingsController < ApplicationController
   end
 
   def create
+    params[:following][:follower_id] = current_user_id if params[:following] && params[:following][:follower_type] == 'User'
     @following = Following.new params[:following]
 
     respond_to do |format|

@@ -8,11 +8,9 @@
 
 <% for brand in @brands %>
   <tr>
-    <td><%=h brand.name %></td>
+    <td><%= link_to_name brand %></td>
     <td><%=h brand.phone %></td>
-    <td><%= link_to 'show', brand %></td>
-    <td><%= link_to 'edit', edit_brand_path(brand) %></td>
-    <td><%= link_to 'Destroy', brand, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= attach_image_link brand %></td>
   </tr>
 <% end %>
 </table>

@@ -15,6 +15,10 @@
   <% if @image_use.target_id %>
     <%= f.hidden_field :target_type %>
     <%= f.hidden_field :target_id %>
+  <% elsif @image_use.target_type %>
+    <%= f.hidden_field :target_type %>
+    <%= f.label :target_id %>
+    <%= f.select :target_id, @image_use.target_type.constantize.send('map_name_and_id') %>
   <% else %>
     <p>
       <%= f.label :target_type %><br />

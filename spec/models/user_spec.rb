@@ -11,12 +11,12 @@ describe User do
   describe 'retrieving followers' do
     before do
       @user = create_user
-      @sammy = create_user(:login => 'sammy', :email => 'halpert@gendle.com')
-      @sindacated = Group.create(:name => 'sindacated')
-      @simply = Location.create(:name => 'simple')
-      Following.create(:follower => @sammy, :target => @user)
-      Following.create(:follower => @sindacated, :target => @user)
-      Following.create(:follower => @simply, :target => @user)
+      @sammy = create_user :login => 'sammy', :email => 'halpert@gendle.com'
+      @sindacated = Group.create :name => 'sindacated'
+      @simply = Location.create :name => 'simple'
+      Following.create :follower => @sammy, :target => @user
+      Following.create :follower => @sindacated, :target => @user
+      Following.create :follower => @simply, :target => @user
     end
     
     it 'should be able to find its followers' do
