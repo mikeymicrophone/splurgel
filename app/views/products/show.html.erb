@@ -1,6 +1,6 @@
   <%=h @product.name %><br>
   <%= link_to_name @product.brand %><br>
-
+  <%= attach_image_link product %>
 <%= link_to 'edit', edit_product_path(@product) %> |
 <%= link_to 'products', products_path %>
 <%= link_to_backup %>

@@ -1,19 +1,13 @@
 <h1>websites</h1>
 
 <table>
-  <tr>
-    <th>Href</th>
-    <th>Name</th>
-    <th>User</th>
-  </tr>
-
 <% for website in @websites %>
   <tr>
     <td><%= link_to website.name, website.href %></td>
-    <td><%= link_to website.user.name, website.user %></td>
+    <td><%= link_to_name website.user %></td>
     <td><%= link_to 'show', website %></td>
     <td><%= link_to 'edit', edit_website_path(website) %></td>
-    <td><%= link_to 'Destroy', website, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= attach_image_link website %></td>
   </tr>
 <% end %>
 </table>

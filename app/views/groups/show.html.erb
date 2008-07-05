@@ -2,6 +2,7 @@
 administered by  <%= link_to_name @group.administrator %><br><br>
 
   <%= @group.members.count %> members!<br>
+  <%= attach_image_link @group %>
 <%= link_to 'edit', edit_group_path(@group) %> |
 <%= link_to 'groups', groups_path %>
 <%= link_to_backup %>

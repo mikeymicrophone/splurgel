@@ -1,18 +1,12 @@
 <h1>cities</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>State</th>
-  </tr>
-
 <% for city in @cities %>
   <tr>
-    <td><%=h city.name %></td>
-    <td><%=h city.state_id %></td>
-    <td><%= link_to 'show', city %></td>
+    <td><%= link_to_name city %></td>
+    <td><%= link_to_name city.state %></td>
     <td><%= link_to 'edit', edit_city_path(city) %></td>
-    <td><%= link_to 'Destroy', city, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= attach_image_link city %></td>
   </tr>
 <% end %>
 </table>

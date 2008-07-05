@@ -8,4 +8,8 @@ class Comment < ActiveRecord::Base
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses, :source => :website, :conditions => "website_uses.target_type = 'Comment'"
   has_many :comments, :as => :target
+  
+  def name
+    user.name + '~' + created_at.strftime("%l%M %A %b %e")
+  end
 end

@@ -1,19 +1,13 @@
 <h1>groups</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Administrator</th>
-    <th>Group type</th>
-  </tr>
 
 <% for group in @groups %>
   <tr>
-    <td><%= link_to group.name, group %></td>
-    <td><%= link_to group.administrator.name, group.administrator %></td>
-    <td><%=h group.group_type %></td>
+    <td><%= link_to_name group %></td>
+    <td><%= link_to_name group.administrator %></td>
     <td><%= link_to 'edit', edit_group_path(group) %></td>
-    <td><%= link_to 'Destroy', group, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= attach_image_link group %></td>
   </tr>
 <% end %>
 </table>

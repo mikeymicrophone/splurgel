@@ -2,6 +2,8 @@
   <%=h @image.filename %>: 
   <%=h @image.height %>x
   <%=h @image.width %><br>
+  <%= attach_image_link @image %>/
+  <%= attach_image_link nil, @image %>
 
 <%= link_to 'edit', edit_image_path(@image) %> |
 <%= link_to 'images', images_path %>

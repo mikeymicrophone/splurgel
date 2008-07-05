@@ -1,17 +1,12 @@
 <h1>products</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Brand</th>
-  </tr>
-
 <% for product in @products %>
   <tr>
-    <td><%= link_to product.name, product %></td>
-    <td><%= link_to product.brand.name, product.brand %></td>
+    <td><%= link_to_name product %></td>
+    <td><%= link_to_name product.brand %></td>
     <td><%= link_to 'edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= attach_image_link product %></td>
   </tr>
 <% end %>
 </table>

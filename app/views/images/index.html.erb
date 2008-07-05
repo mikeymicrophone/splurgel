@@ -22,7 +22,7 @@
     <td><%=h image.thumbnail %></td>
     <td><%= link_to 'show', image %></td>
     <td><%= link_to 'edit', edit_image_path(image) %></td>
-    <td><%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= attach_image_link image %><%= attach_image_link nil, image %></td>
   </tr>
 <% end %>
 </table>

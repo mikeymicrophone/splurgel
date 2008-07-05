@@ -1,19 +1,13 @@
 <h1>networks</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>City</th>
-    <th>State</th>
-  </tr>
-
 <% for network in @networks %>
   <tr>
-    <td><%= link_to network.name, network %></td>
-    <td><%= link_to network.city.name, network.city %></td>
-    <td><%= link_to network.state.name, network.state %></td>
+    <td><%= link_to_name network %></td>
+    <td><%= link_to_name network.city %></td>
+    <td><%= link_to_name network.state %></td>
     <td><%= link_to 'edit', edit_network_path(network) %></td>
-    <td><%= link_to 'Destroy', network, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= attach_image_link network %></td>
   </tr>
 <% end %>
 </table>

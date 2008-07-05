@@ -1,5 +1,5 @@
 <%=h @state.name %><br>
-
+<%= attach_image_link @state %>
 <% @state.cities.each do |c| %>
   <%= link_to_name c %> --~~-- 
 <% end %><br>

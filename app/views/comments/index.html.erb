@@ -18,7 +18,7 @@
     <td><%=h comment.target_id %></td>
     <td><%= link_to 'show', comment %></td>
     <td><%= link_to 'edit', edit_comment_path(comment) %></td>
-    <td><%= link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= attach_image_link comment %></td>
   </tr>
 <% end %>
 </table>

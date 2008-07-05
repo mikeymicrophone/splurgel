@@ -2,17 +2,16 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Administrator</th>
-    <th>Primary image</th>
+    <th></th>
+    <th>administrator</th>
   </tr>
 
 <% for store in @stores %>
   <tr>
-    <td><%= link_to store.name, store %></td>
-    <td><%= link_to store.administrator.name, store.administrator %></td>
+    <td><%= link_to_name store %></td>
+    <td><%= link_to_name store.administrator %></td>
     <td><%= link_to 'edit', edit_store_path(store) %></td>
-    <td><%= link_to 'Destroy', store, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= attach_image_link store %></td>
   </tr>
 <% end %>
 </table>
