@@ -4,18 +4,18 @@ module ApplicationHelper
     details = {:image_use => {}}
     text = 'paste'
     if img
-      text += ' ' + img.name
+      text += ' ' + (img.name || 'image ' + img.id.to_s)
       details[:image_use].merge!({:image_id => img.id})
     else
       text += ' an image'
     end
     
-    if obj
+    if obj && !obj.nil?
       if obj.is_a?(String) || obj.is_a?(Class)
         text += ' to a ' + obj.to_s.downcase
         details[:image_use].merge!({:target_type => obj.to_s})
       elsif obj.kind_of?(ActiveRecord::Base)
-        text += ' to ' + obj.name
+        text += ' to ' + (obj.name || obj.class.name.downcase + ' ' + obj.id.to_s)
         details[:image_use].merge!({:target_type => obj.class.name, :target_id => obj.id})
       end
     else
