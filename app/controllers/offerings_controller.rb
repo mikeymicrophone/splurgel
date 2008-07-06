@@ -18,7 +18,7 @@ class OfferingsController < ApplicationController
   end
 
   def new
-    @offering = Offering.new
+    @offering = Offering.new params[:offering]
 
     respond_to do |format|
       format.html # new.html.erb

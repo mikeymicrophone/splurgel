@@ -9,6 +9,7 @@ class Address < ActiveRecord::Base
   has_many :taggings, :as => :target
   has_many :tags, :through => :taggings, :source => :tag, :conditions => "taggings.target_type = 'Address'"
   has_many :comments, :as => :target
+  serialize :primary_photos, Array
   
   def display
     address = ''

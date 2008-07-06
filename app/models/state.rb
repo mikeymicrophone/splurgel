@@ -6,4 +6,5 @@ class State < ActiveRecord::Base
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses, :source => :website, :conditions => "website_uses.target_type = 'State'"
   has_many :comments, :as => :target
+  serialize :primary_photos, Array
 end

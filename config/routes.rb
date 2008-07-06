@@ -19,7 +19,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :websites
 
-  map.resources :image_uses
+  map.resources :image_uses, :member => {:prioritize => :post}
 
   map.resources :images
 

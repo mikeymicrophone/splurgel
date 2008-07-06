@@ -3,8 +3,8 @@
   <%= ' by ' if @listing.product && @listing.brand %><%= link_to_name @listing.brand %>
   <%= ' at ' if @listing.store && (@listing.product || @listing.brand) %>
   <%= link_to_name @listing.store %> to his/her 
-  <%= {1 => 'want', 2 => 'have', 3 => 'like'}[@listing.list_type] %> list 
-  <%= time_ago_in_words @listing.create_at %><br>
+  <%= {1 => 'like', 2 => 'want', 3 => 'have'}[@listing.list_type] %> list 
+  <%= time_ago_in_words @listing.created_at %><br>
   
 <% else %>
   yo! listing private.

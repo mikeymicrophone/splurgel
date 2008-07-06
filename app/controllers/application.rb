@@ -36,6 +36,10 @@ end
 
 class ActiveRecord::Base
   
+  def add_primary_photo img
+    self.primary_photos.push(img.kind_of?(ActiveRecord::Base) ? img.id : img) && save if img && respond_to?(:primary_photos)
+  end
+  
   def current_user
     ActiveRecord::Base.instance_variable_get('@current_user')
   end

@@ -10,4 +10,5 @@ class City < ActiveRecord::Base
   has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'City' and followings.follower_type = 'User'"
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'City' and followings.follower_type = 'Group'"
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'City' and followings.follower_type = 'Location'"
+  serialize :primary_photos, Array
 end

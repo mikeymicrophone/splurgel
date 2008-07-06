@@ -5,7 +5,7 @@
 
   <p>
     <%= f.label :list_type %><br />
-    <%= f.select :list_type, [['want', 1], ['have', 2], ['like', 3]] %>
+    <%= f.select :list_type, Listing.list_types %>
   </p>
   <p>
     <%= f.label :product_id %><br />

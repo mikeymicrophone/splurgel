@@ -14,7 +14,7 @@
     <td><%= link_to 'here', image_use.target %></td>
     <td><%= link_to 'show', image_use %></td>
     <td><%= link_to 'edit', edit_image_use_path(image_use) %></td>
-    <td><%= link_to 'Destroy', image_use, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'make primary', prioritize_image_use_path(image_use), :method => :post, :id => dom_id(image_use) unless image_use.primary? %></td>
   </tr>
 <% end %>
 </table>

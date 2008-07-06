@@ -1,7 +1,9 @@
   <%=h @product.name %><br>
   <%= link_to_name @product.brand %><br>
   <%= attach_image_link @product %><br>
-  <%= render :partial => 'tags/tag_form', :locals => {:obj => @product} %>
+  <%= render :partial => 'tags/tag_form', :locals => {:obj => @product} %><br>
+  <%= lists @product %>
+  <%= link_to 'offer this product', new_offering_path(:offering => {:product_id => @product.id}) %>
 <%= link_to 'edit', edit_product_path(@product) %> |
 <%= link_to 'products', products_path %>
 <%= link_to_backup %>

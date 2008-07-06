@@ -53,4 +53,11 @@ module ApplicationHelper
     link_to_function 'backitup', 'history.go(-1)'
   end
   
+  def lists obj
+    obj_type = {Product => :product_id, Brand => :brand_id, Store => :store_id}[obj.class]
+    %w[ like have want ].map do |list|
+      link_to list, listings_path(:listing => {obj_type => obj, :list_type => Listing.list_types[list]}), :method => :post
+    end.join(' / ')
+  end
+  
 end

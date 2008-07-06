@@ -3,10 +3,15 @@
 <% form_for(@offering) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :product_id %><br />
-    <%= f.select :product_id, Product.map_name_and_id %>
-  </p>
+  <% if @offering.product %>
+    <%= f.hidden_field :product_id %>
+  <% else %>
+    <p>
+      <%= f.label :product_id %><br />
+      <%= f.select :product_id, Product.map_name_and_id %>
+      <%= link_to 'add new product', new_product_path %>
+    </p>
+  <% end %>
   <p>
     <%= f.label :location_id %><br />
     <%= f.select :location_id, Location.map_name_and_id %>

@@ -10,4 +10,8 @@ class ImageUse < ActiveRecord::Base
   def self.targets
     ['Address', 'Brand', 'City', 'Comment', 'Group', 'Listing', 'Location', 'Offering', 'Product', 'State', 'Store', 'Tagging', 'User', 'Website']
   end
+  
+  def primary?
+    target && target.respond_to?(:primary_photos) && target.primary_photos && target.primary_photos.include?(id)
+  end
 end

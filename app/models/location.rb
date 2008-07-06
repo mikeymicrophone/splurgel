@@ -11,7 +11,8 @@ class Location < ActiveRecord::Base
   has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Location' and followings.follower_type = 'User'", :as => :target
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Location' and followings.follower_type = 'Group'", :as => :target
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Location' and followings.follower_type = 'Location'", :as => :target
-  
+  serialize :primary_photos, Array
+    
   def name
     nm = ''
     nm += store.name if store

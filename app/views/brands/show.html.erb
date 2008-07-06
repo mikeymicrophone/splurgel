@@ -2,7 +2,8 @@
   <%=h @brand.name %>
   <%=h @brand.phone %><br>
   <%= attach_image_link @brand %>
-  <%= @brand.products.count %> products
+  <%= @brand.products.count %> products<br>
+  <%= lists @brand %>
 
 
 <%= link_to 'edit', edit_brand_path(@brand) %> |

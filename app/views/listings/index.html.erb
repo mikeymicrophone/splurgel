@@ -2,25 +2,25 @@
 
 <table>
   <tr>
-    <th>List type</th>
-    <th>Product</th>
-    <th>Brand</th>
-    <th>Store</th>
-    <th>User</th>
-    <th>Private</th>
+    <th>list type</th>
+    <th>product</th>
+    <th>brand</th>
+    <th>store</th>
+    <th></th>
+    <th>private</th>
   </tr>
 
 <% for listing in @listings %>
   <tr>
-    <td><%=h listing.list_type %></td>
-    <td><%= link_to listing.product.name, listing.product %></td>
-    <td><%= link_to listing.brand.name, listing.brand %></td>
-    <td><%= link_to listing.store.name, listing.store %></td>
-    <td><%= link_to listing.user.name, listing.user %></td>
-    <td><%=h listing.private %></td>
+    <td><%= {1 => 'like', 2 => 'want', 3 => 'have'}[listing.list_type] %></td>
+    <td><%= link_to_name listing.product %></td>
+    <td><%= link_to_name listing.brand %></td>
+    <td><%= link_to_name listing.store %></td>
+    <td><%= link_to_name listing.user %></td>
+    <td><%=h listing.private? %></td>
     <td><%= link_to 'show', listing %></td>
     <td><%= link_to 'edit', edit_listing_path(listing) %></td>
-    <td><%= link_to 'Destroy', listing, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td></td>
   </tr>
 <% end %>
 </table>
