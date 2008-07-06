@@ -28,5 +28,9 @@ class Tag < ActiveRecord::Base
   has_many :users, :through => :taggings, :source => :user, :conditions => "taggings.target_type = 'User'"
   has_many :websites, :through => :taggings, :source => :website, :conditions => "taggings.target_type = 'Website'"
   has_many :website_uses, :through => :taggings, :source => :website_use, :conditions => "taggings.target_type = 'Website_use'"
+  has_many :followings, :as => :target
+  has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Tag' and followings.follower_type = 'User'"
+  has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Tag' and followings.follower_type = 'Group'"
+  has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Tag' and followings.follower_type = 'Location'"
   
 end

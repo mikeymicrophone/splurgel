@@ -7,6 +7,7 @@ class Offering < ActiveRecord::Base
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses, :source => :website, :conditions => "website_uses.target_type = 'Offering'"
   has_many :comments, :as => :target
+  has_many :followings, :as => :target
   has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Offering' and followings.follower_type = 'User'", :as => :target
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Offering' and followings.follower_type = 'Group'", :as => :target
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Offering' and followings.follower_type = 'Location'", :as => :target

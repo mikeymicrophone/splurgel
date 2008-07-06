@@ -14,7 +14,7 @@ describe User do
       @sammy = create_user :login => 'sammy', :email => 'halpert@gendle.com'
       @sindacated = Group.create :name => 'sindacated'
       @simply = Location.create :name => 'simple'
-      Following.create :follower => @sammy, :target => @user
+      Following.create :follower => @sammy, :target => @user, :user => @sammy
       Following.create :follower => @sindacated, :target => @user
       Following.create :follower => @simply, :target => @user
     end
@@ -22,16 +22,19 @@ describe User do
     it 'should be able to find its followers' do
       @user.followers.should_not be_nil
       @user.followers.first.should be_kind_of(User)
+      @user.followers.first.should == @sammy
     end
     
     it 'should be able to find its following groups' do
       @user.follower_groups.should_not be_nil
       @user.follower_groups.first.should be_kind_of(Group)
+      @user.follower_groups.first.should == @sindacated
     end
     
     it 'should be able to find its following locations' do
       @user.follower_locations.should_not be_nil
       @user.follower_locations.first.should be_kind_of(Location)
+      @user.follower_locations.first.should == @simply
     end
   end
 

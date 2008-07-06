@@ -35,6 +35,9 @@ class TagsController < ApplicationController
 
     respond_to do |format|
       if @tag.save
+        if params[:tagging]
+          Tagging.create(:target_id => params[:tagging][:target_id], :target_type => params[:tagging][:target_type], :tag_id => @tag.id)
+        end
         flash[:notice] = 'Tag was successfully created.'
         format.html { redirect_to @tag }
         format.xml  { render :xml => @tag, :status => :created, :location => @tag }
