@@ -6,4 +6,8 @@ class ImageUse < ActiveRecord::Base
   has_many :taggings, :as => :target
   has_many :tags, :through => :taggings, :source => :tag, :conditions => "taggings.target_type = 'ImageUse'"
   has_many :comments, :as => :target
+  
+  def self.targets
+    ['Address', 'Brand', 'City', 'Comment', 'Group', 'Listing', 'Location', 'Offering', 'Product', 'State', 'Store', 'Tagging', 'User', 'Website']
+  end
 end

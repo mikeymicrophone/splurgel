@@ -22,7 +22,7 @@
   <% else %>
     <p>
       <%= f.label :target_type %><br />
-      <%= f.text_field :target_type %>
+      <%= f.select :target_type, ImageUse.targets %>
     </p>
     <p>
       <%= f.label :target_id %><br />

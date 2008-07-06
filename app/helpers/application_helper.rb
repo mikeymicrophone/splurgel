@@ -21,7 +21,6 @@ module ApplicationHelper
     else
       text += ' to something'
     end
-    debugger
     if details.length == 3
       link_to(text, images_path(details), :method => :post)
     else    
@@ -53,4 +52,5 @@ module ApplicationHelper
   def link_to_backup
     link_to_function 'backitup', 'history.go(-1)'
   end
+  
 end

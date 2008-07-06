@@ -22,6 +22,7 @@ class ApplicationController < ActionController::Base
       if user.respond_to?(:user)
         user.user_id
       else
+        'miningus' # won't match any user, I thought false might match an unlogged in user although I believe it's :false
         # put custom behavior for certain models here
       end
     end

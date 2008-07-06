@@ -11,10 +11,10 @@
   <tr>
     <td><%=h tagging.tag.name %></td>
     <td><%=h tagging.target_type %></td>
-    <td><%= link_to 'here' tagging.target %></td>
+    <td><%= link_to_name tagging.target, 'tag_name' %></td>
     <td><%= link_to 'show', tagging %></td>
     <td><%= link_to 'edit', edit_tagging_path(tagging) %></td>
-    <td><%= link_to 'Destroy', tagging, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= attach_image_link tagging %></td>
   </tr>
 <% end %>
 </table>

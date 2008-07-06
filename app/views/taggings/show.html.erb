@@ -1,4 +1,4 @@
-<%= link_to_name @tagging.target %>  [<%=h @tagging.target_type %>] was tagged with <%=h @tagging.tag %><br>
+<%= link_to_name @tagging.target %>  [<%=h @tagging.target_type %>] was tagged with <%= link_to_name @tagging.tag %><br>
 
 <%= link_to 'edit', edit_tagging_path(@tagging) %> |
 <%= link_to 'taggings', taggings_path %>

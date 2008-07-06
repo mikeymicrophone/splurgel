@@ -1,6 +1,6 @@
 class Tag < ActiveRecord::Base
   has_many :taggings
-  has_many :particular_taggings, :class_name => 'Tagging', :as => :target
+  has_many :particular_taggings, :class_name => 'Tagging', :as => :target # test me
   has_many :tags, :through => :particular_taggings, :source => :tag, :conditions => "taggings.target_type = 'Tag'"
   has_many :comments, :as => :target
   has_many :addresses, :through => :taggings, :source => :address, :conditions => "taggings.target_type = 'Address'"
@@ -33,4 +33,9 @@ class Tag < ActiveRecord::Base
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Tag' and followings.follower_type = 'Group'"
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Tag' and followings.follower_type = 'Location'"
   
+  def targets
+    addresses + address_uses + brands + cities + comments + followings + groups + images + image_uses +
+    listings + locations + memberships + messages + networks + network_memberships + offerings + prices + products +
+    purchases + schedules + states + stores + users + websites + website_uses    
+  end
 end
