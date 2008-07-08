@@ -1,18 +1,14 @@
 <h1>memberships keep track of who is in which groups</h1>
 
 <table>
-  <tr>
-    <th>Group</th>
-    <th>User</th>
-  </tr>
 
 <% for membership in @memberships %>
   <tr>
-    <td><%= link_to membership.group.name, membership.group %></td>
-    <td><%= link_to membership.user.name, membership.user %></td>
+    <td><%= link_to_name membership.user %></td>
+    <td>is a member of <%= link_to_name membership.group %></td>  
     <td><%= link_to 'show', membership %></td>
-    <td><%= link_to 'edit', edit_membership_path(membership) %></td>
-    <td><%= link_to 'Destroy', membership, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'edit', edit_membership_path(membership) if membership.user == current_user %></td>
+    <td><%= link_to 'members of this group', group_memberships_path(membership.group) %></td>
   </tr>
 <% end %>
 </table>

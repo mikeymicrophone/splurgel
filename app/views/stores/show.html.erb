@@ -1,11 +1,13 @@
-<%=h @store.name %>  administered by <%= link_to_name, @store.administrator %><br>
-<%= image_tag @store.primary_image.public_filename  if @store.primary_image %><br>
+<%=h @store.name %>  administered by <%= link_to_name @store.administrator %><br>
+<%= image_tag @store.primary_photo.public_filename  if @store.primary_photo %><br>
 <%= attach_image_link @store %><br>
-<%= lists @stores %>
+<%= lists @stores %><hr>
 
 <% @store.locations.each do |l| %>
-  <%= link_to l.street + ' ' + l.city, l %><br>
+  <%= link_to l.address.street + ' ' + l.address.city.name, l %><br>
 <% end %>
+<%= link_to 'add a location', new_store_location_path(@store) %><br>
+<%= link_to 'locations', store_locations_path(@store) %>
 
 <%= link_to 'edit', edit_store_path(@store) %> |
 <%= link_to 'stores', stores_path %>

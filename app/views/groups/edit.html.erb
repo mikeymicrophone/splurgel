@@ -4,19 +4,18 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
   <p>
     <%= f.label :administrator_id %><br />
-    <%= f.text_field :administrator_id %>
+    <%= f.select :administrator_id, User.map_name_and_id %>
   </p>
   <p>
     <%= f.label :group_type %><br />
-    <%= f.text_field :group_type %>
+    <%= f.select :group_type, [['open - splurgers can join', 1], ['public - only you add splurgers', 2], ['private - invite only', 3], ['personal - for your use and your eyes', 4]] %>
   </p>
   <p>
-    <%= f.submit "Update" %>
+    <%= f.submit :regroup %>
   </p>
 <% end %>
 

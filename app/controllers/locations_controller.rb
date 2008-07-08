@@ -1,6 +1,10 @@
 class LocationsController < ApplicationController
   def index
-    @locations = Location.find :all
+    @locations = if params[:store_id]
+      Store.find(params[:store_id]).locations
+    else
+      Location.find :all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,7 +22,7 @@ class LocationsController < ApplicationController
   end
 
   def new
-    @location = Location.new
+    @location = Location.new(:store_id => params[:store_id])
 
     respond_to do |format|
       format.html # new.html.erb

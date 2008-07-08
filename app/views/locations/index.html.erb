@@ -22,4 +22,4 @@
 
 <br />
 
-<%= link_to 'new location', new_location_path %>
+<%= link_to 'new location', (params[:store_id] ? new_store_location_path(params[:store_id]) : new_location_path) %>

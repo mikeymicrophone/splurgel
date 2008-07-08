@@ -1,6 +1,10 @@
 class TaggingsController < ApplicationController
   def index
-    @taggings = Tagging.find :all
+    @taggings = if params[:tag_id]
+      Tag.find(params[:tag_id]).taggings
+    else
+      Tagging.find :all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

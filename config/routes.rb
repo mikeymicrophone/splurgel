@@ -35,15 +35,21 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :taggings
 
-  map.resources :tags
+  map.resources :tags do |tag|
+    tag.resources :taggings
+  end
 
   map.resources :memberships
 
-  map.resources :groups
+  map.resources :groups do |group|
+    group.resources :memberships
+  end
 
   map.resources :listings
 
-  map.resources :schedules
+  map.resources :schedules do |schedule|
+    schedule.resources :locations
+  end
 
   map.resources :prices
 
@@ -59,7 +65,9 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :states
 
-  map.resources :stores
+  map.resources :stores do |store|
+    store.resources :locations
+  end
     
   map.resources :users
 

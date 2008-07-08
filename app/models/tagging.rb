@@ -36,6 +36,7 @@ class Tagging < ActiveRecord::Base
   has_many :websites, :through => :website_uses
   has_many :comments, :as => :target
   serialize :primary_photos, Array
+  belongs_to :user
   
   def self.apply_to(target_type, target_id, tag_id)
     find_by_tag_id_and_target_id_and_target_type(tag_id, target_id, target_type) || create(:tag_id => tag_id, :target_id => target_id, :target_type => target_type)

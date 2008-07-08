@@ -1,6 +1,6 @@
-  <%=h @tag.name %><br>
+  <h1><%=h @tag.name %></h1>
 
-  <%= @tag.targets.map { |t| link_to_name t }.join(':::::') %>
+  <%= @tag.targets.map { |t| link_to_name t }.join(':::::') %><br>
 
 <%= link_to 'edit', edit_tag_path(@tag) %> |
 <%= link_to 'tags', tags_path %>

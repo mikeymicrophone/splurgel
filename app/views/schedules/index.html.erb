@@ -2,29 +2,30 @@
 
 <table>
   <tr>
-    <th>Sunday open</th>
-    <th>Sunday close</th>
-    <th>Monday open</th>
-    <th>Monday close</th>
-    <th>Tuesday open</th>
-    <th>Tuesday close</th>
-    <th>Wednesday open</th>
-    <th>Wednesday close</th>
-    <th>Thursday open</th>
-    <th>Thursday close</th>
-    <th>Friday open</th>
-    <th>Friday close</th>
-    <th>Saturday open</th>
-    <th>Saturday close</th>
-    <th>Holidays</th>
+    <th>sun</th>
+    <th>mon</th>
+    <th>tues</th>
+    <th>wed</th>
+    <th>thurs</th>
+    <th>fri</th>
+    <th>sat</th>
+    <th>holidays</th>
   </tr>
 
 <% for schedule in @schedules %>
+  <tr><%= schedule_view schedule %></tr>
   <tr>
-    <%= schedule_view schedule%>
+    <td><%= schedule.sunday_open.to_s + '-' + schedule.sunday_close.to_s %></td>
+    <td><%= schedule.monday_open.to_s + '-' + schedule.monday_close.to_s %></td>
+    <td><%= schedule.tuesday_open.to_s + '-' + schedule.tuesday_close.to_s %></td>
+    <td><%= schedule.wednesday_open.to_s + '-' + schedule.wednesday_close.to_s %></td>
+    <td><%= schedule.thursday_open.to_s + '-' + schedule.thursday_close.to_s %></td>
+    <td><%= schedule.friday_open.to_s + '-' + schedule.friday_close.to_s %></td>
+    <td><%= schedule.saturday_open.to_s + '-' + schedule.saturday_close.to_s %></td>
+    <td><%= schedule.holidays? ? '' : 'not ' %>open on holidays</td>
     <td><%= link_to 'show', schedule %></td>
     <td><%= link_to 'edit', edit_schedule_path(schedule) %></td>
-    <td><%= link_to 'Destroy', schedule, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'locations with this schedule', schedule_locations_path(schedule) %></td>
   </tr>
 <% end %>
 </table>

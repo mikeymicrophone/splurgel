@@ -12,6 +12,7 @@
     <td><%= link_to_name store.administrator %></td>
     <td><%= link_to 'edit', edit_store_path(store) %></td>
     <td><%= attach_image_link store %></td>
+    <td><%= link_to 'new branch', new_store_location_path(store) %></td>
   </tr>
 <% end %>
 </table>

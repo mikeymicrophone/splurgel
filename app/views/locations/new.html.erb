@@ -7,17 +7,24 @@
     <%= f.label :phone %><br />
     <%= f.text_field :phone, :size => 13 %>
   </p>
-  <p>
-    <%= f.label :store_id %><br />
-    <%= f.select :store_id, Store.map_name_and_id %>
-  </p>
+  <% if @location.store_id %>
+    <%= f.hidden_field :store_id %>
+  <% else %>
+    <p>
+      <%= f.label :store_id %><br />
+      <%= f.select :store_id, Store.map_name_and_id %>
+      <%= link_to 'new store', new_store_path%>
+    </p>
+  <% end %>
   <p>
     <%= f.label :schedule_id %><br />
-    <%= f.select :schedule_id, Schedule.map_name_and_id %>
+    <%= f.select :schedule_id, Schedule.map_name_and_id('display') %>
+    <%= link_to 'new schedule', new_schedule_path %>
   </p>
   <p>
     <%= f.label :address_id %><br />
     <%= f.select :address_id, Address.map_name_and_id('display') %>
+    <%= link_to 'new address', new_address_path %>
   </p>
   <p>
     <%= f.submit :locate %>

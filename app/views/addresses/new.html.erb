@@ -2,15 +2,6 @@
 
 <% form_for(@address) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :latitude %><br />
-    <%= f.text_field :latitude %>
-  </p>
-  <p>
-    <%= f.label :longitude %><br />
-    <%= f.text_field :longitude %>
-  </p>
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
@@ -29,11 +20,13 @@
   </p>
   <p>
     <%= f.label :city_id %><br />
-    <%= f.text_field :city_id %>
+    <%= f.select :city_id, City.map_name_and_id %>
+    <%= link_to 'new city', new_city_path %>
   </p>
   <p>
     <%= f.label :state_id %><br />
-    <%= f.text_field :state_id %>
+    <%= f.select :state_id, State.map_name_and_id %>
+    <%= link_to 'new state', new_state_path %>
   </p>
   <p>
     <%= f.label :zip %><br />

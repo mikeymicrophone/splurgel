@@ -1,17 +1,11 @@
 <h1>taggings keep track of which tags are on which objects</h1>
 
 <table>
-  <tr>
-    <th>Tag</th>
-    <th>Target type</th>
-    <th>Target</th>
-  </tr>
-
 <% for tagging in @taggings %>
   <tr>
-    <td><%=h tagging.tag.name %></td>
-    <td><%=h tagging.target_type %></td>
-    <td><%= link_to_name tagging.target, 'tag_name' %></td>
+    <td><%= link_to_name tagging.tag %></td>
+    <td>on <%= link_to_name tagging.target %></td>
+    <td>from <%= link_to_name tagging.user %></td>
     <td><%= link_to 'show', tagging %></td>
     <td><%= link_to 'edit', edit_tagging_path(tagging) %></td>
     <td><%= attach_image_link tagging %></td>
