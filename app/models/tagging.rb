@@ -26,8 +26,8 @@ class Tagging < ActiveRecord::Base
   belongs_to :schedule, :foreign_key => :target_id
   belongs_to :state, :foreign_key => :target_id
   belongs_to :store, :foreign_key => :target_id
-  belongs_to :tag, :foreign_key => :target_id
-  belongs_to :user, :foreign_key => :target_id
+  belongs_to :tagged_tag, :foreign_key => :target_id
+  belongs_to :tagged_user, :foreign_key => :target_id
   belongs_to :website, :foreign_key => :target_id
   belongs_to :website_use, :foreign_key => :target_id
   has_many :taggings, :as => :target
@@ -36,6 +36,10 @@ class Tagging < ActiveRecord::Base
   has_many :websites, :through => :website_uses
   has_many :comments, :as => :target
   serialize :primary_photos, Array
+  
+  def self.apply_to(target_type, target_id, tag_id)
+    find_by_tag_id_and_target_id_and_target_type(tag_id, target_id, target_type) || create(:tag_id => tag_id, :target_id => target_id, :target_type => target_type)
+  end
   
   def tag_name
     tag.name

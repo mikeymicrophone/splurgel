@@ -1,9 +1,9 @@
 <% form_for Tag.new do |f| %>
-<% @tagging = Tagging.new(:target => obj)%>
   <%= f.text_field :name %>
   <% if obj && obj.kind_of?(ActiveRecord::Base) %>
+    <% @tagging = Tagging.new(:target => obj) %>
     <%= hidden_field :tagging, :target_type %>
     <%= hidden_field :tagging, :target_id %>
   <% end %>
-  <%= f.submit 'tag' %>
+  <%= f.submit 'tags separated by commas' %>
 <% end %>

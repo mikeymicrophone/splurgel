@@ -80,4 +80,7 @@ module ApplicationHelper
     end
   end
   
+  def tags_on obj
+    obj.tags.map { |t| link_to_name t }
+  end  
 end

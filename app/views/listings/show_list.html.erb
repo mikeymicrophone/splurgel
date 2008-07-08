@@ -1,8 +1,14 @@
+<%= list_links User.find(params[:id]) %>
 <ul>
   <%= @listed_items.length %>
   <% @listed_items.each do |i| %>
     <% content_tag_for :li, i do %>
-      <%= link_to_name i %>
+      <%= link_to_name i.product %>
+      <%= link_to_name i.brand %>
+      <%= link_to_name i.store %>
+      <%= lists i.product if i.product %>
+      <%= lists i.brand + '[' + i.brand.name + ']' if i.brand %>
+      <%= lists i.store + '[' + i.store.name + ']' if i.store %>
     <% end %>
   <% end %>
 </ul>
