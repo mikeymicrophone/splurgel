@@ -89,6 +89,6 @@ module ApplicationHelper
   end
   
   def display_comment comment
-    link_to_name(comment.user) + content_tag(:p, comment.body)
+    comment.body + link_to_name(comment.user) + '<br>'
   end
 end

@@ -31,15 +31,16 @@ class TagsController < ApplicationController
   end
 
   def create
+    taggings = []
     params[:tag][:name].split(',').each do |t|
       @tag = Tag.find_or_create_by_name t.strip
-      Tagging.apply_to(params[:tagging][:target_type], params[:tagging][:target_id], @tag.id)    if params[:tagging]
+      taggings << Tagging.apply_to(params[:tagging][:target_type], params[:tagging][:target_id], @tag.id)    if params[:tagging]
     end
 
     respond_to do |format|
       if @tag.valid?
         flash[:notice] = 'Tag was successfully created.'
-        format.html { redirect_to @tag }
+        format.html { render :partial => 'taggings/tagging', :collection => taggings }
         format.xml  { render :xml => @tag, :status => :created, :location => @tag }
       else
         format.html { render :action => "new" }

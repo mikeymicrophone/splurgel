@@ -1,4 +1,5 @@
-<% form_for Comment.new do |f| %>
+<div id="<%= dom_id(obj, 'comments_on') %>"><%= comments_on obj %></div>
+<% form_remote_for Comment.new, :update => dom_id(obj, 'comments_on'), :position => :bottom, :loading => "$('comment_body').clear()" do |f| %>
   <%= f.text_field :body %>
   <% if obj && obj.kind_of?(ActiveRecord::Base) %>
     <%= f.hidden_field :target_type, :value => obj.class.name %>

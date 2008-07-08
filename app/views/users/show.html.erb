@@ -1,8 +1,6 @@
 <%= @user.login %><br><br>
 <%= @user.listings.count %> items on lists<br>
-<%= attach_image_link @user %>
+<%= attach_image_link @user %><br>
 <%= list_links @user %><br>
-<%= tags_on @user %>
 <%= render :partial => 'tags/tag_form', :locals => {:obj => @user} %>
-<%= comments_on @user %>
 <%= render :partial => 'comments/comment_form', :locals => {:obj => @user} %>

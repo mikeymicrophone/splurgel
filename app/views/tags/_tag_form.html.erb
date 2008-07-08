@@ -1,4 +1,5 @@
-<% form_for Tag.new do |f| %>
+<div id="<%= dom_id(obj, 'tags_on') %>"><%= tags_on obj %></div>
+<% form_remote_for Tag.new, :update => dom_id(obj, 'tags_on'), :position => :bottom, :loading => "$('tag_name').clear()" do |f| %>
   <%= f.text_field :name %>
   <% if obj && obj.kind_of?(ActiveRecord::Base) %>
     <% @tagging = Tagging.new(:target => obj) %>
