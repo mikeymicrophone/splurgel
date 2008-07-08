@@ -1,30 +1,16 @@
 <h1>listings keep track of which items are on have and want and like lists</h1>
 
-<table>
-  <tr>
-    <th>list type</th>
-    <th>product</th>
-    <th>brand</th>
-    <th>store</th>
-    <th></th>
-    <th>private</th>
-  </tr>
-
 <% for listing in @listings %>
-  <tr>
-    <td><%= {1 => 'like', 2 => 'want', 3 => 'have'}[listing.list_type] %></td>
-    <td><%= link_to_name listing.product %></td>
-    <td><%= link_to_name listing.brand %></td>
-    <td><%= link_to_name listing.store %></td>
-    <td><%= link_to_name listing.user %></td>
-    <td><%=h listing.private? %></td>
-    <td><%= link_to 'show', listing %></td>
-    <td><%= link_to 'edit', edit_listing_path(listing) %></td>
-    <td></td>
-  </tr>
+  <% unless listing.private? %>
+    <%= link_to_name listing.user %>
+    <%= {1 => 'likes', 2 => 'wants', 3 => 'has'}[listing.list_type] %>
+    <%= link_to_name listing.product %>
+    <%= link_to_name listing.brand %>
+    <%= link_to_name listing.store %>
+    <%= link_to 'show', listing %>
+    <%= link_to 'edit', edit_listing_path(listing) if listing.user == current_user %>
+  <% end %>
 <% end %>
-</table>
-
-<br />
+<br>
 
 <%= link_to 'new listing', new_listing_path %>

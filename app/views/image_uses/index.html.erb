@@ -1,17 +1,11 @@
 <h1>image_uses keep track of what images are used for</h1>
 
 <table>
-  <tr>
-    <th>Image</th>
-    <th>Target type</th>
-    <th>Target</th>
-  </tr>
-
 <% for image_use in @image_uses %>
   <tr>
-    <td><%= link_to image_use.image.filename, image_use.image %></td>
+    <td><%= link_to_name image_use.image, 'filename' %></td>
     <td><%=h image_use.target_type %></td>
-    <td><%= link_to 'here', image_use.target %></td>
+    <td><%= link_to_name image_use.target %></td>
     <td><%= link_to 'show', image_use %></td>
     <td><%= link_to 'edit', edit_image_use_path(image_use) %></td>
     <td><%= link_to 'make primary', prioritize_image_use_path(image_use), :method => :post, :id => dom_id(image_use) unless image_use.primary? %></td>

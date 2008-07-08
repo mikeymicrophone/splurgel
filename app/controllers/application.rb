@@ -36,6 +36,16 @@ end
 
 class ActiveRecord::Base
   
+  def primary_photo
+    if respond_to?(:primary_photos) && primary_photos && primary_photos.not_blank?
+      Image.find( primary_photos[ rand( primary_photos.length ) ] )
+    elsif respond_to?(:images) && images && images.not_blank?
+      images[rand(images.length)]
+    else
+      nil
+    end
+  end
+  
   def add_primary_photo img
     self.primary_photos.push(img.kind_of?(ActiveRecord::Base) ? img.id : img) && save if img && respond_to?(:primary_photos)
   end
@@ -73,5 +83,9 @@ class Array
     else
       map { |e| [e.send(method), e.id] }
     end
+  end
+  
+  def not_blank?
+    !blank?
   end
 end

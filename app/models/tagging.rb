@@ -31,9 +31,9 @@ class Tagging < ActiveRecord::Base
   belongs_to :website, :foreign_key => :target_id
   belongs_to :website_use, :foreign_key => :target_id
   has_many :taggings, :as => :target
-  has_many :tags, :through => :taggings, :source => :tag, :conditions => "taggings.target_type = 'Tagging'"
+  has_many :tags, :through => :taggings
   has_many :website_uses, :as => :target
-  has_many :websites, :through => :website_uses, :source => :website, :conditions => "website_uses.target_type = 'Tagging'"
+  has_many :websites, :through => :website_uses
   has_many :comments, :as => :target
   serialize :primary_photos, Array
   

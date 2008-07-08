@@ -1,4 +1,9 @@
 class ListingsController < ApplicationController
+  def show_list
+    @listed_items = Listing.all :conditions => {:user_id => params[:id], :list_type => params[:list_type]}
+    @listed_items.reject &:private?
+  end
+  
   def index
     @listings = Listing.find :all
 

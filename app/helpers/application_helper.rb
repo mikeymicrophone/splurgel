@@ -60,4 +60,24 @@ module ApplicationHelper
     end.join(' / ')
   end
   
+  def list_links usr
+    link_to("#{usr.login}'s like list", like_list_path(usr), :class => 'list') +
+    link_to("#{usr.login}'s want list", want_list_path(usr), :class => 'list') +
+    link_to("#{usr.login}'s have list", have_list_path(usr), :class => 'list')
+  end
+  
+  def primary_image obj, size = '45x55'
+    image_tag obj.primary_photo.public_filename, :alt => obj.name, :size => size if obj.primary_photo
+  end
+  
+  def login_stuff
+    if logged_in?
+      profile_link + 
+      link_to('log out', logout_path)
+    else
+      link_to('log in', login_path) + 
+      link_to('sign up', signup_path)
+    end
+  end
+  
 end

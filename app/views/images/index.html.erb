@@ -1,31 +1,15 @@
 <h1>images</h1>
 
-<table>
-  <tr>
-    <th>Size</th>
-    <th>Content type</th>
-    <th>Filename</th>
-    <th>Height</th>
-    <th>Width</th>
-    <th>Parent</th>
-    <th>Thumbnail</th>
-  </tr>
-
 <% for image in @images %>
-  <tr>
-    <td><%=h image.size %></td>
-    <td><%=h image.content_type %></td>
-    <td><%=h image.filename %></td>
-    <td><%=h image.height %></td>
-    <td><%=h image.width %></td>
-    <td><%=h image.parent_id %></td>
-    <td><%=h image.thumbnail %></td>
-    <td><%= link_to 'show', image %></td>
-    <td><%= link_to 'edit', edit_image_path(image) %></td>
-    <td><%= attach_image_link image %><%= attach_image_link nil, image %></td>
-  </tr>
+  <% content_tag_for :div, image do %>
+    <% if image.content_type =~ /image/ %>
+      <%= image_tag image.public_filename %>
+    <% end %>
+    <%= link_to 'show', image %>
+    <%= link_to 'edit', edit_image_path(image) %>
+    <%= attach_image_link image %><%= attach_image_link nil, image %>
+  <% end %>
 <% end %>
-</table>
 
 <br />
 

@@ -4,7 +4,7 @@
     <%= javascript_include_tag :defaults %>
   </head>
   <body>
-    <%= profile_link if logged_in? %><br>
+    <%= login_stuff %><br>
     <% [%w[address_uses addresses brands cities comments credit_cards], %w[followings groups image_uses images listings locations], %w[ memberships messages network_memberships networks offerings prices products], %w[ purchases schedules states stores taggings tags users website_uses websites]].each do |set| %>
       <% set.each do |resource| %>
         [<%= link_to resource, "/#{resource}" %> <%= link_to '(cr8)', "/#{resource}/new" %>]

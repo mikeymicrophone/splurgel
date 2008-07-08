@@ -1,16 +1,15 @@
 <h1>products</h1>
 
-<table>
-<% for product in @products %>
-  <tr>
-    <td><%= link_to_name product %></td>
-    <td><%= link_to_name product.brand %></td>
-    <td><%= link_to 'edit', edit_product_path(product) %></td>
-    <td><%= attach_image_link product %></td>
-  </tr>
+<% @products.each do |product| %>
+  <% content_tag_for :div, product do %>
+    <%= primary_image product %>
+    <%= link_to_name product %>
+    <%= link_to_name product.brand %>
+    <%= link_to 'edit', edit_product_path(product) %>
+    <%= attach_image_link product %>
+  <% end %>
 <% end %>
-</table>
 
-<br />
+<br>
 
 <%= link_to 'new product', new_product_path %>

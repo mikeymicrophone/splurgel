@@ -7,7 +7,7 @@ class Address < ActiveRecord::Base
   # has_many :locations, :through => :address_uses, :source => :locations, :conditions => "address_uses.target_type = 'Location'"
   has_many :stores, :through => :address_uses, :source => :stores, :conditions => "address_uses.target_type = 'Store'"
   has_many :taggings, :as => :target
-  has_many :tags, :through => :taggings, :source => :tag, :conditions => "taggings.target_type = 'Address'"
+  has_many :tags, :through => :taggings
   has_many :comments, :as => :target
   serialize :primary_photos, Array
   

@@ -15,9 +15,9 @@ class Image < ActiveRecord::Base
   has_many :users, :through => :image_uses, :source => :user, :conditions => "image_uses.target_type = 'User'"
   has_many :websites, :through => :image_uses, :source => :website, :conditions => "image_uses.target_type = 'Website'"
   has_many :taggings, :as => :target
-  has_many :tags, :through => :taggings, :source => :tag, :conditions => "taggings.target_type = 'Image'"
+  has_many :tags, :through => :taggings
   has_many :website_uses, :as => :target
-  has_many :websites, :through => :website_uses, :source => :website, :conditions => "website_uses.target_type = 'Image'"
+  has_many :websites, :through => :website_uses
   has_many :comments, :as => :target
   
   has_attachment :storage => :s3

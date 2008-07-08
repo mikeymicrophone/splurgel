@@ -1,0 +1,8 @@
+<ul>
+  <%= @listed_items.length %>
+  <% @listed_items.each do |i| %>
+    <% content_tag_for :li, i do %>
+      <%= link_to_name i %>
+    <% end %>
+  <% end %>
+</ul>

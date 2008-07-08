@@ -3,7 +3,7 @@ class Store < ActiveRecord::Base
   has_many :address_uses, :as => :target
   has_many :addresses, :through => :address_uses, :source => :address, :conditions => "address_uses.target_type = 'Store'"
   has_many :taggings, :as => :target
-  has_many :tags, :through => :taggings, :source => :tag, :conditions => "taggings.target_type = 'Store'"
+  has_many :tags, :through => :taggings
   has_many :comments, :as => :target
   has_many :offerings, :through => :locations
   has_many :followings, :as => :target

@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.like_list '/users/:id/list/like', :controller => 'listings', :action => 'show_list', :list_type => '1'
+  map.want_list '/users/:id/list/want', :controller => 'listings', :action => 'show_list', :list_type => '2'
+  map.have_list '/users/:id/list/have', :controller => 'listings', :action => 'show_list', :list_type => '3'
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  map.login '/login', :controller => 'sessions', :action => 'new'
+  map.register '/register', :controller => 'users', :action => 'create'
+  map.signup '/signup', :controller => 'users', :action => 'new'
+  
   map.resources :address_uses
 
   map.resources :network_memberships
@@ -52,11 +60,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :states
 
   map.resources :stores
-
-  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
-  map.login '/login', :controller => 'sessions', :action => 'new'
-  map.register '/register', :controller => 'users', :action => 'create'
-  map.signup '/signup', :controller => 'users', :action => 'new'
+    
   map.resources :users
 
   map.resource :session

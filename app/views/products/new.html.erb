@@ -10,6 +10,7 @@
   <p>
     <%= f.label :brand_id %><br />
     <%= f.select :brand_id, Brand.map_name_and_id %>
+    <%= link_to 'add a brand', new_brand_path %>
   </p>
   <p>
     <%= f.submit :'ready for consumption' %>
