@@ -82,5 +82,13 @@ module ApplicationHelper
   
   def tags_on obj
     obj.tags.map { |t| link_to_name t }
-  end  
+  end
+  
+  def comments_on obj
+    obj.comments.map { |c| display_comment c }
+  end
+  
+  def display_comment comment
+    link_to_name(comment.user) + content_tag(:p, comment.body)
+  end
 end

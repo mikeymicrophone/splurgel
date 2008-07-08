@@ -1,7 +1,7 @@
 <%= link_to_name @comment.user %> said<br>
 <%=h @comment.body %><br>
 about  <%=h @comment.target_type.downcase %>  <%= link_to_name @comment.target %><br>
-<%= 'it was a reply to' + link_to_name @comment.reply if comment.reply %>
+<%= 'it was a reply to' + link_to_name(@comment.reply) if @comment.reply %>
   
 <%= attach_image_link @comment %>
 <%= link_to 'edit', edit_comment_path(@comment) %> |

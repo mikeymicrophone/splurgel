@@ -1,5 +1,6 @@
 class Comment < ActiveRecord::Base
   belongs_to :user
+  belongs_to :reply, :class_name => 'Comment'
   belongs_to :target, :polymorphic => true
   # address, address_use, brand, city, comment, credit_card, following, group, image, image_use, listing, location, membership, message
   # network, network_membership, offering, price, product, purchase, schedule, state, store, tag, tagging, user, website, website_use

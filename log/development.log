@@ -22025,3 +22025,741 @@ Rendering users/show
   [4;35;1mTag Columns (0.003308)[0m   [0mSHOW FIELDS FROM `tags`[0m
 Rendered tags/_tag_form (0.00570)
 Completed in 0.19336 (5 reqs/sec) | Rendering: 0.07066 (36%) | DB: 0.02420 (12%) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2008-07-08 00:14:29) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGQ5MmI1Yjg1ZGMzZDhmYjVhNzM1OGZkYWI4NTdl
+YTM6DHVzZXJfaWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA==--63e0379a63678ef855bfd087cfb151dcc7eba5ea
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Columns (0.005955)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.002237)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.001671)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mListing Columns (0.005062)[0m   [0mSHOW FIELDS FROM `listings`[0m
+  [4;36;1mSQL (0.000780)[0m   [0;1mSELECT count(*) AS count_all FROM `listings` WHERE (`listings`.user_id = 1) [0m
+  [4;35;1mTagging Columns (0.004123)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+  [4;36;1mTag Load (0.000958)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.target_id = 1) AND (`taggings`.target_type = 'User')) [0m
+  [4;35;1mTag Columns (0.003340)[0m   [0mSHOW FIELDS FROM `tags`[0m
+Rendered tags/_tag_form (0.00599)
+  [4;36;1mComment Load (0.038546)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.target_id = 1 AND `comments`.target_type = 'User') [0m
+Completed in 0.38365 (2 reqs/sec) | Rendering: 0.09565 (24%) | DB: 0.06895 (17%) | 200 OK [http://localhost/users/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2008-07-08 00:16:55) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGQ5MmI1Yjg1ZGMzZDhmYjVhNzM1OGZkYWI4NTdl
+YTM6DHVzZXJfaWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--6f6ec6bf02deedd9df0f5099f25267ed03f4cc3c
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Columns (0.005996)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.002266)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.001783)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mListing Columns (0.004417)[0m   [0;1mSHOW FIELDS FROM `listings`[0m
+  [4;35;1mSQL (0.000571)[0m   [0mSELECT count(*) AS count_all FROM `listings` WHERE (`listings`.user_id = 1) [0m
+  [4;36;1mTagging Columns (0.004328)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mTag Load (0.000970)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.target_id = 1) AND (`taggings`.target_type = 'User')) [0m
+  [4;36;1mTag Columns (0.003752)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+Rendered tags/_tag_form (0.00463)
+  [4;35;1mComment Load (0.001006)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.target_id = 1 AND `comments`.target_type = 'User') [0m
+  [4;36;1mComment Columns (0.002725)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered comments/_comment_form (0.00624)
+Completed in 0.36025 (2 reqs/sec) | Rendering: 0.09651 (26%) | DB: 0.15999 (44%) | 200 OK [http://localhost/users/1]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2008-07-08 00:17:03) [POST]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGQ5MmI1Yjg1ZGMzZDhmYjVhNzM1OGZkYWI4NTdl
+YTM6DHVzZXJfaWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA==--63e0379a63678ef855bfd087cfb151dcc7eba5ea
+  Parameters: {"commit"=>"that is what I think", "action"=>"create", "authenticity_token"=>"32ebac00ab3c6958cd20f0f19b1506660dc5c13d", "controller"=>"comments", "comment"=>{"target_id"=>"1", "body"=>"holy camole", "target_type"=>"User"}}
+  [4;35;1mUser Columns (0.005515)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.002198)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mComment Columns (0.004576)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.000273)[0m   [0;1mBEGIN[0m
+  [4;35;1mComment Create (0.000435)[0m   [0mINSERT INTO `comments` (`updated_at`, `primary_photos`, `body`, `target_id`, `user_id`, `target_type`, `reply_id`, `created_at`) VALUES('2008-07-08 04:17:03', NULL, 'holy camole', 1, 1, 'User', NULL, '2008-07-08 04:17:03')[0m
+  [4;36;1mSQL (0.000965)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/comments/1
+Completed in 0.16716 (5 reqs/sec) | DB: 0.01568 (9%) | 302 Found [http://localhost/comments]
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2008-07-08 00:17:03) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGQ5MmI1Yjg1ZGMzZDhmYjVhNzM1OGZkYWI4NTdl
+YTM6DHVzZXJfaWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiJkNvbW1lbnQg
+d2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVkLgY6CkB1c2VkewY7CUY=--039daecd2a04bdd4645e9a883684fc3b067b7097
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"comments"}
+  [4;35;1mUser Columns (0.005329)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.096957)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mComment Columns (0.004623)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mComment Load (0.001615)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering comments/show
+ERROR: compiling _run_erb_47app47views47comments47show46html46erb RAISED compile error
+/Users/mschwab/projects/spl/app/views/comments/show.html.erb:4: syntax error, unexpected tIVAR, expecting kDO or '{' or '('
+_erbout.concat(( 'it was a reply to' + link_to_name @comment.reply if comment.reply ).to_s); _erbout.concat "\n"
+                                                            ^
+Function body: def _run_erb_47app47views47comments47show46html46erb(local_assigns)
+_erbout = ''; _erbout.concat(( link_to_name @comment.user ).to_s); _erbout.concat " said<br>\n"
+_erbout.concat((h @comment.body ).to_s); _erbout.concat "<br>\n"
+_erbout.concat "about  "; _erbout.concat((h @comment.target_type.downcase ).to_s); _erbout.concat "  "; _erbout.concat(( link_to_name @comment.target ).to_s); _erbout.concat "<br>\n"
+_erbout.concat(( 'it was a reply to' + link_to_name @comment.reply if comment.reply ).to_s); _erbout.concat "\n"
+_erbout.concat "  \n"
+_erbout.concat(( attach_image_link @comment ).to_s); _erbout.concat "\n"
+_erbout.concat(( link_to 'edit', edit_comment_path(@comment) ).to_s); _erbout.concat " |\n"
+_erbout.concat(( link_to 'comments', comments_path ).to_s); _erbout.concat "\n"
+_erbout.concat(( link_to_backup ).to_s); _erbout.concat "\n"
+_erbout
+end
+Backtrace: /Users/mschwab/projects/spl/app/views/comments/show.html.erb:11:in `compile_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:55:in `prepare!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:34:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:22:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:245:in `render_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1108:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:865:in `render_with_no_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:880:in `render_with_no_layout'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb:251:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `custom'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `each'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `respond'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/mschwab/projects/spl/app/controllers/comments_controller.rb:14:in `show'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+/Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+/Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+script/server:3
+
+
+ActionView::TemplateError (compile error
+/Users/mschwab/projects/spl/app/views/comments/show.html.erb:4: syntax error, unexpected tIVAR, expecting kDO or '{' or '('
+_erbout.concat(( 'it was a reply to' + link_to_name @comment.reply if comment.reply ).to_s); _erbout.concat "\n"
+                                                            ^) on line #4 of comments/show.html.erb:
+1: <%= link_to_name @comment.user %> said<br>
+2: <%=h @comment.body %><br>
+3: about  <%=h @comment.target_type.downcase %>  <%= link_to_name @comment.target %><br>
+4: <%= 'it was a reply to' + link_to_name @comment.reply if comment.reply %>
+5:   
+6: <%= attach_image_link @comment %>
+7: <%= link_to 'edit', edit_comment_path(@comment) %> |
+
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/app/views/comments/show.html.erb&line=11'>app/views/comments/show.html.erb:11:in `compile_template'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb&line=55'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:55:in `prepare!'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb&line=34'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:34:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb&line=22'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:22:in `render_template'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=245'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:245:in `render_file'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1108'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1108:in `render_for_file'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=865'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:865:in `render_with_no_layout'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=880'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:880:in `render_with_no_layout'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb&line=251'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb:251:in `render_without_benchmark'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=51'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb&line=8'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb:8:in `realtime'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=51'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=131'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=131'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `custom'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=160'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `call'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=160'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `respond'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=154'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `each'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=154'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `respond'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=107'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:107:in `respond_to'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/app/controllers/comments_controller.rb&line=14'>app/controllers/comments_controller.rb:14:in `show'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1162'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1162'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=580'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=573'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=68'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb&line=293'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=68'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb&line=201'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb&line=13'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb&line=33'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb&line=8'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb&line=12'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=529'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=529'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=569'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb&line=130'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=389'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=149'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=107'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=104'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=104'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=120'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=35'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=76'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:76:in `process'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=74'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `synchronize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=74'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `process'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=159'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=158'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=158'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=282'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails&line=128'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb&line=212'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=354'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb&line=64'>/Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=509'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=354'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=509'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb&line=39'>/Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/script/server&line=3'>script/server:3</a>
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2008-07-08 00:17:34) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGQ5MmI1Yjg1ZGMzZDhmYjVhNzM1OGZkYWI4NTdl
+YTM6DHVzZXJfaWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiJkNvbW1lbnQgd2FzIHN1Y2Nlc3Nm
+dWxseSBjcmVhdGVkLgY6CkB1c2VkewY7CFQ6DnJldHVybl90bzA=--20031b8a5b0db5f58b9346cafad3b7852cb4d8f9
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"comments"}
+  [4;35;1mUser Columns (0.006046)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.002484)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mComment Columns (0.004306)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mComment Load (0.001317)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.002192)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+ActionView::TemplateError (undefined local variable or method `comment' for #<ActionView::Base:0x1e80c14>) on line #4 of comments/show.html.erb:
+1: <%= link_to_name @comment.user %> said<br>
+2: <%=h @comment.body %><br>
+3: about  <%=h @comment.target_type.downcase %>  <%= link_to_name @comment.target %><br>
+4: <%= 'it was a reply to' + link_to_name(@comment.reply) if comment.reply %>
+5:   
+6: <%= attach_image_link @comment %>
+7: <%= link_to 'edit', edit_comment_path(@comment) %> |
+
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/app/views/comments/show.html.erb&line=4'>app/views/comments/show.html.erb:4:in `_run_erb_47app47views47comments47show46html46erb'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=338'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:338:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=338'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:338:in `execute'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb&line=29'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb:29:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb&line=29'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb:29:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb&line=35'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:35:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb&line=22'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:22:in `render_template'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=245'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:245:in `render_file'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1108'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1108:in `render_for_file'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=865'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:865:in `render_with_no_layout'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=880'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:880:in `render_with_no_layout'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb&line=251'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb:251:in `render_without_benchmark'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=51'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb&line=8'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb:8:in `realtime'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=51'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=131'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=131'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `custom'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=160'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `call'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=160'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `respond'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=154'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `each'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=154'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `respond'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=107'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:107:in `respond_to'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/app/controllers/comments_controller.rb&line=14'>app/controllers/comments_controller.rb:14:in `show'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1162'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1162'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=580'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=573'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=68'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb&line=293'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=68'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb&line=201'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb&line=13'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb&line=33'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb&line=8'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb&line=12'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=529'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=529'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=569'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb&line=130'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=389'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=149'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=107'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=104'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=104'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=120'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=35'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=76'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:76:in `process'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=74'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `synchronize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=74'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `process'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=159'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=158'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=158'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=282'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails&line=128'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb&line=212'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=354'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb&line=64'>/Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=509'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=354'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=509'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb&line=39'>/Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/script/server&line=3'>script/server:3</a>
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2008-07-08 00:17:45) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGQ5MmI1Yjg1ZGMzZDhmYjVhNzM1OGZkYWI4NTdl
+YTM6DHVzZXJfaWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--6f6ec6bf02deedd9df0f5099f25267ed03f4cc3c
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"comments"}
+  [4;35;1mUser Columns (0.004038)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.003095)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mComment Columns (0.004723)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mComment Load (0.003047)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.001865)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+ActionView::TemplateError (undefined method `reply' for #<Comment:0x1e0da98>) on line #4 of comments/show.html.erb:
+1: <%= link_to_name @comment.user %> said<br>
+2: <%=h @comment.body %><br>
+3: about  <%=h @comment.target_type.downcase %>  <%= link_to_name @comment.target %><br>
+4: <%= 'it was a reply to' + link_to_name(@comment.reply) if @comment.reply %>
+5:   
+6: <%= attach_image_link @comment %>
+7: <%= link_to 'edit', edit_comment_path(@comment) %> |
+
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/attribute_methods.rb&line=256'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/attribute_methods.rb:256:in `method_missing'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/app/views/comments/show.html.erb&line=4'>app/views/comments/show.html.erb:4:in `_run_erb_47app47views47comments47show46html46erb'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=338'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:338:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=338'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:338:in `execute'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb&line=29'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb:29:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb&line=29'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb:29:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb&line=35'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:35:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb&line=22'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:22:in `render_template'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=245'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:245:in `render_file'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1108'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1108:in `render_for_file'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=865'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:865:in `render_with_no_layout'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=880'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:880:in `render_with_no_layout'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb&line=251'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb:251:in `render_without_benchmark'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=51'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb&line=8'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb:8:in `realtime'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=51'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=131'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=131'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `custom'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=160'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `call'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=160'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `respond'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=154'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `each'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=154'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `respond'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=107'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:107:in `respond_to'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/app/controllers/comments_controller.rb&line=14'>app/controllers/comments_controller.rb:14:in `show'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1162'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1162'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=580'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=573'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=68'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb&line=293'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=68'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb&line=201'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb&line=13'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb&line=33'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb&line=8'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb&line=12'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=529'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=529'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=569'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb&line=130'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=389'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=149'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=107'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=104'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=104'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=120'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=35'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=76'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:76:in `process'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=74'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `synchronize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=74'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `process'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=159'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=158'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=158'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=282'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails&line=128'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb&line=212'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=354'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb&line=64'>/Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=509'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=354'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=509'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb&line=39'>/Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/script/server&line=3'>script/server:3</a>
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2008-07-08 00:18:08) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGQ5MmI1Yjg1ZGMzZDhmYjVhNzM1OGZkYWI4NTdl
+YTM6DHVzZXJfaWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA==--63e0379a63678ef855bfd087cfb151dcc7eba5ea
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"comments"}
+  [4;35;1mUser Columns (0.006019)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.002282)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mComment Columns (0.004602)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mComment Load (0.001541)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.002019)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+ActionView::TemplateError (uninitialized constant Comment::Reply) on line #4 of comments/show.html.erb:
+1: <%= link_to_name @comment.user %> said<br>
+2: <%=h @comment.body %><br>
+3: about  <%=h @comment.target_type.downcase %>  <%= link_to_name @comment.target %><br>
+4: <%= 'it was a reply to' + link_to_name(@comment.reply) if @comment.reply %>
+5:   
+6: <%= attach_image_link @comment %>
+7: <%= link_to 'edit', edit_comment_path(@comment) %> |
+
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=492'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:492:in `const_missing'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/base.rb&line=1909'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/base.rb:1909:in `compute_type'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/reflection.rb&line=129'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/reflection.rb:129:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/reflection.rb&line=129'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/reflection.rb:129:in `klass'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/belongs_to_association.rb&line=44'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/belongs_to_association.rb:44:in `find_target'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb&line=196'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb:196:in `load_target'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb&line=99'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb:99:in `reload'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations.rb&line=1084'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations.rb:1084:in `reply'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/app/views/comments/show.html.erb&line=4'>app/views/comments/show.html.erb:4:in `_run_erb_47app47views47comments47show46html46erb'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=338'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:338:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=338'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:338:in `execute'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb&line=29'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb:29:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb&line=29'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb:29:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb&line=35'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:35:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb&line=22'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:22:in `render_template'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=245'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:245:in `render_file'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1108'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1108:in `render_for_file'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=865'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:865:in `render_with_no_layout'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=880'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:880:in `render_with_no_layout'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb&line=251'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb:251:in `render_without_benchmark'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=51'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb&line=8'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb:8:in `realtime'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=51'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=131'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=131'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:131:in `custom'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=160'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `call'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=160'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:160:in `respond'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=154'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `each'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=154'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:154:in `respond'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb&line=107'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/mime_responds.rb:107:in `respond_to'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/app/controllers/comments_controller.rb&line=14'>app/controllers/comments_controller.rb:14:in `show'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1162'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1162'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1162:in `perform_action_without_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=580'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=573'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=68'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb&line=293'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=68'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb&line=201'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb&line=13'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb&line=33'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb&line=8'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb&line=12'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=529'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=529'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=569'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb&line=130'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=389'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=149'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=107'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=104'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=104'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=120'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=35'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=76'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:76:in `process'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=74'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `synchronize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=74'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `process'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=159'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=158'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=158'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=282'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails&line=128'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb&line=212'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=354'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb&line=64'>/Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=509'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=354'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=509'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb&line=39'>/Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/script/server&line=3'>script/server:3</a>
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CommentsController#show (for 127.0.0.1 at 2008-07-08 00:18:26) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGQ5MmI1Yjg1ZGMzZDhmYjVhNzM1OGZkYWI4NTdl
+YTM6DHVzZXJfaWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--6f6ec6bf02deedd9df0f5099f25267ed03f4cc3c
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"comments"}
+  [4;35;1mUser Columns (0.005781)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.002393)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mComment Columns (0.004047)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mComment Load (0.001292)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering comments/show
+  [4;35;1mUser Load (0.001973)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Completed in 0.17336 (5 reqs/sec) | Rendering: 0.10642 (61%) | DB: 0.02276 (13%) | 200 OK [http://localhost/comments/1]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2008-07-08 00:18:30) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGQ5MmI1Yjg1ZGMzZDhmYjVhNzM1OGZkYWI4NTdl
+YTM6DHVzZXJfaWRpBiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxh
+c2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7ADoOcmV0dXJuX3RvMA==--63e0379a63678ef855bfd087cfb151dcc7eba5ea
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;35;1mUser Columns (0.005469)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.002545)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mUser Load (0.002352)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mListing Columns (0.004793)[0m   [0;1mSHOW FIELDS FROM `listings`[0m
+  [4;35;1mSQL (0.001458)[0m   [0mSELECT count(*) AS count_all FROM `listings` WHERE (`listings`.user_id = 1) [0m
+  [4;36;1mTagging Columns (0.004204)[0m   [0;1mSHOW FIELDS FROM `taggings`[0m
+  [4;35;1mTag Load (0.001014)[0m   [0mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.target_id = 1) AND (`taggings`.target_type = 'User')) [0m
+  [4;36;1mTag Columns (0.003034)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+Rendered tags/_tag_form (0.00587)
+  [4;35;1mComment Load (0.001431)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.target_id = 1 AND `comments`.target_type = 'User') [0m
+  [4;36;1mComment Columns (0.003290)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mCACHE (0.000000)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+
+
+ActionView::TemplateError (undefined method `+' for #<User:0x20006c0>) on line #7 of users/show.html.erb:
+4: <%= list_links @user %><br>
+5: <%= tags_on @user %>
+6: <%= render :partial => 'tags/tag_form', :locals => {:obj => @user} %>
+7: <%= comments_on @user %>
+8: <%= render :partial => 'comments/comment_form', :locals => {:obj => @user} %>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/attribute_methods.rb&line=256'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/attribute_methods.rb:256:in `method_missing'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb&line=177'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb:177:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb&line=177'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb:177:in `method_missing'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/app/helpers/application_helper.rb&line=92'>app/helpers/application_helper.rb:92:in `display_comment'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/app/helpers/application_helper.rb&line=88'>app/helpers/application_helper.rb:88:in `comments_on'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_collection.rb&line=274'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_collection.rb:274:in `method_missing'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb&line=175'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb:175:in `method_missing'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb&line=175'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb:175:in `map'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb&line=175'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb:175:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb&line=175'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_proxy.rb:175:in `method_missing'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_collection.rb&line=274'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/associations/association_collection.rb:274:in `method_missing'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/app/helpers/application_helper.rb&line=88'>app/helpers/application_helper.rb:88:in `comments_on'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/app/views/users/show.html.erb&line=7'>app/views/users/show.html.erb:7:in `_run_erb_47app47views47users47show46html46erb'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=338'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:338:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=338'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:338:in `execute'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb&line=29'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb:29:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb&line=29'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template_handlers/compilable.rb:29:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb&line=35'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:35:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb&line=22'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/template.rb:22:in `render_template'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb&line=245'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_view/base.rb:245:in `render_file'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1108'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1108:in `render_for_file'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=841'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:841:in `render_with_no_layout'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb&line=251'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/layout.rb:251:in `render_without_benchmark'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=51'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb&line=8'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/core_ext/benchmark.rb:8:in `realtime'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=51'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:51:in `render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1157'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1157:in `default_render'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=1163'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:1163:in `perform_action_without_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=580'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:580:in `call_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=573'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:573:in `perform_action_without_benchmark'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=68'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb&line=293'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb&line=68'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb&line=201'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb&line=13'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb&line=33'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb&line=8'>/Library/Ruby/Gems/1.8/gems/activerecord-2.1.0/lib/active_record/query_cache.rb:8:in `cache'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb&line=12'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=529'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `send'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=529'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:529:in `process_without_filters'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb&line=569'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/filters.rb:569:in `process_without_session_management_support'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb&line=130'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/session_management.rb:130:in `process'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb&line=389'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/base.rb:389:in `process'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=149'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:149:in `handle_request'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=107'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:107:in `dispatch'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=104'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=104'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=120'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb&line=35'>/Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=76'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:76:in `process'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=74'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `synchronize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb&line=74'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/rails.rb:74:in `process'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=159'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=158'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=158'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=285'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&line=268'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=282'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:282:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `each'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/configurator.rb:281:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails&line=128'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb&line=212'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel/command.rb:212:in `run'</a>
+    <a href='txmt://open?url=file:///System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails&line=281'>/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=354'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=502'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb&line=64'>/Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=509'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=354'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb&line=509'>/Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb&line=39'>/Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'</a>
+    <a href='txmt://open?url=file:///Library/Ruby/Site/1.8/rubygems/custom_require.rb&line=27'>/Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'</a>
+    <a href='txmt://open?url=file:///Users/mschwab/projects/spl/script/server&line=3'>script/server:3</a>
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#show (for 127.0.0.1 at 2008-07-08 00:18:55) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlMGQ5MmI1Yjg1ZGMzZDhmYjVhNzM1OGZkYWI4NTdl
+YTM6DHVzZXJfaWRpBjoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--6f6ec6bf02deedd9df0f5099f25267ed03f4cc3c
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"users"}
+  [4;36;1mUser Columns (0.028698)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.002435)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mUser Load (0.003102)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mListing Columns (0.004182)[0m   [0mSHOW FIELDS FROM `listings`[0m
+  [4;36;1mSQL (0.000551)[0m   [0;1mSELECT count(*) AS count_all FROM `listings` WHERE (`listings`.user_id = 1) [0m
+  [4;35;1mTagging Columns (0.003958)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+  [4;36;1mTag Load (0.001028)[0m   [0;1mSELECT `tags`.* FROM `tags` INNER JOIN taggings ON tags.id = taggings.tag_id WHERE ((`taggings`.target_id = 1) AND (`taggings`.target_type = 'User')) [0m
+  [4;35;1mTag Columns (0.003491)[0m   [0mSHOW FIELDS FROM `tags`[0m
+Rendered tags/_tag_form (0.00508)
+  [4;36;1mComment Load (0.001263)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.target_id = 1 AND `comments`.target_type = 'User') [0m
+  [4;35;1mComment Columns (0.004006)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mCACHE (0.000000)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered comments/_comment_form (0.00150)
+Completed in 0.29577 (3 reqs/sec) | Rendering: 0.10259 (34%) | DB: 0.08282 (28%) | 200 OK [http://localhost/users/1]
