@@ -1,5 +1,7 @@
 <h1>products</h1>
 
+<%= render :partial => 'shared/search_form', :locals => {:model => 'product'} %>
+
 <% @products.each do |product| %>
   <% content_tag_for :div, product do %>
     <%= primary_image product %>

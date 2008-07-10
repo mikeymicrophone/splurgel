@@ -72,6 +72,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
 
   map.resource :session
+  
+  map.connect 'search/:controller', :action => 'search', :method => :post
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

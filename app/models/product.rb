@@ -23,6 +23,8 @@ class Product < ActiveRecord::Base
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Product' and followings.follower_type = 'Location'"
   serialize :primary_photos, Array
 
+  acts_as_ferret :fields => [:name]
+
   def stores
     locations.map &:store
   end

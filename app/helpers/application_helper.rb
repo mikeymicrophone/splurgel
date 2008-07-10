@@ -91,4 +91,8 @@ module ApplicationHelper
   def display_comment comment
     comment.body + link_to_name(comment.user) + '<br>'
   end
+  
+  def search_box_for model
+    "<form action='/search/#{model.to_s.pluralize}' method='post'><input type='text' id='query' name='query'></form>"
+  end
 end
