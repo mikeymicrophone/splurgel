@@ -33,6 +33,8 @@ class Tag < ActiveRecord::Base
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Tag' and followings.follower_type = 'Group'"
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Tag' and followings.follower_type = 'Location'"
   
+  acts_as_ferret :fields => [:name]
+  
   def targets
     addresses + address_uses + brands + cities + comments + followings + groups + images + image_uses +
     listings + locations + memberships + messages + networks + network_memberships + offerings + prices + products +

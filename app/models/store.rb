@@ -13,6 +13,8 @@ class Store < ActiveRecord::Base
   belongs_to :administrator, :class_name => 'User', :foreign_key => :administrator_id
   serialize :primary_photos, Array
   
+  acts_as_ferret :fields => [:name]
+  
   def products
     offerings.map &:product
   end

@@ -10,6 +10,7 @@
         [<%= link_to resource, "/#{resource}" %> <%= link_to '(cr8)', "/#{resource}/new" %>]
       <% end %><br>
     <% end %>
+    <%= render :partial => 'shared/search_form', :locals => {:model => controller.controller_name} if searchable_models.include?(controller.controller_name) %>
     <%= yield %>
   </body>
 </html>

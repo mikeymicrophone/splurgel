@@ -1,10 +1,5 @@
 class ProductsController < ApplicationController
-  
-  def search
-    @results = Product.find_with_ferret(params[:query])
-    render :partial => '/shared/results'
-  end
-  
+    
   def index
     @products = Product.find :all
 

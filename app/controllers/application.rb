@@ -1,9 +1,18 @@
 class ApplicationController < ActionController::Base
   helper :all
   include AuthenticatedSystem
-  helper_method :logged_in?, :current_user?
+  helper_method :logged_in?, :current_user?, :searchable_models
   protect_from_forgery
   filter_parameter_logging :password
+  
+  def search
+    @results = params[:model].singularize.capitalize.constantize.send(:find_with_ferret, params[:query])
+    render :partial => 'shared/results'
+  end
+  
+  def searchable_models
+    %w!addresses brands cities comments groups images locations messages networks products stores tags users websites!
+  end
 
   def load_user_id_into_ar
     ActiveRecord::Base.instance_variable_set('@current_user', current_user) if logged_in?

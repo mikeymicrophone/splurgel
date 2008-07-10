@@ -10,6 +10,8 @@ class Address < ActiveRecord::Base
   has_many :tags, :through => :taggings
   has_many :comments, :as => :target
   serialize :primary_photos, Array
+
+  acts_as_ferret :fields => [:name, :alternate_names, :street, :street2]
   
   def display
     address = ''

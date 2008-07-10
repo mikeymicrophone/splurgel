@@ -10,4 +10,6 @@ class Network < ActiveRecord::Base
   has_many :comments, :as => :target
   belongs_to :city
   belongs_to :state
+  
+  acts_as_ferret :fields => [:name]
 end

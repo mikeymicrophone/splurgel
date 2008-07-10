@@ -8,6 +8,8 @@ class Message < ActiveRecord::Base
   has_many :comments, :as => :target
   belongs_to :reply, :class_name => 'Message'
   
+  acts_as_ferret :fields => [:body]
+  
   def first_sentence
     sentence = body[/([^\.]*)/]
     sentence[0..230]
