@@ -9,6 +9,8 @@
     <%= link_to_name listing.store %>
     <%= link_to 'show', listing %>
     <%= link_to 'edit', edit_listing_path(listing) if listing.user == current_user %>
+    <%= link_to 'make private', privatize_listing_path(listing) if listing.user == current_user && !listing.private? %>
+    <%= link_to 'go public', publicize_listing_path(listing) if listing.user == current_user && listing.private? %>
   <% end %>
 <% end %>
 <br>

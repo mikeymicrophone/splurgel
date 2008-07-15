@@ -1,2 +1,4 @@
 <%= comment.body %>
 <%= link_to_name comment.user %>
+<%= link_to_remote 'reply', :url => reply_to_comment_path(comment), :update => dom_id(comment, 'reply_to'), :method => :get %>
+<%= content_tag(:div, {}, :id => dom_id(comment, 'reply_to')) %>

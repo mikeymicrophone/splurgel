@@ -84,12 +84,16 @@ module ApplicationHelper
     obj.tags.map { |t| link_to_name t }
   end
   
-  def comments_on obj
-    obj.comments.map { |c| display_comment c }
+  def comments_on obj, depth = 1
+    content_tag(:div, obj.comments.map { |c| display_comment c, depth }.join, :id => dom_id(obj, 'comments_on'))
   end
   
-  def display_comment comment
-    comment.body + link_to_name(comment.user) + '<br>'
+  def display_comment comment, depth = 1, replies = true
+    %Q{<div class="comment #{'r'*depth}">} +
+    comment.id.to_s + comment.body + link_to_name(comment.user) + '<br>' +
+    link_to_remote('reply', :url => reply_to_comment_path(comment), :update => dom_id(comment, 'reply_to'), :method => :get, :loading => "insert_comment_holder(#{comment.id})") +
+    content_tag(:div, {}, :id => dom_id(comment, 'reply_to')) + '</div>' + 
+    (replies && comment.comments.not_empty? ? comments_on(comment, depth + 1) : '') + "\n"
   end
   
   def search_box_for model

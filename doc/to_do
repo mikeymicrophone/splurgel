@@ -6,9 +6,7 @@ paranoia # easy as hell
 cool index # photos are key
 partials
 mail # yeah
-comment display # generalize and parametrize
 website attachment
-tags
 bookmarks # gettin creativ
 to_param
 
@@ -19,3 +17,22 @@ address => lat/long
 
 description field for products
 sizes and styles field for products
+webrat stories
+named_scope
+
+descriptions - has_many :descriptions, has_one :primary_description
+
+comments need to display replies and reply button
+
+a cool way to make the comment reply box appear really fast would be to have it loaded already and hidden
+however doing that for each comment is a significant commitment up front
+so I could have a single comment box that would move into place and get informed about which comment it was targeting
+but then users would always have to submit one comment before starting another
+although I could override it to load a new form when the primary one wasn't submitted
+and I think I will to speed up the site once it becomes popular
+but for now I will just load the comment form by ajax
+
+
+preferences for the default privacy of events (like when you add an item to your want list) could be saved in the users table using acts_as_bitfield or acts_as_bytefield
+
+micro formats

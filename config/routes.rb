@@ -21,7 +21,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :messages
 
-  map.resources :comments
+  map.resources :comments, :member => {:reply_to => :get}
 
   map.resources :website_uses
 
@@ -45,7 +45,7 @@ ActionController::Routing::Routes.draw do |map|
     group.resources :memberships
   end
 
-  map.resources :listings
+  map.resources :listings, :member => {:publicize => :post, :privatize => :post}
 
   map.resources :schedules do |schedule|
     schedule.resources :locations

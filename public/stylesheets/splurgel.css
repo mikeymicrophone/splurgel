@@ -14,3 +14,19 @@ a#profile {
 	text-align: center;
 	font-size: 2em;
 }
+
+.r {
+	padding-left:10px;
+}
+
+.rr {
+	padding-left:20px;
+}
+
+.rrr {
+	padding-left:30px;
+}
+
+.rrrr {
+	padding-left:40px;
+}

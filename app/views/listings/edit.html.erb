@@ -5,30 +5,26 @@
 
   <p>
     <%= f.label :list_type %><br />
-    <%= f.text_field :list_type %>
+    <%= f.select :list_type, Listing.list_types %>
   </p>
   <p>
     <%= f.label :product_id %><br />
-    <%= f.text_field :product_id %>
+    <%= f.select :product_id, Product.map_name_and_id %>
   </p>
   <p>
     <%= f.label :brand_id %><br />
-    <%= f.text_field :brand_id %>
+    <%= f.select :brand_id, Brand.map_name_and_id %>
   </p>
   <p>
     <%= f.label :store_id %><br />
-    <%= f.text_field :store_id %>
+    <%= f.select :store_id, Store.map_name_and_id %>
   </p>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.label :private %>(only those in the selected group will see it)<br />
+    <%= f.select :private, Group.map_name_and_id.unshift(['public', nil]) %>
   </p>
   <p>
-    <%= f.label :private %><br />
-    <%= f.text_field :private %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "fix" %>
   </p>
 <% end %>
 

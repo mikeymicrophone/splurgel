@@ -1,4 +1,8 @@
 class CommentsController < ApplicationController
+  def reply_to
+    render :partial => 'comment_form', :locals => {:obj => Comment.find(params[:id])}
+  end
+  
   def index
     @comments = Comment.find :all
 

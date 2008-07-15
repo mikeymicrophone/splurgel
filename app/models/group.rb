@@ -15,4 +15,8 @@ class Group < ActiveRecord::Base
   serialize :primary_photos, Array
   
   acts_as_ferret :fields => [:name]
+  
+  def self.group_types
+    [['personal', 1], ['private', 2], ['unconsensual', 3], ['consensual', 4]]
+  end
 end

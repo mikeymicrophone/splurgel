@@ -97,4 +97,5 @@ class Array
   def not_blank?
     !blank?
   end
+  alias :not_empty? :not_blank?
 end

@@ -5,7 +5,11 @@ class ListingsController < ApplicationController
   end
   
   def index
-    @listings = Listing.find :all
+    @listings = if params[:user_id]
+      User.find(params[:user_id]).listings
+    else
+      Listing.find :all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

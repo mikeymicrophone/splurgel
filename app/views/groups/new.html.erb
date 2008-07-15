@@ -13,7 +13,7 @@
   </p>
   <p>
     <%= f.label :group_type %><br />
-    <%= f.select :group_type, [['personal', 1], ['private', 2], ['unconsensual', 3], ['consensual', 4]] %>
+    <%= f.select :group_type, Group.group_types %>
   </p>
   <p>
     <%= f.submit :gather %>
