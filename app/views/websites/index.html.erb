@@ -3,7 +3,7 @@
 <table>
 <% for website in @websites %>
   <tr>
-    <td><%= link_to website.name, website.href %></td>
+    <td><%= link_to_name website %></td>
     <td><%= link_to_name website.user %></td>
     <td><%= link_to 'show', website %></td>
     <td><%= link_to 'edit', edit_website_path(website) %></td>

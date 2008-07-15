@@ -36,7 +36,11 @@ module ApplicationHelper
     return '' if obj.nil?
     unless method
       if obj.respond_to?(:name)
-        link_to obj.name, obj, :class => "name #{obj.class.name.downcase}"
+        if obj.name.blank? && obj.is_a?(Website)
+          link_to obj.href, obj, :class => "name #{obj.class.name.downcase}"
+        else
+          link_to obj.name, obj, :class => "name #{obj.class.name.downcase}"
+        end
       else
         link_to 'here', obj, :class => obj.class.name.downcase
       end
@@ -89,8 +93,8 @@ module ApplicationHelper
   end
   
   def display_comment comment, depth = 1, replies = true
-    %Q{<div class="comment #{'r'*depth}">} +
-    comment.id.to_s + comment.body + link_to_name(comment.user) + '<br>' +
+    %Q{<div class="comment #{'r'*(depth-1)}">} +
+    comment.body + link_to_name(comment.user) + '<br>' +
     link_to_remote('reply', :url => reply_to_comment_path(comment), :update => dom_id(comment, 'reply_to'), :method => :get, :loading => "insert_comment_holder(#{comment.id})") +
     content_tag(:div, {}, :id => dom_id(comment, 'reply_to')) + '</div>' + 
     (replies && comment.comments.not_empty? ? comments_on(comment, depth + 1) : '') + "\n"

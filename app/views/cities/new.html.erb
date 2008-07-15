@@ -4,12 +4,11 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :state_id %><br />
     <%= f.select :state_id, State.map_name_and_id %>
+    <%= link_to 'new state', new_state_path %>
   </p>
   <p>
     <%= f.submit :identify %>

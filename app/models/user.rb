@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
   has_many :taggings, :as => :target
   has_many :tags, :through => :taggings
   has_many :website_uses, :as => :target
-  has_many :websites, :through => :website_uses
+  has_many :used_websites, :through => :website_uses
+  has_many :websites
   has_many :comments, :as => :target
   has_many :followings, :as => :target
   has_many :followers, :through => :followings, :source => :user, 

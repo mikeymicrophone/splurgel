@@ -1,4 +1,9 @@
 class WebsiteUsesController < ApplicationController
+  def use
+    @websites = current_user.websites
+    render :partial => 'websites', :locals => {:id => params[:id], :class_name => params[:class_name]}
+  end
+  
   def index
     @website_uses = WebsiteUse.find :all
 
@@ -31,6 +36,7 @@ class WebsiteUsesController < ApplicationController
   end
 
   def create
+    params[:website_use][:target_type].capitalize!
     @website_use = WebsiteUse.new params[:website_use]
 
     respond_to do |format|

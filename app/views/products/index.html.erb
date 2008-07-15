@@ -7,9 +7,10 @@
     <%= link_to_name product.brand %>
     <%= link_to 'edit', edit_product_path(product) %>
     <%= attach_image_link product %>
+    <%= link_to_remote 'attach site', :url => attach_site_path(product), :method => :get, :update => 'uses' %>
   <% end %>
 <% end %>
-
+<div id='uses'></div>
 <br>
 
 <%= link_to 'new product', new_product_path %>

@@ -81,6 +81,10 @@ class ActiveRecord::Base
     end
   end
   
+  def class_name
+    self.class.name.downcase
+  end
+  
   before_create :credit_creator
   
 end

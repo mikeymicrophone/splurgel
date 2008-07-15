@@ -36,3 +36,5 @@ but for now I will just load the comment form by ajax
 preferences for the default privacy of events (like when you add an item to your want list) could be saved in the users table using acts_as_bitfield or acts_as_bytefield
 
 micro formats
+
+better logic for who gets which websites in their websites partial (for making website_uses)

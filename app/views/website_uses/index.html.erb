@@ -10,11 +10,10 @@
 <% for website_use in @website_uses %>
   <tr>
     <td><%=h website_use.target_type %></td>
-    <td><%= link_to 'here', website_use.target %></td>
+    <td><%= link_to_name website_use.target %></td>
     <td><%=h website_use.website.name %></td>
     <td><%= link_to 'show', website_use %></td>
     <td><%= link_to 'edit', edit_website_use_path(website_use) %></td>
-    <td><%= link_to 'Destroy', website_use, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -8,3 +8,22 @@ function insert_comment_holder(id) {
 		Element.insert($('reply_to_comment_' + id), { before: container });
 	}
 }
+
+function site_chosen() {
+	if (multiple_sites_being_chosen) {
+		return true;
+	} else {
+	    $('websites').remove();
+	}
+}
+
+function multiple_sites_being_chosen(toggle) {
+	if (toggle) {
+		multiple_sites_being_chosen = false;
+		site_chosen();
+	} else {
+		multiple_sites_being_chosen = true;
+		$('multiple_sites_toggle').inner_html = 'x';
+	}
+}
+var multiple_sites_being_chosen = false;
