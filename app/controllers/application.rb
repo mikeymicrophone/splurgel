@@ -82,6 +82,7 @@ class ActiveRecord::Base
   end
   
   def class_name
+    debugger
     self.class.name.downcase
   end
   

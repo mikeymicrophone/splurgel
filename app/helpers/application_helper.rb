@@ -77,10 +77,10 @@ module ApplicationHelper
   def login_stuff
     if logged_in?
       profile_link + 
-      link_to('log out', logout_path)
+      link_to('log out?(no!)', logout_path, :class => 'login')
     else
-      link_to('log in', login_path) + 
-      link_to('sign up', signup_path)
+      link_to('log in!', login_path, :class => 'login') + 
+      link_to('sign up!', signup_path, :class => 'login')
     end
   end
   

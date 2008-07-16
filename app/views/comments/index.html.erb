@@ -12,10 +12,10 @@
 <% for comment in @comments %>
   <tr>
     <td><%=h comment.body %></td>
-    <td><%= link_to comment.user.name, comment.user %></td>
-    <td><%=h comment.reply.b %></td>
+    <td><%= link_to_name comment.user %></td>
+    <td><%= link_to_name comment.reply, 'body' %></td>
     <td><%=h comment.target_type %></td>
-    <td><%=h comment.target_id %></td>
+    <td><%= link_to_name comment.target %></td>
     <td><%= link_to 'show', comment %></td>
     <td><%= link_to 'edit', edit_comment_path(comment) %></td>
     <td><%= attach_image_link comment %></td>

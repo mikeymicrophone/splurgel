@@ -18,6 +18,6 @@ class Comment < ActiveRecord::Base
   acts_as_ferret :fields => [:body]
   
   def name
-    user.name + '~' + created_at.strftime("%l%M %A %b %e")
+    user.name + '~' + created_at.strftime("%l:%M %A %b %e")
   end
 end

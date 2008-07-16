@@ -1,3 +1,20 @@
+div#left_nav {
+	width: 140px;
+	background-color: #aa8844;
+	float:left;
+}
+
+.login {
+	float:right;
+}
+
+#splurgel_title {
+	font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+	font-variant: small-caps;
+	font-size: 4em;
+	color: #664400;
+}
+
 a {
 	color: #886622;
 	padding-right: 2px;
