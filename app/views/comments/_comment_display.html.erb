@@ -1,0 +1,4 @@
+<% div_for(obj, 'comments_on') do %>
+<%= comments_on obj %>
+<% end %>
+<%= render :partial => 'comments/comment_form', :locals => {:obj => obj} %>
