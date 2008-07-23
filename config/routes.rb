@@ -6,7 +6,7 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
-  map.attach_site '/use/:name/:id', :controller => 'website_uses', :action => 'use'
+  map.attach_site '/use/:class_name/:id', :controller => 'website_uses', :action => 'use'
   
   
   map.resources :address_uses

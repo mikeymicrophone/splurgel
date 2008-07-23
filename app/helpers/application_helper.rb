@@ -1,5 +1,9 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  def attach_site_path(obj)
+    super(:class_name => obj.class.name.downcase, :id => obj.to_param)
+  end
+  
   def attach_image_link(obj = nil, img = nil)
     details = {:image_use => {}}
     text = 'paste'

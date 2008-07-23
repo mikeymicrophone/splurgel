@@ -80,12 +80,7 @@ class ActiveRecord::Base
       all.map { |r| [r.send(method), r.id] }
     end
   end
-  
-  def class_name
-    debugger
-    self.class.name.downcase
-  end
-  
+    
   before_create :credit_creator
   
 end
