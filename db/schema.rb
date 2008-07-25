@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080706024535) do
+ActiveRecord::Schema.define(:version => 20080725055636) do
 
   create_table "address_uses", :force => true do |t|
     t.string   "target_type"
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(:version => 20080706024535) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
-    t.string   "phone"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "administrator_id", :limit => 11
@@ -134,7 +133,6 @@ ActiveRecord::Schema.define(:version => 20080706024535) do
   end
 
   create_table "locations", :force => true do |t|
-    t.string   "phone"
     t.integer  "store_id",         :limit => 11
     t.integer  "schedule_id",      :limit => 11
     t.integer  "address_id",       :limit => 11
@@ -143,6 +141,7 @@ ActiveRecord::Schema.define(:version => 20080706024535) do
     t.integer  "user_id",          :limit => 11
     t.integer  "administrator_id", :limit => 11
     t.string   "name"
+    t.integer  "primary_phone_id", :limit => 11
     t.string   "primary_photos"
   end
 
@@ -188,6 +187,22 @@ ActiveRecord::Schema.define(:version => 20080706024535) do
     t.datetime "updated_at"
     t.integer  "user_id",        :limit => 11
     t.string   "primary_photos"
+  end
+
+  create_table "phone_uses", :force => true do |t|
+    t.integer  "phone_id",    :limit => 11
+    t.integer  "target_id",   :limit => 11
+    t.string   "target_type"
+    t.integer  "user_id",     :limit => 11
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "phones", :force => true do |t|
+    t.string   "number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id",    :limit => 11
   end
 
   create_table "prices", :force => true do |t|
@@ -283,7 +298,6 @@ ActiveRecord::Schema.define(:version => 20080706024535) do
     t.text     "hobbies"
     t.text     "persona"
     t.integer  "primary_address_id",        :limit => 11
-    t.string   "phone"
     t.string   "email",                     :limit => 100
     t.string   "crypted_password",          :limit => 40
     t.string   "salt",                      :limit => 40

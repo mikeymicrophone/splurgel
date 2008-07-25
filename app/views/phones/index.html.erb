@@ -1,0 +1,18 @@
+<h1>Listing phones</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% for phone in @phones %>
+  <tr>
+    <td><%= phone.number %></td>
+    <td><%= link_to 'Show', phone %></td>
+    <td><%= link_to 'Edit', edit_phone_path(phone) if phone.user_id == current_user.id %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New phone', new_phone_path %>

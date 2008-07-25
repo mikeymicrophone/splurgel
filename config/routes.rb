@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :phone_uses
+
+  map.resources :phones
+
   map.like_list '/users/:id/list/like', :controller => 'listings', :action => 'show_list', :list_type => '1'
   map.want_list '/users/:id/list/want', :controller => 'listings', :action => 'show_list', :list_type => '2'
   map.have_list '/users/:id/list/have', :controller => 'listings', :action => 'show_list', :list_type => '3'
