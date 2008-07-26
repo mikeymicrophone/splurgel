@@ -4,6 +4,12 @@ module ApplicationHelper
     super(:class_name => obj.class.name.downcase, :id => obj.to_param)
   end
   
+  def use_phone obj, phone
+    phone = phone.is_a?(Phone) ? phone : Phone.find(phone)
+    phone_id = phone.id
+    link_to "uses #{phone.number}", phone_uses_path(:target_type => obj.class.name, :target_id => obj.id, :phone_id => phone_id)
+  end
+  
   def attach_image_link(obj = nil, img = nil)
     details = {:image_use => {}}
     text = 'paste'

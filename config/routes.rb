@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :authorizations
+
   map.resources :phone_uses
 
   map.resources :phones

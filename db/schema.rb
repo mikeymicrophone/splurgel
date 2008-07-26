@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080725055636) do
+ActiveRecord::Schema.define(:version => 20080726031446) do
 
   create_table "address_uses", :force => true do |t|
     t.string   "target_type"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(:version => 20080725055636) do
     t.datetime "updated_at"
     t.integer  "user_id",         :limit => 11
     t.string   "primary_photos"
+  end
+
+  create_table "authorizations", :force => true do |t|
+    t.integer  "user_id",            :limit => 11
+    t.integer  "authorization_type", :limit => 11
+    t.string   "target_type"
+    t.integer  "target_id",          :limit => 11
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "brands", :force => true do |t|
