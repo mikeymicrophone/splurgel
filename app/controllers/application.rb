@@ -45,6 +45,37 @@ end
 
 class ActiveRecord::Base
   
+  def uses_phone phone
+    case phone.class
+    when Phone
+      phone.is_used_by self
+    when PhoneUse
+      phone.phone.is_used_by self
+    when Integer, String # may want to validate or format number to prevent duplicates
+      Phone.find_or_create_by_number(phone.to_s).is_used_by self
+    end
+  end
+  
+  def uses_site site
+    case site.class
+    when Website
+      site.is_used_by self
+    when WebsiteUse
+      site.website.is_used_by self
+    when String
+      Website.find_or_create_by_href(site).is_used_by self
+    end
+  end
+  
+  def uses_image image
+    case image.class
+    when Image
+      image.is_used_by self
+    when ImageUse
+      image.image.is_used_by self
+    end
+  end
+  
   def primary_photo
     if respond_to?(:primary_photos) && primary_photos && primary_photos.not_blank?
       Image.find( primary_photos[ rand( primary_photos.length ) ] )
@@ -98,4 +129,13 @@ class Array
     !blank?
   end
   alias :not_empty? :not_blank?
+  alias :is_not_blank? :not_blank?
+end
+
+class NilClass
+  def not_blank?
+    false
+  end
+  
+  alias :is_not_blank? :not_blank?
 end

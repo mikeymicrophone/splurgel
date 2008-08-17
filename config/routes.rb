@@ -5,15 +5,14 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :phones
 
-  map.like_list '/users/:id/list/like', :controller => 'listings', :action => 'show_list', :list_type => '1'
-  map.want_list '/users/:id/list/want', :controller => 'listings', :action => 'show_list', :list_type => '2'
-  map.have_list '/users/:id/list/have', :controller => 'listings', :action => 'show_list', :list_type => '3'
+  map.like_list '/users/:id/like/list', :controller => 'listings', :action => 'show_list', :list_type => '1'
+  map.want_list '/users/:id/want/list', :controller => 'listings', :action => 'show_list', :list_type => '2'
+  map.have_list '/users/:id/have/list', :controller => 'listings', :action => 'show_list', :list_type => '3'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.attach_site '/use/:class_name/:id', :controller => 'website_uses', :action => 'use'
-  
   
   map.resources :address_uses
 
@@ -61,13 +60,19 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :prices
 
-  map.resources :offerings
+  map.resources :offerings do |offering|
+    offering.resources :prices
+  end
 
-  map.resources :products
+  map.resources :products do |product|
+    product.resources :offerings
+  end
 
   map.resources :brands
 
-  map.resources :locations
+  map.resources :locations do |location|
+    location.resources :offerings
+  end
 
   map.resources :cities
 

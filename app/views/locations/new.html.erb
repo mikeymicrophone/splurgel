@@ -4,8 +4,8 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone, :size => 13 %>
+    <%= label :phone %><br />
+    <%= text_field :phone, :number, :size => 13 %>
   </p>
   <% if @location.store_id %>
     <%= f.hidden_field :store_id %>
@@ -26,6 +26,7 @@
     <%= f.select :address_id, Address.map_name_and_id('display') %>
     <%= link_to 'new address', new_address_path %>
   </p>
+  <%= %>
   <p>
     <%= f.submit :locate %>
   </p>

@@ -1,6 +1,6 @@
-<h1> store</h1>
+<h1> store</h1>this just deals with the store name and logo. to list specific branches of a store <%= link_to 'go here', new_location_path %>.
 
-<% form_for(@store) do |f| %>
+<% form_for(@store, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -11,12 +11,18 @@
     <%= f.label :administrator_id %><br />
     <%= f.select :administrator_id, User.map_name_and_id %>
   </p>
+  <%= label :phone %>
+  <%= text_field :phone, :number, :size => 10 %>
+  <%= label :website %>
+  <%= text_field :website, :url %>
+  <%= %>
   <p>
     <%= f.label :primary_image_id %><br />
-    <%= f.select :primary_image_id, Image.map_name_and_id('filename') %>
+    <%= f.select :primary_image_id, Image.map_name_and_id('filename'), :include_blank => true %>
+    <%= file_field :image, :uploaded_data %>
   </p>
   <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "ready" %>
   </p>
 <% end %>
 

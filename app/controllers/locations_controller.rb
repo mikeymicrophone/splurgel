@@ -37,8 +37,12 @@ class LocationsController < ApplicationController
   def create
     @location = Location.new params[:location]
 
+    @phone = Phone.find_or_create_by_number(params[:phone][:number]) if params[:phone]
+    params[:location][:primary_phone_id] = @phone.id if @phone
+
     respond_to do |format|
       if @location.save
+        @location.uses_phone @phone
         flash[:notice] = 'Location was successfully created.'
         format.html { redirect_to @location }
         format.xml  { render :xml => @location, :status => :created, :location => @location }

@@ -33,8 +33,14 @@ class StoresController < ApplicationController
   def create
     @store = Store.new params[:store]
 
+    # if they uploaded an image, it becomes the store's primary image
+    @image = Image.create(params[:image]) if params[:image] && params[:image][:uploaded_data] && params[:image][:uploaded_data] != ''
+    params[:store][:primary_image_id] = @image.id
+    
     respond_to do |format|
       if @store.save
+        @store.uses_phone params[:phone][:number] if params[:phone]
+        @store.uses_site params[:website][:url] if params[:website]
         flash[:notice] = 'Store was successfully created.'
         format.html { redirect_to @store }
         format.xml  { render :xml => @store, :status => :created, :location => @store }

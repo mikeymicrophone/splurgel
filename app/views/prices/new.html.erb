@@ -1,12 +1,17 @@
 <h1> price</h1>
 
-<% form_for(@price) do |f| %>
+<% form_for @price do |f| %>
   <%= f.error_messages %>
-
+  $<%= f.text_field :point, :size => 5 %>
+  <% if @price.offering %>
+    <%= f.hidden_field :offering_id %>
+  <% else %>
   <p>
     <%= f.label :offering_id %><br />
     <%= f.select :offering_id, Offering.map_name_and_id %>
+    <%= link_to 'add new offering', new_offering_path %>
   </p>
+  <% end %>
   <p>
     <%= f.label :sale %><br />
     <%= f.check_box :sale %>
@@ -16,7 +21,7 @@
     <%= f.datetime_select :end_date %>
   </p>
   <p>
-    <%= f.submit :evaluate   %>
+    <%= f.submit :evaluate %>
   </p>
 <% end %>
 

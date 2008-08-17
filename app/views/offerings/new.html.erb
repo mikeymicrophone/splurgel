@@ -1,6 +1,6 @@
 <h1>new offering</h1>
 
-<% form_for(@offering) do |f| %>
+<% form_for @offering do |f| %>
   <%= f.error_messages %>
 
   <% if @offering.product %>
@@ -12,13 +12,18 @@
       <%= link_to 'add new product', new_product_path %>
     </p>
   <% end %>
-  <p>
-    <%= f.label :location_id %><br />
-    <%= f.select :location_id, Location.map_name_and_id %>
-  </p>
+  <% if @offering.location %>
+    <%= f.hidden_field :location_id %>
+  <% else %>
+    <p>
+      <%= f.label :location_id %><br />
+      <%= f.select :location_id, Location.map_name_and_id %>
+      <%= link_to 'add new location', new_location_path %>
+    </p>
+  <% end %>
   <p>
     <%= f.label 'how many in stock' %><br />
-    <%= f.text_field :stock, :length => 8 %>
+    <%= f.text_field :stock, :size => 8 %>
   </p>
   <p>
     <%= f.submit 'done-zo' %>

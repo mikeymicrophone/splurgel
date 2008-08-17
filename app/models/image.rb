@@ -23,4 +23,8 @@ class Image < ActiveRecord::Base
   acts_as_ferret :fields => [:name, :filename]
   
   has_attachment :storage => :s3
+  
+  def is_used_by entity
+    ImageUse.create(:image_id => id, :target_id => entity.id, :target_type => entity.class.name) unless ImageUse.find_by_image_id_and_target_id_and_target_type(id, entity.id, entity.type)
+  end
 end

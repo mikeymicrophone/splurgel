@@ -18,7 +18,11 @@ class PricesController < ApplicationController
   end
 
   def new
-    @price = Price.new
+    params[:price] ||= {}
+    if params[:offering_id]
+      params[:price][:offering_id] = params[:offering_id]
+    end
+    @price = Price.new params[:price]
 
     respond_to do |format|
       format.html # new.html.erb

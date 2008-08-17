@@ -18,6 +18,14 @@ class OfferingsController < ApplicationController
   end
 
   def new
+    params[:offering] ||= {}
+    if params[:product_id]
+      params[:offering][:product_id] = params[:product_id]
+    end
+    if params[:location_id]
+      params[:offering][:location_id] = params[:location_id]
+    end
+      
     @offering = Offering.new params[:offering]
 
     respond_to do |format|
