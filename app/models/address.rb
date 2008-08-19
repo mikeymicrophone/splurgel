@@ -14,17 +14,16 @@ class Address < ActiveRecord::Base
 
   acts_as_ferret :fields => [:name, :alternate_names, :street, :street2]
   
-  after_save :geocode
+  before_save :geocode
   
   def geocode
     st = street.gsub(' ', '+')
     ct = city.name.gsub(' ', '+')
     stat = state.name.gsub(' ', '+')
     address_query = "street=#{st}&city=#{ct}&state=#{stat}"
-    geo_doc = open("http://local.yahooapis.com/MapsService/V1/geocode?appid=LomUn77V34EqSiI5chOAO9Buwwxd0N8XUDuDTcwsj3p_DRqhTwzxa4fYxOLoW3Td&#{address_query}").read
+    geo_doc = open("http://local.yahooapis.com/MapsService/V1/geocode?appid=#{YGEO}&#{address_query}").read
     geo_doc =~ /<Latitude>(.*)<\/Latitude><Longitude>(.*)<\/Longitude>/
     self.latitude, self.longitude = $1, $2
-    save
     # maybe fall back to this after yahoo daily limit reached "http://geocoder.us/service/rest?address="
   end
   

@@ -36,3 +36,5 @@ REST_AUTH_SITE_KEY         = '7fcd9e457aadf03b29150f5dad475a5727023fca'
 # * "An Illustrated Guide to Cryptographic Hashes":http://www.unixwiz.net/techtips/iguide-crypto-hashes.html
 
 REST_AUTH_DIGEST_STRETCHES = 10
+GMAP = "ABQIAAAA6mAZlaUj_34Q2o-vAy6H-hR1Bh8ug_-qeZ_68VVLKuVo_csymBT-oj68CLbgeayVmkEcpYjmOY_0yA"
+YGEO = "LomUn77V34EqSiI5chOAO9Buwwxd0N8XUDuDTcwsj3p_DRqhTwzxa4fYxOLoW3Td"
