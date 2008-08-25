@@ -2,6 +2,7 @@
   from <%= link_to_name @message.user %> to <% link_to_name @message.recipient %><br>
   <%= 'this is a reply to ' + link_to_name(@message.reply, 'first_sentence') + '<br>' if @message.reply_id %><br>
   <%= attach_image_link @message %>
+  <%= attachable_sites @message %>
 
 <% if @message.read_on.blank? %>
   unread by recipient as of yet.

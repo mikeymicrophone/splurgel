@@ -4,6 +4,7 @@ about  <%=h @comment.target_type.downcase %>  <%= link_to_name @comment.target %
 <%= 'it was a reply to' + link_to_name(@comment.reply) if @comment.reply %>
   
 <%= attach_image_link @comment %>
+<%= attachable_sites @comment %>
 <%= link_to 'edit', edit_comment_path(@comment) %> |
 <%= link_to 'comments', comments_path %>
 <%= link_to_backup %>

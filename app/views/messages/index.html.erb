@@ -12,7 +12,7 @@
   <tr>
     <td><%=h message.body %></td>
     <td><%= link_to_name message.user %> to <%= link_to_name message.recipient %></td>
-    <td><%= link_to_name('subject') message.reply %></td>
+    <td><%= link_to_name message.reply, 'subject' %></td>
     <td><%=h message.read_on %></td>
     <td><%= link_to 'show', message %></td>
     <td><%= link_to 'edit', edit_message_path(message) %></td>

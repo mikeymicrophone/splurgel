@@ -4,6 +4,15 @@ module ApplicationHelper
     super(:class_name => obj.class.name.downcase, :id => obj.to_param)
   end
   
+  def attachable_sites obj
+    link_to_remote('attach site', :url => attach_site_path(obj), :update => 'uses', :method => :get) +
+    '<div id="uses"></div>' + attached_sites(obj)
+  end
+  
+  def attached_sites obj
+    obj.websites.map { |ws| link_to_name ws }.join('<br>')
+  end
+  
   def use_phone obj, phone
     phone = phone.is_a?(Phone) ? phone : Phone.find(phone)
     phone_id = phone.id
@@ -25,7 +34,7 @@ module ApplicationHelper
         text += ' to a ' + obj.to_s.downcase
         details[:image_use].merge!({:target_type => obj.to_s})
       elsif obj.kind_of?(ActiveRecord::Base)
-        text += ' to ' + (obj.name || obj.class.name.downcase + ' ' + obj.id.to_s)
+        text += ' to ' + ((obj.name rescue nil) || obj.class.name.downcase + ' ' + obj.id.to_s)
         details[:image_use].merge!({:target_type => obj.class.name, :target_id => obj.id})
       end
     else
@@ -75,8 +84,8 @@ module ApplicationHelper
   end
   
   def list_links usr
-    link_to("#{usr.login}'s like list", like_list_path(usr), :class => 'list') +
-    link_to("#{usr.login}'s want list", want_list_path(usr), :class => 'list') +
+    link_to("#{usr.login}'s like list", like_list_path(usr), :class => 'list') + ' ' +
+    link_to("#{usr.login}'s want list", want_list_path(usr), :class => 'list') + ' ' +
     link_to("#{usr.login}'s have list", have_list_path(usr), :class => 'list')
   end
   

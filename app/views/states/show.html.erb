@@ -3,6 +3,7 @@
 <% @state.cities.each do |c| %>
   <%= link_to_name c %> --~~-- 
 <% end %><br>
+<%= attachable_sites @state %>
 
 <%= link_to 'edit', edit_state_path(@state) %> |
 <%= link_to 'states', states_path %>

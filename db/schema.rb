@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080726031446) do
+ActiveRecord::Schema.define(:version => 20080819231225) do
 
   create_table "address_uses", :force => true do |t|
     t.string   "target_type"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20080726031446) do
     t.integer  "target_id",          :limit => 11
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "authorizer_id",      :limit => 11
   end
 
   create_table "brands", :force => true do |t|

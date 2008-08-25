@@ -11,9 +11,9 @@
     <%= f.label :administrator_id %><br />
     <%= f.select :administrator_id, User.map_name_and_id %>
   </p>
-  <%= label :phone %>
+  <%= label :phone, :number %>
   <%= text_field :phone, :number, :size => 10 %>
-  <%= label :website %>
+  <%= label :website, :url %>
   <%= text_field :website, :url %>
   <%= %>
   <p>

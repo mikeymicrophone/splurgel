@@ -1,6 +1,8 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+  has_many :authorizations
+  has_many :authorized_situations, :class_name => 'Authorization', :foreign_key => :authorizer_id
   has_many :listings
   has_many :network_memberships
   has_many :networks, :through => :network_memberships
@@ -11,6 +13,8 @@ class User < ActiveRecord::Base
   has_many :addresses, :through => :address_uses, :source => :address, :conditions => "address_uses.target_type = 'User'"
   has_many :taggings, :as => :target
   has_many :tags, :through => :taggings
+  has_many :phone_uses, :as => :target
+  has_many :phones, :through => :phone_uses
   has_many :website_uses, :as => :target
   has_many :used_websites, :through => :website_uses
   has_many :websites

@@ -8,6 +8,8 @@ class Location < ActiveRecord::Base
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses
   has_many :comments, :as => :target
+  has_many :phone_uses, :as => :target
+  has_many :phones, :through => :phone_uses
   belongs_to :primary_phone, :class_name => 'Phone'
   has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Location' and followings.follower_type = 'User'", :as => :target
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Location' and followings.follower_type = 'Group'", :as => :target

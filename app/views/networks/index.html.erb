@@ -8,10 +8,11 @@
     <td><%= link_to_name network.state %></td>
     <td><%= link_to 'edit', edit_network_path(network) %></td>
     <td><%= attach_image_link network %></td>
-    <td><%= link_to_remote 'attach site', attach_site_path(network), :method => :get %></td>
+    <td><%= link_to_remote 'attach site', :url => attach_site_path(network), :update => 'uses', :method => :get %></td>
   </tr>
 <% end %>
 </table>
+<div id="uses"></div>
 
 <br />
 

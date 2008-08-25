@@ -10,6 +10,8 @@ class Address < ActiveRecord::Base
   has_many :taggings, :as => :target
   has_many :tags, :through => :taggings
   has_many :comments, :as => :target
+  has_many :phone_uses, :as => :target
+  has_many :phones, :through => :phone_uses
   serialize :primary_photos, Array
 
   acts_as_ferret :fields => [:name, :alternate_names, :street, :street2]
@@ -20,9 +22,9 @@ class Address < ActiveRecord::Base
     st = street.gsub(' ', '+')
     ct = city.name.gsub(' ', '+')
     stat = state.name.gsub(' ', '+')
-    address_query = "street=#{st}&city=#{ct}&state=#{stat}"
+    address_query = "street=#{st}&city=#{ct}&state=#{stat}&zip=#{zip}"
     geo_doc = open("http://local.yahooapis.com/MapsService/V1/geocode?appid=#{YGEO}&#{address_query}").read
-    geo_doc =~ /<Latitude>(.*)<\/Latitude><Longitude>(.*)<\/Longitude>/
+    geo_doc =~ /<Latitude>([\d\-\.]*)<\/Latitude><Longitude>([\d\-\.]*)<\/Longitude>/
     self.latitude, self.longitude = $1, $2
     # maybe fall back to this after yahoo daily limit reached "http://geocoder.us/service/rest?address="
   end

@@ -4,7 +4,7 @@
   <%= f.error_messages %>
 
   <p>
-    <%= label :phone %><br />
+    <%= label :phone, :number %><br />
     <%= text_field :phone, :number, :size => 13 %>
   </p>
   <% if @location.store_id %>

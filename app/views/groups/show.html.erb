@@ -3,6 +3,7 @@ administered by  <%= link_to_name @group.administrator %><br><br>
   <%= primary_image @group %>
   <%= @group.users.count %> members!<br>
   <%= attach_image_link @group %>
+  <%= attachable_sites @group %>
   
   <%= render :partial => 'tags/tag_form', :locals => {:obj => @group} %>
   <%= render :partial => 'comments/comment_form', :locals => {:obj => @group} %>

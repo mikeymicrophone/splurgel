@@ -10,7 +10,10 @@ class AddressesController < ApplicationController
 
   def show
     @address = Address.find params[:id]
-
+    @map = GMap.new("map_div")
+	  @map.control_init(:large_map => true, :map_type => true)
+	  @map.center_zoom_init([@address.latitude, @address.longitude], 14)
+	  @map.overlay_init(GMarker.new([@address.latitude, @address.longitude], :title => @address.name, :info_window => @address.name))
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @address }

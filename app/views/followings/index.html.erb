@@ -7,7 +7,7 @@
 
 <% for following in @followings %>
   <tr>
-    <td><%= link_to 'follower', following.follower %> following <%= link_to 'followed', follower.target %></td>
+    <td><%= link_to 'follower', following.follower %> following <%= link_to 'followed', following.target %></td>
     <td><%= link_to 'show', following %></td>
     <td><%= link_to 'edit', edit_following_path(following) %></td>
     <td><%= link_to 'Destroy', following, :confirm => 'Are you sure?', :method => :delete %></td>

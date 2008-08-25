@@ -35,7 +35,7 @@ class StoresController < ApplicationController
 
     # if they uploaded an image, it becomes the store's primary image
     @image = Image.create(params[:image]) if params[:image] && params[:image][:uploaded_data] && params[:image][:uploaded_data] != ''
-    params[:store][:primary_image_id] = @image.id
+    params[:store][:primary_image_id] = @image.id if @image
     
     respond_to do |format|
       if @store.save

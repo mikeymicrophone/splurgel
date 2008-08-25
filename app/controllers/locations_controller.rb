@@ -35,11 +35,11 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.new params[:location]
-
     @phone = Phone.find_or_create_by_number(params[:phone][:number]) if params[:phone]
     params[:location][:primary_phone_id] = @phone.id if @phone
-
+    
+    @location = Location.new params[:location]
+    
     respond_to do |format|
       if @location.save
         @location.uses_phone @phone

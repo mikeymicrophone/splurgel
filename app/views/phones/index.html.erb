@@ -8,7 +8,7 @@
   <tr>
     <td><%= phone.number %></td>
     <td><%= link_to 'Show', phone %></td>
-    <td><%= link_to 'Edit', edit_phone_path(phone) if phone.user_id == current_user.id %></td>
+    <td><%= link_to 'Edit', edit_phone_path(phone) if logged_in? && phone.user_id == current_user.id %></td>
   </tr>
 <% end %>
 </table>

@@ -47,3 +47,7 @@ a#profile {
 .rrrr {
 	padding-left:40px;
 }
+
+#map_div {
+	float:left;
+}

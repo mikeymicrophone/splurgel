@@ -1,9 +1,9 @@
 <%= link_to_name @location.store %><br>
 <%= @location.schedule.display if @location.schedule %><br>
 <%= attach_image_link @location %>
-
+<%= attachable_sites @location %>
 <%=h @location.address.display %><br>
-<%=h @location.phone %><br>
+<%=h @location.primary_phone %><br>
 <%= link_to 'edit', edit_location_path(@location) %> |
 <%= link_to 'locations', locations_path %>
 <%= link_to_backup %>

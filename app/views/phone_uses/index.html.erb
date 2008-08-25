@@ -6,9 +6,10 @@
 
 <% for phone_use in @phone_uses %>
   <tr>
+    <td><%= phone_use.phone.number %></td>
+    <td><%= link_to_name phone_use.target %></td>
     <td><%= link_to 'Show', phone_use %></td>
     <td><%= link_to 'Edit', edit_phone_use_path(phone_use) %></td>
-    <td><%= link_to 'Destroy', phone_use, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

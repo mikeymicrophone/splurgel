@@ -3,7 +3,8 @@ class Website < ActiveRecord::Base
   has_many :taggings, :as => :target
   has_many :tags, :through => :taggings
   has_many :comments, :as => :target
-  
+  has_many :phone_uses, :as => :target
+  has_many :phones, :through => :phone_uses
   has_many :brands, :through => :website_uses, :source => :brand, :conditions => "websitee_uses.target_type = 'Brand'"
   has_many :cities, :through => :website_uses, :source => :city, :conditions => "website_uses.target_type = 'City'"
   has_many :aided_comments, :through => :website_uses, :source => :comment, :conditions => "website_uses.target_type = 'Comment'"

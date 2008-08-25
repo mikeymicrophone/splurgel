@@ -1,10 +1,10 @@
   <%= link_to_name @offering.location %> is offering <%= link_to_name @offering.product %>
-  <%= ' by ' + link_to_name @offering.product.brand if @offering.product.brand %><br>
+  <%= ' by ' + link_to_name(@offering.product.brand) if @offering.product.brand %><br>
 
   <% price = @offering.prices.select { |p| p.end_date > Time.now }.first %>
   <%= price.point if price %><br>
   <%= '[sale]' if price && price.sale %><br>
-
+  <%= attachable_sites @offering %>
   <%=h @offering.stock + ' in stock' if @offering.stock %>
 
 <%= link_to 'edit', edit_offering_path(@offering) %> |
