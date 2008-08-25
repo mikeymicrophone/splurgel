@@ -38,6 +38,7 @@ class FollowingsController < ApplicationController
       if @following.save
         flash[:notice] = 'Following was successfully created.'
         format.html { redirect_to @following }
+        format.js   { render :text => 'now following' }
         format.xml  { render :xml => @following, :status => :created, :location => @following }
       else
         format.html { render :action => "new" }

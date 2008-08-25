@@ -2,6 +2,7 @@
 <%= @location.schedule.display if @location.schedule %><br>
 <%= attach_image_link @location %>
 <%= attachable_sites @location %>
+<%= follow_link @location %>
 <%=h @location.address.display %><br>
 <%=h @location.primary_phone %><br>
 <%= link_to 'edit', edit_location_path(@location) %> |

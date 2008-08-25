@@ -2,7 +2,7 @@
   <%=h @city.state.name %>
   <%= attach_image_link @city %>
   <%= attachable_sites @city %>
-
+  <%= follow_link @city %>
 <%= link_to 'edit', edit_city_path(@city) %> |
 <%= link_to 'cities', cities_path %>
 <%= link_to_backup %>

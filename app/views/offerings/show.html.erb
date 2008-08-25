@@ -5,6 +5,7 @@
   <%= price.point if price %><br>
   <%= '[sale]' if price && price.sale %><br>
   <%= attachable_sites @offering %>
+  <%= follow_link @offering %>
   <%=h @offering.stock + ' in stock' if @offering.stock %>
 
 <%= link_to 'edit', edit_offering_path(@offering) %> |

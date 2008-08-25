@@ -3,7 +3,7 @@
 <%= attach_image_link @store %><br>
 <%= lists @store %><hr>
 <%= attachable_sites @store %>
-
+<%= follow_link @store %>
 <% @store.locations.each do |l| %>
   <%= link_to l.address.street + ' ' + l.address.city.name, l %><br>
 <% end %>

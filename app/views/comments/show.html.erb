@@ -5,6 +5,7 @@ about  <%=h @comment.target_type.downcase %>  <%= link_to_name @comment.target %
   
 <%= attach_image_link @comment %>
 <%= attachable_sites @comment %>
+<%= follow_link @comment %>
 <%= link_to 'edit', edit_comment_path(@comment) %> |
 <%= link_to 'comments', comments_path %>
 <%= link_to_backup %>

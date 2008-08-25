@@ -13,6 +13,16 @@ module ApplicationHelper
     obj.websites.map { |ws| link_to_name ws }.join('<br>')
   end
   
+  def follow_link obj
+    if logged_in?
+      if Following.find_by_follower_id_and_follower_type_and_target_id_and_target_type(current_user.id, 'User', obj.id, obj.class.name)
+        'followed'
+      else
+        "<span id='follow'>" + link_to_remote('follow', :url => followings_path(:following => {:follower_type => 'User', :follower_id => current_user.id, :target_type => obj.class.name, :target_id => obj.id}), :update => 'follow') + "</span>"
+      end
+    end
+  end
+  
   def use_phone obj, phone
     phone = phone.is_a?(Phone) ? phone : Phone.find(phone)
     phone_id = phone.id

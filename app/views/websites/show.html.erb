@@ -2,6 +2,7 @@
 <%= link_to @website.href, @website.href %><br>
 <%= link_to_name @website.user %><br>
 <%= attach_image_link @website %>
+<%= follow_link @website %>
 <%= link_to 'edit', edit_website_path(@website) %> |
 <%= link_to 'websites', websites_path %>
 <%= link_to_backup %>

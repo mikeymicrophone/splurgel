@@ -1,7 +1,7 @@
   <h1><%=h @tag.name %></h1>
 
   <%= @tag.targets.map { |t| link_to_name t }.join(':::::') %><br>
-
+<%= follow_link @tag %>
 <%= link_to 'edit', edit_tag_path(@tag) %> |
 <%= link_to 'tags', tags_path %>
 <%= link_to_backup %>
