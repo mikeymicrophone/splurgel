@@ -14,7 +14,7 @@ class Address < ActiveRecord::Base
   has_many :phones, :through => :phone_uses
   serialize :primary_photos, Array
 
-  acts_as_ferret :fields => [:name, :alternate_names, :street, :street2]
+  #acts_as_ferret :fields => [:name, :alternate_names, :street, :street2]
   
   before_save :geocode
   

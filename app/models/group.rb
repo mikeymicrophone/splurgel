@@ -16,7 +16,7 @@ class Group < ActiveRecord::Base
   belongs_to :administrator, :class_name => 'User', :foreign_key => :administrator_id
   serialize :primary_photos, Array
   
-  acts_as_ferret :fields => [:name]
+  #acts_as_ferret :fields => [:name]
   
   def self.group_types
     [['personal', 1], ['private', 2], ['unconsensual', 3], ['consensual', 4]]

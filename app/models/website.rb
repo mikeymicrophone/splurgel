@@ -25,7 +25,7 @@ class Website < ActiveRecord::Base
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Website' and followings.follower_type = 'Location'", :as => :target
   serialize :primary_photos, Array
   
-  acts_as_ferret :fields => [:name, :href]
+  #acts_as_ferret :fields => [:name, :href]
   
   def is_used_by entity
     WebsiteUse.create(:website_id => id, :target_id => entity.id, :target_type => entity.class.name) unless WebsiteUse.find_by_target_id_and_target_type_and_website_id(entity.id, entity.type, id)

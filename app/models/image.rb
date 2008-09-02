@@ -20,7 +20,7 @@ class Image < ActiveRecord::Base
   has_many :websites, :through => :website_uses
   has_many :comments, :as => :target
   
-  acts_as_ferret :fields => [:name, :filename]
+  #acts_as_ferret :fields => [:name, :filename]
   
   has_attachment :storage => :s3
   
