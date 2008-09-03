@@ -2,11 +2,13 @@ require 'open-uri'
 class Address < ActiveRecord::Base
   belongs_to :city
   belongs_to :state
+  belongs_to :user
   has_many :address_uses
   has_many :users, :through => :address_uses, :source => :user, :conditions => "address_uses.target_type = 'User'"
   # Location actually has a foreign key address_id because it is such an intrinsic part of the model.. however may be better to handle it through address_uses
-  # has_many :locations, :through => :address_uses, :source => :locations, :conditions => "address_uses.target_type = 'Location'"
-  has_many :stores, :through => :address_uses, :source => :stores, :conditions => "address_uses.target_type = 'Store'"
+  has_many :locations#, :through => :address_uses, :source => :locations, :conditions => "address_uses.target_type = 'Location'"
+  #has_many :headquartered_stores, :through => :address_uses, :source => :store#, :conditions => "address_uses.target_type = 'Store'"
+  has_many :located_stores, :through => :locations, :source => :store
   has_many :taggings, :as => :target
   has_many :tags, :through => :taggings
   has_many :comments, :as => :target
@@ -14,14 +16,32 @@ class Address < ActiveRecord::Base
   has_many :phones, :through => :phone_uses
   serialize :primary_photos, Array
 
+  define_index do
+    indexes city.name, :as => :city_name
+    indexes state.name, :as => :state_name
+   # indexes stores.name, :as => :store_names
+    indexes :street
+    indexes :name
+    indexes :alternate_names
+
+  end
+
+  def headquartered_stores
+    address_uses.all(:conditions => {:target_type => 'Store'}).map(&:store)
+  end
+
+  def stores
+    headquartered_stores + located_stores
+  end
+
   #acts_as_ferret :fields => [:name, :alternate_names, :street, :street2]
   
-  before_save :geocode
+  # before_save :geocode
   
   def geocode
-    st = street.gsub(' ', '+')
-    ct = city.name.gsub(' ', '+')
-    stat = state.name.gsub(' ', '+')
+    st = street.gsub(' ', '+') if street
+    ct = city.name.gsub(' ', '+') if city
+    stat = state.name.gsub(' ', '+') if state
     address_query = "street=#{st}&city=#{ct}&state=#{stat}&zip=#{zip}"
     geo_doc = open("http://local.yahooapis.com/MapsService/V1/geocode?appid=#{YGEO}&#{address_query}").read
     geo_doc =~ /<Latitude>([\d\-\.]*)<\/Latitude><Longitude>([\d\-\.]*)<\/Longitude>/

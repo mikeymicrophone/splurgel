@@ -19,6 +19,10 @@ class Brand < ActiveRecord::Base
   
   #acts_as_ferret :fields => [:name]
   
+  define_index do
+    indexes :name
+  end
+  
   def stores
     products.map(&:offerings).flatten.map(&:location).uniq.map(&:store).uniq
   end

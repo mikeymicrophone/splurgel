@@ -18,6 +18,10 @@ class Group < ActiveRecord::Base
   
   #acts_as_ferret :fields => [:name]
   
+  define_index do
+    indexes :name
+  end
+  
   def self.group_types
     [['personal', 1], ['private', 2], ['unconsensual', 3], ['consensual', 4]]
   end

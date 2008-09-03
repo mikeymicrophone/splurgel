@@ -16,7 +16,11 @@ class Comment < ActiveRecord::Base
   serialize :primary_photos, Array
   
   #acts_as_ferret :fields => [:body]
-  
+
+  define_index do
+    indexes :body
+  end
+
   def name
     user.name + '~' + created_at.strftime("%l:%M %A %b %e")
   end

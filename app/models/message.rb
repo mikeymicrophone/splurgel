@@ -10,6 +10,10 @@ class Message < ActiveRecord::Base
   
   #acts_as_ferret :fields => [:body]
   
+  define_index do
+    indexes :body
+  end
+  
   def first_sentence
     sentence = body[/([^\.]*)/]
     sentence[0..230]

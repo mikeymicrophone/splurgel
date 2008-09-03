@@ -24,6 +24,11 @@ class Product < ActiveRecord::Base
   serialize :primary_photos, Array
 
   #acts_as_ferret :fields => [:name]
+  
+  define_index do
+    indexes :name
+  end
+  
 
   def stores
     locations.map &:store

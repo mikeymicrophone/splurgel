@@ -19,6 +19,10 @@ class Store < ActiveRecord::Base
   
   #acts_as_ferret :fields => [:name]
   
+  define_index do
+    indexes :name
+  end
+  
   def products
     offerings.map &:product
   end

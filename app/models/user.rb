@@ -31,6 +31,14 @@ class User < ActiveRecord::Base
   
   #acts_as_ferret :fields => [:persona, :login, :name, :hobbies, :interests]
   
+  define_index do
+    indexes :persona
+    indexes :login
+    indexes :name
+    indexes :hobbies
+    indexes :interests
+  end
+  
   def administers? thing
     thing.administrator_id == id # refactor when I implement multiple administrators per thing
   end

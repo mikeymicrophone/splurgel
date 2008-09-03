@@ -151,8 +151,8 @@ ActiveRecord::Schema.define(:version => 20080819231225) do
     t.integer  "user_id",          :limit => 11
     t.integer  "administrator_id", :limit => 11
     t.string   "name"
-    t.integer  "primary_phone_id", :limit => 11
     t.string   "primary_photos"
+    t.integer  "primary_phone_id", :limit => 11
   end
 
   create_table "memberships", :force => true do |t|

@@ -35,6 +35,10 @@ class Tag < ActiveRecord::Base
   
   #acts_as_ferret :fields => [:name]
   
+  define_index do
+    indexes :name
+  end
+  
   def targets
     addresses + address_uses + brands + cities + comments + followings + groups + images + image_uses +
     listings + locations + memberships + messages + networks + network_memberships + offerings + prices + products +
