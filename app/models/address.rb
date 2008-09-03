@@ -21,6 +21,7 @@ class Address < ActiveRecord::Base
     indexes state.name, :as => :state_name
    # indexes stores.name, :as => :store_names
     indexes :street
+    indexes :street2
     indexes :name
     indexes :alternate_names
 
@@ -33,8 +34,6 @@ class Address < ActiveRecord::Base
   def stores
     headquartered_stores + located_stores
   end
-
-  #acts_as_ferret :fields => [:name, :alternate_names, :street, :street2]
   
   # before_save :geocode
   

@@ -11,8 +11,6 @@ class Network < ActiveRecord::Base
   belongs_to :city
   belongs_to :state
   
-  #acts_as_ferret :fields => [:name]
-  
   define_index do
     indexes :name
   end

@@ -14,8 +14,6 @@ class Comment < ActiveRecord::Base
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Comment' and followings.follower_type = 'Group'"
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Comment' and followings.follower_type = 'Location'"
   serialize :primary_photos, Array
-  
-  #acts_as_ferret :fields => [:body]
 
   define_index do
     indexes :body

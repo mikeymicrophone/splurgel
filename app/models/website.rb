@@ -25,8 +25,6 @@ class Website < ActiveRecord::Base
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Website' and followings.follower_type = 'Location'", :as => :target
   serialize :primary_photos, Array
   
-  #acts_as_ferret :fields => [:name, :href]
-  
   define_index do
     indexes :name
     indexes :href

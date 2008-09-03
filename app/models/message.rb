@@ -8,8 +8,6 @@ class Message < ActiveRecord::Base
   has_many :comments, :as => :target
   belongs_to :reply, :class_name => 'Message'
   
-  #acts_as_ferret :fields => [:body]
-  
   define_index do
     indexes :body
   end

@@ -16,13 +16,15 @@ class Location < ActiveRecord::Base
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Location' and followings.follower_type = 'Location'", :as => :target
   serialize :primary_photos, Array
   
-  #acts_as_ferret :fields => [:name]
+  define_index do
+    indexes :name
+  end
   
      # also an attribute called name now
   def name
     nm = ''
     nm += store.name if store
     nm += ' of ' if store && (address.street && !address.street.blank?)
-    nm += address.street
+    nm += address.street if address
   end
 end

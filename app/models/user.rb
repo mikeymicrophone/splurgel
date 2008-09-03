@@ -29,8 +29,6 @@ class User < ActiveRecord::Base
   has_many :incoming_messages, :class_name => 'Message', :foreign_key => :recipient_id
   serialize :primary_photos, Array
   
-  #acts_as_ferret :fields => [:persona, :login, :name, :hobbies, :interests]
-  
   define_index do
     indexes :persona
     indexes :login
