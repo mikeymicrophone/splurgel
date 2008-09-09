@@ -4,6 +4,11 @@ class Price < ActiveRecord::Base
   has_many :tags, :through => :taggings
   has_many :comments, :as => :target
   
+  define_index do
+    indexes tags(:name)
+    indexes comments(:body)
+  end
+  
   def product
     offering.product
   end

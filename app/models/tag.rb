@@ -7,7 +7,7 @@ class Tag < ActiveRecord::Base
   has_many :address_uses, :through => :taggings, :source => :address_use, :conditions => "taggings.target_type = 'Address_use'"
   has_many :brands, :through => :taggings, :source => :brand, :conditions => "taggings.target_type = 'Brand'"
   has_many :cities, :through => :taggings, :source => :city, :conditions => "taggings.target_type = 'City'"
-  has_many :comments, :through => :taggings, :source => :comment, :conditions => "taggings.target_type = 'Comment'"
+  has_many :tagged_comments, :through => :taggings, :source => :comment, :conditions => "taggings.target_type = 'Comment'"
   has_many :followings, :through => :taggings, :source => :following, :conditions => "taggings.target_type = 'Following'"
   has_many :groups, :through => :taggings, :source => :group, :conditions => "taggings.target_type = 'Group'"
   has_many :images, :through => :taggings, :source => :image, :conditions => "taggings.target_type = 'Image'"
@@ -35,6 +35,16 @@ class Tag < ActiveRecord::Base
   
   define_index do
     indexes :name
+    indexes tags(:name)
+    indexes comments(:body)
+    indexes brands(:name)
+    indexes cities(:name)
+    indexes tagged_comments(:body)
+    indexes groups(:name)
+    indexes networks(:name)
+    indexes products(:name)
+    indexes states(:name)
+    indexes stores(:name)
   end
   
   def targets

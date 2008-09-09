@@ -9,7 +9,7 @@ if defined?(ActiveRecord::Base)
         #   ModelClass.should have(1).record
         #   ModelClass.should have(n).records
         def records
-          find :all
+          find(:all)
         end
         alias :record :records
       end

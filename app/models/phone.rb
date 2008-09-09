@@ -9,6 +9,13 @@ class Phone < ActiveRecord::Base
   has_many :websites, :through => :phone_uses, :source => :website, :conditions => "phone_uses.target_type = 'Website'"
   has_many :cities, :through => :phone_uses, :source => :city, :conditions => "phone_uses.target_type = 'City'"
   has_many :addresses, :through => :phone_uses, :source => :address, :conditions => "phone_uses.target_type = 'Address'"
+
+  define_index do
+    indexes groups(:name)
+    indexes brands(:name)
+    indexes stores(:name)
+    indexes cities(:name)
+  end
   
   def is_used_by entity
     PhoneUse.create(:phone_id => id, :target_id => entity.id, :target_type => entity.class.name) unless PhoneUse.find_by_phone_id_and_target_id_and_target_type(id, entity.id, entity.type)

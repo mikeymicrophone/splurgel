@@ -38,6 +38,34 @@ class Tagging < ActiveRecord::Base
   serialize :primary_photos, Array
   belongs_to :user
   
+  def self.targets(format = :classes)
+    case format
+    when :classes
+      %w!address address_use brand city comment following group image image_use listing location
+      membership message network network_membership offering price product purchase schedule
+      state store tag user website website_use!.map &:capitalize
+    when :association_names
+      %w!address address_use brand city comment following group image image_use listing location
+      membership message network network_membership offering price product purchase schedule
+      state store tagged_tag tagged_user website website_use!
+    end
+  end
+  
+  # targets(:association_names).delete(target_type.underscore).each do |fallacious_association|
+  #   define_method(fallactious_association) do
+  #     nil
+  #   end
+  # end
+  
+  define_index do
+    indexes :name
+    indexes tags(:name)
+    indexes comments(:body)
+    # targets(:assocation_names).each do |potential_association|
+    #   indexes potential_association(:name)
+    # end
+  end
+  
   def self.apply_to(target_type, target_id, tag_id)
     find_by_tag_id_and_target_id_and_target_type(tag_id, target_id, target_type) || create(:tag_id => tag_id, :target_id => target_id, :target_type => target_type)
   end

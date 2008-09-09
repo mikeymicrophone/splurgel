@@ -63904,3 +63904,432 @@ Processing PhoneUsesController#index (for 0.0.0.0 at 2008-07-25 00:40:00) [GET]
 Rendering template within layouts/application
 Rendering phone_uses/index
 Completed in 0.00071 (1414 reqs/sec) | Rendering: 0.00022 (30%) | DB: 0.00000 (0%) | 200 OK [http://test.host/phone_uses]
+  [4;36;1mSQL (0.000657)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.001632)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.021517)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.008222)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.000689)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.000524)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000177)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000164)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000151)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000109)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000109)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000093)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000110)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000132)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000116)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000109)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000109)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000107)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000109)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000107)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000114)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000107)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000108)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20080614192830)
+  [4;36;1mSQL (0.000110)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.000296)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.003257)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `login` varchar(40) DEFAULT NULL NULL, `name` varchar(100) DEFAULT '' NULL, `interests` text DEFAULT NULL NULL, `hobbies` text DEFAULT NULL NULL, `persona` text DEFAULT NULL NULL, `primary_address_id` int(11) DEFAULT NULL NULL, `phone` varchar(255) DEFAULT NULL NULL, `email` varchar(100) DEFAULT NULL NULL, `crypted_password` varchar(40) DEFAULT NULL NULL, `salt` varchar(40) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL, `remember_token` varchar(40) DEFAULT NULL NULL, `remember_token_expires_at` datetime DEFAULT NULL NULL, `activation_code` varchar(40) DEFAULT NULL NULL, `activated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.008247)[0m   [0mCREATE UNIQUE INDEX `index_users_on_login` ON `users` (`login`)[0m
+  [4;36;1mSQL (0.001009)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614192830')[0m
+Migrating to CreateStores (20080614195028)
+  [4;35;1mSQL (0.000361)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002091)[0m   [0;1mCREATE TABLE `stores` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL NULL, `administrator_id` int(11) DEFAULT NULL NULL, `primary_image_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000635)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614195028')[0m
+Migrating to CreateStates (20080614195108)
+  [4;36;1mSQL (0.000242)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002587)[0m   [0mCREATE TABLE `states` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000731)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614195108')[0m
+Migrating to CreateCities (20080614195127)
+  [4;35;1mSQL (0.000341)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.004210)[0m   [0;1mCREATE TABLE `cities` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL NULL, `state_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000885)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614195127')[0m
+Migrating to CreateLocations (20080614195148)
+  [4;36;1mSQL (0.000392)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002907)[0m   [0mCREATE TABLE `locations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `phone` varchar(255) DEFAULT NULL NULL, `store_id` int(11) DEFAULT NULL NULL, `schedule_id` int(11) DEFAULT NULL NULL, `address_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000717)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614195148')[0m
+Migrating to CreateBrands (20080614195205)
+  [4;35;1mSQL (0.000274)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001937)[0m   [0;1mCREATE TABLE `brands` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL NULL, `phone` varchar(255) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000695)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614195205')[0m
+Migrating to CreateProducts (20080614195220)
+  [4;36;1mSQL (0.000407)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002310)[0m   [0mCREATE TABLE `products` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL NULL, `brand_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000940)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614195220')[0m
+Migrating to CreateOfferings (20080614195755)
+  [4;35;1mSQL (0.000288)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002826)[0m   [0;1mCREATE TABLE `offerings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `product_id` int(11) DEFAULT NULL NULL, `location_id` int(11) DEFAULT NULL NULL, `stock` varchar(255) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000909)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614195755')[0m
+Migrating to CreatePrices (20080614195822)
+  [4;36;1mSQL (0.000428)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003865)[0m   [0mCREATE TABLE `prices` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `offering_id` int(11) DEFAULT NULL NULL, `sale` tinyint(1) DEFAULT NULL NULL, `end_date` datetime DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.002989)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614195822')[0m
+Migrating to CreateSchedules (20080614195840)
+  [4;35;1mSQL (0.000274)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003706)[0m   [0;1mCREATE TABLE `schedules` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sunday_open` time DEFAULT NULL NULL, `sunday_close` time DEFAULT NULL NULL, `monday_open` time DEFAULT NULL NULL, `monday_close` time DEFAULT NULL NULL, `tuesday_open` time DEFAULT NULL NULL, `tuesday_close` time DEFAULT NULL NULL, `wednesday_open` time DEFAULT NULL NULL, `wednesday_close` time DEFAULT NULL NULL, `thursday_open` time DEFAULT NULL NULL, `thursday_close` time DEFAULT NULL NULL, `friday_open` time DEFAULT NULL NULL, `friday_close` time DEFAULT NULL NULL, `saturday_open` time DEFAULT NULL NULL, `saturday_close` time DEFAULT NULL NULL, `holidays` tinyint(1) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000691)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614195840')[0m
+Migrating to CreateListings (20080614195906)
+  [4;36;1mSQL (0.000291)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003165)[0m   [0mCREATE TABLE `listings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `list_type` int(11) DEFAULT NULL NULL, `product_id` int(11) DEFAULT NULL NULL, `brand_id` int(11) DEFAULT NULL NULL, `store_id` int(11) DEFAULT NULL NULL, `user_id` int(11) DEFAULT NULL NULL, `private` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000747)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614195906')[0m
+Migrating to CreateGroups (20080614200131)
+  [4;35;1mSQL (0.000362)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002866)[0m   [0;1mCREATE TABLE `groups` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL NULL, `administrator_id` int(11) DEFAULT NULL NULL, `group_type` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000933)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200131')[0m
+Migrating to CreateMemberships (20080614200145)
+  [4;36;1mSQL (0.000256)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003198)[0m   [0mCREATE TABLE `memberships` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `group_id` int(11) DEFAULT NULL NULL, `user_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000924)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200145')[0m
+Migrating to CreateTags (20080614200210)
+  [4;35;1mSQL (0.000433)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002935)[0m   [0;1mCREATE TABLE `tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000795)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200210')[0m
+Migrating to CreateTaggings (20080614200226)
+  [4;36;1mSQL (0.000395)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002390)[0m   [0mCREATE TABLE `taggings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tag_id` int(11) DEFAULT NULL NULL, `target_type` varchar(255) DEFAULT NULL NULL, `target_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.001536)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200226')[0m
+Migrating to CreateFollowings (20080614200258)
+  [4;35;1mSQL (0.000414)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003107)[0m   [0;1mCREATE TABLE `followings` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL NULL, `follower_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000998)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200258')[0m
+Migrating to CreateImages (20080614200336)
+  [4;36;1mSQL (0.000389)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003047)[0m   [0mCREATE TABLE `images` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `size` int(11) DEFAULT NULL NULL, `content_type` varchar(255) DEFAULT NULL NULL, `filename` varchar(255) DEFAULT NULL NULL, `height` int(11) DEFAULT NULL NULL, `width` int(11) DEFAULT NULL NULL, `parent_id` int(11) DEFAULT NULL NULL, `thumbnail` varchar(255) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.001501)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200336')[0m
+Migrating to CreateImageUses (20080614200353)
+  [4;35;1mSQL (0.000432)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003219)[0m   [0;1mCREATE TABLE `image_uses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `image_id` int(11) DEFAULT NULL NULL, `target_type` varchar(255) DEFAULT NULL NULL, `target_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000921)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200353')[0m
+Migrating to CreateWebsites (20080614200536)
+  [4;36;1mSQL (0.000426)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003081)[0m   [0mCREATE TABLE `websites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `href` varchar(255) DEFAULT NULL NULL, `name` varchar(255) DEFAULT NULL NULL, `user_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.001287)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200536')[0m
+Migrating to CreateWebsiteUses (20080614200600)
+  [4;35;1mSQL (0.000295)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002909)[0m   [0;1mCREATE TABLE `website_uses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `target_type` varchar(255) DEFAULT NULL NULL, `target_id` int(11) DEFAULT NULL NULL, `website_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.001003)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200600')[0m
+Migrating to CreateComments (20080614200615)
+  [4;36;1mSQL (0.000414)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003120)[0m   [0mCREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `body` text DEFAULT NULL NULL, `user_id` int(11) DEFAULT NULL NULL, `reply_id` int(11) DEFAULT NULL NULL, `target_type` varchar(255) DEFAULT NULL NULL, `target_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000816)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200615')[0m
+Migrating to CreateMessages (20080614200637)
+  [4;35;1mSQL (0.001626)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003394)[0m   [0;1mCREATE TABLE `messages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `body` text DEFAULT NULL NULL, `user_id` int(11) DEFAULT NULL NULL, `reply_id` int(11) DEFAULT NULL NULL, `read_on` datetime DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000876)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200637')[0m
+Migrating to CreatePurchases (20080614200653)
+  [4;36;1mSQL (0.000423)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002936)[0m   [0mCREATE TABLE `purchases` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL NULL, `offering_id` int(11) DEFAULT NULL NULL, `credit_card_id` int(11) DEFAULT NULL NULL, `address_id` int(11) DEFAULT NULL NULL, `approved` tinyint(1) DEFAULT NULL NULL, `complete` tinyint(1) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.001130)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200653')[0m
+Migrating to CreateAddresses (20080614200715)
+  [4;35;1mSQL (0.000321)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.016914)[0m   [0;1mCREATE TABLE `addresses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `latitude` varchar(255) DEFAULT NULL NULL, `longitude` varchar(255) DEFAULT NULL NULL, `name` varchar(255) DEFAULT NULL NULL, `alternate_names` varchar(255) DEFAULT NULL NULL, `street` varchar(255) DEFAULT NULL NULL, `street2` varchar(255) DEFAULT NULL NULL, `city` varchar(255) DEFAULT NULL NULL, `state` varchar(255) DEFAULT NULL NULL, `city_id` int(11) DEFAULT NULL NULL, `state_id` int(11) DEFAULT NULL NULL, `zip` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000929)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200715')[0m
+Migrating to CreateCreditCards (20080614200750)
+  [4;36;1mSQL (0.000443)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003201)[0m   [0mCREATE TABLE `credit_cards` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `address_id` int(11) DEFAULT NULL NULL, `card_number` int(11) DEFAULT NULL NULL, `expiration_month` int(11) DEFAULT NULL NULL, `expiration_year` int(11) DEFAULT NULL NULL, `security_code` int(11) DEFAULT NULL NULL, `user_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000786)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200750')[0m
+Migrating to CreateNetworks (20080614200809)
+  [4;35;1mSQL (0.000300)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002747)[0m   [0;1mCREATE TABLE `networks` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) DEFAULT NULL NULL, `city_id` int(11) DEFAULT NULL NULL, `state_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000815)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200809')[0m
+Migrating to CreateNetworkMemberships (20080614200821)
+  [4;36;1mSQL (0.001031)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.003321)[0m   [0mCREATE TABLE `network_memberships` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL NULL, `network_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.000829)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080614200821')[0m
+Migrating to AddUserIds (20080614200841)
+  [4;35;1mSQL (0.000444)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.008355)[0m   [0;1mALTER TABLE `brands` ADD `administrator_id` int(11)[0m
+  [4;35;1mSQL (0.007602)[0m   [0mALTER TABLE `brands` ADD `user_id` int(11)[0m
+  [4;36;1mSQL (0.008019)[0m   [0;1mALTER TABLE `products` ADD `user_id` int(11)[0m
+  [4;35;1mSQL (0.007067)[0m   [0mALTER TABLE `offerings` ADD `user_id` int(11)[0m
+  [4;36;1mSQL (0.011554)[0m   [0;1mALTER TABLE `prices` ADD `user_id` int(11)[0m
+  [4;35;1mSQL (0.008311)[0m   [0mALTER TABLE `tags` ADD `user_id` int(11)[0m
+  [4;36;1mSQL (0.007738)[0m   [0;1mALTER TABLE `taggings` ADD `user_id` int(11)[0m
+  [4;35;1mSQL (0.007569)[0m   [0mALTER TABLE `images` ADD `user_id` int(11)[0m
+  [4;36;1mSQL (0.007926)[0m   [0;1mALTER TABLE `image_uses` ADD `user_id` int(11)[0m
+  [4;35;1mSQL (0.010322)[0m   [0mALTER TABLE `website_uses` ADD `user_id` int(11)[0m
+  [4;36;1mSQL (0.007943)[0m   [0;1mALTER TABLE `addresses` ADD `user_id` int(11)[0m
+  [4;35;1mSQL (0.000821)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614200841')[0m
+Migrating to CreateAddressUses (20080614202316)
+  [4;36;1mSQL (0.000433)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002839)[0m   [0mCREATE TABLE `address_uses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `target_type` varchar(255) DEFAULT NULL NULL, `target_id` int(11) DEFAULT NULL NULL, `address_id` int(11) DEFAULT NULL NULL, `user_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.010047)[0m   [0;1mALTER TABLE `networks` ADD `user_id` int(11)[0m
+  [4;35;1mSQL (0.000896)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080614202316')[0m
+Migrating to FollowAnything (20080615192044)
+  [4;36;1mSQL (0.000382)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002095)[0m   [0mSHOW COLUMNS FROM `followings` LIKE 'user_id'[0m
+  [4;36;1mSQL (0.006124)[0m   [0;1mALTER TABLE `followings` CHANGE `user_id` `target_id` int(11)[0m
+  [4;35;1mSQL (0.007666)[0m   [0mALTER TABLE `followings` ADD `target_type` varchar(255)[0m
+  [4;36;1mSQL (0.007416)[0m   [0;1mALTER TABLE `followings` ADD `follower_type` varchar(255)[0m
+  [4;35;1mSQL (0.000856)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080615192044')[0m
+Migrating to MessageRecipients (20080615192902)
+  [4;36;1mSQL (0.000541)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.008168)[0m   [0mALTER TABLE `messages` ADD `recipient_id` int(11)[0m
+  [4;36;1mSQL (0.000886)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080615192902')[0m
+Migrating to OneCityOneState (20080628043414)
+  [4;35;1mSQL (0.000367)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.008569)[0m   [0;1mALTER TABLE `addresses` DROP `city`[0m
+  [4;35;1mSQL (0.006237)[0m   [0mALTER TABLE `addresses` DROP `state`[0m
+  [4;36;1mSQL (0.000751)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080628043414')[0m
+Migrating to PricePoints (20080628223148)
+  [4;35;1mSQL (0.000454)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.008749)[0m   [0;1mALTER TABLE `prices` ADD `point` float[0m
+  [4;35;1mSQL (0.000909)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080628223148')[0m
+Migrating to AddAdminsAndCreators (20080704015500)
+  [4;36;1mSQL (0.002577)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.011493)[0m   [0mALTER TABLE `groups` ADD `user_id` int(11)[0m
+  [4;36;1mSQL (0.009896)[0m   [0;1mALTER TABLE `stores` ADD `user_id` int(11)[0m
+  [4;35;1mSQL (0.007979)[0m   [0mALTER TABLE `locations` ADD `user_id` int(11)[0m
+  [4;36;1mSQL (0.009265)[0m   [0;1mALTER TABLE `schedules` ADD `user_id` int(11)[0m
+  [4;35;1mSQL (0.007898)[0m   [0mALTER TABLE `locations` ADD `administrator_id` int(11)[0m
+  [4;36;1mSQL (0.010317)[0m   [0;1mALTER TABLE `networks` ADD `administrator_id` int(11)[0m
+  [4;35;1mSQL (0.008287)[0m   [0mALTER TABLE `followings` ADD `user_id` int(11)[0m
+  [4;36;1mSQL (0.007941)[0m   [0;1mALTER TABLE `states` ADD `user_id` int(11)[0m
+  [4;35;1mSQL (0.007633)[0m   [0mALTER TABLE `cities` ADD `user_id` int(11)[0m
+  [4;36;1mSQL (0.002389)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080704015500')[0m
+Migrating to AddNamesImageCreditCards (20080704022846)
+  [4;35;1mSQL (0.000359)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.009050)[0m   [0;1mALTER TABLE `credit_cards` ADD `name` varchar(255)[0m
+  [4;35;1mSQL (0.009146)[0m   [0mALTER TABLE `images` ADD `name` varchar(255)[0m
+  [4;36;1mSQL (0.011740)[0m   [0;1mALTER TABLE `locations` ADD `name` varchar(255)[0m
+  [4;35;1mSQL (0.000799)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080704022846')[0m
+Migrating to PrimaryPhotoCaching (20080706024535)
+  [4;36;1mSQL (0.000467)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.009218)[0m   [0mALTER TABLE `addresses` ADD `primary_photos` varchar(255)[0m
+  [4;36;1mSQL (0.007925)[0m   [0;1mALTER TABLE `brands` ADD `primary_photos` varchar(255)[0m
+  [4;35;1mSQL (0.007610)[0m   [0mALTER TABLE `cities` ADD `primary_photos` varchar(255)[0m
+  [4;36;1mSQL (0.007790)[0m   [0;1mALTER TABLE `comments` ADD `primary_photos` varchar(255)[0m
+  [4;35;1mSQL (0.005404)[0m   [0mALTER TABLE `groups` ADD `primary_photos` varchar(255)[0m
+  [4;36;1mSQL (0.007715)[0m   [0;1mALTER TABLE `listings` ADD `primary_photos` varchar(255)[0m
+  [4;35;1mSQL (0.008265)[0m   [0mALTER TABLE `locations` ADD `primary_photos` varchar(255)[0m
+  [4;36;1mSQL (0.008580)[0m   [0;1mALTER TABLE `offerings` ADD `primary_photos` varchar(255)[0m
+  [4;35;1mSQL (0.006619)[0m   [0mALTER TABLE `products` ADD `primary_photos` varchar(255)[0m
+  [4;36;1mSQL (0.008457)[0m   [0;1mALTER TABLE `states` ADD `primary_photos` varchar(255)[0m
+  [4;35;1mSQL (0.008347)[0m   [0mALTER TABLE `stores` ADD `primary_photos` varchar(255)[0m
+  [4;36;1mSQL (0.009093)[0m   [0;1mALTER TABLE `taggings` ADD `primary_photos` varchar(255)[0m
+  [4;35;1mSQL (0.009866)[0m   [0mALTER TABLE `users` ADD `primary_photos` varchar(255)[0m
+  [4;36;1mSQL (0.011256)[0m   [0;1mALTER TABLE `websites` ADD `primary_photos` varchar(255)[0m
+  [4;35;1mSQL (0.000846)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080706024535')[0m
+Migrating to CreatePhones (20080723034925)
+  [4;36;1mSQL (0.000624)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.002855)[0m   [0mCREATE TABLE `phones` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `number` varchar(255) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.008778)[0m   [0;1mALTER TABLE `brands` DROP `phone`[0m
+  [4;35;1mSQL (0.005471)[0m   [0mALTER TABLE `locations` DROP `phone`[0m
+  [4;36;1mSQL (0.007963)[0m   [0;1mALTER TABLE `locations` ADD `primary_phone_id` int(11)[0m
+  [4;35;1mSQL (0.009279)[0m   [0mALTER TABLE `users` DROP `phone`[0m
+  [4;36;1mSQL (0.000808)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080723034925')[0m
+Migrating to CreatePhoneUses (20080725011654)
+  [4;35;1mSQL (0.000460)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.002777)[0m   [0;1mCREATE TABLE `phone_uses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `phone_id` int(11) DEFAULT NULL NULL, `target_id` int(11) DEFAULT NULL NULL, `target_type` varchar(255) DEFAULT NULL NULL, `user_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.002052)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080725011654')[0m
+Migrating to PhoneUserId (20080725055636)
+  [4;36;1mSQL (0.000356)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.008294)[0m   [0mALTER TABLE `phones` ADD `user_id` int(11)[0m
+  [4;36;1mSQL (0.000985)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080725055636')[0m
+Migrating to CreateAuthorizations (20080726031446)
+  [4;35;1mSQL (0.000361)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.003467)[0m   [0;1mCREATE TABLE `authorizations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) DEFAULT NULL NULL, `authorization_type` int(11) DEFAULT NULL NULL, `target_type` varchar(255) DEFAULT NULL NULL, `target_id` int(11) DEFAULT NULL NULL, `created_at` datetime DEFAULT NULL NULL, `updated_at` datetime DEFAULT NULL NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000729)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20080726031446')[0m
+Migrating to AuthorizationCreator (20080819231225)
+  [4;36;1mSQL (0.000333)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.007381)[0m   [0mALTER TABLE `authorizations` ADD `authorizer_id` int(11)[0m
+  [4;36;1mSQL (0.000837)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20080819231225')[0m
+  [4;35;1mSQL (0.000626)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.001144)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.002627)[0m   [0mSHOW FIELDS FROM `address_uses`[0m
+  [4;36;1mSQL (0.002569)[0m   [0;1mdescribe `address_uses`[0m
+  [4;35;1mSQL (0.000720)[0m   [0mSHOW KEYS FROM `address_uses`[0m
+  [4;36;1mSQL (0.002636)[0m   [0;1mSHOW FIELDS FROM `addresses`[0m
+  [4;35;1mSQL (0.002647)[0m   [0mdescribe `addresses`[0m
+  [4;36;1mSQL (0.000428)[0m   [0;1mSHOW KEYS FROM `addresses`[0m
+  [4;35;1mSQL (0.002552)[0m   [0mSHOW FIELDS FROM `authorizations`[0m
+  [4;36;1mSQL (0.002410)[0m   [0;1mdescribe `authorizations`[0m
+  [4;35;1mSQL (0.000501)[0m   [0mSHOW KEYS FROM `authorizations`[0m
+  [4;36;1mSQL (0.002003)[0m   [0;1mSHOW FIELDS FROM `brands`[0m
+  [4;35;1mSQL (0.002669)[0m   [0mdescribe `brands`[0m
+  [4;36;1mSQL (0.000716)[0m   [0;1mSHOW KEYS FROM `brands`[0m
+  [4;35;1mSQL (0.002689)[0m   [0mSHOW FIELDS FROM `cities`[0m
+  [4;36;1mSQL (0.002849)[0m   [0;1mdescribe `cities`[0m
+  [4;35;1mSQL (0.000576)[0m   [0mSHOW KEYS FROM `cities`[0m
+  [4;36;1mSQL (0.002614)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (0.003029)[0m   [0mdescribe `comments`[0m
+  [4;36;1mSQL (0.000936)[0m   [0;1mSHOW KEYS FROM `comments`[0m
+  [4;35;1mSQL (0.002239)[0m   [0mSHOW FIELDS FROM `credit_cards`[0m
+  [4;36;1mSQL (0.070710)[0m   [0;1mdescribe `credit_cards`[0m
+  [4;35;1mSQL (0.000404)[0m   [0mSHOW KEYS FROM `credit_cards`[0m
+  [4;36;1mSQL (0.002559)[0m   [0;1mSHOW FIELDS FROM `followings`[0m
+  [4;35;1mSQL (0.003463)[0m   [0mdescribe `followings`[0m
+  [4;36;1mSQL (0.000468)[0m   [0;1mSHOW KEYS FROM `followings`[0m
+  [4;35;1mSQL (0.002669)[0m   [0mSHOW FIELDS FROM `groups`[0m
+  [4;36;1mSQL (0.003303)[0m   [0;1mdescribe `groups`[0m
+  [4;35;1mSQL (0.000723)[0m   [0mSHOW KEYS FROM `groups`[0m
+  [4;36;1mSQL (0.002551)[0m   [0;1mSHOW FIELDS FROM `image_uses`[0m
+  [4;35;1mSQL (0.002579)[0m   [0mdescribe `image_uses`[0m
+  [4;36;1mSQL (0.000982)[0m   [0;1mSHOW KEYS FROM `image_uses`[0m
+  [4;35;1mSQL (0.002308)[0m   [0mSHOW FIELDS FROM `images`[0m
+  [4;36;1mSQL (0.003050)[0m   [0;1mdescribe `images`[0m
+  [4;35;1mSQL (0.000484)[0m   [0mSHOW KEYS FROM `images`[0m
+  [4;36;1mSQL (0.002991)[0m   [0;1mSHOW FIELDS FROM `listings`[0m
+  [4;35;1mSQL (0.002916)[0m   [0mdescribe `listings`[0m
+  [4;36;1mSQL (0.000393)[0m   [0;1mSHOW KEYS FROM `listings`[0m
+  [4;35;1mSQL (0.057405)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mSQL (0.002680)[0m   [0;1mdescribe `locations`[0m
+  [4;35;1mSQL (0.001014)[0m   [0mSHOW KEYS FROM `locations`[0m
+  [4;36;1mSQL (0.001922)[0m   [0;1mSHOW FIELDS FROM `memberships`[0m
+  [4;35;1mSQL (0.002754)[0m   [0mdescribe `memberships`[0m
+  [4;36;1mSQL (0.000491)[0m   [0;1mSHOW KEYS FROM `memberships`[0m
+  [4;35;1mSQL (0.002034)[0m   [0mSHOW FIELDS FROM `messages`[0m
+  [4;36;1mSQL (0.002633)[0m   [0;1mdescribe `messages`[0m
+  [4;35;1mSQL (0.000436)[0m   [0mSHOW KEYS FROM `messages`[0m
+  [4;36;1mSQL (0.002235)[0m   [0;1mSHOW FIELDS FROM `network_memberships`[0m
+  [4;35;1mSQL (0.001803)[0m   [0mdescribe `network_memberships`[0m
+  [4;36;1mSQL (0.000682)[0m   [0;1mSHOW KEYS FROM `network_memberships`[0m
+  [4;35;1mSQL (0.002116)[0m   [0mSHOW FIELDS FROM `networks`[0m
+  [4;36;1mSQL (0.002823)[0m   [0;1mdescribe `networks`[0m
+  [4;35;1mSQL (0.001065)[0m   [0mSHOW KEYS FROM `networks`[0m
+  [4;36;1mSQL (0.002184)[0m   [0;1mSHOW FIELDS FROM `offerings`[0m
+  [4;35;1mSQL (0.002575)[0m   [0mdescribe `offerings`[0m
+  [4;36;1mSQL (0.000373)[0m   [0;1mSHOW KEYS FROM `offerings`[0m
+  [4;35;1mSQL (0.058555)[0m   [0mSHOW FIELDS FROM `phone_uses`[0m
+  [4;36;1mSQL (0.002791)[0m   [0;1mdescribe `phone_uses`[0m
+  [4;35;1mSQL (0.000676)[0m   [0mSHOW KEYS FROM `phone_uses`[0m
+  [4;36;1mSQL (0.001977)[0m   [0;1mSHOW FIELDS FROM `phones`[0m
+  [4;35;1mSQL (0.002365)[0m   [0mdescribe `phones`[0m
+  [4;36;1mSQL (0.000471)[0m   [0;1mSHOW KEYS FROM `phones`[0m
+  [4;35;1mSQL (0.002100)[0m   [0mSHOW FIELDS FROM `prices`[0m
+  [4;36;1mSQL (0.003002)[0m   [0;1mdescribe `prices`[0m
+  [4;35;1mSQL (0.001074)[0m   [0mSHOW KEYS FROM `prices`[0m
+  [4;36;1mSQL (0.002862)[0m   [0;1mSHOW FIELDS FROM `products`[0m
+  [4;35;1mSQL (0.002450)[0m   [0mdescribe `products`[0m
+  [4;36;1mSQL (0.000390)[0m   [0;1mSHOW KEYS FROM `products`[0m
+  [4;35;1mSQL (0.002033)[0m   [0mSHOW FIELDS FROM `purchases`[0m
+  [4;36;1mSQL (0.002545)[0m   [0;1mdescribe `purchases`[0m
+  [4;35;1mSQL (0.000568)[0m   [0mSHOW KEYS FROM `purchases`[0m
+  [4;36;1mSQL (0.002494)[0m   [0;1mSHOW FIELDS FROM `schedules`[0m
+  [4;35;1mSQL (0.003163)[0m   [0mdescribe `schedules`[0m
+  [4;36;1mSQL (0.000369)[0m   [0;1mSHOW KEYS FROM `schedules`[0m
+  [4;35;1mSQL (0.059833)[0m   [0mSHOW FIELDS FROM `states`[0m
+  [4;36;1mSQL (0.001523)[0m   [0;1mdescribe `states`[0m
+  [4;35;1mSQL (0.001398)[0m   [0mSHOW KEYS FROM `states`[0m
+  [4;36;1mSQL (0.002907)[0m   [0;1mSHOW FIELDS FROM `stores`[0m
+  [4;35;1mSQL (0.002427)[0m   [0mdescribe `stores`[0m
+  [4;36;1mSQL (0.000416)[0m   [0;1mSHOW KEYS FROM `stores`[0m
+  [4;35;1mSQL (0.002809)[0m   [0mSHOW FIELDS FROM `taggings`[0m
+  [4;36;1mSQL (0.002878)[0m   [0;1mdescribe `taggings`[0m
+  [4;35;1mSQL (0.000448)[0m   [0mSHOW KEYS FROM `taggings`[0m
+  [4;36;1mSQL (0.001823)[0m   [0;1mSHOW FIELDS FROM `tags`[0m
+  [4;35;1mSQL (0.002199)[0m   [0mdescribe `tags`[0m
+  [4;36;1mSQL (0.000519)[0m   [0;1mSHOW KEYS FROM `tags`[0m
+  [4;35;1mSQL (0.003145)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (0.002665)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.000474)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.002610)[0m   [0;1mSHOW FIELDS FROM `website_uses`[0m
+  [4;35;1mSQL (0.002620)[0m   [0mdescribe `website_uses`[0m
+  [4;36;1mSQL (0.000726)[0m   [0;1mSHOW KEYS FROM `website_uses`[0m
+  [4;35;1mSQL (0.056519)[0m   [0mSHOW FIELDS FROM `websites`[0m
+  [4;36;1mSQL (0.001676)[0m   [0;1mdescribe `websites`[0m
+  [4;35;1mSQL (0.001281)[0m   [0mSHOW KEYS FROM `websites`[0m
+  [4;36;1mSQL (0.000449)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000097)[0m   [0mBEGIN[0m
+  [4;36;1mOffering Columns (0.003598)[0m   [0;1mSHOW FIELDS FROM `offerings`[0m
+  [4;35;1mSQL (0.000146)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000104)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Columns (0.001714)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Create (0.000351)[0m   [0;1mINSERT INTO `products` (`name`, `brand_id`, `updated_at`, `primary_photos`, `user_id`, `created_at`) VALUES('vest', NULL, '2008-09-07 23:18:35', NULL, NULL, '2008-09-07 23:18:35')[0m
+  [4;35;1mStore Columns (0.001856)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mStore Create (0.000292)[0m   [0;1mINSERT INTO `stores` (`name`, `updated_at`, `primary_photos`, `administrator_id`, `primary_image_id`, `user_id`, `created_at`) VALUES('Target', '2008-09-07 23:18:35', NULL, NULL, NULL, NULL, '2008-09-07 23:18:35')[0m
+  [4;35;1mLocation Columns (0.002123)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Create (0.000323)[0m   [0;1mINSERT INTO `locations` (`name`, `updated_at`, `primary_photos`, `administrator_id`, `address_id`, `store_id`, `schedule_id`, `user_id`, `primary_phone_id`, `created_at`) VALUES(NULL, '2008-09-07 23:18:35', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2008-09-07 23:18:35')[0m
+  [4;35;1mSQL (0.000969)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000442)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000086)[0m   [0mBEGIN[0m
+  [4;36;1mOffering Columns (0.003373)[0m   [0;1mSHOW FIELDS FROM `offerings`[0m
+  [4;35;1mSQL (0.000142)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Columns (0.001854)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Create (0.000341)[0m   [0;1mINSERT INTO `products` (`name`, `brand_id`, `updated_at`, `primary_photos`, `user_id`, `created_at`) VALUES('vest', NULL, '2008-09-07 23:22:42', NULL, NULL, '2008-09-07 23:22:42')[0m
+  [4;35;1mStore Columns (0.001909)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mStore Create (0.000281)[0m   [0;1mINSERT INTO `stores` (`name`, `updated_at`, `primary_photos`, `administrator_id`, `primary_image_id`, `user_id`, `created_at`) VALUES('Target', '2008-09-07 23:22:42', NULL, NULL, NULL, NULL, '2008-09-07 23:22:42')[0m
+  [4;35;1mLocation Columns (0.002811)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Create (0.000294)[0m   [0;1mINSERT INTO `locations` (`name`, `updated_at`, `primary_photos`, `administrator_id`, `address_id`, `store_id`, `schedule_id`, `user_id`, `primary_phone_id`, `created_at`) VALUES(NULL, '2008-09-07 23:22:42', NULL, NULL, NULL, 2, NULL, NULL, NULL, '2008-09-07 23:22:42')[0m
+  [4;35;1mSQL (0.001233)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000447)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000086)[0m   [0mBEGIN[0m
+  [4;36;1mOffering Columns (0.003185)[0m   [0;1mSHOW FIELDS FROM `offerings`[0m
+  [4;35;1mSQL (0.000152)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000113)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Columns (0.001728)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Create (0.000345)[0m   [0;1mINSERT INTO `products` (`name`, `brand_id`, `updated_at`, `primary_photos`, `user_id`, `created_at`) VALUES('vest', NULL, '2008-09-07 23:23:07', NULL, NULL, '2008-09-07 23:23:07')[0m
+  [4;35;1mStore Columns (0.002037)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mStore Create (0.000282)[0m   [0;1mINSERT INTO `stores` (`name`, `updated_at`, `primary_photos`, `administrator_id`, `primary_image_id`, `user_id`, `created_at`) VALUES('Target', '2008-09-07 23:23:07', NULL, NULL, NULL, NULL, '2008-09-07 23:23:07')[0m
+  [4;35;1mLocation Columns (0.002130)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Create (0.000269)[0m   [0;1mINSERT INTO `locations` (`name`, `updated_at`, `primary_photos`, `administrator_id`, `address_id`, `store_id`, `schedule_id`, `user_id`, `primary_phone_id`, `created_at`) VALUES(NULL, '2008-09-07 23:23:07', NULL, NULL, NULL, 3, NULL, NULL, NULL, '2008-09-07 23:23:07')[0m
+  [4;35;1mOffering Create (0.000225)[0m   [0mINSERT INTO `offerings` (`updated_at`, `primary_photos`, `product_id`, `stock`, `location_id`, `user_id`, `created_at`) VALUES('2008-09-07 23:23:07', NULL, 3, NULL, 3, NULL, '2008-09-07 23:23:07')[0m
+  [4;36;1mStore Load (0.000000)[0m   [0;1mMysql::Error: Unknown column 'locations.location_id' in 'where clause': SELECT `stores`.* FROM `stores` INNER JOIN locations ON stores.id = locations.store_id WHERE ((`locations`.location_id = 1)) [0m
+  [4;35;1mSQL (0.012941)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000448)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000091)[0m   [0mBEGIN[0m
+  [4;36;1mOffering Columns (0.003283)[0m   [0;1mSHOW FIELDS FROM `offerings`[0m
+  [4;35;1mSQL (0.000143)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000103)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Columns (0.002263)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Create (0.000347)[0m   [0;1mINSERT INTO `products` (`name`, `brand_id`, `updated_at`, `primary_photos`, `user_id`, `created_at`) VALUES('vest', NULL, '2008-09-07 23:29:51', NULL, NULL, '2008-09-07 23:29:51')[0m
+  [4;35;1mStore Columns (0.081515)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mStore Create (0.000299)[0m   [0;1mINSERT INTO `stores` (`name`, `updated_at`, `primary_photos`, `administrator_id`, `primary_image_id`, `user_id`, `created_at`) VALUES('Target', '2008-09-07 23:29:51', NULL, NULL, NULL, NULL, '2008-09-07 23:29:51')[0m
+  [4;35;1mLocation Columns (0.002705)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Create (0.000271)[0m   [0;1mINSERT INTO `locations` (`name`, `updated_at`, `primary_photos`, `administrator_id`, `address_id`, `store_id`, `schedule_id`, `user_id`, `primary_phone_id`, `created_at`) VALUES(NULL, '2008-09-07 23:29:51', NULL, NULL, NULL, 4, NULL, NULL, NULL, '2008-09-07 23:29:51')[0m
+  [4;35;1mOffering Create (0.000214)[0m   [0mINSERT INTO `offerings` (`updated_at`, `primary_photos`, `product_id`, `stock`, `location_id`, `user_id`, `created_at`) VALUES('2008-09-07 23:29:51', NULL, 4, NULL, NULL, NULL, '2008-09-07 23:29:51')[0m
+  [4;36;1mLocation Update (0.000263)[0m   [0;1mUPDATE `locations` SET `updated_at` = '2008-09-07 23:29:51' WHERE `id` = 4[0m
+  [4;35;1mStore Load (0.000000)[0m   [0mMysql::Error: Unknown column 'locations.offering_id' in 'where clause': SELECT `stores`.* FROM `stores` INNER JOIN locations ON stores.id = locations.store_id WHERE ((`locations`.offering_id = 2)) [0m
+  [4;36;1mSQL (0.001401)[0m   [0;1mROLLBACK[0m
+  [4;36;1mSQL (0.000444)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000086)[0m   [0mBEGIN[0m
+  [4;36;1mOffering Columns (0.003413)[0m   [0;1mSHOW FIELDS FROM `offerings`[0m
+  [4;35;1mSQL (0.000156)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000114)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Columns (0.001762)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Create (0.000345)[0m   [0;1mINSERT INTO `products` (`name`, `brand_id`, `updated_at`, `primary_photos`, `user_id`, `created_at`) VALUES('vest', NULL, '2008-09-07 23:30:26', NULL, NULL, '2008-09-07 23:30:26')[0m
+  [4;35;1mStore Columns (0.002439)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mStore Create (0.000274)[0m   [0;1mINSERT INTO `stores` (`name`, `updated_at`, `primary_photos`, `administrator_id`, `primary_image_id`, `user_id`, `created_at`) VALUES('Target', '2008-09-07 23:30:26', NULL, NULL, NULL, NULL, '2008-09-07 23:30:26')[0m
+  [4;35;1mLocation Columns (0.001811)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Create (0.000287)[0m   [0;1mINSERT INTO `locations` (`name`, `updated_at`, `primary_photos`, `administrator_id`, `address_id`, `store_id`, `schedule_id`, `user_id`, `primary_phone_id`, `created_at`) VALUES(NULL, '2008-09-07 23:30:26', NULL, NULL, NULL, 5, NULL, NULL, NULL, '2008-09-07 23:30:26')[0m
+  [4;35;1mOffering Create (0.000212)[0m   [0mINSERT INTO `offerings` (`updated_at`, `primary_photos`, `product_id`, `stock`, `location_id`, `user_id`, `created_at`) VALUES('2008-09-07 23:30:26', NULL, 5, NULL, 5, NULL, '2008-09-07 23:30:26')[0m
+  [4;36;1mStore Load (0.000000)[0m   [0;1mMysql::Error: Unknown column 'locations.location_id' in 'where clause': SELECT `stores`.* FROM `stores` INNER JOIN locations ON stores.id = locations.store_id WHERE ((`locations`.location_id = 3)) [0m
+  [4;35;1mSQL (0.001385)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000455)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000086)[0m   [0mBEGIN[0m
+  [4;36;1mOffering Columns (0.003513)[0m   [0;1mSHOW FIELDS FROM `offerings`[0m
+  [4;35;1mSQL (0.000157)[0m   [0mROLLBACK[0m
+  [4;36;1mSQL (0.000105)[0m   [0;1mBEGIN[0m
+  [4;35;1mProduct Columns (0.002262)[0m   [0mSHOW FIELDS FROM `products`[0m
+  [4;36;1mProduct Create (0.000351)[0m   [0;1mINSERT INTO `products` (`name`, `brand_id`, `updated_at`, `primary_photos`, `user_id`, `created_at`) VALUES('vest', NULL, '2008-09-07 23:30:58', NULL, NULL, '2008-09-07 23:30:58')[0m
+  [4;35;1mStore Columns (0.002004)[0m   [0mSHOW FIELDS FROM `stores`[0m
+  [4;36;1mStore Create (0.000305)[0m   [0;1mINSERT INTO `stores` (`name`, `updated_at`, `primary_photos`, `administrator_id`, `primary_image_id`, `user_id`, `created_at`) VALUES('Target', '2008-09-07 23:30:58', NULL, NULL, NULL, NULL, '2008-09-07 23:30:58')[0m
+  [4;35;1mLocation Columns (0.002295)[0m   [0mSHOW FIELDS FROM `locations`[0m
+  [4;36;1mLocation Create (0.000304)[0m   [0;1mINSERT INTO `locations` (`name`, `updated_at`, `primary_photos`, `administrator_id`, `address_id`, `store_id`, `schedule_id`, `user_id`, `primary_phone_id`, `created_at`) VALUES(NULL, '2008-09-07 23:30:58', NULL, NULL, NULL, 6, NULL, NULL, NULL, '2008-09-07 23:30:58')[0m
+  [4;35;1mOffering Create (0.000220)[0m   [0mINSERT INTO `offerings` (`updated_at`, `primary_photos`, `product_id`, `stock`, `location_id`, `user_id`, `created_at`) VALUES('2008-09-07 23:30:58', NULL, 6, NULL, 6, NULL, '2008-09-07 23:30:58')[0m
+  [4;36;1mSQL (0.001205)[0m   [0;1mROLLBACK[0m

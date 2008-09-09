@@ -1,5 +1,6 @@
 class Brand < ActiveRecord::Base
   has_many :products
+  has_many :offerings, :through => :products
   has_many :listings
   has_many :image_uses, :as => :target
   has_many :images, :through => :image_uses, :source => :image, :conditions => "image_uses.target_type = 'Brand'"
@@ -19,6 +20,9 @@ class Brand < ActiveRecord::Base
   
   define_index do
     indexes :name
+    indexes products(:name)
+    indexes tags(:name)
+    indexes comments(:body)
   end
   
   def stores

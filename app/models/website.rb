@@ -28,6 +28,16 @@ class Website < ActiveRecord::Base
   define_index do
     indexes :name
     indexes :href
+    indexes tags(:name)
+    indexes comments(:body)
+    indexes brands(:name)
+    indexes cities(:name)
+    indexes aided_comments(:body)
+    indexes groups(:name)
+    indexes networks(:name)
+    indexes products(:name)
+    indexes states(:name)
+    indexes stores(:name)
   end
   
   def is_used_by entity

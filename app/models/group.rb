@@ -18,6 +18,8 @@ class Group < ActiveRecord::Base
   
   define_index do
     indexes :name
+    indexes tags(:name)
+    indexes comments(:body)
   end
   
   def self.group_types

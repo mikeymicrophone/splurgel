@@ -17,6 +17,7 @@ class Comment < ActiveRecord::Base
 
   define_index do
     indexes :body
+    # indexes target(:name)
   end
 
   def name

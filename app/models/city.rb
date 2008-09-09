@@ -16,5 +16,8 @@ class City < ActiveRecord::Base
   
   define_index do
     indexes :name
+    indexes tags(:name)
+    indexes comments(:name)
+    indexes state(:name)
   end
 end

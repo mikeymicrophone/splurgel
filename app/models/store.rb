@@ -19,10 +19,16 @@ class Store < ActiveRecord::Base
   
   define_index do
     indexes :name
+    indexes tags(:name)
+    indexes comments(:name)
   end
   
   def products
     offerings.map &:product
+  end
+  
+  def brands
+    products.map(&:brand).uniq
   end
   
   def prices

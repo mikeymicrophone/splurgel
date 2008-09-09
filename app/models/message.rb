@@ -10,6 +10,8 @@ class Message < ActiveRecord::Base
   
   define_index do
     indexes :body
+    indexes tags(:name)
+    indexes comments(:body)
   end
   
   def first_sentence

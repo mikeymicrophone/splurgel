@@ -8,6 +8,14 @@ class Listing < ActiveRecord::Base
   has_many :comments, :as => :target
   serialize :primary_photos, Array
   
+  define_index do
+    indexes product(:name)
+    indexes brand(:name)
+    indexes store(:name)
+    indexes tags(:name)
+    indexes comments(:body)
+  end
+  
   def self.list_types
     {'like' => 1, 'want' => 2, 'have' => 3}
   end

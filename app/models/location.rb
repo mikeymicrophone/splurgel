@@ -18,6 +18,9 @@ class Location < ActiveRecord::Base
   
   define_index do
     indexes :name
+    indexes store(:name)
+    indexes taggings(:name)
+    indexes comments(:body)
   end
   
      # also an attribute called name now
