@@ -13,6 +13,10 @@ module ApplicationHelper
     obj.websites.map { |ws| link_to_name ws }.join('<br>')
   end
   
+  def message_link user
+    link_to 'message', new_message_path(:message => {:recipient_id => user.id})
+  end
+  
   def follow_link obj
     if logged_in?
       if Following.find_by_follower_id_and_follower_type_and_target_id_and_target_type(current_user.id, 'User', obj.id, obj.class.name)

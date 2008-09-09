@@ -15,6 +15,9 @@ class Address < ActiveRecord::Base
   has_many :phone_uses, :as => :target
   has_many :phones, :through => :phone_uses
   serialize :primary_photos, Array
+  before_create :ensure_line_1, :ensure_city
+  validates_presence_of :street
+  attr_accessor :city_name, :state_name
 
   define_index do
     indexes city.name, :as => :city_name
@@ -59,6 +62,23 @@ class Address < ActiveRecord::Base
   end
   
   def name
-    street + ' ' + street2
+    (street ? street + ' ' : '') + (street2 ? street2 : '')
+  end
+  
+  def ensure_line_1
+    if street.blank? && !street2.blank?
+      street = street2
+      street2 = ''
+    end
+  end
+  
+  def ensure_city
+    ensure_state
+    self.city = City.find_or_create_by_name_and_state_id(city_name, state_id)
+    true
+  end
+  
+  def ensure_state
+    self.state = State.find_or_create_by_name(state_name)
   end
 end

@@ -1,5 +1,3 @@
 <% @users.each do |u| %>
-  <%= link_to_name u %>
-  <%= link_to 'edit', edit_user_path(u) %><br>
-  <%= attach_image_link u %>
+  <%= link_to_name u, 'login' %><br>
 <% end %>

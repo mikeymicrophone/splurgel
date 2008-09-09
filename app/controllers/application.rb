@@ -46,32 +46,32 @@ end
 class ActiveRecord::Base
   
   def uses_phone phone
-    case phone.class
-    when Phone
+    case phone.class.name
+    when 'Phone'
       phone.is_used_by self
-    when PhoneUse
+    when 'PhoneUse'
       phone.phone.is_used_by self
-    when Integer, String # may want to validate or format number to prevent duplicates
-      Phone.find_or_create_by_number(phone.to_s).is_used_by self
+    when 'String'
+      Phone.find_or_create_by_number(phone).is_used_by self
     end
   end
   
   def uses_site site
-    case site.class
-    when Website
+    case site.class.name
+    when 'Website'
       site.is_used_by self
-    when WebsiteUse
+    when 'WebsiteUse'
       site.website.is_used_by self
-    when String
+    when 'String'
       Website.find_or_create_by_href(site).is_used_by self
     end
   end
   
   def uses_image image
-    case image.class
-    when Image
+    case image.class.name
+    when 'Image'
       image.is_used_by self
-    when ImageUse
+    when 'ImageUse'
       image.image.is_used_by self
     end
   end
@@ -87,6 +87,7 @@ class ActiveRecord::Base
   end
   
   def add_primary_photo img
+    self.primary_photos ||= []
     self.primary_photos.push(img.kind_of?(ActiveRecord::Base) ? img.id : img) && save if img && respond_to?(:primary_photos)
   end
   

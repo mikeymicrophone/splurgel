@@ -10,11 +10,10 @@
 <% for address_use in @address_uses %>
   <tr>
     <td><%=h address_use.target_type %></td>
-    <td><%=h address_use.target_id %></td>
-    <td><%=h address_use.address_id %></td>
+    <td><%= link_to_name address_use.target %></td>
+    <td><%= link_to_name address_use.address %></td>
     <td><%= link_to 'show', address_use %></td>
     <td><%= link_to 'edit', edit_address_use_path(address_use) %></td>
-    <td><%= link_to 'Destroy', address_use, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

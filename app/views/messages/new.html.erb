@@ -3,15 +3,17 @@
 <% form_for(@message) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.text_area :body %>what it is:
+  <p>what it is:<br>
+    <%= f.text_area :body %>
   </p>
-  <p>
-    <%= f.select :recipient_id, User.map_name_and_id %>to:
-  </p>
-  <p>
-    <%= f.select :reply_id, current_user.incoming_messages.map_name_and_id, :include_blank => true %>replying to?
-  </p>
+  <% unless @message.recipient %>
+	  <p>
+	    to:<%= f.select :recipient_id, User.map_name_and_id('login') %>
+	  </p>
+	<% else %>
+	  <%= f.hidden_field :recipient_id %>
+	<% end %>
+	<%= f.hidden_field :reply_id %>
   <p>
     <%= f.submit :bestow %>
   </p>

@@ -1,17 +1,16 @@
   <blockquote><%=h @message.body %></blockquote><br>
-  from <%= link_to_name @message.user %> to <% link_to_name @message.recipient %><br>
+  from <%= link_to_name @message.user, 'login' %> to <%= link_to_name @message.recipient, 'login' %><br>
   <%= 'this is a reply to ' + link_to_name(@message.reply, 'first_sentence') + '<br>' if @message.reply_id %><br>
   <%= attach_image_link @message %>
   <%= attachable_sites @message %>
 
 <% if @message.read_on.blank? %>
-  unread by recipient as of yet.
+  unread by recipient as yet.
 <% else %>
   read <%= time_ago_in_words @message.read_on %> ago
 <% end %><br>
 
 <%= link_to 'reply', new_message_path(:reply_id => @message.id) if current_user?(@message.recipient_id) %>
 
-<%= link_to 'edit', edit_message_path(@message) %> |
 <%= link_to 'messages', messages_path %>
 <%= link_to_backup %>

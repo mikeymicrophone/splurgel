@@ -1,23 +1,29 @@
-<h1>Sign up as a new user</h1>
+<h1>be the newest member of splurgel!!!</h1>
 <% @user.password = @user.password_confirmation = nil %>
 
 <%= error_messages_for :user %>
-<% form_for :user, :url => users_path do |f| -%>
-<p><label for="login">Login</label><br/>
-<%= f.text_field :login %></p>
+<% form_for :user, :url => users_path, :html => {:multipart => true, :id => 'splurgel_sign_up'} do |f| -%>
 
-<p><label for="email">Email</label><br/>
-<%= f.text_field :email %></p>
+<p><%= f.text_field :login %><label for="login">pick a name for yourself</label></p>
 
-<p><label for="password">Password</label><br/>
-<%= f.password_field :password %></p>
+<p><%= f.text_field :email %><label for="email">your email</label></p>
 
-<p><label for="password_confirmation">Confirm Password</label><br/>
-<%= f.password_field :password_confirmation %></p>
+<p><%= f.password_field :password %><label for="password">a password</label></p>
 
-<%= text_field :phone, :number %>phone<br>
-<%= text_field :website, :url %>site<br>
-
-
-<p><%= submit_tag 'Sign up' %></p>
+<p><%= f.password_field :password_confirmation %><label for="password_confirmation">confirm your password</label></p>
+<p>optionally, please add</p>
+<p><%= file_field :image, :uploaded_data %>an image</p>
+<p><%= text_field :phone, :number %>your phone</p>
+<p><%= text_field :website, :url %>a site</p>
+<p><%= f.text_field :name %>your name</p>
+<p><%= f.text_area :persona, :size => '39x3' %>persona</p>
+<p><%= f.text_area :hobbies, :size => '39x3' %>and hobbies</p>
+<p><%= f.text_area :interests, :size => '39x3' %>your interests</p>
+<p><%= text_field :address, :street %>shipping address</p>
+<p><%= text_field :address, :street2 %>line 2</p>
+<p><%= text_field :address, :city_name %>city</p>
+<p><%= text_field :address, :state_name %>state</p>
+<p><%= text_field :address, :zip %>zip</p>
+<p><%= text_field :address, :name %>a name for this address</p>
+<p><%= submit_tag 'sign up' %></p>
 <% end -%>

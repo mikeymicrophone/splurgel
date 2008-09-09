@@ -21,12 +21,11 @@
     <td><%=h address.alternate_names %></td>
     <td><%=h address.street %></td>
     <td><%=h address.street2 %></td>
-    <td><%=h address.city.name %></td>
-    <td><%=h address.state.name %></td>
+    <td><%= link_to_name address.city %></td>
+    <td><%= link_to_name address.state %></td>
     <td><%=h address.zip %></td>
     <td><%= link_to 'show', address %></td>
     <td><%= link_to 'edit', edit_address_path(address) %></td>
-    <td><%= link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

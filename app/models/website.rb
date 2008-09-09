@@ -41,6 +41,6 @@ class Website < ActiveRecord::Base
   end
   
   def is_used_by entity
-    WebsiteUse.create(:website_id => id, :target_id => entity.id, :target_type => entity.class.name) unless WebsiteUse.find_by_target_id_and_target_type_and_website_id(entity.id, entity.type, id)
+    WebsiteUse.create(:website_id => id, :target_id => entity.id, :target_type => entity.class.name) unless WebsiteUse.find_by_target_id_and_target_type_and_website_id(entity.id, entity.class.name, id)
   end
 end

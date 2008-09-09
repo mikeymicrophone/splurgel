@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
   end
 
   def new
-    @message = Message.new
+    @message = Message.new params[:message]
 
     respond_to do |format|
       format.html # new.html.erb

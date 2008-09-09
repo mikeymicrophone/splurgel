@@ -6,6 +6,7 @@
 <%= @user.hobbies %><br>
 <%= @user.interests %><br>
 
+<%= message_link @user unless current_user && current_user == @user %>
 <%= list_links @user %><br>
 <%= attachable_sites @user %>
 <%= follow_link @user %>

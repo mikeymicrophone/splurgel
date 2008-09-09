@@ -22,7 +22,13 @@ class UsersController < ApplicationController
     @user = User.new params[:user]
     success = @user && @user.save
     if success && @user.errors.empty?
-      @user.uses_phone params[:phone][:number] if params[:phone]
+      @user.uses_phone params[:phone][:number]
+      @user.uses_site params[:website][:url]
+      @shipping_address = Address.create params[:address].merge('user_id' => @user.id)
+      @user.primary_address_id = @shipping_address.id if @shipping_address.valid?
+      @image = Image.create params[:image] unless params[:image][:uploaded_data].blank?
+      @user.add_primary_photo @image if @image
+      @user.save
       redirect_back_or_default('/')
       flash[:notice] = "Thanks for signing up!  We're sending you an email with your activation code."
     else
