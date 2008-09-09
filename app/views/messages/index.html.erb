@@ -2,18 +2,16 @@
 
 <table>
   <tr>
-    <th>Body</th>
-    <th>User</th>
-    <th>Reply</th>
-    <th>Read on</th>
+    <th>first line</th>
+    <th>from</th>
+    <th>a reply to</th>
   </tr>
 
 <% for message in @messages %>
   <tr>
-    <td><%=h message.body %></td>
+    <td><%= message.read_on.blank? ? '<b>' : '' %><%= link_to message.first_sentence, message %><%= message.read_on.blank? ? '</b>' : '' %></td>
     <td><%= link_to_name message.user %> to <%= link_to_name message.recipient %></td>
-    <td><%= link_to_name message.reply, 'subject' %></td>
-    <td><%=h message.read_on %></td>
+    <td><%= link_to_name message.reply, 'first_sentence' %></td>
     <td><%= link_to 'show', message %></td>
     <td><%= link_to 'edit', edit_message_path(message) %></td>
     <td><%= attach_image_link message %></td>

@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     @user = User.new params[:user]
     success = @user && @user.save
     if success && @user.errors.empty?
+      ActiveRecord::Base.instance_variable_set('@current_user', @user)
       @user.uses_phone params[:phone][:number]
       @user.uses_site params[:website][:url]
       @shipping_address = Address.create params[:address].merge('user_id' => @user.id)

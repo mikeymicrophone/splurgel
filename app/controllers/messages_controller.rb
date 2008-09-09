@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.find :all
+    @messages = Message.find :all, :conditions => {:recipient_id => current_user_id}
 
     respond_to do |format|
       format.html # index.html.erb
@@ -11,9 +11,13 @@ class MessagesController < ApplicationController
   def show
     @message = Message.find params[:id]
     redirect_to messages_path unless current_user.id == @message.recipient_id || current_user.id == @message.user_id
-    
-    @message.read_on ||= DateTime.now && @message.save if current_user.id == @message.recipient_id
-    
+
+    if @message.read_on.blank? && current_user.id == @message.recipient_id
+      @message.read_on = DateTime.now
+      @message.save
+      @message = Message.find(@message.id) # otherwise throws error when calling time_ago_in_words @message.read_on
+    end
+
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @message }
