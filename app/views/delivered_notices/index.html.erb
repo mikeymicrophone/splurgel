@@ -1,0 +1,30 @@
+<h1>Listing delivered_notices</h1>
+
+<table>
+  <tr>
+    <th>Notice</th>
+    <th>User</th>
+    <th>Read at</th>
+    <th>Dismissed at</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+  </tr>
+
+<% for delivered_notice in @delivered_notices %>
+  <tr>
+    <td><%=h delivered_notice.notice_id %></td>
+    <td><%=h delivered_notice.user_id %></td>
+    <td><%=h delivered_notice.read_at %></td>
+    <td><%=h delivered_notice.dismissed_at %></td>
+    <td><%=h delivered_notice.created_at %></td>
+    <td><%=h delivered_notice.updated_at %></td>
+    <td><%= link_to 'Show', delivered_notice %></td>
+    <td><%= link_to 'Edit', edit_delivered_notice_path(delivered_notice) %></td>
+    <td><%= link_to 'Destroy', delivered_notice, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New delivered_notice', new_delivered_notice_path %>

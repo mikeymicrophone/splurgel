@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  target_type: MyString
+  target_id: 1
+  followed_type: MyString
+  followed_id: 1
+  secondary_targets: MyString
+  user_id: 1
+  private: MyString
+  created_at: 2008-09-10 16:28:16
+  updated_at: 2008-09-10 16:28:16
+
+two:
+  target_type: MyString
+  target_id: 1
+  followed_type: MyString
+  followed_id: 1
+  secondary_targets: MyString
+  user_id: 1
+  private: MyString
+  created_at: 2008-09-10 16:28:16
+  updated_at: 2008-09-10 16:28:16

@@ -1,0 +1,57 @@
+<h1>Editing notice</h1>
+
+<% form_for(@notice) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_field :body %>
+  </p>
+  <p>
+    <%= f.label :short_version %><br />
+    <%= f.text_field :short_version %>
+  </p>
+
+
+  <p>
+    <%= f.label :target_type %><br />
+    <%= f.text_field :target_type %>
+  </p>
+  <p>
+    <%= f.label :target_id %><br />
+    <%= f.text_field :target_id %>
+  </p>
+  <p>
+    <%= f.label :followed_type %><br />
+    <%= f.text_field :followed_type %>
+  </p>
+  <p>
+    <%= f.label :followed_id %><br />
+    <%= f.text_field :followed_id %>
+  </p>
+  <p>
+    <%= f.label :secondary_targets %><br />
+    <%= f.text_field :secondary_targets %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :private %><br />
+    <%= f.text_field :private %>
+  </p>
+  <p>
+    <%= f.label :created_at %><br />
+    <%= f.datetime_select :created_at %>
+  </p>
+  <p>
+    <%= f.label :updated_at %><br />
+    <%= f.datetime_select :updated_at %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @notice %> |
+<%= link_to 'Back', notices_path %>

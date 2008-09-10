@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080909185157) do
+ActiveRecord::Schema.define(:version => 20080910204042) do
 
   create_table "address_uses", :force => true do |t|
     t.string   "target_type"
@@ -85,6 +85,15 @@ ActiveRecord::Schema.define(:version => 20080909185157) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+  end
+
+  create_table "delivered_notices", :force => true do |t|
+    t.integer  "notice_id",    :limit => 11
+    t.integer  "user_id",      :limit => 11
+    t.datetime "read_at"
+    t.datetime "dismissed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "followings", :force => true do |t|
@@ -187,6 +196,20 @@ ActiveRecord::Schema.define(:version => 20080909185157) do
     t.datetime "updated_at"
     t.integer  "user_id",          :limit => 11
     t.integer  "administrator_id", :limit => 11
+  end
+
+  create_table "notices", :force => true do |t|
+    t.text     "body"
+    t.string   "short_version"
+    t.string   "target_type"
+    t.integer  "target_id",         :limit => 11
+    t.string   "followed_type"
+    t.integer  "followed_id",       :limit => 11
+    t.string   "secondary_targets"
+    t.integer  "user_id",           :limit => 11
+    t.string   "private"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "offerings", :force => true do |t|

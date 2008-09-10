@@ -1,0 +1,35 @@
+<h1>Listing notices</h1>
+
+<table>
+  <tr>
+    <th>Target type</th>
+    <th>Target</th>
+    <th>Followed type</th>
+    <th>Followed</th>
+    <th>Secondary targets</th>
+    <th>User</th>
+    <th>Private</th>
+    <th>Created at</th>
+    <th>Updated at</th>
+  </tr>
+
+<% for notice in @notices %>
+  <tr>
+    <td><%=h notice.target_type %></td>
+    <td><%= link_to_name notice.target %></td>
+    <td><%=h notice.followed_type %></td>
+    <td><%= link_to_name notice.followed %></td>
+    <td><%=h notice.secondary_targets %></td>
+    <td><%= link_to_name notice.user %></td>
+    <td><%=h notice.private %></td>
+    <td><%=h notice.created_at %></td>
+    <td><%=h notice.updated_at %></td>
+    <td><%= link_to 'Show', notice %></td>
+    <td><%= link_to 'Edit', edit_notice_path(notice) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New notice', new_notice_path %>

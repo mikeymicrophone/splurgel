@@ -1,0 +1,36 @@
+<h1>Editing delivered_notice</h1>
+
+<% form_for(@delivered_notice) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :notice_id %><br />
+    <%= f.text_field :notice_id %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.label :read_at %><br />
+    <%= f.datetime_select :read_at %>
+  </p>
+  <p>
+    <%= f.label :dismissed_at %><br />
+    <%= f.datetime_select :dismissed_at %>
+  </p>
+  <p>
+    <%= f.label :created_at %><br />
+    <%= f.datetime_select :created_at %>
+  </p>
+  <p>
+    <%= f.label :updated_at %><br />
+    <%= f.datetime_select :updated_at %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @delivered_notice %> |
+<%= link_to 'Back', delivered_notices_path %>

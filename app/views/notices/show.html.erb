@@ -1,0 +1,48 @@
+<p>
+  <b>Target type:</b>
+  <%=h @notice.target_type %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%=h @notice.target_id %>
+</p>
+
+<p>
+  <b>Followed type:</b>
+  <%=h @notice.followed_type %>
+</p>
+
+<p>
+  <b>Followed:</b>
+  <%=h @notice.followed_id %>
+</p>
+
+<p>
+  <b>Secondary targets:</b>
+  <%=h @notice.secondary_targets %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @notice.user_id %>
+</p>
+
+<p>
+  <b>Private:</b>
+  <%=h @notice.private %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @notice.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%=h @notice.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_notice_path(@notice) %> |
+<%= link_to 'Back', notices_path %>

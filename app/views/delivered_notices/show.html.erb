@@ -1,0 +1,33 @@
+<p>
+  <b>Notice:</b>
+  <%=h @delivered_notice.notice_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @delivered_notice.user_id %>
+</p>
+
+<p>
+  <b>Read at:</b>
+  <%=h @delivered_notice.read_at %>
+</p>
+
+<p>
+  <b>Dismissed at:</b>
+  <%=h @delivered_notice.dismissed_at %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%=h @delivered_notice.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%=h @delivered_notice.updated_at %>
+</p>
+
+
+<%= link_to 'Edit', edit_delivered_notice_path(@delivered_notice) %> |
+<%= link_to 'Back', delivered_notices_path %>
