@@ -1,6 +1,8 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+  has_many :stores
+  has_many :locations
   has_many :authorizations
   has_many :authorized_situations, :class_name => 'Authorization', :foreign_key => :authorizer_id
   has_many :listings
@@ -41,42 +43,67 @@ class User < ActiveRecord::Base
     thing.administrator_id == id # refactor when I implement multiple administrators per thing
   end
   
+  def owned_stores_and_locations
+    stores + locations
+  end
+  
+  def authorized_to_authorize store_or_location
+    if store_or_location.is_a? Store
+      id == store_or_location.id
+    elsif store_or_location.is_a? Location
+      id == store_or_location.user_id || id == store_or_location.store.user_id
+    else
+      raise TypeError
+    end
+  end
+  
   def is_authorized_to_create_locations_of store
     store = store.id if store.is_a? Store
-    not (authorizations.select { |a| a.target_id == store && a.target_type == 'Store' && a.authorization_type == 1}.blank?)
+    return true if authorized_to_authorize(Store.find(store))
+    Authorization.find_by_authorization_type_and_target_id_and_target_type_and_user_id(1, store, 'Store', id)
   end
   
   def is_authorized_to_edit_locations_of store
     store = store.id if store.is_a? Store
-    not (authorizations.select { |a| a.target_id == store && a.target_type == 'Store' && [1, 2].include?(a.authorization_type)}.blank?)    
+    return true if is_authorized_to_create_locations_of(store)
+    @a = Authorization.find_by_target_id_and_target_type_and_user_id(store, 'Store', id) && [1,2].include?(@a.authorization_type)
   end
   
   def is_authorized_to_create_offerings_at location
+    if location.is_a? Store
+      @a = Authorization.find_by_target_id_and_target_type_and_user_id(location, 'Store', id)
+    end
     location = location.id if location.is_a? Location
+    return true if authorized_to_authorize(Location.find(location))
     return true if is_authorized_to_edit_locations_of(Location.find(location).store_id)
-    not (authorizations.select { |a| a.target_id == location && a.target_type == 'Location' && [1, 2, 10].include?(a.authorization_type)}.blank?)    
+    @a ||= Authorization.find_by_target_id_and_target_type_and_user_id(location, 'Location', id)
+    @a && [1, 2, 10].include(@a.authorization_type)
   end
   
   def is_authorized_to_edit_offerings_at location
+    if location.is_a? Store
+      @a = Authorization.find_by_target_id_and_target_type_and_user_id(location, 'Store', id)
+    end    
     location = location.id if location.is_a? Location
     return true if is_authorized_to_create_offerings_at location
-    not (authorizations.select { |a| a.target_id == location && a.target_type == 'Location' && [1, 2, 10, 20].include?(a.authorization_type)}.blank?)    
+    @a ||= Authorization.find_by_target_id_and_target_type_and_user_id(location, 'Location', id)
+    @a && [1, 2, 10, 20].include(@a.authorization_type)
   end
   
   def authorize_to_create_locations_of store
-    Authorization.create(:target => store, :authorization_type => 1, :user_id => id, :authorizer_id => current_user.id)
+    Authorization.create(:target => store, :authorization_type => 1, :user_id => id, :authorizer_id => ActiveRecord::Base.instance_variable_get('@current_user').id)
   end
   
   def authorize_to_edit_locations_of store
-    Authorization.create(:target => store, :authorization_type => 2, :user_id => id, :authorizer_id => current_user.id)
+    Authorization.create(:target => store, :authorization_type => 2, :user_id => id, :authorizer_id => ActiveRecord::Base.instance_variable_get('@current_user').id)
   end
   
   def authorize_to_create_offerings_at location
-    Authorization.create(:target => location, :authorization_type => 10, :user_id => id, :authorizer_id => current_user.id)
+    Authorization.create(:target => location, :authorization_type => 10, :user_id => id, :authorizer_id => ActiveRecord::Base.instance_variable_get('@current_user').id)
   end
   
   def authorize_to_edit_offerings_at location
-    Authorization.create(:target => location, :authorization_type => 20, :user_id => id, :authorizer_id => current_user.id)
+    Authorization.create(:target => location, :authorization_type => 20, :user_id => id, :authorizer_id => ActiveRecord::Base.instance_variable_get('@current_user').id)
   end
   
   include Authentication

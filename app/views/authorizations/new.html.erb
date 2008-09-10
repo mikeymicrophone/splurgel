@@ -11,13 +11,11 @@
     <%= f.label :authorization_type %><br />
     <%= f.text_field :authorization_type %>
   </p>
-  <p>
-    <%= f.label :target_type %><br />
-    <%= f.text_field :target_type %>
-  </p>
+    <%= f.hidden_field :target_type %>
+		<%= f.hidden_field :authorizer_id, :value => current_user.id %>
   <p>
     <%= f.label :target_id %><br />
-    <%= f.text_field :target_id %>
+    <%= f.select :target_id, @authorized_spots.map { |s| [s.name, s.id] } %>
   </p>
   <p>
     <%= f.submit "authorize" %>

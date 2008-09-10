@@ -24,7 +24,21 @@ class AuthorizationsController < ApplicationController
   # GET /authorizations/new
   # GET /authorizations/new.xml
   def new
-    @authorization = Authorization.new
+    @authorization = Authorization.new params[:authorization]
+    if params[:authorization][:target_type]
+      if params[:authorization][:target_type] == 'Store'
+        @authorized_spots = current_user.stores
+        @authorization_types = [['create locations', 1], ['edit locations', 2], ['create offerings', 10], ['edit offerings', 20]]
+      elsif params[:authorization][:target_type] == 'Location'
+        @authorized_spots = current_user.locations
+        @authorization_types = [['create offerings', 10], ['edit offerings', 20]]
+      else
+        raise TypeError
+      end
+    else
+      @authorized_spots = current_user.owned_stores_and_locations
+      @authorization_types = [['create locations', 1], ['edit locations', 2], ['create offerings', 10], ['edit offerings', 20]]
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +55,9 @@ class AuthorizationsController < ApplicationController
   # POST /authorizations.xml
   def create
     @authorization = Authorization.new(params[:authorization])
-
+    @target = params[:authorization][:target_type].constantize.send(:find, params[:authorization][:target_id])
+    redirect_to current_user unless current_user.authorized_to_authorize @target
+    
     respond_to do |format|
       if @authorization.save
         flash[:notice] = 'Authorization was successfully created.'
