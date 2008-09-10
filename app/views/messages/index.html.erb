@@ -12,8 +12,6 @@
     <td><%= message.read_on.blank? ? '<b>' : '' %><%= link_to message.first_sentence, message %><%= message.read_on.blank? ? '</b>' : '' %></td>
     <td><%= link_to_name message.user %> to <%= link_to_name message.recipient %></td>
     <td><%= link_to_name message.reply, 'first_sentence' %></td>
-    <td><%= link_to 'show', message %></td>
-    <td><%= link_to 'edit', edit_message_path(message) %></td>
     <td><%= attach_image_link message %></td>
   </tr>
 <% end %>

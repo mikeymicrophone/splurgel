@@ -41,6 +41,44 @@ class User < ActiveRecord::Base
     thing.administrator_id == id # refactor when I implement multiple administrators per thing
   end
   
+  def is_authorized_to_create_locations_of store
+    store = store.id if store.is_a? Store
+    not (authorizations.select { |a| a.target_id == store && a.target_type == 'Store' && a.authorization_type == 1}.blank?)
+  end
+  
+  def is_authorized_to_edit_locations_of store
+    store = store.id if store.is_a? Store
+    not (authorizations.select { |a| a.target_id == store && a.target_type == 'Store' && [1, 2].include?(a.authorization_type)}.blank?)    
+  end
+  
+  def is_authorized_to_create_offerings_at location
+    location = location.id if location.is_a? Location
+    return true if is_authorized_to_edit_locations_of(Location.find(location).store_id)
+    not (authorizations.select { |a| a.target_id == location && a.target_type == 'Location' && [1, 2, 10].include?(a.authorization_type)}.blank?)    
+  end
+  
+  def is_authorized_to_edit_offerings_at location
+    location = location.id if location.is_a? Location
+    return true if is_authorized_to_create_offerings_at location
+    not (authorizations.select { |a| a.target_id == location && a.target_type == 'Location' && [1, 2, 10, 20].include?(a.authorization_type)}.blank?)    
+  end
+  
+  def authorize_to_create_locations_of store
+    Authorization.create(:target => store, :authorization_type => 1, :user_id => id, :authorizer_id => current_user.id)
+  end
+  
+  def authorize_to_edit_locations_of store
+    Authorization.create(:target => store, :authorization_type => 2, :user_id => id, :authorizer_id => current_user.id)
+  end
+  
+  def authorize_to_create_offerings_at location
+    Authorization.create(:target => location, :authorization_type => 10, :user_id => id, :authorizer_id => current_user.id)
+  end
+  
+  def authorize_to_edit_offerings_at location
+    Authorization.create(:target => location, :authorization_type => 20, :user_id => id, :authorizer_id => current_user.id)
+  end
+  
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken

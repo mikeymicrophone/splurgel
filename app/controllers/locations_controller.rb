@@ -22,6 +22,7 @@ class LocationsController < ApplicationController
   end
 
   def new
+    redirect_back_or_default('/') if params[:store_id] && !current_user.is_authorized_to_create_locations_of(params[:store_id])
     @location = Location.new(:store_id => params[:store_id])
 
     respond_to do |format|
@@ -32,6 +33,7 @@ class LocationsController < ApplicationController
 
   def edit
     @location = Location.find params[:id]
+    redirect_back_or_default('/') unless current_user.is_authorized_to_edit_locations_of(@location.store_id)
   end
 
   def create
@@ -39,6 +41,7 @@ class LocationsController < ApplicationController
     params[:location][:primary_phone_id] = @phone.id if @phone
     
     @location = Location.new params[:location]
+    redirect_to current_user unless current_user.is_authorized_to_create_locations_of(params[:location][:store_id])
     
     respond_to do |format|
       if @location.save
