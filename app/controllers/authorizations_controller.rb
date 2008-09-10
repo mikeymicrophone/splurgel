@@ -49,13 +49,20 @@ class AuthorizationsController < ApplicationController
   # GET /authorizations/1/edit
   def edit
     @authorization = Authorization.find(params[:id])
+    redirect_to current_user unless current_user.authorized_to_authorize(@authorization.target)
   end
 
   # POST /authorizations
   # POST /authorizations.xml
   def create
+    if params[:authorization][:target_type].blank?
+      potentials = current_user.owned_stores_and_locations.select { |s| s.id == params[:authorization][:target_id].to_i }
+      raise NotImplemented if potentials.length > 1
+      @target = potentials.first
+      params[:authorization][:target_type] = @target.class.name
+    end
     @authorization = Authorization.new(params[:authorization])
-    @target = params[:authorization][:target_type].constantize.send(:find, params[:authorization][:target_id])
+    @target ||= params[:authorization][:target_type].constantize.send(:find, params[:authorization][:target_id])
     redirect_to current_user unless current_user.authorized_to_authorize @target
     
     respond_to do |format|

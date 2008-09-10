@@ -47,6 +47,9 @@ class User < ActiveRecord::Base
     stores + locations
   end
   
+  # conventionally these five methods would have question marks at the end of their names, I left them off for now
+  
+  # true if the user is allowed to create authorizations for the passed object
   def authorized_to_authorize store_or_location
     if store_or_location.is_a? Store
       id == store_or_location.id
@@ -57,18 +60,24 @@ class User < ActiveRecord::Base
     end
   end
   
+  # true if the user is allowed to create locations for the passed store (or store id)
+  # this is allowed if the user created the store, or if an authorization object exists that allows them to create locations of this store
   def is_authorized_to_create_locations_of store
     store = store.id if store.is_a? Store
     return true if authorized_to_authorize(Store.find(store))
     Authorization.find_by_authorization_type_and_target_id_and_target_type_and_user_id(1, store, 'Store', id)
   end
   
+  # true if the user is allowed to edit locations of the passed store (or store id)
+  # this is allowed if the user is allowed to create locations for the store, or an authorization object exists that allows it
   def is_authorized_to_edit_locations_of store
     store = store.id if store.is_a? Store
     return true if is_authorized_to_create_locations_of(store)
     @a = Authorization.find_by_target_id_and_target_type_and_user_id(store, 'Store', id) && [1,2].include?(@a.authorization_type)
   end
   
+  # true if the user is allowed to create offerings (which specify a product, a location, and optionally a price) for the passed location (or location id) or store (but not store id)
+  # this is allowed if the user meets any of the criteria for editing the location, or if an authorization object exists that allows it
   def is_authorized_to_create_offerings_at location
     if location.is_a? Store
       @a = Authorization.find_by_target_id_and_target_type_and_user_id(location, 'Store', id)
@@ -80,6 +89,8 @@ class User < ActiveRecord::Base
     @a && [1, 2, 10].include(@a.authorization_type)
   end
   
+  # true if the user is allowed to edit offerings at the passed location or store (or location id)
+  # this is allowed if the user meets any of the criteria for editing offerings there, or if an authorization object exists that allows it
   def is_authorized_to_edit_offerings_at location
     if location.is_a? Store
       @a = Authorization.find_by_target_id_and_target_type_and_user_id(location, 'Store', id)

@@ -6,8 +6,8 @@ class Authorization < ActiveRecord::Base
   # authorized to create locations if target_type is Store and authorization_type is 1
   # authorized to edit locations if target_type is Store and authorization_type is 2
   
-  # authorized to create offerings if target_type is Location and authorization_type is 10
-  # authorized to edit offerings if target_type is Location and authorization_type is 20
+  # authorized to create offerings if target_type is Location or Store and authorization_type is 10
+  # authorized to edit offerings if target_type is Location or Store and authorization_type is 20
 
   def to_create_location(store)
     store = store.id if store.is_a?(Store)
