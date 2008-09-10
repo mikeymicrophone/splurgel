@@ -7,16 +7,24 @@
     <%= f.label :user_id %><br />
     <%= f.select :user_id, User.map_name_and_id %>
   </p>
-  <p>
-    <%= f.label :authorization_type %><br />
-    <%= f.text_field :authorization_type %>
-  </p>
-    <%= f.hidden_field :target_type %>
-		<%= f.hidden_field :authorizer_id, :value => current_user.id %>
-  <p>
-    <%= f.label :target_id %><br />
-    <%= f.select :target_id, @authorized_spots.map { |s| [s.name, s.id] } %>
-  </p>
+  <% if @authorization.authorization_type.blank? %>
+	  <p>
+	    <%= f.label :authorization_type %><br />
+	    <%= f.text_field :authorization_type %>
+	  </p>
+  <% else %>
+    <%= f.hidden_field :authorization_type %>
+  <% end %>
+  <%= f.hidden_field :target_type %>
+	<%= f.hidden_field :authorizer_id, :value => current_user.id %>
+	<% if @authorization.target_id.blank? %>
+	  <p>
+	    <%= f.label :target_id %><br />
+	    <%= f.select :target_id, @authorized_spots.map { |s| [s.name, s.id] } %>
+	  </p>
+  <% else%>
+    <%= f.hidden_field :target_id %>
+	<% end %>
   <p>
     <%= f.submit "authorize" %>
   </p>

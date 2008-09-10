@@ -53,7 +53,7 @@ class Address < ActiveRecord::Base
   
   def display
     address = ''
-    address += street + ' '
+    address += street + ' ' unless street.blank?
     address += street2 + ' ' unless street2.blank?
     address += city.name if city
     address += ', ' if city && state

@@ -5,11 +5,11 @@
 <%= attachable_sites @store %>
 <%= follow_link @store %>
 <% @store.locations.each do |l| %>
-  <%= link_to l.address.street + ' ' + l.address.city.name, l %><br>
+  <%= link_to l.address.street + ' ' + (l.address.city ? l.address.city.name : ''), l %><br>
 <% end %>
-<%= link_to 'add a location', new_store_location_path(@store) %><br>
+<%= link_to 'add a location', new_store_location_path(@store) if current_user.is_authorized_to_create_locations_of(@store) %><br>
 <%= link_to 'locations', store_locations_path(@store) %>
 
-<%= link_to 'edit', edit_store_path(@store) %> |
+<%= link_to 'edit', edit_store_path(@store) if current_user.authorized_to_authorize(@store) %> |
 <%= link_to 'stores', stores_path %>
 <%= link_to_backup %>

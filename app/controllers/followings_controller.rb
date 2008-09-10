@@ -1,6 +1,10 @@
 class FollowingsController < ApplicationController
   def index
-    @followings = Following.find :all
+    @followings = if params[:user_id]
+      Following.find(:all, :conditions => {:follower_type => 'User', :follower_id => params[:user_id]})
+    else
+      Following.find :all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

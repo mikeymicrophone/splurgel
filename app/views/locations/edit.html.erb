@@ -1,26 +1,21 @@
 <h1> location</h1>
 
+<%= link_to 'authorize someone to edit', new_authorization_path(:authorization => {:target_type => 'Store', :target_id => @location.store_id, :authorization_type => 2}) %><br>
+<%= link_to 'authorize someone to add products', new_authorization_path(:authorization => {:target_type => 'Location', :target_id => @location.id, :authorization_type => 10}) %><br>
+<%= link_to 'authorize someone to edit products', new_authorization_path(:authorization => {:target_type => 'Location', :target_id => @location.id, :authorization_type => 20}) %>
+
 <% form_for(@location) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </p>
-  <p>
-    <%= f.label :store_id %><br />
-    <%= f.text_field :store_id %>
+    <%= f.select :primary_phone_id, Phone.map_name_and_id('number') %>primary phone number
   </p>
   <p>
     <%= f.label :schedule_id %><br />
-    <%= f.text_field :schedule_id %>
+    <%= f.select :schedule_id, Schedule.map_name_and_id %>
   </p>
   <p>
-    <%= f.label :address_id %><br />
-    <%= f.text_field :address_id %>
-  </p>
-  <p>
-    <%= f.submit "Update" %>
+    <%= f.submit "update" %>
   </p>
 <% end %>
 

@@ -3,8 +3,12 @@
 <%= attach_image_link @location %>
 <%= attachable_sites @location %>
 <%= follow_link @location %>
-<%=h @location.address.display %><br>
-<%=h @location.primary_phone %><br>
-<%= link_to 'edit', edit_location_path(@location) %> |
+<%=h @location.address.display if @location.address %><br>
+<%=h @location.primary_phone.number if @location.primary_phone %><br>
+<% @location.products.each do |p| %>
+  <%= link_to_name p %>
+<% end %>
+<%= link_to 'add product', new_offering_path(:offering => {:location_id => @location.id}) if current_user.is_authorized_to_create_offerings_at(@location) %>
+<%= link_to 'edit', edit_location_path(@location) if current_user.is_authorized_to_edit_locations_of(@location.store) %> |
 <%= link_to 'locations', locations_path %>
 <%= link_to_backup %>

@@ -20,6 +20,10 @@ class Offering < ActiveRecord::Base
     indexes comments(:body)
   end
   
+  def price
+    prices.select { |p| p.end_date > Time.now }.first
+  end
+  
   def store
     location.store
   end

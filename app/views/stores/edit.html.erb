@@ -1,5 +1,10 @@
 <h1> store</h1>
 
+<%= link_to 'authorize someone to add locations', new_authorization_path(:authorization => {:target_type => 'Store', :target_id => @store.id, :authorization_type => 1}) %><br>
+<%= link_to 'authorize someone to edit locations', new_authorization_path(:authorization => {:target_type => 'Store', :target_id => @store.id, :authorization_type => 2}) %><br>
+<%= link_to 'authorize someone to add products', new_authorization_path(:authorization => {:target_type = 'Store', :target_id => @store.id, :authorization_type => 10}) %><br>
+<%= link_to 'authorize someone to edit products', new_authorization_path(:authorization => {:target_type => 'Store', :target_id => @store.id, :authorization_type => 20}) %>
+
 <% form_for(@store) do |f| %>
   <%= f.error_messages %>
 

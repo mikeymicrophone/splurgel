@@ -25,7 +25,7 @@ class AuthorizationsController < ApplicationController
   # GET /authorizations/new.xml
   def new
     @authorization = Authorization.new params[:authorization]
-    if params[:authorization][:target_type]
+    if !params[:authorization][:target_type].blank? && params[:authorization][:target_id].blank?
       if params[:authorization][:target_type] == 'Store'
         @authorized_spots = current_user.stores
         @authorization_types = [['create locations', 1], ['edit locations', 2], ['create offerings', 10], ['edit offerings', 20]]

@@ -5,6 +5,10 @@ class Schedule < ActiveRecord::Base
   has_many :tags, :through => :taggings
   has_many :comments, :as => :target
   
+  def display_for_select
+    display
+  end
+  
   def display
     days = %w! monday tuesday wednesday thursday friday saturday sunday !
 

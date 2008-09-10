@@ -2,7 +2,9 @@ class Location < ActiveRecord::Base
   belongs_to :store
   belongs_to :schedule
   belongs_to :address
+  belongs_to :user
   has_many :offerings
+  has_many :products, :through => :offerings
   has_many :taggings, :as => :target
   has_many :tags, :through => :taggings
   has_many :website_uses, :as => :target

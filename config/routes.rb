@@ -82,7 +82,9 @@ ActionController::Routing::Routes.draw do |map|
     store.resources :locations
   end
     
-  map.resources :users
+  map.resources :users do |user|
+    user.resources :followings
+  end
 
   map.resource :session
   
