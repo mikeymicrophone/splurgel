@@ -21,7 +21,10 @@ class Product < ActiveRecord::Base
   has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Product' and followings.follower_type = 'User'"
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Product' and followings.follower_type = 'Group'"
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Product' and followings.follower_type = 'Location'"
+  has_many :notices
+  has_many :delivered_notices, :through => :notices
   serialize :primary_photos, Array
+  after_create :notify_brand
   
   define_index do
     indexes :name
@@ -30,6 +33,9 @@ class Product < ActiveRecord::Base
     indexes tags(:body)
   end
   
+  def notify_brand
+    brand.make_known("#{name} is the newest product from #{brand.name}.", [self, brand])
+  end
 
   def stores
     locations.map &:store

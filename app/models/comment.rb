@@ -13,11 +13,26 @@ class Comment < ActiveRecord::Base
   has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Comment' and followings.follower_type = 'User'"
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Comment' and followings.follower_type = 'Group'"
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Comment' and followings.follower_type = 'Location'"
+  has_many :notices
+  has_many :delivered_notices, :through => :notices
   serialize :primary_photos, Array
+  after_create :notify_target, :notify_of_reply
 
   define_index do
     indexes :body
     # indexes target(:name)
+  end
+  
+  def notify_user
+    user.make_known("commented on #{target.name}.", [self, target])
+  end
+  
+  def notify_target
+    target.make_known("#{user.login} commented", [self, user])
+  end
+  
+  def notify_of_reply
+    reply.make_known("#{user.login} replied", [self, reply]) if reply
   end
 
   def name

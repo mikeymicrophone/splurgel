@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
   has_many :authorizations
   has_many :authorized_situations, :class_name => 'Authorization', :foreign_key => :authorizer_id
   has_many :listings
+  has_many :delivered_notices
+  has_many :notices, :through => :delivered_notices
   has_many :network_memberships
   has_many :networks, :through => :network_memberships
   has_many :memberships

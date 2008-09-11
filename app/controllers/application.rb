@@ -45,6 +45,18 @@ end
 
 class ActiveRecord::Base
   
+  def make_known body, targets = nil, short_version = nil
+    if targets && targets.is_a?(Array) && targets.length > 1
+      primary_target = targets.shift
+      secondary_targets = targets.map { |t| [t.class.name, t.id] }
+    elsif targets && targets.is_a?(Array)
+      primary_target = targets.first
+    else
+      primary_target = targets
+    end
+    Notice.create(:followed => self, :body => body, :target => primary_target, :short_version => short_version, :secondary_targets => secondary_targets)
+  end
+  
   def uses_phone phone
     case phone.class.name
     when 'Phone'

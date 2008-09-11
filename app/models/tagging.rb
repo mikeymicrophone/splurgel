@@ -38,6 +38,14 @@ class Tagging < ActiveRecord::Base
   serialize :primary_photos, Array
   belongs_to :user
   
+  def notify_tag
+    tag.make_known("applied to #{target.name}.", self)
+  end
+  
+  def notify_target
+    target.make_known("tagged with #{tag.name}", self)
+  end
+  
   def self.targets(format = :classes)
     case format
     when :classes

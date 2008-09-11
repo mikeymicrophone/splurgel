@@ -15,6 +15,8 @@ class Store < ActiveRecord::Base
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Store' and followings.follower_type = 'Group'", :as => :target
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Store' and followings.follower_type = 'Location'", :as => :target
   belongs_to :administrator, :class_name => 'User', :foreign_key => :administrator_id
+  has_many :notices
+  has_many :delivered_notices, :through => :notices
   serialize :primary_photos, Array
   
   define_index do

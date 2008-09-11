@@ -23,6 +23,8 @@ class Website < ActiveRecord::Base
   has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Website' and followings.follower_type = 'User'", :as => :target
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Website' and followings.follower_type = 'Group'", :as => :target
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Website' and followings.follower_type = 'Location'", :as => :target
+  has_many :notices
+  has_many :delivered_notices, :through => :notices
   serialize :primary_photos, Array
   
   define_index do
