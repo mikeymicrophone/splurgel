@@ -49,12 +49,20 @@ class User < ActiveRecord::Base
     stores + locations
   end
   
+  def authorized_stores
+    authorizations.find(:all, :conditions => ['authorization_type in (1, 2)']).map(&:target) + stores
+  end
+  
+  def authorized_locations
+    authorizations.find(:all, :conditions => ['authorization_type in (1, 2, 10)']).map(&:locations) + locations
+  end
+  
   # conventionally these five methods would have question marks at the end of their names, I left them off for now
   
   # true if the user is allowed to create authorizations for the passed object
   def authorized_to_authorize store_or_location
     if store_or_location.is_a? Store
-      id == store_or_location.id
+      id == store_or_location.user_id
     elsif store_or_location.is_a? Location
       id == store_or_location.user_id || id == store_or_location.store.user_id
     else

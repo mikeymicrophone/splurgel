@@ -3,18 +3,10 @@
 <% form_for(@store, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :administrator_id %><br />
-    <%= f.select :administrator_id, User.map_name_and_id %>
-  </p>
-  <%= label :phone, :number %>
-  <%= text_field :phone, :number, :size => 10 %>
-  <%= label :website, :url %>
-  <%= text_field :website, :url %>
+  <%= f.text_field :name %><%= f.label :name, 'store name' %><br>
+  <%= f.hidden_field :administrator_id, :value => current_user.id %>
+  <%= text_field :phone, :number, :size => 10 %>  <%= label :phone, :number, 'phone number' %><br>
+  <%= text_field :website, :url %>  <%= label :website, :url, 'website' %><br>
   <%= %>
   <p>
     <%= f.label :primary_image_id %><br />

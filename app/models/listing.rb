@@ -17,6 +17,6 @@ class Listing < ActiveRecord::Base
   end
   
   def self.list_types
-    {'like' => 1, 'want' => 2, 'have' => 3}
+    {'like' => 1, 'want' => 2, 'have' => 3, 1 => 'like', 2 => 'want', 3 => 'have'}
   end
 end

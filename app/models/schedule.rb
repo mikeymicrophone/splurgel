@@ -28,6 +28,6 @@ class Schedule < ActiveRecord::Base
     days.shift
 
     'monday-' + last_day_of_monday_hours + ' ' + monday_open.strftime("%l:%M") + ' to ' + monday_close.strftime("%l:%M") + ', ' +
-    days.map { |d| d + ' ' + send(d + '_open').strftime('%l:%m') + ' to ' + send(d + '_close').strftime('%l:%M') + ' '}.to_sentence
+    days.map { |d| d + ' ' + send(d + '_open').strftime('%l:%M') + ' to ' + send(d + '_close').strftime('%l:%M') + ' '}.to_sentence
   end
 end

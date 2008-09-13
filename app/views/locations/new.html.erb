@@ -1,18 +1,17 @@
-<h1> location</h1>
+<h1>you are submitting a new location<%= " for #{@location.store.name}" if @location.store %></h1>
 
 <% form_for(@location) do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= label :phone, :number %><br />
-    <%= text_field :phone, :number, :size => 13 %>
+    <%= text_field :phone, :number, :size => 13 %>    <%= label :phone, :number, 'phone number' %>
   </p>
   <% if @location.store_id %>
     <%= f.hidden_field :store_id %>
   <% else %>
     <p>
       <%= f.label :store_id %><br />
-      <%= f.select :store_id, Store.map_name_and_id %>
+      <%= f.select :store_id, current_user.authorized_stores.map_name_and_id %>
       <%= link_to 'new store', new_store_path%>
     </p>
   <% end %>
@@ -22,11 +21,15 @@
     <%= link_to 'new schedule', new_schedule_path %>
   </p>
   <p>
-    <%= f.label :address_id %><br />
+    <%= f.label :address_id, 'select an address' %><br />
     <%= f.select :address_id, Address.map_name_and_id('display') %>
-    <%= link_to 'new address', new_address_path %>
   </p>
-  <%= %>
+	<p><%= text_field :address, :street %><%= label :address, :street, 'or write it here' %></p>
+	<p><%= text_field :address, :street2 %><%= label :address, :street2, 'line 2' %></p>
+	<p><%= text_field :address, :city_name %><%= label :address, :city_name, 'city' %></p>
+	<p><%= text_field :address, :state_name %><%= label :address, :state_name, 'state' %></p>
+	<p><%= text_field :address, :zip %><%= label :address, :zip, 'zip' %></p>
+	<p><%= text_field :address, :name %><%= label :address, :name, 'a name for this address' %></p>
   <p>
     <%= f.submit :locate %>
   </p>

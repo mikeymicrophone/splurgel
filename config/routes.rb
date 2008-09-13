@@ -72,10 +72,15 @@ ActionController::Routing::Routes.draw do |map|
     product.resources :offerings
   end
 
-  map.resources :brands
+  map.resources :brands do |brand|
+    brand.resources :products
+  end
 
   map.resources :locations do |location|
     location.resources :offerings
+    location.resources :brands do |brand|
+      brand.resources :products
+    end
   end
 
   map.resources :cities

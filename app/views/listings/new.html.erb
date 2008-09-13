@@ -9,19 +9,19 @@
   </p>
   <p>
     <%= f.label :product_id %><br />
-    <%= f.select :product_id, Product.map_name_and_id %>
+    <%= f.select :product_id, Product.map_name_and_id, :include_blank => true %>
   </p>
   <p>
     <%= f.label :brand_id %><br />
-    <%= f.select :brand_id, Brand.map_name_and_id %>
+    <%= f.select :brand_id, Brand.map_name_and_id, :include_blank => true %>
   </p>
   <p>
     <%= f.label :store_id %><br />
-    <%= f.select :store_id, Store.map_name_and_id %>
+    <%= f.select :store_id, Store.map_name_and_id, :include_blank => true %>
   </p>
   <p>
     <%= f.label :private %><br />
-    <%= f.select :private, Group.map_name_and_id %>
+    <%= f.select :private, Group.map_name_and_id, :include_blank => true %>
   </p>
   <p>
     <%= f.submit :'listen(enlist?)' %>

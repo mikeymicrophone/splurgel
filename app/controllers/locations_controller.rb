@@ -22,12 +22,15 @@ class LocationsController < ApplicationController
   end
 
   def new
-    redirect_back_or_default('/') if params[:store_id] && !current_user.is_authorized_to_create_locations_of(params[:store_id])
     @location = Location.new(:store_id => params[:store_id])
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @location }
+      if params[:store_id] && !current_user.is_authorized_to_create_locations_of(params[:store_id])
+        format.html { redirect_back_or_default('/') }
+      else
+        format.html # new.html.erb
+        format.xml  { render :xml => @location }
+      end
     end
   end
 
@@ -40,18 +43,24 @@ class LocationsController < ApplicationController
     @phone = Phone.find_or_create_by_number(params[:phone][:number]) if params[:phone]
     params[:location][:primary_phone_id] = @phone.id if @phone
     
+    @address = Address.create params[:address]
+    params[:location][:address_id] = @address.id if @address && @address.valid?
+    
     @location = Location.new params[:location]
-    redirect_to current_user unless current_user.is_authorized_to_create_locations_of(params[:location][:store_id])
     
     respond_to do |format|
-      if @location.save
-        @location.uses_phone @phone
-        flash[:notice] = 'Location was successfully created.'
-        format.html { redirect_to @location }
-        format.xml  { render :xml => @location, :status => :created, :location => @location }
+      if current_user.is_authorized_to_create_locations_of(params[:location][:store_id])
+        if @location.save
+          @location.uses_phone @phone
+          flash[:notice] = 'Location was successfully created.'
+          format.html { redirect_to @location }
+          format.xml  { render :xml => @location, :status => :created, :location => @location }
+        else
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @location.errors, :status => :unprocessable_entity }
+        end
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @location.errors, :status => :unprocessable_entity }
+        format.html { redirect_to current_user }
       end
     end
   end

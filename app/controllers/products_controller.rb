@@ -1,7 +1,15 @@
 class ProductsController < ApplicationController
     
   def index
-    @products = Product.find :all
+    @products = if params[:brand_id]
+      if params[:location_id]
+        Location.find(params[:location_id]).products.find(:all, :conditions => {:brand_id => params[:brand_id]})
+      else
+        Product.find(:all, :conditions => {:brand_id => params[:brand_id]})
+      end    
+    else
+      Product.find :all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,7 +27,11 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    params[:product] ||= {}
+    if params[:brand_id]
+      params[:product][:brand_id] = params[:brand_id]
+    end
+    @product = Product.new params[:product]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,6 +44,12 @@ class ProductsController < ApplicationController
   end
 
   def create
+    unless params[:brand].blank? || params[:brand][:name].blank?
+      @brand = Brand.find_or_create_by_name params[:brand][:name]
+    end
+    
+    params[:product][:brand_id] = @brand.id if @brand
+    
     @product = Product.new params[:product]
 
     respond_to do |format|

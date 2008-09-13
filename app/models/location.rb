@@ -13,6 +13,7 @@ class Location < ActiveRecord::Base
   has_many :phone_uses, :as => :target
   has_many :phones, :through => :phone_uses
   belongs_to :primary_phone, :class_name => 'Phone'
+  has_many :followings, :as => :target
   has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Location' and followings.follower_type = 'User'", :as => :target
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Location' and followings.follower_type = 'Group'", :as => :target
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Location' and followings.follower_type = 'Location'", :as => :target
@@ -30,6 +31,10 @@ class Location < ActiveRecord::Base
   
   def notify_store
     store.make_known("#{store.name} has a new location in #{address.city.name}.", self)
+  end
+  
+  def brands
+    products.map(&:brand).uniq
   end
   
      # also an attribute called name now

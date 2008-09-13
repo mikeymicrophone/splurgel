@@ -1,4 +1,4 @@
-<%= schedule_display @schedule %><br>
+<%= @schedule.display %><br>
 <%= 'open on holidays' if @schedule.holidays %><br>
 
 <%= link_to 'edit', edit_schedule_path(@schedule) %> |

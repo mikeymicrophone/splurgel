@@ -15,13 +15,13 @@
 <% for schedule in @schedules %>
   <tr><%= schedule_view schedule %></tr>
   <tr>
-    <td><%= schedule.sunday_open.to_s + '-' + schedule.sunday_close.to_s %></td>
-    <td><%= schedule.monday_open.to_s + '-' + schedule.monday_close.to_s %></td>
-    <td><%= schedule.tuesday_open.to_s + '-' + schedule.tuesday_close.to_s %></td>
-    <td><%= schedule.wednesday_open.to_s + '-' + schedule.wednesday_close.to_s %></td>
-    <td><%= schedule.thursday_open.to_s + '-' + schedule.thursday_close.to_s %></td>
-    <td><%= schedule.friday_open.to_s + '-' + schedule.friday_close.to_s %></td>
-    <td><%= schedule.saturday_open.to_s + '-' + schedule.saturday_close.to_s %></td>
+    <td><%= schedule.sunday_open.strftime('%l:%M') + '-' + schedule.sunday_close.strftime('%l:%M') %></td>
+    <td><%= schedule.monday_open.strftime('%l:%M') + '-' + schedule.monday_close.strftime('%l:%M') %></td>
+    <td><%= schedule.tuesday_open.strftime('%l:%M') + '-' + schedule.tuesday_close.strftime('%l:%M') %></td>
+    <td><%= schedule.wednesday_open.strftime('%l:%M') + '-' + schedule.wednesday_close.strftime('%l:%M') %></td>
+    <td><%= schedule.thursday_open.strftime('%l:%M') + '-' + schedule.thursday_close.strftime('%l:%M') %></td>
+    <td><%= schedule.friday_open.strftime('%l:%M') + '-' + schedule.friday_close.strftime('%l:%M') %></td>
+    <td><%= schedule.saturday_open.strftime('%l:%M') + '-' + schedule.saturday_close.strftime('%l:%M') %></td>
     <td><%= schedule.holidays? ? '' : 'not ' %>open on holidays</td>
     <td><%= link_to 'show', schedule %></td>
     <td><%= link_to 'edit', edit_schedule_path(schedule) %></td>

@@ -18,7 +18,11 @@ class SchedulesController < ApplicationController
   end
 
   def new
-    @schedule = Schedule.new
+    opening = Time.new
+    opening.change(:hour => 9)
+    closing = Time.new
+    closing.change(:hour => 18)
+    @schedule = Schedule.new :sunday_open => opening, :sunday_close => closing, :monday_open => opening, :monday_close => closing, :tuesday_open => opening, :tuesday_close => closing, :wednesday_open => opening, :wednesday_close => closing, :thursday_open => opening, :thursday_close => closing, :friday_open => opening, :friday_close => closing, :saturday_open => opening, :saturday_close => closing
 
     respond_to do |format|
       format.html # new.html.erb

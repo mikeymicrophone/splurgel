@@ -31,7 +31,7 @@ module SchedulesHelper
     days.shift
     
     'monday-' + last_day_of_monday_hours + ' ' + monday_open.strftime("%l:%M") + ' to ' + monday_close.strftime("%l:%M") + ', ' +
-    days.map { |d| d + ' ' + s.send(d + '_open').strftime('%l:%m') + ' to ' + s.send(d + '_close').strftime('%l:%M') + ' '}.to_sentence
+    days.map { |d| d + ' ' + s.send(d + '_open').strftime('%l:%M') + ' to ' + s.send(d + '_close').strftime('%l:%M') + ' '}.to_sentence
     
   end
   

@@ -1,3 +1,4 @@
+<h1><%= @location.name %></h1>
 <%= link_to_name @location.store %><br>
 <%= @location.schedule.display if @location.schedule %><br>
 <%= attach_image_link @location %>
@@ -5,10 +6,16 @@
 <%= follow_link @location %>
 <%=h @location.address.display if @location.address %><br>
 <%=h @location.primary_phone.number if @location.primary_phone %><br>
+<h2>brands at this location</h2>
+<% @location.brands.each do |b| %>
+  <%= link_to b.name, location_brand_products_path(@location, b) %>
+<% end %>
+<h2>products you'll find and love</h2>
 <% @location.products.each do |p| %>
   <%= link_to_name p %>
 <% end %>
+<h2><%= 'admin' if current_user.is_authorized_to_edit_locations_of(@location.store) %></h2>
 <%= link_to 'add product', new_offering_path(:offering => {:location_id => @location.id}) if current_user.is_authorized_to_create_offerings_at(@location) %>
-<%= link_to 'edit', edit_location_path(@location) if current_user.is_authorized_to_edit_locations_of(@location.store) %> |
+<%= link_to 'edit', edit_location_path(@location) if current_user.is_authorized_to_edit_locations_of(@location.store) %>
 <%= link_to 'locations', locations_path %>
 <%= link_to_backup %>

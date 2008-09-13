@@ -42,16 +42,19 @@ class OfferingsController < ApplicationController
 
   def create
     @offering = Offering.new params[:offering]
-    redirect_to current_user unless current_user.is_authorized_to_create_offerings_at(params[:offering][:location_id])
 
     respond_to do |format|
-      if @offering.save
-        flash[:notice] = 'Offering was successfully created.'
-        format.html { redirect_to @offering }
-        format.xml  { render :xml => @offering, :status => :created, :location => @offering }
+      if current_user.is_authorized_to_create_offerings_at(params[:offering][:location_id])
+        if @offering.save
+          flash[:notice] = 'Offering was successfully created.'
+          format.html { redirect_to @offering }
+          format.xml  { render :xml => @offering, :status => :created, :location => @offering }
+        else
+          format.html { render :action => "new" }
+          format.xml  { render :xml => @offering.errors, :status => :unprocessable_entity }
+        end
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @offering.errors, :status => :unprocessable_entity }
+        format.html { redirect_to current_user }
       end
     end
   end

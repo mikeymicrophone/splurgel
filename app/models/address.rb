@@ -74,11 +74,11 @@ class Address < ActiveRecord::Base
   
   def ensure_city
     ensure_state
-    self.city = City.find_or_create_by_name_and_state_id(city_name, state_id)
+    self.city = City.find_or_create_by_name_and_state_id(city_name, state_id) if city_id.blank?
     true
   end
   
   def ensure_state
-    self.state = State.find_or_create_by_name(state_name)
+    self.state = State.find_or_create_by_name(state_name) if state_id.blank?
   end
 end

@@ -1,4 +1,4 @@
-<h1>new offering</h1>
+<h1>new product available<%= " at #{@offering.location.name}" if @offering.location %></h1>
 
 <% form_for @offering do |f| %>
   <%= f.error_messages %>
@@ -17,7 +17,7 @@
   <% else %>
     <p>
       <%= f.label :location_id %><br />
-      <%= f.select :location_id, Location.map_name_and_id %>
+      <%= f.select :location_id, current_user.authorized_locations.map_name_and_id %>
       <%= link_to 'add new location', new_location_path %>
     </p>
   <% end %>

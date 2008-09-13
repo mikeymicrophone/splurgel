@@ -93,14 +93,14 @@ module ApplicationHelper
   def lists obj
     obj_type = {Product => :product_id, Brand => :brand_id, Store => :store_id}[obj.class]
     %w[ like have want ].map do |list|
-      link_to list, listings_path(:listing => {obj_type => obj, :list_type => Listing.list_types[list]}), :method => :post
-    end.join(' / ')
+      link_to list, listings_path(:listing => {obj_type => obj, :list_type => Listing.list_types[list]}), :method => :post unless current_user.listings.find(:first, :conditions => {:list_type => Listing.list_types[list], obj_type => obj})
+    end.compact.join(' / ')
   end
   
-  def list_links usr
-    link_to("#{usr.login}'s like list", like_list_path(usr), :class => 'list') + ' ' +
-    link_to("#{usr.login}'s want list", want_list_path(usr), :class => 'list') + ' ' +
-    link_to("#{usr.login}'s have list", have_list_path(usr), :class => 'list')
+  def list_links usr, except = nil
+    (except == 'like' ? '' : link_to("#{usr.login}'s like list", like_list_path(usr), :class => 'list') + ' ') +
+    (except == 'want' ? '' : link_to("#{usr.login}'s want list", want_list_path(usr), :class => 'list') + ' ') +
+    (except == 'have' ? '' : link_to("#{usr.login}'s have list", have_list_path(usr), :class => 'list'))
   end
   
   def primary_image obj, size = '45x55'

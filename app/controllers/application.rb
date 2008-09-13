@@ -64,6 +64,7 @@ class ActiveRecord::Base
     when 'PhoneUse'
       phone.phone.is_used_by self
     when 'String'
+      return if phone.blank?
       Phone.find_or_create_by_number(phone).is_used_by self
     end
   end
@@ -75,6 +76,7 @@ class ActiveRecord::Base
     when 'WebsiteUse'
       site.website.is_used_by self
     when 'String'
+      return if site.blank?
       Website.find_or_create_by_href(site).is_used_by self
     end
   end
@@ -131,7 +133,7 @@ end
 
 class Array
   def map_name_and_id(method = 'display_for_select')
-    if respond_to?(:name)
+    if first.respond_to?(:name)
       map { |e| [e.name, e.id] }
     else
       map { |e| [e.send(method), e.id] }

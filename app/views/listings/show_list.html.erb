@@ -1,14 +1,13 @@
-<%= list_links User.find(params[:id]) %>
+<%= list_links User.find(params[:id]), Listing.list_types[params[:list_type].to_i] %>
 <ul>
   <%= @listed_items.length %>
   <% @listed_items.each do |i| %>
     <% content_tag_for :li, i do %>
-      <%= link_to_name i.product %>
-      <%= link_to_name i.brand %>
-      <%= link_to_name i.store %>
-      <%= lists i.product if i.product %>
-      <%= lists i.brand + '[' + i.brand.name + ']' if i.brand %>
-      <%= lists i.store + '[' + i.store.name + ']' if i.store %>
+      <%= link_to_name i.product %><em style="font-size:.7em;"><%= lists(i.product) if i.product %></em>
+      <%= ' by ' if i.brand && i.product %>
+			<%= link_to_name i.brand %><em style="font-size:.7em;"><%= lists(i.brand) if i.brand %></em>
+      <%= ' at ' if i.store && (i.brand || i.product) %>
+			<%= link_to_name i.store %><em style="font-size:.7em;"><%= lists(i.store) if i.store %></em>
     <% end %>
   <% end %>
 </ul>

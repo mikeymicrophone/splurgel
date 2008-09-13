@@ -3,34 +3,27 @@
 <% form_for(@address) do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name %>    <%= f.label :name %>
   </p>
   <p>
-    <%= f.label :alternate_names %><br />
-    <%= f.text_field :alternate_names %>
+    <%= f.text_field :alternate_names %>    <%= f.label :alternate_names %>
   </p>
   <p>
-    <%= f.label :street %><br />
-    <%= f.text_field :street %>
+    <%= f.text_field :street %>    <%= f.label :street %>
   </p>
   <p>
-    <%= f.label :street2 %><br />
-    <%= f.text_field :street2 %>
+    <%= f.text_field :street2 %>    <%= f.label :street2 %>
   </p>
   <p>
-    <%= f.label :city_id %><br />
-    <%= f.select :city_id, City.map_name_and_id %>
-    <%= link_to 'new city', new_city_path %>
+    <%= f.select :city_id, City.map_name_and_id, :include_blank => true %>    <%= f.label :city_id, 'select city or enter here' %>
+    <%= f.text_field :city_name %>
   </p>
   <p>
-    <%= f.label :state_id %><br />
-    <%= f.select :state_id, State.map_name_and_id %>
-    <%= link_to 'new state', new_state_path %>
+    <%= f.select :state_id, State.map_name_and_id, :include_blank => true %>    <%= f.label :state_id, 'select state or enter here' %>
+    <%= f.text_field :state_name %>
   </p>
   <p>
-    <%= f.label :zip %><br />
-    <%= f.text_field :zip %>
+    <%= f.text_field :zip %>    <%= f.label :zip %>
   </p>
   <p>
     <%= f.submit :encode %>

@@ -4,7 +4,7 @@
   <%= ' at ' if @listing.store && (@listing.product || @listing.brand) %>
   <%= link_to_name @listing.store %> to his/her 
   <%= {1 => 'like', 2 => 'want', 3 => 'have'}[@listing.list_type] %> list 
-  <%= time_ago_in_words @listing.created_at %><br>
+  <%= time_ago_in_words @listing.created_at %> ago<br>
   
 <% else %>
   yo! listing private.
