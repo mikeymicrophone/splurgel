@@ -10,6 +10,7 @@ class Group < ActiveRecord::Base
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses
   has_many :comments, :as => :target
+  has_many :followings, :as => :target
   has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Group' and followings.follower_type = 'User'", :as => :target
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Group' and followings.follower_type = 'Group'", :as => :target
   has_many :follower_locations, :through => :followings, :source => :location, :conditions => "followings.target_type = 'Group' and followings.follower_type = 'Location'", :as => :target
@@ -22,6 +23,15 @@ class Group < ActiveRecord::Base
     indexes :name
     indexes tags(:name)
     indexes comments(:body)
+  end
+  
+  def self.public_groups
+    find :all, :conditions => ['group_type in (3, 4)']
+  end
+  
+  def self.viewable
+    u = ActiveRecord::Base.instance_variable_get('@current_user')
+    u.nil? ? public_groups : (u.groups + u.administered_groups + public_groups).uniq
   end
   
   def self.group_types

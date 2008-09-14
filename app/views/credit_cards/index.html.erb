@@ -2,26 +2,21 @@
 
 <table>
   <tr>
-    <th>Address</th>
-    <th>Card number[last 4]</th>
-    <th>Expiration month</th>
-    <th>Expiration year</th>
-    <th>Security code</th>
-    <th>User</th>
+    <th>address</th>
+    <th>card number[last 4]</th>
   </tr>
 
 <% for credit_card in @credit_cards %>
   <tr>
-    <td><%=h credit_card.address_id %></td>
-    <td><%=h credit_card.card_number[-4..-1] %></td>
-    <td><%= link_to credit_card.user.name, credit_card.user %></td>
+    <td><%= link_to_name credit_card.address %></td>
+    <td><%=h credit_card.last_four %></td>
     <td><%= link_to 'show', credit_card %></td>
     <td><%= link_to 'edit', edit_credit_card_path(credit_card) %></td>
-    <td><%= link_to 'Destroy', credit_card, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'remove', credit_card, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'new credit_card', new_credit_card_path %>
+<%= link_to 'new credit card', new_credit_card_path %>

@@ -1,5 +1,4 @@
-  <%= link_to_name @network_membership.user %> has been a member of <%= link_to_name @network_membership.network %> since <%= time_ago_in_words @network_membership.created_at %><br>
+<%= link_to_name @network_membership.user %> has been a member of <%= link_to_name @network_membership.network %> since <%= time_ago_in_words @network_membership.created_at %> ago<br>
 
-<%= link_to 'edit', edit_network_membership_path(@network_membership) %> |
 <%= link_to 'network_memberships', network_memberships_path %>
 <%= link_to_backup %>

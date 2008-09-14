@@ -1,10 +1,9 @@
 <%=h @network.name %><br>
-  <%=h @network.city.name %><%= ', ' if @network.city && @network.state %><%=h @network.state.name %><br>
+<%=h @network.city.name %><%= ', ' if @network.city && @network.state %><%=h @network.state.name %><br>
   
-  <%= @network.network_memberships.count %> members!<br>
+<%= @network.network_memberships.count %> members!<br>
 <%= attach_image_link @network %>
 <%= attachable_sites @network %>
 <div id="uses"></div>
-<%= link_to 'edit', edit_network_path(@network) %> |
 <%= link_to 'networks', networks_path %>
 <%= link_to_backup %>

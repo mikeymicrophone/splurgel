@@ -55,3 +55,6 @@ a#profile {
 form {
 	float:left;
 }
+form#search {
+	float:right;
+}

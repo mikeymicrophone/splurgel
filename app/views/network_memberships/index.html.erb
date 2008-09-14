@@ -1,22 +1,7 @@
 <h1>network_memberships keep track of who is in which networks</h1>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Network</th>
-  </tr>
-
 <% for network_membership in @network_memberships %>
-  <tr>
-    <td><%= link_to network_membership.user.name, network_membership.user %></td>
-    <td><%= link_to network_membership.network.name, network_membership.network %></td>
-    <td><%= link_to 'show', network_membership %></td>
-    <td><%= link_to 'edit', edit_network_membership_path(network_membership) %></td>
-    <td><%= link_to 'Destroy', network_membership, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <%= link_to_name network_membership.user %> is a member of 
+  <%= link_to_name network_membership.network %>
+  <%= link_to 'show', network_membership %><br>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'new network_membership', new_network_membership_path %>

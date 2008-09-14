@@ -1,4 +1,4 @@
-  <%= link_to_name @purchase.user %> purchased <%= link_to_name @purchase.offering %> <%= time_ago_in_words @purchase.created_at %><br>
+  <%= link_to_name @purchase.user %> purchased <%= link_to_name @purchase.offering %> <%= time_ago_in_words @purchase.created_at %> ago<br>
 
 <%= link_to 'edit', edit_purchase_path(@purchase) %> |
 <%= link_to 'purchases', purchases_path %>

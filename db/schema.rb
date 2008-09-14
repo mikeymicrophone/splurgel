@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080914005817) do
+ActiveRecord::Schema.define(:version => 20080914044549) do
 
   create_table "address_uses", :force => true do |t|
     t.string   "target_type"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(:version => 20080914005817) do
 
   create_table "credit_cards", :force => true do |t|
     t.integer  "address_id",       :limit => 11
-    t.integer  "card_number",      :limit => 11
+    t.string   "card_number"
     t.integer  "expiration_month", :limit => 11
     t.integer  "expiration_year",  :limit => 11
     t.integer  "security_code",    :limit => 11

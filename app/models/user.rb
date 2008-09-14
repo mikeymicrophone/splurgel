@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :networks, :through => :network_memberships
   has_many :memberships
   has_many :groups, :through => :memberships
+  has_many :administered_groups, :class_name => 'Group', :foreign_key => :administrator_id
   has_many :comments
   has_many :address_uses, :as => :target
   has_many :addresses, :through => :address_uses, :source => :address, :conditions => "address_uses.target_type = 'User'"
@@ -31,6 +32,7 @@ class User < ActiveRecord::Base
   has_many :follower_locations, :through => :followings, :source => :location, 
     :conditions => "followings.target_type = 'User' and followings.follower_type = 'Location'", :as => :target
   has_many :incoming_messages, :class_name => 'Message', :foreign_key => :recipient_id
+  has_many :credit_cards
   serialize :primary_photos, Array
   
   define_index do
@@ -43,6 +45,17 @@ class User < ActiveRecord::Base
   
   def reads_notice notice
     delivered_notices.find(:first, :conditions => {:notice_id => notice.id}).update_attribute(:read_at, Time.now)
+  end
+  
+  def is_a_member_of network_or_group
+    case network_or_group.class.name
+    when 'Network'
+      NetworkMembership.find(:first, :conditions => {:user_id => id, :network_id => network_or_group.id})
+    when 'Group'
+      Membership.find(:first, :conditions => {:user_id => id, :group_id => network_or_group.id})      
+    when 'Integer', 'String'
+      NetworkMembership.find(:first, :conditions => {:user_id => id, :network_id => network_or_group})
+    end
   end
   
   def administers? thing

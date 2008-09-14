@@ -5,7 +5,7 @@ class OneCityOneState < ActiveRecord::Migration
   end
 
   def self.down
-    create_column :addresses, :city, :string
-    create_column :addresses, :state, :string
+    add_column :addresses, :city, :string
+    add_column :addresses, :state, :string
   end
 end

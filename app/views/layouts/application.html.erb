@@ -7,6 +7,7 @@
   </head>
   <body>
     <%= login_stuff %>
+    <%= render :partial => 'shared/search_form', :locals => {:model => controller.controller_name} if searchable_models.include?(controller.controller_name) %>
     <div id='left_nav'>
       <% [%w[address_uses addresses brands cities comments credit_cards], %w[followings groups image_uses images listings locations], %w[ memberships messages network_memberships networks offerings prices products], %w[ purchases schedules states stores taggings tags users website_uses websites phones phone_uses authorizations notices delivered_notices]].each do |set| %>
         <% set.each do |resource| %>
@@ -15,7 +16,6 @@
       <% end %>
     </div>
     <h1 id='splurgel_title'>Splurgel=======!</h1>
-    <%= render :partial => 'shared/search_form', :locals => {:model => controller.controller_name} if searchable_models.include?(controller.controller_name) %>
     <%= yield %>
   </body>
 </html>

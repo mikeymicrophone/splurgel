@@ -133,7 +133,9 @@ end
 
 class Array
   def map_name_and_id(method = 'display_for_select')
-    if first.respond_to?(:name)
+    if method != 'display_for_select'
+      map { |e| [e.send(method), e.id] }
+    elsif first.respond_to?(:name)
       map { |e| [e.name, e.id] }
     else
       map { |e| [e.send(method), e.id] }

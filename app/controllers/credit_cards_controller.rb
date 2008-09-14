@@ -1,6 +1,6 @@
 class CreditCardsController < ApplicationController
   def index
-    @credit_cards = CreditCard.find :all
+    @credit_cards = current_user.credit_cards
 
     respond_to do |format|
       format.html # index.html.erb

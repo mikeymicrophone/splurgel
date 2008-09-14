@@ -4,28 +4,19 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :address_id %><br />
-    <%= f.text_field :address_id %>
+    <%= f.select :address_id, Address.map_name_and_id %>    <%= f.label :address_id, 'billing address' %>
   </p>
   <p>
-    <%= f.label :card_number %><br />
-    <%= f.text_field :card_number %>
+    <%= f.text_field :card_number, :size => 19 %>    <%= f.label :card_number, 'card number' %>
   </p>
   <p>
-    <%= f.label :expiration_month %><br />
-    <%= f.text_field :expiration_month %>
+    <%= f.text_field :expiration_month, :size => 2 %>    <%= f.label :expiration_month, 'expiration month' %>
   </p>
   <p>
-    <%= f.label :expiration_year %><br />
-    <%= f.text_field :expiration_year %>
+    <%= f.text_field :expiration_year, :size => 2 %>    <%= f.label :expiration_year, 'expiration year' %>
   </p>
   <p>
-    <%= f.label :security_code %><br />
-    <%= f.text_field :security_code %>
-  </p>
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+    <%= f.text_field :security_code, :size => 6 %>    <%= f.label :security_code, 'security code' %>
   </p>
   <p>
     <%= f.submit "Update" %>

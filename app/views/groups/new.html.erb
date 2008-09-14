@@ -4,16 +4,13 @@
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name %><%= f.label :name, 'name' %>
   </p>
+    <%= f.hidden_field :administrator_id, :value => current_user.id %>
   <p>
-    <%= f.label :administrator_id %><br />
-    <%= f.select :administrator_id, User.map_name_and_id %>
-  </p>
-  <p>
-    <%= f.label :group_type %><br />
-    <%= f.select :group_type, Group.group_types %>
+    <%= f.select :group_type, Group.group_types %><br>
+		<em style='font-size:0.8em;'>personal lists are viewable by you only, private groups by members only;<br>
+		users don't have to accept invites for you to add them to personal or unconsentual lists.</em>
   </p>
   <p>
     <%= f.submit :gather %>

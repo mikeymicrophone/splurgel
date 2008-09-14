@@ -3,27 +3,19 @@
 <% form_for(@purchase) do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label :offering_id %><br />
-    <%= f.text_field :offering_id, Offering.map_name_and_id %>
+    <%= f.label :offering_id, 'what you want' %>
+    <%= f.select :offering_id, Offering.map_name_and_id %>
   </p>
   <p>
-    <%= f.label :credit_card_id %><br />
-    <%= f.text_field :credit_card_id, CreditCard.map_name_and_id %>
+    <%= f.label :credit_card_id, 'which card' %>
+    <%= f.select :credit_card_id, current_user.credit_cards.map_name_and_id('name_or_four') %>
   </p>
   <p>
-    <%= f.label :address_id %><br />
-    <%= f.select :address_id, Address.map_name_and_id %>
+    <%= f.label :address_id, 'ship to' %>
+    <%= f.select :address_id, (current_user.addresses + current_user.credit_cards.map(&:address)).uniq.map_name_and_id %>
   </p>
   <p>
-    <%= f.label :approved %><br />
-    <%= f.check_box :approved %>
-  </p>
-  <p>
-    <%= f.label :complete %><br />
-    <%= f.check_box :complete %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "submit purchase to retailer" %>
   </p>
 <% end %>
 

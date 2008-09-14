@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
   def index
-    @groups = Group.find :all
+    @groups = Group.viewable
 
     respond_to do |format|
       format.html # index.html.erb

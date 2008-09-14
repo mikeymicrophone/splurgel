@@ -6,6 +6,7 @@
     <td><%= link_to_name network %></td>
     <td><%= link_to_name network.city %></td>
     <td><%= link_to_name network.state %></td>
+		<td><%= join_network_link network %></td>
     <td><%= link_to 'edit', edit_network_path(network) %></td>
     <td><%= attach_image_link network %></td>
     <td><%= link_to_remote 'attach site', :url => attach_site_path(network), :update => 'uses', :method => :get %></td>

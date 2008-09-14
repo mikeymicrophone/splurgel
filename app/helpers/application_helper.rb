@@ -1,7 +1,11 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
-  def attach_site_path(obj)
+  def attach_site_path obj
     super(:class_name => obj.class.name.downcase, :id => obj.to_param)
+  end
+  
+  def join_network_link net
+    link_to 'join', network_memberships_path(:network_membership => {:network_id => net.id, :user_id => current_user.id}), :method => :post unless !logged_in? || current_user.is_a_member_of(net)
   end
   
   def notifications_for usr
