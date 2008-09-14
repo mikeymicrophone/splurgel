@@ -12,6 +12,6 @@
 <% end %>
 
 <%= link_to 'states', states_path %>
-<%= link_to_backup %>
+
 states we already know about:<br>
 <%= State.all.map { |s| s.name + '.../////////////\\\\\\\\....' }.join %>

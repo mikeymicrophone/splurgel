@@ -3,6 +3,36 @@ module ApplicationHelper
   def attach_site_path obj
     super(:class_name => obj.class.name.downcase, :id => obj.to_param)
   end
+
+  def authorize_links usr = nil, thing = nil
+    [1, 2, 10, 20].map do |typ|
+      authorize_link usr, thing, typ
+    end.join('<br>')
+  end
+  
+  # if the second argument is a number or string, it will be treated as a location id
+  def authorize_link usr = nil, thing = nil, typ = nil
+    what_we_know = case thing.class.name
+    when 'Store'
+      {:target_id => thing.id, :target_type => 'Store'}
+    when 'Location', 'String', 'Fixnum'
+      {:target_id => (thing.is_a?(Location) ? thing.id : thing), :target_type => 'Location'}
+    else
+      {}
+    end
+    what_we_know.merge!(:user_id => usr.id) if usr
+    what_we_know.merge!(:authorization_type => typ) if typ
+    if usr && thing && typ
+      if Authorization.find_by_authorization_type_and_target_id_and_target_type_and_user_id(typ, what_we_know[:target_id], what_we_know[:target_type], usr.id)
+        "#{usr.login} can #{Authorization.type_hash[typ]} at #{what_we_know[:target_type].constantize.send(:find, what_we_know[:target_id]).name}"
+      else
+        '<span id="' + "user_#{usr.id}_#{what_we_know[:target_type].downcase}_#{what_we_know[:target_id]}_#{typ}" + '">' + link_to_remote("authorize #{usr.login}#{' (' + usr.name + ') ' unless usr.name.blank?} to #{Authorization.type_hash[typ]} at {what_we_know[:target_type].constantize.send(:find, what_we_know[:target_id]).name}",
+         :url => authorizations_path(:authorization => what_we_know), :update => "user_#{usr.id}_#{what_we_know[:target_type].downcase}_#{what_we_know[:target_id]}_#{typ}") + '</span>'
+       end
+    else
+      link_to "authorize#{' ' + usr.login if usr}#{' (' + usr.name + ')' unless !usr || usr.name.blank?}#{' to ' + Authorization.type_hash[typ] if typ}#{' at ' + what_we_know[:target_type].constantize.send(:find, what_we_know[:target_id]).name if thing}", new_authorization_path(:authorization => what_we_know)
+    end
+  end
   
   def join_network_link net
     link_to 'join', network_memberships_path(:network_membership => {:network_id => net.id, :user_id => current_user.id}), :method => :post unless !logged_in? || current_user.is_a_member_of(net)
@@ -95,7 +125,7 @@ module ApplicationHelper
   end
   
   def link_to_backup
-    link_to_function 'backitup', 'history.go(-1)'
+    '<div id="backup">' + link_to_function('back', 'history.go(-1)') + '</div>'
   end
   
   def lists obj

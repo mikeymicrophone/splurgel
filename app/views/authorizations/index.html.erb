@@ -1,26 +1,25 @@
-<h1>Listing authorizations</h1>
+<h1>authorizations</h1>
 
 <table>
   <tr>
-    <th>User</th>
-    <th>Authorization type</th>
-    <th>Target type</th>
-    <th>Target</th>
+    <th>user</th>
+    <th>authorization type</th>
+    <th>target type</th>
+    <th>target</th>
   </tr>
 
 <% for authorization in @authorizations %>
   <tr>
-    <td><%=h authorization.user_id %></td>
-    <td><%=h authorization.authorization_type %></td>
+    <td><%= link_to_name authorization.user, 'login' %></td>
+    <td><%= Authorization.type_hash[authorization.authorization_type] %></td>
     <td><%=h authorization.target_type %></td>
-    <td><%=h authorization.target_id %></td>
-    <td><%= link_to 'Show', authorization %></td>
-    <td><%= link_to 'Edit', edit_authorization_path(authorization) %></td>
-    <td><%= link_to 'Destroy', authorization, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to_name authorization.target %></td>
+    <td><%= link_to 'show', authorization %></td>
+    <td><%= link_to 'edit', edit_authorization_path(authorization) if logged_in? && current_user.id == authorization.authorizer_id %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New authorization', new_authorization_path %>
+<%= link_to 'new authorization', new_authorization_path %>

@@ -1,26 +1,31 @@
-<h1>New authorization</h1>
+<h1>authorization<%= ' for ' + @authorization.target.name if @authorization.target%></h1>
 
 <% form_for(@authorization) do |f| %>
   <%= f.error_messages %>
 
-  <p>
-    <%= f.label :user_id %><br />
-    <%= f.select :user_id, User.map_name_and_id %>
-  </p>
+	<% if @authorization.user_id.blank? %>
+	  <p>
+	    <%= f.select :user_id, User.map_name_and_id %><%= f.label :user_id, 'who are you authorizing?' %>
+	  </p>
+	<% else %>
+	  <%= f.hidden_field :user_id %>
+		authorizing <%= @authorization.user.name + ' ~ ' + @authorization.user.login %>
+	<% end %>
   <% if @authorization.authorization_type.blank? %>
 	  <p>
-	    <%= f.label :authorization_type %><br />
-	    <%= f.text_field :authorization_type %>
+	    <%= f.select :authorization_type, @authorization_types %><%= f.label :authorization_type, 'authorization type' %><br>
+			a location is a branch of a store.  an offering is a product that is available at a location.
 	  </p>
   <% else %>
+		to <%= Authorization.type_hash[@authorization.authorization_type] %>
     <%= f.hidden_field :authorization_type %>
   <% end %>
   <%= f.hidden_field :target_type %>
 	<%= f.hidden_field :authorizer_id, :value => current_user.id %>
 	<% if @authorization.target_id.blank? %>
 	  <p>
-	    <%= f.label :target_id %><br />
-	    <%= f.select :target_id, @authorized_spots.map { |s| [s.name, s.id] } %>
+	    <%= select :store, :id, current_user.stores.map_name_and_id, :include_blank => true %><%= label :store, :id, 'which store' %> OR 
+	    <%= select :location, :id, current_user.locations.map_name_and_id, :include_blank => true %><%= label :location, :id, 'location' %>
 	  </p>
   <% else%>
     <%= f.hidden_field :target_id %>
@@ -30,4 +35,4 @@
   </p>
 <% end %>
 
-<%= link_to 'Back', authorizations_path %>
+

@@ -3,7 +3,8 @@
 <%= @location.schedule.display if @location.schedule %><br>
 <%= attach_image_link @location %>
 <%= attachable_sites @location %>
-<%= follow_link @location %>
+<%= follow_link @location %><br>
+<%= link_to 'locations', locations_path %>
 <%=h @location.address.display if @location.address %><br>
 <%=h @location.primary_phone.number if @location.primary_phone %><br>
 <h2>brands at this location</h2>
@@ -17,5 +18,6 @@
 <h2><%= 'admin' if current_user.is_authorized_to_edit_locations_of(@location.store) %></h2>
 <%= link_to 'add product', new_offering_path(:offering => {:location_id => @location.id}) if current_user.is_authorized_to_create_offerings_at(@location) %>
 <%= link_to 'edit', edit_location_path(@location) if current_user.is_authorized_to_edit_locations_of(@location.store) %>
-<%= link_to 'locations', locations_path %>
-<%= link_to_backup %>
+
+<br>
+<%= authorize_links nil, @location if current_user.authorized_to_authorize(@location) %>

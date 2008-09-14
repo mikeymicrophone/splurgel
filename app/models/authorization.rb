@@ -39,6 +39,22 @@ class Authorization < ActiveRecord::Base
     location = location.id if location.is_a?(Location)
     [1, 2, 10, 20].include?(authorization_type) && target_id == location
   end
+  
+  def self.type_hash
+    {1 => 'create locations', 2 => 'edit locations', 10 => 'create offerings', 20 => 'edit offerings',
+     'create locations' => 1, 'edit locations' => 2, 'create offerings' => 10, 'edit offerings' => 20}
+  end
+  
+  def self.authorization_types(scope = nil)
+    case scope
+    when 'location', 'Location', :location
+      [['create offerings', 10], ['edit offerings', 20]]
+    when 'store', 'Store', :store
+      [['create locations', 1], ['edit locations', 2], ['create offerings', 10], ['edit offerings', 20]]
+    else
+      [['create locations', 1], ['edit locations', 2], ['create offerings', 10], ['edit offerings', 20]]
+    end
+  end
 
   alias :to_create_location_of :to_create_location
   alias :to_edit_location_of :to_edit_location
