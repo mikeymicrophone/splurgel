@@ -27,7 +27,8 @@ class ListingsController < ApplicationController
   end
 
   def new
-    @listing = Listing.new
+    params[:listing] ||= {}
+    @listing = Listing.new params[:listing]
 
     respond_to do |format|
       format.html # new.html.erb

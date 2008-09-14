@@ -22,7 +22,9 @@ class LocationsController < ApplicationController
   end
 
   def new
-    @location = Location.new(:store_id => params[:store_id])
+    params[:location] ||= {}
+    params[:location][:store_id] ||= params[:store_id]
+    @location = Location.new params[:location]
 
     respond_to do |format|
       if params[:store_id] && !current_user.is_authorized_to_create_locations_of(params[:store_id])

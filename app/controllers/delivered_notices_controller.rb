@@ -1,6 +1,4 @@
 class DeliveredNoticesController < ApplicationController
-  # GET /delivered_notices
-  # GET /delivered_notices.xml
   def index
     @delivered_notices = DeliveredNotice.find(:all)
 
@@ -10,8 +8,6 @@ class DeliveredNoticesController < ApplicationController
     end
   end
 
-  # GET /delivered_notices/1
-  # GET /delivered_notices/1.xml
   def show
     @delivered_notice = DeliveredNotice.find(params[:id])
 
@@ -21,10 +17,9 @@ class DeliveredNoticesController < ApplicationController
     end
   end
 
-  # GET /delivered_notices/new
-  # GET /delivered_notices/new.xml
   def new
-    @delivered_notice = DeliveredNotice.new
+    params[:delivered_notice] ||= {}
+    @delivered_notice = DeliveredNotice.new params[:delivered_notice]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,13 +27,10 @@ class DeliveredNoticesController < ApplicationController
     end
   end
 
-  # GET /delivered_notices/1/edit
   def edit
     @delivered_notice = DeliveredNotice.find(params[:id])
   end
 
-  # POST /delivered_notices
-  # POST /delivered_notices.xml
   def create
     @delivered_notice = DeliveredNotice.new(params[:delivered_notice])
 
@@ -54,8 +46,6 @@ class DeliveredNoticesController < ApplicationController
     end
   end
 
-  # PUT /delivered_notices/1
-  # PUT /delivered_notices/1.xml
   def update
     @delivered_notice = DeliveredNotice.find(params[:id])
 
@@ -71,8 +61,6 @@ class DeliveredNoticesController < ApplicationController
     end
   end
 
-  # DELETE /delivered_notices/1
-  # DELETE /delivered_notices/1.xml
   def destroy
     @delivered_notice = DeliveredNotice.find(params[:id])
     @delivered_notice.destroy

@@ -18,7 +18,8 @@ class NetworksController < ApplicationController
   end
 
   def new
-    @network = Network.new
+    params[:network] ||= {}
+    @network = Network.new params[:network]
 
     respond_to do |format|
       format.html # new.html.erb

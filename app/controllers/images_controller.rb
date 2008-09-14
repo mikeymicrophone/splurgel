@@ -18,7 +18,8 @@ class ImagesController < ApplicationController
   end
 
   def new
-    @image = Image.new
+    params[:image] ||= {}
+    @image = Image.new params[:image]
 
     respond_to do |format|
       format.html # new.html.erb

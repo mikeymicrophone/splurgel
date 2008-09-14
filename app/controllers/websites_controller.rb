@@ -18,7 +18,8 @@ class WebsitesController < ApplicationController
   end
 
   def new
-    @website = Website.new
+    params[:website] ||= {}
+    @website = Website.new params[:website]
 
     respond_to do |format|
       format.html # new.html.erb

@@ -24,6 +24,7 @@ class ImageUsesController < ApplicationController
   end
 
   def new
+    params[:image_use] ||= {}
     @image_use = ImageUse.new params[:image_use]
 
     respond_to do |format|

@@ -18,7 +18,8 @@ class GroupsController < ApplicationController
   end
 
   def new
-    @group = Group.new
+    params[:group] ||= {}
+    @group = Group.new params[:group]
 
     respond_to do |format|
       format.html # new.html.erb

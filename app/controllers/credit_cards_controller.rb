@@ -18,7 +18,8 @@ class CreditCardsController < ApplicationController
   end
 
   def new
-    @credit_card = CreditCard.new
+    params[:credit_card] ||= {}
+    @credit_card = CreditCard.new params[:credit_card]
 
     respond_to do |format|
       format.html # new.html.erb

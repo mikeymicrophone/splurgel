@@ -18,7 +18,8 @@ class TagsController < ApplicationController
   end
 
   def new
-    @tag = Tag.new
+    params[:tag] ||= {}
+    @tag = Tag.new params[:tag]
 
     respond_to do |format|
       format.html # new.html.erb

@@ -21,7 +21,8 @@ class AddressesController < ApplicationController
   end
 
   def new
-    @address = Address.new
+    params[:address] ||= {}
+    @address = Address.new params[:address]
 
     respond_to do |format|
       format.html # new.html.erb

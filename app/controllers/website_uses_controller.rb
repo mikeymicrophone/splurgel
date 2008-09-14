@@ -23,7 +23,8 @@ class WebsiteUsesController < ApplicationController
   end
 
   def new
-    @website_use = WebsiteUse.new
+    params[:website_use] ||= {}
+    @website_use = WebsiteUse.new params[:website_use]
 
     respond_to do |format|
       format.html # new.html.erb

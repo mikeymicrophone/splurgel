@@ -18,7 +18,8 @@ class CitiesController < ApplicationController
   end
 
   def new
-    @city = City.new
+    params[:city] ||= {}
+    @city = City.new params[:city]
 
     respond_to do |format|
       format.html # new.html.erb

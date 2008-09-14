@@ -18,7 +18,8 @@ class PurchasesController < ApplicationController
   end
 
   def new
-    @purchase = Purchase.new
+    params[:purchase] ||= {}
+    @purchase = Purchase.new params[:purchase]
 
     respond_to do |format|
       format.html # new.html.erb

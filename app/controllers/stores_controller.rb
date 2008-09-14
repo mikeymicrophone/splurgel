@@ -18,7 +18,8 @@ class StoresController < ApplicationController
   end
 
   def new
-    @store = Store.new
+    params[:store] ||= {}
+    @store = Store.new params[:store]
 
     respond_to do |format|
       format.html # new.html.erb

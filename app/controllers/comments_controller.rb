@@ -22,7 +22,8 @@ class CommentsController < ApplicationController
   end
 
   def new
-    @comment = Comment.new
+    params[:comment] ||= {}
+    @comment = Comment.new params[:comment]
 
     respond_to do |format|
       format.html # new.html.erb

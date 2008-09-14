@@ -22,7 +22,8 @@ class FollowingsController < ApplicationController
   end
 
   def new
-    @following = Following.new
+    params[:following] ||= {}
+    @following = Following.new params[:following]
 
     respond_to do |format|
       format.html # new.html.erb

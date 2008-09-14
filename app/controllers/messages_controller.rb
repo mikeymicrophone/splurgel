@@ -25,6 +25,7 @@ class MessagesController < ApplicationController
   end
 
   def new
+    params[:message] ||= {}
     @message = Message.new params[:message]
 
     respond_to do |format|

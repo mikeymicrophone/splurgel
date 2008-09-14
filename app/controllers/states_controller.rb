@@ -18,7 +18,8 @@ class StatesController < ApplicationController
   end
 
   def new
-    @state = State.new
+    params[:state] ||= {}
+    @state = State.new params[:state]
 
     respond_to do |format|
       format.html # new.html.erb

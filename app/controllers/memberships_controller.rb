@@ -18,7 +18,8 @@ class MembershipsController < ApplicationController
   end
 
   def new
-    @membership = Membership.new
+    params[:membership] ||= {}
+    @membership = Membership.new params[:membership]
 
     respond_to do |format|
       format.html # new.html.erb

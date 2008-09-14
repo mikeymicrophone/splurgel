@@ -18,7 +18,8 @@ class BrandsController < ApplicationController
   end
 
   def new
-    @brand = Brand.new
+    params[:brand] ||= {}
+    @brand = Brand.new params[:brand]
 
     respond_to do |format|
       format.html # new.html.erb

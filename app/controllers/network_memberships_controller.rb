@@ -18,7 +18,8 @@ class NetworkMembershipsController < ApplicationController
   end
 
   def new
-    @network_membership = NetworkMembership.new
+    params[:network_membership] ||= {}
+    @network_membership = NetworkMembership.new params[:network_membership]
 
     respond_to do |format|
       format.html # new.html.erb

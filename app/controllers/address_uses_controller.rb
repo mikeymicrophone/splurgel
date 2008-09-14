@@ -18,7 +18,8 @@ class AddressUsesController < ApplicationController
   end
 
   def new
-    @address_use = AddressUse.new
+    params[:address_use] ||= {}
+    @address_use = AddressUse.new params[:address_use]
 
     respond_to do |format|
       format.html # new.html.erb

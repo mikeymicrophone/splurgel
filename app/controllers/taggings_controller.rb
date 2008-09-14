@@ -22,7 +22,8 @@ class TaggingsController < ApplicationController
   end
 
   def new
-    @tagging = Tagging.new
+    params[:tagging] ||= {}
+    @tagging = Tagging.new params[:tagging]
 
     respond_to do |format|
       format.html # new.html.erb

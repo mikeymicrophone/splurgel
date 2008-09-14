@@ -24,6 +24,7 @@ class AuthorizationsController < ApplicationController
   # GET /authorizations/new
   # GET /authorizations/new.xml
   def new
+    params[:authorization] ||= {}
     @authorization = Authorization.new params[:authorization]
     if !params[:authorization][:target_type].blank? && params[:authorization][:target_id].blank?
       if params[:authorization][:target_type] == 'Store'
