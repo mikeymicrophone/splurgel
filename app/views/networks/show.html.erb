@@ -4,5 +4,8 @@
 <%= @network.network_memberships.count %> members!<br>
 <%= attach_image_link @network %>
 <%= attachable_sites @network %>
-<div id="uses"></div>
+<h2>tags</h2>
+<%= render :partial => 'tags/tag_form', :locals => {:obj => @network} %>
+<h2>comments</h2>
+<%= render :partial => 'comments/comment_display', :locals => {:obj => @network} %>
 <%= link_to 'networks', networks_path %>

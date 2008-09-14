@@ -17,7 +17,7 @@ class Notice < ActiveRecord::Base
   end
   
   def deliver_notices
-    followed.followers.each { |f| deliver_notice_to f }
+    followed.followers.each { |f| deliver_notice_to f } if followed.respond_to?(:followers)
   end
   
   def deliver_notice_to follower

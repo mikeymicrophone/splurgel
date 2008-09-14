@@ -11,8 +11,6 @@
   <%= link_to l.address.street + ' ' + (l.address.city ? l.address.city.name : ''), l %><br>
 <% end %>
 
-
-
 <h2><%= 'admin' if current_user.authorized_to_authorize(@store) %></h2>
 <%= link_to 'add a location', new_store_location_path(@store) if current_user.is_authorized_to_create_locations_of(@store) %><br>
 <%= link_to 'edit', edit_store_path(@store) if current_user.authorized_to_authorize(@store) %><br>
