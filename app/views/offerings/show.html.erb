@@ -1,11 +1,11 @@
-  <%= link_to_name @offering.location %> is offering <%= link_to_name @offering.product %>
-  <%= ' by ' + link_to_name(@offering.product.brand) if @offering.product.brand %><br>
+<%= link_to_name @offering.location %> is offering <%= link_to_name @offering.product %>
+<%= ' by ' + link_to_name(@offering.product.brand) if @offering.product.brand %>
+<%= ' for ' + @offering.price.point.to_s if @offering.price %>
+<%= '[sale]' if @offering.price && @offering.price.sale %><br>
 
-  <%= @offering.price.point if @offering.price %><br>
-  <%= '[sale]' if @offering.price && @offering.price.sale %><br>
-  <%= attachable_sites @offering %>
-  <%= follow_link @offering %>
-  <%=h @offering.stock + ' in stock' if @offering.stock %>
+<%= attachable_sites @offering %>
+<%= follow_link @offering %>
+<%=h @offering.stock + ' in stock' if @offering.stock %>
 
 <%= link_to 'edit', edit_offering_path(@offering) if current_user.is_authorized_to_edit_offerings_at(@offering.location) %> |
 <%= link_to 'set price', new_offering_price_path(@offering) if current_user.is_authorized_to_edit_offerings_at(@offering.location) %>

@@ -1,7 +1,7 @@
   <%= link_to_name @price.offering %> for
   <%= @price.point %>
   <%= '[sale]' if @price.sale %>
-valid until <%= time_ago_in_words @price.end_date %><br>
+valid for <%= time_ago_in_words @price.end_date %><br>
 
 <%= link_to 'edit', edit_price_path(@price) %> |
 <%= link_to 'prices', prices_path %>

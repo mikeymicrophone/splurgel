@@ -1,48 +1,29 @@
-<p>
-  <b>Target type:</b>
-  <%=h @notice.target_type %>
-</p>
+<% unless @notice.private %>
+	<p><%= h @notice.body %></p>
 
-<p>
-  <b>Target:</b>
-  <%=h @notice.target_id %>
-</p>
+	<%= link_to_name @notice.target %>
 
-<p>
-  <b>Followed type:</b>
-  <%=h @notice.followed_type %>
-</p>
+	<p>
+	  <%= link_to_name @notice.followed %>
+	</p>
 
-<p>
-  <b>Followed:</b>
-  <%=h @notice.followed_id %>
-</p>
+	<p>
+	  <b>Secondary targets:</b>
+	  <%= @notice.secondary_targets.map { |t| link_to_name t.first.constantize.send(:find, t.last) } %>
+	</p>
 
-<p>
-  <b>Secondary targets:</b>
-  <%=h @notice.secondary_targets %>
-</p>
+	<p>
+	  <%= link_to_name @notice.user %>
+	</p>
 
-<p>
-  <b>User:</b>
-  <%=h @notice.user_id %>
-</p>
+	<p>
+	  <%= time_ago_in_words(@notice.created_at) + ' old' %>
+	</p>
 
-<p>
-  <b>Private:</b>
-  <%=h @notice.private %>
-</p>
+	<%= link_to 'Edit', edit_notice_path(@notice) %> |
+	<%= link_to_backup %>
 
-<p>
-  <b>Created at:</b>
-  <%=h @notice.created_at %>
-</p>
+<% else %>
 
-<p>
-  <b>Updated at:</b>
-  <%=h @notice.updated_at %>
-</p>
-
-
-<%= link_to 'Edit', edit_notice_path(@notice) %> |
-<%= link_to 'Back', notices_path %>
+Private!
+<% end %>

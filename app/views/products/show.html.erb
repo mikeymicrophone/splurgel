@@ -1,4 +1,5 @@
-  <%=h @product.name %><br>
+<h1><%= @product.name %></h1>
+  <%= @price.point if @price %><br>
   <%= link_to_name @product.brand %><br>
   <%= attach_image_link @product %><br>
   <%= render :partial => 'tags/tag_form', :locals => {:obj => @product} %><br>

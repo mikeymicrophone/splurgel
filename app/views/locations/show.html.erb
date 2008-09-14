@@ -12,7 +12,7 @@
 <% end %>
 <h2>products you'll find and love</h2>
 <% @location.products.each do |p| %>
-  <%= link_to_name p %>
+  <%= link_to p.name, location_product_path(@location, p) %>
 <% end %>
 <h2><%= 'admin' if current_user.is_authorized_to_edit_locations_of(@location.store) %></h2>
 <%= link_to 'add product', new_offering_path(:offering => {:location_id => @location.id}) if current_user.is_authorized_to_create_offerings_at(@location) %>

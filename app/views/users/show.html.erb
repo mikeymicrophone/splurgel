@@ -6,7 +6,8 @@
 <%= @user.hobbies %><br>
 <%= @user.interests %><br>
 
-<%= message_link @user unless current_user && current_user == @user %>
+<%= message_link @user unless logged_in? && current_user == @user %>
+<%= notifications_for @user if logged_in? && current_user == @user %><br>
 <%= list_links @user %><br>
 <%= attachable_sites @user %>
 <%= follow_link @user %>

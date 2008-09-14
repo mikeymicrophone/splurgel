@@ -4,6 +4,10 @@ module ApplicationHelper
     super(:class_name => obj.class.name.downcase, :id => obj.to_param)
   end
   
+  def notifications_for usr
+    usr.delivered_notices.unread.map { |n| n.notice.body }.join('<br>')
+  end
+  
   def attachable_sites obj
     link_to_remote('attach site', :url => attach_site_path(obj), :update => 'uses', :method => :get) +
     '<div id="uses"></div>' + attached_sites(obj)
@@ -98,9 +102,10 @@ module ApplicationHelper
   end
   
   def list_links usr, except = nil
-    (except == 'like' ? '' : link_to("#{usr.login}'s like list", like_list_path(usr), :class => 'list') + ' ') +
-    (except == 'want' ? '' : link_to("#{usr.login}'s want list", want_list_path(usr), :class => 'list') + ' ') +
-    (except == 'have' ? '' : link_to("#{usr.login}'s have list", have_list_path(usr), :class => 'list'))
+    user_identifier = (logged_in? && (current_user == usr)) ? 'my' : (usr.login + '\'s')
+    (except == 'like' ? '' : link_to("#{user_identifier} like list", like_list_path(usr), :class => 'list') + ' ') +
+    (except == 'want' ? '' : link_to("#{user_identifier} want list", want_list_path(usr), :class => 'list') + ' ') +
+    (except == 'have' ? '' : link_to("#{user_identifier} have list", have_list_path(usr), :class => 'list'))
   end
   
   def primary_image obj, size = '45x55'

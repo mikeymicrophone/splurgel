@@ -6,7 +6,9 @@ class ProductsController < ApplicationController
         Location.find(params[:location_id]).products.find(:all, :conditions => {:brand_id => params[:brand_id]})
       else
         Product.find(:all, :conditions => {:brand_id => params[:brand_id]})
-      end    
+      end
+    elsif params[:location_id]
+      Location.find(params[:location_id]).products
     else
       Product.find :all
     end
@@ -19,6 +21,11 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find params[:id]
+
+    if params[:location_id]
+      @offering = Offering.find_by_location_id_and_product_id(params[:location_id], params[:id])
+      @price = @offering.price if @offering
+    end
 
     respond_to do |format|
       format.html # show.html.erb
