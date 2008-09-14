@@ -1,15 +1,11 @@
 <h1>followings keep track of who is following who and which groups and locations</h1>
 
 <table>
-  <tr>
-    <th>Follower</th>
-  </tr>
-
-<% for following in @followings %>
+<% @followings.each do |following| %>
   <tr>
     <td><%= link_to_name following.follower %> following <%= link_to_name following.target %></td>
     <td><%= link_to 'show', following %></td>
-    <td><%= link_to 'edit', edit_following_path(following) %></td>
+    <td><%= link_to 'edit', edit_following_path(following) if following.follower == current_user %></td>
   </tr>
 <% end %>
 </table>

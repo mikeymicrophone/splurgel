@@ -12,7 +12,9 @@
 <%= attachable_sites @user %>
 <%= follow_link @user %>
 <%= link_to "#{@user.login}'s followed items", user_followings_path(@user) %>
+<h2>tags</h2>
 <%= render :partial => 'tags/tag_form', :locals => {:obj => @user} %>
+<h2>comments</h2>
 <%= render :partial => 'comments/comment_display', :locals => {:obj => @user} %>
 
 <%= link_to 'edit', edit_user_path(@user) if @user == current_user %>

@@ -14,6 +14,8 @@ class NoticesController < ApplicationController
   # GET /notices/1.xml
   def show
     @notice = Notice.find(params[:id])
+    
+    current_user.reads_notice @notice
 
     respond_to do |format|
       format.html # show.html.erb

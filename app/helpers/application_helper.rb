@@ -5,7 +5,7 @@ module ApplicationHelper
   end
   
   def notifications_for usr
-    usr.delivered_notices.unread.map { |n| n.notice.body }.join('<br>')
+    usr.delivered_notices.unread.map { |n| n.notice.body + link_to('see details', n.notice) }.join('<br>')
   end
   
   def attachable_sites obj

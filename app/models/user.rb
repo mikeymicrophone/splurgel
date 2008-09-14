@@ -41,6 +41,10 @@ class User < ActiveRecord::Base
     indexes :interests
   end
   
+  def reads_notice notice
+    delivered_notices.find(:first, :conditions => {:notice_id => notice.id}).update_attribute(:read_at, Time.now)
+  end
+  
   def administers? thing
     thing.administrator_id == id # refactor when I implement multiple administrators per thing
   end
