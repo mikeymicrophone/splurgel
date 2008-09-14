@@ -32,7 +32,7 @@ class Offering < ActiveRecord::Base
   end
   
   def price
-    prices.select { |p| p.end_date > Time.now }.first
+    prices.select { |p| (p.end_date > Time.now) && (p.start_date.blank? || p.start_date < Time.now)  }.sort_by(&:point).first
   end
   
   def store

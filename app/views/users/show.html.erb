@@ -1,5 +1,5 @@
 <%= primary_image @user %>
-<%= @user.login %><br><br>
+<h1><%= @user.login %></h1><%= follow_link @user %><br><br>
 <%= @user.listings.count %> items on lists<br>
 <%= attach_image_link @user %><br>
 <%= @user.persona %><br>
@@ -9,8 +9,8 @@
 <%= message_link @user unless logged_in? && current_user == @user %>
 <%= notifications_for @user if logged_in? && current_user == @user %><br>
 <%= list_links @user %><br>
+<h2><%= @user.login %>'s web complement</h2>
 <%= attachable_sites @user %>
-<%= follow_link @user %>
 <%= link_to "#{@user.login}'s followed items", user_followings_path(@user) %>
 <h2>tags</h2>
 <%= render :partial => 'tags/tag_form', :locals => {:obj => @user} %>

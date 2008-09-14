@@ -1,4 +1,4 @@
-<h1> price</h1>
+<h1>price<%= " of #{@price.offering.product.name} at #{@price.offering.location.name}" if @price.offering %></h1>
 
 <% form_for @price do |f| %>
   <%= f.error_messages %>
@@ -16,6 +16,11 @@
     <%= f.label :sale %><br />
     <%= f.check_box :sale %>
   </p>
+  <p>
+    <%= f.label :start_date %><br />
+    <%= f.datetime_select :start_date %>
+  </p>
+
   <p>
     <%= f.label :end_date %><br />
     <%= f.datetime_select :end_date %>

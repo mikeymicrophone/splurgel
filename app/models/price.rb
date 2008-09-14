@@ -9,6 +9,20 @@ class Price < ActiveRecord::Base
     indexes comments(:body)
   end
   
+  def current?
+    return false if start_date? && start_date > Time.now
+    return false if end_date? && end_date < Time.now
+    true
+  end
+  
+  def not_started?
+    start_date && start_date > Time.now
+  end
+  
+  def finished?
+    end_date && end_date < Time.now
+  end
+  
   def product
     offering.product
   end

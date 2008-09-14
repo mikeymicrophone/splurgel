@@ -13,7 +13,7 @@
     <td><%= link_to offering.location.store.name, offering.location %></td>
     <td><%=h offering.stock %></td>
     <td><%= link_to 'show', offering %></td>
-    <td><%= link_to 'edit', edit_offering_path(offering) %></td>
+    <td><%= link_to 'edit', edit_offering_path(offering) if current_user.is_authorized_to_edit_offerings_at(offering.location_id) %></td>
   </tr>
 <% end %>
 </table>

@@ -4,17 +4,18 @@
   <tr>
     <th>Offering</th>
     <th>Sale</th>
-    <th>End date</th>
+		<th>start</th>
+    <th>end</th>
   </tr>
 
 <% for price in @prices %>
   <tr>
     <td><%= link_to price.offering.product.name, price.offering %></td>
     <td><%=h price.sale %></td>
-    <td><%=h price.end_date %></td>
+    <td><%= time_ago_in_words(price.start_date) + ' to go' if price.not_started? %> </td>
+    <td><%= time_ago_in_words(price.end_date) + ' to go' if price.current? %></td>
     <td><%= link_to 'show', price %></td>
-    <td><%= link_to 'edit', edit_price_path(price) %></td>
-    <td><%= link_to 'Destroy', price, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'edit', edit_price_path(price) if current_user.is_authorized_to_edit_offerings_at(price.offering.location_id) %></td>
   </tr>
 <% end %>
 </table>

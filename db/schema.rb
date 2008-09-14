@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080910204042) do
+ActiveRecord::Schema.define(:version => 20080914005817) do
 
   create_table "address_uses", :force => true do |t|
     t.string   "target_type"
@@ -246,6 +246,7 @@ ActiveRecord::Schema.define(:version => 20080910204042) do
     t.datetime "updated_at"
     t.integer  "user_id",     :limit => 11
     t.float    "point"
+    t.datetime "start_date"
   end
 
   create_table "products", :force => true do |t|
