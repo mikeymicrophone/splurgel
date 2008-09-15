@@ -1,7 +1,10 @@
 class BrandsController < ApplicationController
   def index
-    @brands = Brand.find :all
-
+    @brands = if params[:location_id]
+      Location.find(params[:location_id]).brands
+    else
+      Brand.find :all
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @brands }

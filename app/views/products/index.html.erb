@@ -1,10 +1,13 @@
-<h1>products</h1>
+<h1>products<%= ' at ' + @location.name if @location %></h1>
 
 <% @products.each do |product| %>
   <% content_tag_for :div, product do %>
     <%= primary_image product %>
     <%= link_to_name product %>
     <%= link_to_name product.brand %>
+		<% stock = Stock.find_by_product_and_location(product, @location) %>
+		<%= stock.length.to_s + ' in stock' unless stock.blank? %>
+		<%= link_to 'stock more', new_location_stock_path(@location, :product_id => product.id) %>
     <%= link_to 'edit', edit_product_path(product) %>
     <%= attach_image_link product %>
     <%= link_to_remote 'attach site', :url => attach_site_path(product), :method => :get, :update => 'uses' %>

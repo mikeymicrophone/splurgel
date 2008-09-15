@@ -3,12 +3,12 @@ class ProductsController < ApplicationController
   def index
     @products = if params[:brand_id]
       if params[:location_id]
-        Location.find(params[:location_id]).products.find(:all, :conditions => {:brand_id => params[:brand_id]})
+        (@location = Location.find(params[:location_id])).products.find(:all, :conditions => {:brand_id => params[:brand_id]})
       else
         Product.find(:all, :conditions => {:brand_id => params[:brand_id]})
       end
     elsif params[:location_id]
-      Location.find(params[:location_id]).products
+      (@location = Location.find(params[:location_id])).products
     else
       Product.find :all
     end

@@ -1,6 +1,10 @@
 class StocksController < ApplicationController
   def index
-    @stocks = Stock.find :all
+    @stocks = if params[:location_id]
+      Location.find(params[:location_id]).stocks
+    else  
+      Stock.find :all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,7 +22,12 @@ class StocksController < ApplicationController
   end
 
   def new
-    @stock = Stock.new
+    params[:stock] ||= {}
+    params[:stock][:offering_id] = params[:offering_id] if params[:offering_id]
+    params[:stock][:offering_id] = Offering.find_by_location_id_and_product_id(params[:location_id], params[:product_id]).id if params[:product_id] && params[:location_id]
+    @stock = Stock.new params[:stock]
+    
+    @styles = params[:offering_id] ? @stock.offering.product.styles : Style.all
 
     respond_to do |format|
       format.html # new.html.erb

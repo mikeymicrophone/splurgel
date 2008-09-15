@@ -1,4 +1,4 @@
-<h1>what's in stock</h1>
+<h1>what's in stock <%= ' in terms of ' + @stock.offering.name if @stock.offering %></h1>
 
 <% form_for @stock do |f| %>
   <%= f.error_messages %>
@@ -10,9 +10,14 @@
     <%= f.select :offering_id, Offering.map_name_and_id %><%= f.label :offering_id, 'offering' %>
   </p>
 	<% end %>
-  <p>
-    <%= f.select :style_id, Style.map_name_and_id %><%= f.label :style_id, 'style' %>
-  </p>
+	<% if @stock.style %>
+		<%= f.hidden_field :style_id %><%= @stock.style.display_for_select %>
+	<% else %>
+	  <p>
+	    <%= f.select :style_id, @styles.map_name_and_id, :include_blank => true %><%= f.label :style_id, 'style' %>
+			<%= link_to 'another style', new_product_style_path(@stock.offering.product) if @stock.offering %>
+	  </p>
+	<% end %>
 	<p>
 		how many?	<%= text_field :how, :many, :size => 3 %> in 
     <%= f.submit "stock" %>

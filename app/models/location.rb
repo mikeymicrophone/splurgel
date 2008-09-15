@@ -4,6 +4,7 @@ class Location < ActiveRecord::Base
   belongs_to :address
   belongs_to :user
   has_many :offerings
+  has_many :stocks, :through => :offerings
   has_many :products, :through => :offerings
   has_many :taggings, :as => :target
   has_many :tags, :through => :taggings

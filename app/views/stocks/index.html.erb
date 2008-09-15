@@ -1,24 +1,23 @@
-<h1>Listing stocks</h1>
+<h1>in stock</h1>
 
 <table>
   <tr>
-    <th>Offering</th>
-    <th>Style</th>
-    <th>User</th>
+    <th>offering</th>
+    <th>style</th>
+    <th>user</th>
   </tr>
 
 <% for stock in @stocks %>
   <tr>
-    <td><%=h stock.offering_id %></td>
-    <td><%=h stock.style_id %></td>
-    <td><%=h stock.user_id %></td>
-    <td><%= link_to 'Show', stock %></td>
-    <td><%= link_to 'Edit', edit_stock_path(stock) %></td>
-    <td><%= link_to 'Destroy', stock, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to_name stock.offering %></td>
+    <td><%= link_to_name stock.style, 'display_for_select' %></td>
+    <td><%= link_to_name stock.user %></td>
+    <td><%= link_to 'show', stock %></td>
+    <td><%= link_to 'edit', edit_stock_path(stock) if current_user.is_authorized_to_edit_offerings_at(stock.offering.location_id) %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New stock', new_stock_path %>
+<%= link_to 'new stock', new_stock_path %>

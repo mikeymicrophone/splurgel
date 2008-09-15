@@ -70,6 +70,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :offerings do |offering|
     offering.resources :prices
+    offering.resources :stocks
   end
 
   map.resources :products do |product|
@@ -84,6 +85,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :locations do |location|
     location.resources :offerings
     location.resources :products
+    location.resources :stocks
     location.resources :brands do |brand|
       brand.resources :products
     end
