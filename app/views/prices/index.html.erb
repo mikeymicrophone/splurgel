@@ -2,8 +2,9 @@
 
 <table>
   <tr>
-    <th>Offering</th>
-    <th>Sale</th>
+    <th>offering</th>
+		<th>price</th>
+    <th>sale</th>
 		<th>start</th>
     <th>end</th>
   </tr>
@@ -11,6 +12,7 @@
 <% for price in @prices %>
   <tr>
     <td><%= link_to price.offering.product.name, price.offering %></td>
+		<td><%= price.point %></td>
     <td><%=h price.sale %></td>
     <td><%= time_ago_in_words(price.start_date) + ' to go' if price.not_started? %> </td>
     <td><%= time_ago_in_words(price.end_date) + ' to go' if price.current? %></td>

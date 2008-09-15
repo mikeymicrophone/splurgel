@@ -1,6 +1,6 @@
 <%= link_to_name @offering.location %> is offering <%= link_to_name @offering.product %><%= follow_link @offering %>
 <%= ' by ' + link_to_name(@offering.product.brand) if @offering.product.brand %>
-<%= ' for ' + @offering.price.point.to_s if @offering.price %>
+<%= ' for $' + @offering.price.point.to_s if @offering.price %>
 <%= '[sale]' if @offering.price && @offering.price.sale %><br>
 
 <%= attachable_sites @offering %>

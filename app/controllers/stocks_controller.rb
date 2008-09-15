@@ -27,7 +27,7 @@ class StocksController < ApplicationController
     params[:stock][:offering_id] = Offering.find_by_location_id_and_product_id(params[:location_id], params[:product_id]).id if params[:product_id] && params[:location_id]
     @stock = Stock.new params[:stock]
     
-    @styles = params[:offering_id] ? @stock.offering.product.styles : Style.all
+    @styles = params[:stock][:offering_id] ? @stock.offering.product.styles : Style.all
 
     respond_to do |format|
       format.html # new.html.erb

@@ -73,7 +73,7 @@ class User < ActiveRecord::Base
   end
   
   def authorized_locations
-    authorizations.find(:all, :conditions => ['authorization_type in (1, 2, 10)']).map(&:locations) + locations
+    authorizations.find(:all, :conditions => ['authorization_type in (1, 2, 10)']).map(&:locations).flatten + locations
   end
   
   # conventionally these five methods would have question marks at the end of their names, I left them off for now
