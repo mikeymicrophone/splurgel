@@ -1,7 +1,10 @@
 class StylesController < ApplicationController
   def index
-    @styles = Style.find :all
-
+    @styles = if params[:product_id]
+      Product.find(params[:product_id]).styles
+    else
+      Style.find :all
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @styles }
@@ -18,7 +21,9 @@ class StylesController < ApplicationController
   end
 
   def new
-    @style = Style.new
+    params[:style] ||= {}
+    params[:style][:product_id] ||= params[:product_id] if params[:product_id]
+    @style = Style.new params[:style]
 
     respond_to do |format|
       format.html # new.html.erb

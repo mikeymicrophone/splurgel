@@ -1,23 +1,11 @@
-<p>
-  <b>Size:</b>
-  <%=h @style.size %>
-</p>
+<h2><%= link_to_name @style.product %></h2>is available in size <%=h @style.size %><br>
+described as 
+<i><%=h @style.traits %></i><br>
 
-<p>
-  <b>Traits:</b>
-  <%=h @style.traits %>
-</p>
+reported by <%= link_to_name @style.user, 'login' %>
 
-<p>
-  <b>Product:</b>
-  <%=h @style.product_id %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%=h @style.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_style_path(@style) %> |
-<%= link_to 'Back', styles_path %>
+<h3>available at</h3>
+<% @style.offerings.each do |o| %>
+  <%= link_to_name o.location %><%= '[' + o.price.point + ']' if o.price%><br>
+<% end %>
+<%= link_to 'edit', edit_style_path(@style) if @style.user == current_user %>

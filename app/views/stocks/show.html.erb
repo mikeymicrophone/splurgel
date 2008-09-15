@@ -1,18 +1,22 @@
 <p>
-  <b>Offering:</b>
-  <%=h @stock.offering_id %>
+  <b>the deal:</b>
+  <%= link_to_name @stock.offering.product %>
+</p>
+<p>
+  <b>the spot:</b>
+  <%= link_to_name @stock.offering.location %>
+</p>
+<p>
+  <b>at what cost:</b>
+  <%= link_to_name @stock.offering.price %>
+</p>
+<p>
+  <b>the style:</b>
+  <%= link_to_name @stock.style, 'display_for_select' %>
 </p>
 
 <p>
-  <b>Style:</b>
-  <%=h @stock.style_id %>
+  stocked by  <%= link_to_name @stock.user %>
 </p>
 
-<p>
-  <b>User:</b>
-  <%=h @stock.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_stock_path(@stock) %> |
-<%= link_to 'Back', stocks_path %>
+<%= link_to 'edit', edit_stock_path(@stock) %>

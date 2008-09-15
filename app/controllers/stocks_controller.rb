@@ -31,7 +31,8 @@ class StocksController < ApplicationController
   end
 
   def create
-    @stock = Stock.new params[:stock]
+    params[:how] ||= {}; params[:how][:many] = 1 if params[:how][:many].blank?
+    params[:how][:many].to_i.times { @stock = Stock.create params[:stock] }
 
     respond_to do |format|
       if @stock.save

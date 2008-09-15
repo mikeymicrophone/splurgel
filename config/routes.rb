@@ -74,6 +74,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :products do |product|
     product.resources :offerings
+    product.resources :styles
   end
 
   map.resources :brands do |brand|

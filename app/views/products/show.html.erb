@@ -1,11 +1,11 @@
-<h1><%= @product.name %></h1>
-  <%= @price.point if @price %><br>
-  <%= link_to_name @product.brand %><br>
-  <%= attach_image_link @product %><br>
-  <%= render :partial => 'tags/tag_form', :locals => {:obj => @product} %><br>
-  <%= lists @product %>
-  <%= link_to 'offer this product', new_offering_path(:offering => {:product_id => @product.id}) %>
-  <%= follow_link @product %>
-<%= link_to 'edit', edit_product_path(@product) %> |
+<h1><%= @product.name %></h1>  <%= follow_link @product %>
+<%= @price.point if @price %><br>
+<%= link_to_name @product.brand %><br>
+<%= attach_image_link @product %><br>
+<%= render :partial => 'tags/tag_form', :locals => {:obj => @product} %><br>
+<%= lists @product %>
+<%= link_to 'offer this product', new_offering_path(:offering => {:product_id => @product.id}) %>
+<%= link_to 'add style', new_product_style_path(@product) %>
+<%= link_to 'edit', edit_product_path(@product) %>
 <%= link_to 'products', products_path %>
 

@@ -1,27 +1,22 @@
-<h1>New style</h1>
+<h1>new style<%= ' for ' + @style.product.name if @style.product %></h1>
 
-<% form_for(@style) do |f| %>
+<% form_for @style do |f| %>
   <%= f.error_messages %>
 
   <p>
-    <%= f.label :size %><br />
-    <%= f.text_field :size %>
+    <%= f.text_field :size, :size => 8 %><%= f.label :size, 'size' %>
   </p>
   <p>
-    <%= f.label :traits %><br />
-    <%= f.text_field :traits %>
+    <%= f.text_area :traits, :size => '30x2' %><%= f.label :traits, 'style' %>
   </p>
+	<% if @style.product_id.blank? %>
   <p>
-    <%= f.label :product_id %><br />
-    <%= f.text_field :product_id %>
+    <%= f.text_field :product_id %><%= f.label :product_id, 'product' %>
   </p>
+	<% else %>
+	  <%= f.hidden_field :product_id %>
+	<% end %>
   <p>
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
+    <%= f.submit "define" %>
   </p>
 <% end %>
-
-<%= link_to 'Back', styles_path %>

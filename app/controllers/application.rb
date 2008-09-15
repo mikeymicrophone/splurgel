@@ -120,7 +120,7 @@ class ActiveRecord::Base
   def self.map_name_and_id(method = 'display_for_select')
     if method != 'display_for_select'
       all.map { |r| [r.send(method), r.id] }
-    elsif respond_to?(:name)
+    elsif first.respond_to?(:name)
       all.map { |r| [r.name, r.id] }
     else
       all.map { |r| [r.send(method), r.id] }
