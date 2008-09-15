@@ -12,6 +12,6 @@ class ImageUse < ActiveRecord::Base
   end
   
   def primary?
-    target && target.respond_to?(:primary_photos) && target.primary_photos && target.primary_photos.include?(id)
+    target && target.respond_to?(:primary_photos) && target.primary_photos && target.primary_photos.include?(image_id)
   end
 end

@@ -8,7 +8,7 @@
     <td><%= link_to_name image_use.target %></td>
     <td><%= link_to 'show', image_use %></td>
     <td><%= link_to 'edit', edit_image_use_path(image_use) %></td>
-    <td><%= link_to 'make primary', prioritize_image_use_path(image_use), :method => :post, :id => dom_id(image_use) unless image_use.primary? %></td>
+    <td id="<%= dom_id(image_use, 'prioritization') %>"><%= link_to_remote 'make primary', :url => prioritize_image_use_path(image_use), :update => dom_id(image_use, 'prioritization') unless image_use.primary? %></td>
   </tr>
 <% end %>
 </table>
