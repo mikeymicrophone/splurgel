@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
   belongs_to :brand
+  has_many :styles
   has_many :listings
   has_many :listers, :through => :listings, :class_name => 'User', :foreign_key => :user_id
   has_many :likers, :through => :listings, :class_name => 'User', :foreign_key => :user_id, :conditions => 'listings.list_type = 1'

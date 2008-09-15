@@ -1,0 +1,23 @@
+<p>
+  <b>Size:</b>
+  <%=h @style.size %>
+</p>
+
+<p>
+  <b>Traits:</b>
+  <%=h @style.traits %>
+</p>
+
+<p>
+  <b>Product:</b>
+  <%=h @style.product_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @style.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_style_path(@style) %> |
+<%= link_to 'Back', styles_path %>

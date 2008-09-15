@@ -5,7 +5,6 @@
 
 <%= attachable_sites @offering %>
 <%= follow_link @offering %>
-<%=h @offering.stock + ' in stock' if @offering.stock %>
 
 <%= link_to 'edit', edit_offering_path(@offering) if current_user.is_authorized_to_edit_offerings_at(@offering.location) %> |
 <%= link_to 'set price', new_offering_price_path(@offering) if current_user.is_authorized_to_edit_offerings_at(@offering.location) %>

@@ -1,6 +1,7 @@
 class Offering < ActiveRecord::Base
   belongs_to :product
   belongs_to :location
+  has_many :stocks
   # has_one :store, :through => :location
   has_many :prices
   has_many :taggings, :as => :target

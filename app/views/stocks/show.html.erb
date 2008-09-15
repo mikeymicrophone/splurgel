@@ -1,0 +1,18 @@
+<p>
+  <b>Offering:</b>
+  <%=h @stock.offering_id %>
+</p>
+
+<p>
+  <b>Style:</b>
+  <%=h @stock.style_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @stock.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_stock_path(@stock) %> |
+<%= link_to 'Back', stocks_path %>

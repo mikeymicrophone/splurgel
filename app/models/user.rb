@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   has_many :locations
   has_many :authorizations
   has_many :authorized_situations, :class_name => 'Authorization', :foreign_key => :authorizer_id
+  has_many :styles
+  has_many :stocks
   has_many :listings
   has_many :delivered_notices
   has_many :notices, :through => :delivered_notices

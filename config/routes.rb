@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :stocks
+
+  map.resources :styles
+
   map.resources :delivered_notices
 
   map.resources :notices

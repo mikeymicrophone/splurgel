@@ -1,0 +1,26 @@
+<h1>Listing styles</h1>
+
+<table>
+  <tr>
+    <th>Size</th>
+    <th>Traits</th>
+    <th>Product</th>
+    <th>User</th>
+  </tr>
+
+<% for style in @styles %>
+  <tr>
+    <td><%=h style.size %></td>
+    <td><%=h style.traits %></td>
+    <td><%=h style.product_id %></td>
+    <td><%=h style.user_id %></td>
+    <td><%= link_to 'Show', style %></td>
+    <td><%= link_to 'Edit', edit_style_path(style) %></td>
+    <td><%= link_to 'Destroy', style, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New style', new_style_path %>

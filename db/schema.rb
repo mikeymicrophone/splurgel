@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080914044549) do
+ActiveRecord::Schema.define(:version => 20080915015117) do
 
   create_table "address_uses", :force => true do |t|
     t.string   "target_type"
@@ -215,7 +215,6 @@ ActiveRecord::Schema.define(:version => 20080914044549) do
   create_table "offerings", :force => true do |t|
     t.integer  "product_id",     :limit => 11
     t.integer  "location_id",    :limit => 11
-    t.string   "stock"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id",        :limit => 11
@@ -299,6 +298,14 @@ ActiveRecord::Schema.define(:version => 20080914044549) do
     t.string   "abbreviation"
   end
 
+  create_table "stocks", :force => true do |t|
+    t.integer  "offering_id", :limit => 11
+    t.integer  "style_id",    :limit => 11
+    t.integer  "user_id",     :limit => 11
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "stores", :force => true do |t|
     t.string   "name"
     t.integer  "administrator_id", :limit => 11
@@ -307,6 +314,15 @@ ActiveRecord::Schema.define(:version => 20080914044549) do
     t.datetime "updated_at"
     t.integer  "user_id",          :limit => 11
     t.string   "primary_photos"
+  end
+
+  create_table "styles", :force => true do |t|
+    t.string   "size"
+    t.string   "traits"
+    t.integer  "product_id", :limit => 11
+    t.integer  "user_id",    :limit => 11
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "taggings", :force => true do |t|

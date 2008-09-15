@@ -1,0 +1,24 @@
+<h1>Editing stock</h1>
+
+<% form_for(@stock) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :offering_id %><br />
+    <%= f.text_field :offering_id %>
+  </p>
+  <p>
+    <%= f.label :style_id %><br />
+    <%= f.text_field :style_id %>
+  </p>
+  <p>
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @stock %> |
+<%= link_to 'Back', stocks_path %>
