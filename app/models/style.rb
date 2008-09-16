@@ -17,5 +17,9 @@ class Style < ActiveRecord::Base
   def display_for_select
     (traits.blank? ? '' : traits) + (size.blank? ? '' : " (#{size})")
   end
+  
+  def name
+    traits
+  end
 
 end

@@ -60,5 +60,9 @@ class Authorization < ActiveRecord::Base
   alias :to_edit_location_of :to_edit_location
   alias :to_create_offering_for :to_create_offering
   alias :to_edit_offering_for :to_edit_offering
+  
+  def name
+    "#{user.login} to #{Authorization.type_hash[authorization_type]} at #{target.name}"
+  end
 
 end

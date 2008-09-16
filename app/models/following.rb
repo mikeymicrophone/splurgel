@@ -24,5 +24,8 @@ class Following < ActiveRecord::Base
     ['User', 'Brand', 'Store', 'Location', 'Group', 'City', 'Product', 'Offering', 'Comment', 'Membership', 'Tag', 'Website']
   end
 
+  def name
+    "#{user.login} following #{target.name}"
+  end
 
 end

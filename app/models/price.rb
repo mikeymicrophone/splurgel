@@ -38,4 +38,8 @@ class Price < ActiveRecord::Base
   def brand
     product.brand
   end
+  
+  def name
+    "#{product.name} for #{point} at #{location.name}"
+  end
 end

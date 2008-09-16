@@ -19,4 +19,8 @@ class Message < ActiveRecord::Base
     sentence = body[/([^\.]*)/]
     sentence[0..230]
   end
+  
+  def name
+    "#{user.login} to #{recipient.login}"
+  end
 end

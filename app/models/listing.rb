@@ -16,7 +16,15 @@ class Listing < ActiveRecord::Base
     indexes comments(:body), :as => :comments
   end
   
+  def primary
+    product || brand || store
+  end
+  
   def self.list_types
     {'like' => 1, 'want' => 2, 'have' => 3, 1 => 'like', 2 => 'want', 3 => 'have'}
+  end
+  
+  def name
+    "#{primary.name} on #{user.login}'s #{Listing.list_types[list_type]} list"
   end
 end

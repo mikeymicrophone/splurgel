@@ -7,4 +7,8 @@ class DeliveredNotice < ActiveRecord::Base
   def display
     notice.body
   end
+  
+  def name
+    "#{user.login} alerted about #{notice.target.name if notice.target.respond_to?(:name)}"
+  end
 end

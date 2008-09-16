@@ -20,4 +20,8 @@ class Phone < ActiveRecord::Base
   def is_used_by entity
     PhoneUse.create(:phone_id => id, :target_id => entity.id, :target_type => entity.class.name) unless !PhoneUse.find_by_phone_id_and_target_id_and_target_type(id, entity.id, entity.class.name).blank?
   end
+  
+  def name
+    number
+  end
 end

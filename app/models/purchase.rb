@@ -18,4 +18,8 @@ class Purchase < ActiveRecord::Base
   def store
     location.store
   end
+  
+  def name
+    "#{user.login}'s purchase of #{product.name}"
+  end
 end
