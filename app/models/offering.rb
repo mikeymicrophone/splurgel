@@ -22,6 +22,7 @@ class Offering < ActiveRecord::Base
     indexes product(:name), :as => :product
     indexes tags(:name), :as => :tags
     indexes comments(:body), :as => :comments
+    set_property :delta => true
   end
   
   def notify_location

@@ -15,6 +15,7 @@ class Phone < ActiveRecord::Base
     indexes brands(:name), :as => :brands
     indexes stores(:name), :as => :stores
     indexes cities(:name), :as => :cities
+    set_property :delta => true
   end
   
   def is_used_by entity

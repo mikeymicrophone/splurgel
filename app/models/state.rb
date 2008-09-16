@@ -13,6 +13,7 @@ class State < ActiveRecord::Base
     indexes cities(:name), :as => :cities
     indexes tags(:name), :as => :tags
     indexes comments(:body), :as => :comments
+    set_property :delta => true
   end
   
   def self.find_or_create_by_name name_or_abbreviation

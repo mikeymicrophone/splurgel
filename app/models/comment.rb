@@ -21,6 +21,7 @@ class Comment < ActiveRecord::Base
   define_index do
     indexes :body
     # indexes target(:name)
+    set_property :delta => true
   end
   
   def notify_user

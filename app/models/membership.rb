@@ -12,6 +12,13 @@ class Membership < ActiveRecord::Base
   has_many :delivered_notices, :through => :notices
   after_create :notify_group
   
+  define_index do
+    indexes group(:name), :as => :group
+    indexes user(:login), :as => :username
+    indexes user(:name), :as => :user_name
+    set_property :delta => true
+  end
+  
   def notify_group
     group.make_known("#{group.name} has a new member: #{user.name}.", self)
   end

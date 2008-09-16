@@ -17,5 +17,6 @@ class Network < ActiveRecord::Base
     indexes state(:name), :as => :state_name
     indexes tags(:name), :as => :tags
     indexes comments(:body), :as => :comments
+    set_property :delta => true
   end
 end

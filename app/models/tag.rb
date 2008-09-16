@@ -47,6 +47,7 @@ class Tag < ActiveRecord::Base
     indexes products(:name), :as => :products
     indexes states(:name), :as => :states
     indexes stores(:name), :as => :stores
+    set_property :delta => true
   end
   
   def targets

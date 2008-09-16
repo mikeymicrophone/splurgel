@@ -25,6 +25,7 @@ class Image < ActiveRecord::Base
     indexes :filename
     indexes comments(:body), :as => :comments
     indexes tags(:name), :as => :tags
+    set_property :delta => true
   end
   
   has_attachment :storage => :s3

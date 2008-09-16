@@ -28,6 +28,7 @@ class Location < ActiveRecord::Base
     indexes store(:name), :as => :store
     indexes tags(:name), :as => :tags
     indexes comments(:body), :as => :comments
+    set_property :delta => true
   end
   
   def notify_store

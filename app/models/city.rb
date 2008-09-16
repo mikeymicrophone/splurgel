@@ -21,5 +21,6 @@ class City < ActiveRecord::Base
     indexes tags(:name), :as => :tags
     indexes comments(:body), :as => :comments
     indexes state(:name), :as => :state_name
+    set_property :delta => true
   end
 end

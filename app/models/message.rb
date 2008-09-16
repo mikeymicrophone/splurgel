@@ -12,7 +12,8 @@ class Message < ActiveRecord::Base
     indexes :body
     indexes tags(:name), :as => :tags
     indexes comments(:body), :as => :comments
-    indexds reply(:body), :as => :reply_body
+    indexes reply(:body), :as => :reply_body
+    set_property :delta => true
   end
   
   def first_sentence

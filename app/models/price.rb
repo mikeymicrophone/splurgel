@@ -7,6 +7,7 @@ class Price < ActiveRecord::Base
   define_index do
     indexes tags(:name), :as => :tags
     indexes comments(:body), :as => :comments
+    set_property :delta => true
   end
   
   def current?

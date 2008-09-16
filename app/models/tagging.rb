@@ -68,9 +68,7 @@ class Tagging < ActiveRecord::Base
   define_index do
     indexes tags(:name), :as => :tags
     indexes comments(:body), :as => :comments
-    # targets(:assocation_names).each do |potential_association|
-    #   indexes potential_association(:name)
-    # end
+    set_property :delta => true
   end
   
   def self.apply_to(target_type, target_id, tag_id)

@@ -12,6 +12,7 @@ class Style < ActiveRecord::Base
     indexes :traits
     indexes :size
     indexes product(:name), :as => :product
+    set_property :delta => true
   end
 
   def display_for_select

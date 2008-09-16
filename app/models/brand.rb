@@ -26,6 +26,7 @@ class Brand < ActiveRecord::Base
     indexes products(:name), :as => :product_name
     indexes tags(:name), :as => :tags
     indexes comments(:body), :as => :comments
+    set_property :delta => true
   end
   
   def stores

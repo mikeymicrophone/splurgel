@@ -23,6 +23,7 @@ class Store < ActiveRecord::Base
     indexes :name
     indexes tags(:name), :as => :tags
     indexes comments(:name), :as => :comments
+    set_property :delta => true
   end
   
   def products

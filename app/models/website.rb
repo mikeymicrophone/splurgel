@@ -41,6 +41,7 @@ class Website < ActiveRecord::Base
     # indexes products(:name)
     # indexes states(:name)
     # indexes stores(:name)
+    set_property :delta => true
   end
   
   def is_used_by entity

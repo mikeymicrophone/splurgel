@@ -23,6 +23,7 @@ class Group < ActiveRecord::Base
     indexes :name
     indexes tags(:name), :as => :tags
     indexes comments(:body), :as => :comments
+    set_property :delta => true
   end
   
   def self.public_groups

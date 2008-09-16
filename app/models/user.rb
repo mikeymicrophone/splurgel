@@ -43,6 +43,7 @@ class User < ActiveRecord::Base
     indexes :name
     indexes :hobbies
     indexes :interests
+    set_property :delta => true
   end
   
   def reads_notice notice

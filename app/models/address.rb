@@ -27,6 +27,7 @@ class Address < ActiveRecord::Base
     indexes :name
     indexes :alternate_names
     indexes user(:name), :as => :user_name
+    set_property :delta => true
   end
 
   def headquartered_stores

@@ -32,6 +32,7 @@ class Product < ActiveRecord::Base
     indexes brand(:name), :as => :brand
     indexes comments(:body), :as => :comments
     indexes tags(:name), :as => :tags
+    set_property :delta => true
   end
   
   def notify_brand
