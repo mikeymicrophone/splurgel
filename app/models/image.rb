@@ -23,12 +23,8 @@ class Image < ActiveRecord::Base
   define_index do
     indexes :name
     indexes :filename
-    indexes brands(:name)
-    indexes groups(:name)
-    indexes comments(:body)
-    indexes products(:name)
-    indexes stores(:name)
-    indexes tags(:name)
+    indexes comments(:body), :as => :comments
+    indexes tags(:name), :as => :tags
   end
   
   has_attachment :storage => :s3

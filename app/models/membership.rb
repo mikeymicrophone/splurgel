@@ -16,4 +16,8 @@ class Membership < ActiveRecord::Base
     group.make_known("#{group.name} has a new member: #{user.name}.", self)
   end
   
+  def name
+    "#{user.login} in #{group.name}"
+  end
+  
 end

@@ -23,5 +23,9 @@ class Notice < ActiveRecord::Base
   def deliver_notice_to follower
     DeliveredNotice.create :notice_id => id, :user_id => follower.id
   end
+  
+  def name
+    "notice about #{target.name}"
+  end
 
 end

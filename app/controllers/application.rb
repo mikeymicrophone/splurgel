@@ -4,14 +4,15 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?, :current_user?, :searchable_models
   protect_from_forgery
   filter_parameter_logging :password
+  before_filter :login_required
   
   def search
-    @results = params[:model].singularize.capitalize.constantize.send(:find_with_ferret, params[:query])
+    @results = params[:model].singularize.capitalize.constantize.send(:search, params[:query])
     render :partial => 'shared/results'
   end
   
   def searchable_models
-    %w!addresses brands cities comments groups images locations messages networks products stores tags users websites!
+    %w!addresses brands cities comments groups images locations messages networks products stores styles tags users websites!
   end
 
   def load_user_id_into_ar
@@ -129,6 +130,10 @@ class ActiveRecord::Base
     
   before_create :credit_creator
   
+  def to_param
+    "#{id}_#{name.for_url if name}"
+  end
+  
 end
 
 class Array
@@ -147,6 +152,17 @@ class Array
   end
   alias :not_empty? :not_blank?
   alias :is_not_blank? :not_blank?
+end
+
+class String
+  def for_url
+    safe = dup
+    unsafe_chars = /\#\/\$\&\+\,\:\;\=\?\@\<\>\%\{\}\|\\\^\~\[\]\`\'\"/
+    safe.gsub! unsafe_chars, '-'
+    safe.gsub! ' ', '_'
+    safe.gsub! '--', '-' while self =~ /--/
+    safe
+  end
 end
 
 class NilClass

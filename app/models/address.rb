@@ -20,14 +20,13 @@ class Address < ActiveRecord::Base
   attr_accessor :city_name, :state_name
 
   define_index do
-    indexes city.name, :as => :city_name
-    indexes state.name, :as => :state_name
-   # indexes stores.name, :as => :store_names
+    indexes city(:name), :as => :city_name
+    indexes state(:name), :as => :state_name
     indexes :street
     indexes :street2
     indexes :name
     indexes :alternate_names
-
+    indexes user(:name), :as => :user_name
   end
 
   def headquartered_stores

@@ -18,8 +18,8 @@ class City < ActiveRecord::Base
   
   define_index do
     indexes :name
-    indexes tags(:name)
-    indexes comments(:name)
-    indexes state(:name)
+    indexes tags(:name), :as => :tags
+    indexes comments(:body), :as => :comments
+    indexes state(:name), :as => :state_name
   end
 end

@@ -21,8 +21,8 @@ class Group < ActiveRecord::Base
   
   define_index do
     indexes :name
-    indexes tags(:name)
-    indexes comments(:body)
+    indexes tags(:name), :as => :tags
+    indexes comments(:body), :as => :comments
   end
   
   def self.public_groups

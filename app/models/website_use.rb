@@ -18,4 +18,17 @@ class WebsiteUse < ActiveRecord::Base
   def self.targets
     %w! brand city comment group image location message network offering product state store tagging user !
   end
+  
+  def name
+    if website.name.blank?
+      website.href
+    else
+      website.name
+    end + ' on ' +
+    if target.respond_to?(:name)
+      target.name
+    else
+      target.class.name.downcase
+    end
+  end
 end

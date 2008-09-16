@@ -14,4 +14,8 @@ class ImageUse < ActiveRecord::Base
   def primary?
     target && target.respond_to?(:primary_photos) && target.primary_photos && target.primary_photos.include?(image_id)
   end
+  
+  def name
+    "image #{image_id} for #{target_type.downcase} #{target_id}"
+  end
 end

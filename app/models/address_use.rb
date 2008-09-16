@@ -13,4 +13,8 @@ class AddressUse < ActiveRecord::Base
   def self.targets
     ['User', 'Location', 'Brand', 'Store', 'Group', 'Network']
   end
+  
+  def name
+    (target.respond_to?(:name) ? target.name + ' at ' : 'use of ') + (address.name.blank? ? address.street : address.name)
+  end
 end

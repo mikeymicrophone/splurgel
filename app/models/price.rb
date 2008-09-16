@@ -5,8 +5,8 @@ class Price < ActiveRecord::Base
   has_many :comments, :as => :target
   
   define_index do
-    indexes tags(:name)
-    indexes comments(:body)
+    indexes tags(:name), :as => :tags
+    indexes comments(:body), :as => :comments
   end
   
   def current?
@@ -37,5 +37,9 @@ class Price < ActiveRecord::Base
   
   def brand
     product.brand
+  end
+  
+  def name
+    "#{product.name} for #{point} at #{location.name}"
   end
 end

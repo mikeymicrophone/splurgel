@@ -1,12 +1,6 @@
-<h1>messages</h1>
+<h1>inbox</h1>
 
 <table>
-  <tr>
-    <th>first line</th>
-    <th>from</th>
-    <th>a reply to</th>
-  </tr>
-
 <% for message in @messages %>
   <tr>
     <td><%= message.read_on.blank? ? '<b>' : '' %><%= link_to message.first_sentence, message %><%= message.read_on.blank? ? '</b>' : '' %></td>
