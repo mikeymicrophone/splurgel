@@ -43,7 +43,7 @@ class AuthorizationsController < ApplicationController
 
   def create
     if params[:authorization][:target_type].blank?
-      params[:authorization][:target_id] = params[:store][:id].blank? ? params[:location][:id] : params[:store][:id]
+      params[:authorization].merge!(params[:store][:id].blank? ? {:target_type => 'Location', :target_id => params[:location][:id]} : {:target_type => 'Store', :target_id => params[:store][:id]})
     else
       if params[:authorization][:target_type] == 'Location' && params[:store] && params[:location]
         params[:authorization][:target_id] ||= params[:store][:id].blank? ? params[:location][:id] : params[:store][:id]

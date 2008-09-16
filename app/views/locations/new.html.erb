@@ -10,15 +10,13 @@
     <%= f.hidden_field :store_id %>
   <% else %>
     <p>
-      <%= f.label :store_id %><br />
-      <%= f.select :store_id, current_user.authorized_stores.map_name_and_id %>
-      <%= link_to 'new store', new_store_path%>
+      <%= f.select :store_id, current_user.authorized_stores.map_name_and_id %><%= f.label :store_id, 'choose a store' %>
+      <%= link_to 'or add a new one', new_store_path%>
     </p>
   <% end %>
   <p>
-    <%= f.label :schedule_id %><br />
-    <%= f.select :schedule_id, Schedule.map_name_and_id('display') %>
-    <%= link_to 'new schedule', new_schedule_path %>
+    <%= f.select :schedule_id, Schedule.map_name_and_id('display') %><%= f.label :schedule_id, 'pick a schedule' %>
+    <%= link_to 'or write a new one', new_schedule_path %>
   </p>
   <p>
     <%= f.label :address_id, 'select an address' %><br />
