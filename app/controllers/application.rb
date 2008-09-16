@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :logged_in?, :current_user?, :searchable_models
   protect_from_forgery
   filter_parameter_logging :password
+  before_filter :login_required
   
   def search
     @results = params[:model].singularize.capitalize.constantize.send(:find_with_ferret, params[:query])

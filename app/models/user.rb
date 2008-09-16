@@ -60,6 +60,10 @@ class User < ActiveRecord::Base
     end
   end
   
+  def admin?
+    login == 'schwabsauce'
+  end
+  
   def administers? thing
     thing.administrator_id == id # refactor when I implement multiple administrators per thing
   end
