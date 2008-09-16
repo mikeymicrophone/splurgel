@@ -66,8 +66,8 @@ class Tagging < ActiveRecord::Base
   # end
   
   define_index do
-    indexes tags(:name)
-    indexes comments(:body)
+    indexes tags(:name), :as => :tags
+    indexes comments(:body), :as => :comments
     # targets(:assocation_names).each do |potential_association|
     #   indexes potential_association(:name)
     # end

@@ -10,9 +10,9 @@ class State < ActiveRecord::Base
   
   define_index do
     indexes :name
-    indexes cities(:name)
-    indexes tags(:name)
-    indexes comments(:body)
+    indexes cities(:name), :as => :cities
+    indexes tags(:name), :as => :tags
+    indexes comments(:body), :as => :comments
   end
   
   def self.find_or_create_by_name name_or_abbreviation

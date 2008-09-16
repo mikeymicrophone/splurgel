@@ -37,16 +37,16 @@ class Tag < ActiveRecord::Base
   
   define_index do
     indexes :name
-    indexes tags(:name)
-    indexes comments(:body)
-    indexes brands(:name)
-    indexes cities(:name)
-    indexes tagged_comments(:body)
-    indexes groups(:name)
-    indexes networks(:name)
-    indexes products(:name)
-    indexes states(:name)
-    indexes stores(:name)
+    indexes tags(:name), :as => :tags
+    indexes comments(:body), :as => :comments
+    indexes brands(:name), :as => :brands
+    indexes cities(:name), :as => :cities
+    indexes tagged_comments(:body), :as => :tagged_comments
+    indexes groups(:name), :as => :groups
+    indexes networks(:name), :as => :networks
+    indexes products(:name), :as => :products
+    indexes states(:name), :as => :states
+    indexes stores(:name), :as => :stores
   end
   
   def targets

@@ -19,9 +19,9 @@ class Offering < ActiveRecord::Base
   after_create :notify_location
   
   define_index do
-    indexes product(:name)
-    indexes tags(:name)
-    indexes comments(:body)
+    indexes product(:name), :as => :product
+    indexes tags(:name), :as => :tags
+    indexes comments(:body), :as => :comments
   end
   
   def notify_location

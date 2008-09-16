@@ -31,8 +31,8 @@ class Website < ActiveRecord::Base
   define_index do
     indexes :name
     indexes :href
-    indexes tags(:name)
-    indexes comments(:body)
+    indexes tags(:name), :as => :tags
+    indexes comments(:body), :as => :comments
     # indexes brands(:name)
     # indexes cities(:name)
     # indexes aided_comments(:body)

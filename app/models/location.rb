@@ -25,9 +25,9 @@ class Location < ActiveRecord::Base
   
   define_index do
     indexes :name
-    indexes store(:name)
-    indexes taggings(:name)
-    indexes comments(:body)
+    indexes store(:name), :as => :store
+    indexes tags(:name), :as => :tags
+    indexes comments(:body), :as => :comments
   end
   
   def notify_store

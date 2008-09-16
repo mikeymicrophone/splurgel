@@ -5,8 +5,8 @@ class Price < ActiveRecord::Base
   has_many :comments, :as => :target
   
   define_index do
-    indexes tags(:name)
-    indexes comments(:body)
+    indexes tags(:name), :as => :tags
+    indexes comments(:body), :as => :comments
   end
   
   def current?

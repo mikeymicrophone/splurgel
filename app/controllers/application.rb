@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
   
   def searchable_models
-    %w!addresses brands cities comments groups images locations messages networks products stores tags users websites!
+    %w!addresses brands cities comments groups images locations messages networks products stores styles tags users websites!
   end
 
   def load_user_id_into_ar

@@ -9,11 +9,11 @@ class Listing < ActiveRecord::Base
   serialize :primary_photos, Array
   
   define_index do
-    indexes product(:name)
-    indexes brand(:name)
-    indexes store(:name)
-    indexes tags(:name)
-    indexes comments(:body)
+    indexes product(:name), :as => :product
+    indexes brand(:name), :as => :brand
+    indexes store(:name), :as => :store
+    indexes tags(:name), :as => :tags
+    indexes comments(:body), :as => :comments
   end
   
   def self.list_types

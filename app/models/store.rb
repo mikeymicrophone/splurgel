@@ -21,8 +21,8 @@ class Store < ActiveRecord::Base
   
   define_index do
     indexes :name
-    indexes tags(:name)
-    indexes comments(:name)
+    indexes tags(:name), :as => :tags
+    indexes comments(:name), :as => :comments
   end
   
   def products

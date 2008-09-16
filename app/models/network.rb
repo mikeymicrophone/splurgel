@@ -13,9 +13,9 @@ class Network < ActiveRecord::Base
   
   define_index do
     indexes :name
-    indexes city(:name)
-    indexes state(:name)
-    indexes tags(:name)
-    indexes comments(:body)
+    indexes city(:name), :as => :city_name
+    indexes state(:name), :as => :state_name
+    indexes tags(:name), :as => :tags
+    indexes comments(:body), :as => :comments
   end
 end
