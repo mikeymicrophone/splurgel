@@ -29,9 +29,9 @@ class Product < ActiveRecord::Base
   
   define_index do
     indexes :name
-    indexes brand(:name)
-    indexes comments(:body)
-    indexes tags(:body)
+    indexes brand(:name), :as => :brand_name
+    indexes comments(:body), :as => :comment_bodies
+    indexes tags(:name), :as => :tag_names
   end
   
   def notify_brand

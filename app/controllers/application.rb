@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :login_required
   
   def search
-    @results = params[:model].singularize.capitalize.constantize.send(:find_with_ferret, params[:query])
+    @results = params[:model].singularize.capitalize.constantize.send(:search, params[:query])
     render :partial => 'shared/results'
   end
   

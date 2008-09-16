@@ -5,6 +5,7 @@ class Website < ActiveRecord::Base
   has_many :comments, :as => :target
   has_many :phone_uses, :as => :target
   has_many :phones, :through => :phone_uses
+  has_many :website_uses
   has_many :brands, :through => :website_uses, :source => :brand, :conditions => "websitee_uses.target_type = 'Brand'"
   has_many :cities, :through => :website_uses, :source => :city, :conditions => "website_uses.target_type = 'City'"
   has_many :aided_comments, :through => :website_uses, :source => :comment, :conditions => "website_uses.target_type = 'Comment'"
@@ -32,14 +33,14 @@ class Website < ActiveRecord::Base
     indexes :href
     indexes tags(:name)
     indexes comments(:body)
-    indexes brands(:name)
-    indexes cities(:name)
-    indexes aided_comments(:body)
-    indexes groups(:name)
-    indexes networks(:name)
-    indexes products(:name)
-    indexes states(:name)
-    indexes stores(:name)
+    # indexes brands(:name)
+    # indexes cities(:name)
+    # indexes aided_comments(:body)
+    # indexes groups(:name)
+    # indexes networks(:name)
+    # indexes products(:name)
+    # indexes states(:name)
+    # indexes stores(:name)
   end
   
   def is_used_by entity

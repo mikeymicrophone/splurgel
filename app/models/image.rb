@@ -24,10 +24,10 @@ class Image < ActiveRecord::Base
     indexes :name
     indexes :filename
     indexes brands(:name)
-    indexes groups(:name)
+    # indexes groups(:name)
     indexes comments(:body)
-    indexes products(:name)
-    indexes stores(:name)
+    # indexes products(:name)
+    # indexes stores(:name)
     indexes tags(:name)
   end
   
