@@ -1,0 +1,539 @@
+
+
+Processing UsersController#home (for 64.113.241.82 at 2008-09-16 20:51:33) [GET]
+  Session ID: b0e555215011e6399af142c2b303186f
+  Parameters: {"action"=>"home", "controller"=>"users"}
+Redirected to http://209.20.88.152/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00010 (10000 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://209.20.88.152/]
+
+
+Processing SessionsController#new (for 64.113.241.82 at 2008-09-16 20:51:34) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvIgYvIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVy
+OjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--285f8a37a85c6dea0b6823e564548e2dd46613ec
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.00800 (49%) | DB: 0.00000 (0%) | 200 OK [http://209.20.88.152/session/new]
+
+
+Processing UsersController#new (for 64.113.241.82 at 2008-09-16 20:52:12) [GET]
+  Session ID: BAh7CDoOcmV0dXJuX3RvIgYvOgxjc3JmX2lkIiVhMDU1NDZiY2IwZmQ5Njc0
+YjZjYjM0YjNlMjAzZTg2NSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--18ee9a69869afc7c4eeacf11bc5b7a29a086b50d
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 0.03600 (27 reqs/sec) | Rendering: 0.02400 (66%) | DB: 0.00400 (11%) | 200 OK [http://209.20.88.152/signup]
+
+
+Processing UsersController#create (for 64.113.241.82 at 2008-09-16 20:55:01) [POST]
+  Session ID: BAh7CDoOcmV0dXJuX3RvIgYvOgxjc3JmX2lkIiVhMDU1NDZiY2IwZmQ5Njc0
+YjZjYjM0YjNlMjAzZTg2NSIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--18ee9a69869afc7c4eeacf11bc5b7a29a086b50d
+  Parameters: {"user"=>{"name"=>"Mike Schwab", "password_confirmation"=>"[FILTERED]", "persona"=>"curious, mysterious, social, silly", "interests"=>"rails, ruby, science, writing", "password"=>"[FILTERED]", "login"=>"schwabsauce", "hobbies"=>"music, basketball, trombone, soccer", "email"=>"mike.schwab@gmail.com"}, "commit"=>"sign up", "action"=>"create", "authenticity_token"=>"a4a6170492a23d63abc92af6b0717ab433cb5bf2", "website"=>{"url"=>"http://wordsamong.blogspot.com"}, "controller"=>"users", "phone"=>{"number"=>"518 364-3214"}, "address"=>{"name"=>"one fifty one", "zip"=>"11211", "state_name"=>"New York", "street2"=>"apt 301", "street"=>"151 Kent Ave", "city_name"=>"Brooklyn"}, "image"=>{"uploaded_data"=>""}}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+
+
+NoMethodError (undefined method `delta=' for #<User:0x7f6070beea10>):
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/attribute_methods.rb:251:in `method_missing'
+    /vendor/plugins/thinking-sphinx/lib/thinking_sphinx/active_record/delta.rb:69:in `toggle_delta'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:173:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:173:in `evaluate_method'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:161:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:93:in `run'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:92:in `each'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:92:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:92:in `run'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:272:in `run_callbacks'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/callbacks.rb:298:in `callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/callbacks.rb:206:in `create_or_update'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/base.rb:2211:in `save_without_validation'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/validations.rb:911:in `save_without_dirty'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/dirty.rb:75:in `save_without_transactions'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:106:in `save_without_after_commit_callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/connection_adapters/abstract/database_statements.rb:66:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:79:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:98:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:106:in `save_without_after_commit_callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:118:in `rollback_active_record_state!'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:106:in `save_without_after_commit_callback'
+    /vendor/plugins/thinking-sphinx/lib/thinking_sphinx/active_record/delta.rb:38:in `save'
+    /app/controllers/users_controller.rb:25:in `create'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1166:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:579:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/request_handler.rb:38:in `process_request'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_request_handler.rb:163:in `main_loop'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:307:in `start_request_handler'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:276:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:165:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:274:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:165:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:273:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:135:in `start'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:112:in `fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:112:in `start'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:177:in `start'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:218:in `spawn_rails_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:213:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:122:in `spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:247:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/bin/passenger-spawn-server:46
+
+Rendering /home/mschwab/public_html/splurgel/public/500.html (500 Internal Server Error)
+
+
+Processing UsersController#create (for 64.113.241.82 at 2008-09-16 20:57:55) [POST]
+  Session ID: BAh7CToOcmV0dXJuX3RvIgYvOgx1c2VyX2lkMDoMY3NyZl9pZCIlYTA1NTQ2
+YmNiMGZkOTY3NGI2Y2IzNGIzZTIwM2U4NjUiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--57b4debe3c9891289c2ee4493a7abcbdac046106
+  Parameters: {"user"=>{"name"=>"Mike Schwab", "password_confirmation"=>"[FILTERED]", "persona"=>"curious, mysterious, social, silly", "interests"=>"rails, ruby, science, writing", "password"=>"[FILTERED]", "login"=>"schwabsauce", "hobbies"=>"music, basketball, trombone, soccer", "email"=>"mike.schwab@gmail.com"}, "commit"=>"sign up", "action"=>"create", "authenticity_token"=>"a4a6170492a23d63abc92af6b0717ab433cb5bf2", "website"=>{"url"=>"http://wordsamong.blogspot.com"}, "controller"=>"users", "phone"=>{"number"=>"518 364-3214"}, "address"=>{"name"=>"one fifty one", "zip"=>"11211", "state_name"=>"New York", "street2"=>"apt 301", "street"=>"151 Kent Ave", "city_name"=>"Brooklyn"}, "image"=>{"uploaded_data"=>""}}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+
+
+NoMethodError (undefined method `delta=' for #<User:0x7f6070b3c068>):
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/attribute_methods.rb:251:in `method_missing'
+    /vendor/plugins/thinking-sphinx/lib/thinking_sphinx/active_record/delta.rb:69:in `toggle_delta'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:173:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:173:in `evaluate_method'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:161:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:93:in `run'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:92:in `each'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:92:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:92:in `run'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:272:in `run_callbacks'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/callbacks.rb:298:in `callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/callbacks.rb:206:in `create_or_update'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/base.rb:2211:in `save_without_validation'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/validations.rb:911:in `save_without_dirty'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/dirty.rb:75:in `save_without_transactions'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:106:in `save_without_after_commit_callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/connection_adapters/abstract/database_statements.rb:66:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:79:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:98:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:106:in `save_without_after_commit_callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:118:in `rollback_active_record_state!'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:106:in `save_without_after_commit_callback'
+    /vendor/plugins/thinking-sphinx/lib/thinking_sphinx/active_record/delta.rb:38:in `save'
+    /app/controllers/users_controller.rb:25:in `create'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1166:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:579:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/request_handler.rb:38:in `process_request'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_request_handler.rb:163:in `main_loop'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:307:in `start_request_handler'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:276:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:165:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:274:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:165:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:273:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:135:in `start'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:112:in `fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:112:in `start'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:177:in `start'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:218:in `spawn_rails_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:213:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:122:in `spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:247:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/bin/passenger-spawn-server:46
+
+Rendering /home/mschwab/public_html/splurgel/public/500.html (500 Internal Server Error)
+
+
+Processing UsersController#new (for 64.113.241.82 at 2008-09-16 20:59:02) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvIgYvOgxjc3JmX2lkIiVhMDU1NDZiY2IwZmQ5Njc0
+YjZjYjM0YjNlMjAzZTg2NToMdXNlcl9pZDAiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--afa76997e57fe0e6834fd2699b815d263766120e
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 0.00800 (125 reqs/sec) | Rendering: 0.00800 (100%) | DB: 0.00000 (0%) | 200 OK [http://209.20.88.152/signup]
+
+
+Processing UsersController#new (for 64.113.241.82 at 2008-09-16 21:17:00) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvIgYvOgx1c2VyX2lkMDoMY3NyZl9pZCIlYTA1NTQ2
+YmNiMGZkOTY3NGI2Y2IzNGIzZTIwM2U4NjUiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--57b4debe3c9891289c2ee4493a7abcbdac046106
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 0.04800 (20 reqs/sec) | Rendering: 0.03200 (66%) | DB: 0.00000 (0%) | 200 OK [http://209.20.88.152/signup]
+
+
+Processing UsersController#create (for 64.113.241.82 at 2008-09-16 21:23:59) [POST]
+  Session ID: BAh7CToOcmV0dXJuX3RvIgYvOgxjc3JmX2lkIiVhMDU1NDZiY2IwZmQ5Njc0
+YjZjYjM0YjNlMjAzZTg2NToMdXNlcl9pZDAiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--afa76997e57fe0e6834fd2699b815d263766120e
+  Parameters: {"user"=>{"name"=>"Mike Schwab", "password_confirmation"=>"[FILTERED]", "persona"=>"curious, mysterious, social", "interests"=>"politics, rails, ruby, languages, bicycles, transit", "password"=>"[FILTERED]", "login"=>"schwabsauce", "hobbies"=>"playing instruments like trombone and piano and guitar, sports like basketball and soccer and frisbee, playing games and going to shows", "email"=>"mike.schwab@gmail.com"}, "commit"=>"sign up", "action"=>"create", "authenticity_token"=>"a4a6170492a23d63abc92af6b0717ab433cb5bf2", "website"=>{"url"=>"http://wordsamong.blogspot.com"}, "controller"=>"users", "phone"=>{"number"=>"518 364-3214"}, "address"=>{"name"=>"one fifty one", "zip"=>"11211", "state_name"=>"New York", "street2"=>"apt 301", "street"=>"151 Kent Ave", "city_name"=>"Brooklyn"}, "image"=>{"uploaded_data"=>#<File:/tmp/CGI4092-5>}}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Sent mail to mike.schwab@gmail.com
+
+
+Net::SMTPSyntaxError (501 <ADMINEMAIL>: sender address must contain a domain
+):
+    /usr/lib/ruby/1.8/net/smtp.rb:680:in `check_response'
+    /usr/lib/ruby/1.8/net/smtp.rb:653:in `getok'
+    /usr/lib/ruby/1.8/net/smtp.rb:631:in `mailfrom'
+    /usr/lib/ruby/1.8/net/smtp.rb:544:in `send0'
+    /usr/lib/ruby/1.8/net/smtp.rb:472:in `sendmail'
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-2.1.1/lib/action_mailer/base.rb:630:in `perform_delivery_smtp'
+    /usr/lib/ruby/1.8/net/smtp.rb:379:in `start'
+    /usr/lib/ruby/1.8/net/smtp.rb:316:in `start'
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-2.1.1/lib/action_mailer/base.rb:628:in `perform_delivery_smtp'
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-2.1.1/lib/action_mailer/base.rb:508:in `__send__'
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-2.1.1/lib/action_mailer/base.rb:508:in `deliver!'
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-2.1.1/lib/action_mailer/base.rb:383:in `method_missing'
+    /app/models/user_observer.rb:3:in `after_create'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/observer.rb:171:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/observer.rb:171:in `update'
+    /usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+    /usr/lib/ruby/1.8/observer.rb:184:in `each'
+    /usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/callbacks.rb:309:in `notify'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/callbacks.rb:296:in `callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/callbacks.rb:221:in `create_without_timestamps'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/timestamp.rb:29:in `create'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/base.rb:2483:in `create_or_update_without_callbacks'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/callbacks.rb:207:in `create_or_update'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/base.rb:2211:in `save_without_validation'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/validations.rb:911:in `save_without_dirty'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/dirty.rb:75:in `save_without_transactions'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:106:in `save_without_after_commit_callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/connection_adapters/abstract/database_statements.rb:66:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:79:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:98:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:106:in `save_without_after_commit_callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:118:in `rollback_active_record_state!'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/transactions.rb:106:in `save_without_after_commit_callback'
+    /vendor/plugins/thinking-sphinx/lib/thinking_sphinx/active_record/delta.rb:38:in `save'
+    /app/controllers/users_controller.rb:25:in `create'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1166:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:579:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/request_handler.rb:38:in `process_request'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_request_handler.rb:163:in `main_loop'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:307:in `start_request_handler'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:276:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:165:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:274:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:165:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:273:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:135:in `start'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:112:in `fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:112:in `start'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:177:in `start'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:218:in `spawn_rails_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:213:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:122:in `spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:247:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/bin/passenger-spawn-server:46
+
+Rendering /home/mschwab/public_html/splurgel/public/500.html (500 Internal Server Error)
+
+
+Processing UsersController#new (for 64.113.241.82 at 2008-09-16 22:07:22) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvIgYvOgx1c2VyX2lkMDoMY3NyZl9pZCIlYTA1NTQ2
+YmNiMGZkOTY3NGI2Y2IzNGIzZTIwM2U4NjUiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--57b4debe3c9891289c2ee4493a7abcbdac046106
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Completed in 0.15601 (6 reqs/sec) | Rendering: 0.12401 (79%) | DB: 0.00800 (5%) | 200 OK [http://209.20.88.152/signup]
+
+
+Processing UsersController#home (for 63.239.192.130 at 2008-09-16 22:08:25) [GET]
+  Session ID: 1d741666e906964591fa130ee712b0e1
+  Parameters: {"action"=>"home", "controller"=>"users"}
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00400 (249 reqs/sec) | Rendering: 0.00000 (0%) | DB: 0.00000 (0%) | 401 Unauthorized [http://www.splurgel.com/]
+
+
+Processing UsersController#create (for 64.113.241.82 at 2008-09-16 22:15:01) [POST]
+  Session ID: BAh7CToOcmV0dXJuX3RvIgYvOgxjc3JmX2lkIiVhMDU1NDZiY2IwZmQ5Njc0
+YjZjYjM0YjNlMjAzZTg2NToMdXNlcl9pZDAiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--afa76997e57fe0e6834fd2699b815d263766120e
+  Parameters: {"user"=>{"name"=>"Mike Schwab", "password_confirmation"=>"[FILTERED]", "persona"=>"curious, mysterious, social, casual", "interests"=>"urban politics and national politics, transit and bicycling, ruby and rails", "password"=>"[FILTERED]", "login"=>"schwabsauce", "hobbies"=>"playing instruments including trombone, guitar, and piano; playing sports like basketball, soccer, and frisbee, going out and seeing live music", "email"=>"mike.schwab@gmail.com"}, "commit"=>"sign up", "action"=>"create", "authenticity_token"=>"a4a6170492a23d63abc92af6b0717ab433cb5bf2", "website"=>{"url"=>"http://wordsamong.blogspot.com"}, "controller"=>"users", "phone"=>{"number"=>"518 364-3214"}, "address"=>{"name"=>"one fifty one", "zip"=>"11211", "state_name"=>"New York", "street2"=>"apt 301", "street"=>"151 Kent Ave", "city_name"=>"Brooklyn"}, "image"=>{"uploaded_data"=>#<File:/tmp/CGI4159-5>}}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Sent mail to mike.schwab@gmail.com
+
+
+ThinkingSphinx::ConnectionError (Connection to Sphinx Daemon (searchd) failed.):
+    /vendor/plugins/thinking-sphinx/lib/thinking_sphinx/search.rb:243:in `search_for_id'
+    /vendor/plugins/thinking-sphinx/lib/thinking_sphinx/active_record/search.rb:43:in `search_for_id'
+    /vendor/plugins/thinking-sphinx/lib/thinking_sphinx/active_record.rb:121:in `in_core_index?'
+    /vendor/plugins/thinking-sphinx/lib/thinking_sphinx/active_record/delta.rb:86:in `index_delta'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:173:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:173:in `evaluate_method'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:161:in `call'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:93:in `run'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:92:in `each'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:92:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:92:in `run'
+    /usr/lib/ruby/gems/1.8/gems/activesupport-2.1.1/lib/active_support/callbacks.rb:272:in `run_callbacks'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/callbacks.rb:298:in `callback'
+    /vendor/plugins/thinking-sphinx/lib/thinking_sphinx/active_record/delta.rb:39:in `save'
+    /app/controllers/users_controller.rb:25:in `create'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1166:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:1166:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:579:in `call_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:572:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/rescue.rb:201:in `perform_action_without_caching'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:13:in `passenger_orig_perform_action'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-2.1.1/lib/active_record/query_cache.rb:8:in `cache'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/caching/sql_cache.rb:12:in `passenger_orig_perform_action'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/request_handler.rb:53:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:529:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/filters.rb:568:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/session_management.rb:130:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/base.rb:389:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:149:in `handle_request'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:107:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-2.1.1/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/request_handler.rb:38:in `process_request'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_request_handler.rb:163:in `main_loop'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:307:in `start_request_handler'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:276:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:165:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:274:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:165:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/utils.rb:163:in `safe_fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:273:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:135:in `start'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:112:in `fork'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:112:in `start'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/railz/application_spawner.rb:177:in `start'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:218:in `spawn_rails_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:213:in `synchronize'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:213:in `spawn_rails_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:122:in `spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/spawn_manager.rb:247:in `handle_spawn_application'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `__send__'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:317:in `main_loop'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/lib/passenger/abstract_server.rb:168:in `start_synchronously'
+    /usr/lib/ruby/gems/1.8/gems/passenger-2.0.3/bin/passenger-spawn-server:46
+
+Rendering /home/mschwab/public_html/splurgel/public/500.html (500 Internal Server Error)
+
+
+Processing SessionsController#new (for 64.113.241.82 at 2008-09-16 22:18:32) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvIgYvOgx1c2VyX2lkMDoMY3NyZl9pZCIlYTA1NTQ2
+YmNiMGZkOTY3NGI2Y2IzNGIzZTIwM2U4NjUiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--57b4debe3c9891289c2ee4493a7abcbdac046106
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.03200 (31 reqs/sec) | Rendering: 0.01600 (50%) | DB: 0.00000 (0%) | 200 OK [http://209.20.88.152/login]
+
+
+Processing SessionsController#create (for 64.113.241.82 at 2008-09-16 22:18:41) [POST]
+  Session ID: BAh7CToOcmV0dXJuX3RvIgYvOgxjc3JmX2lkIiVhMDU1NDZiY2IwZmQ5Njc0
+YjZjYjM0YjNlMjAzZTg2NToMdXNlcl9pZDAiCmZsYXNoSUM6J0FjdGlvbkNv
+bnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=--afa76997e57fe0e6834fd2699b815d263766120e
+  Parameters: {"commit"=>"login now please!", "action"=>"create", "authenticity_token"=>"a4a6170492a23d63abc92af6b0717ab433cb5bf2", "controller"=>"sessions", "login"=>"schwabsauce", "password"=>"[FILTERED]"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Cookie set: auth_token=; path=/
+Redirected to http://209.20.88.152/
+Completed in 0.20801 (4 reqs/sec) | DB: 0.02400 (11%) | 302 Found [http://209.20.88.152/session]
+
+
+Processing UsersController#home (for 64.113.241.82 at 2008-09-16 22:18:42) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMdXNlcl9pZGkHOgxjc3JmX2lkIiVhMDU1NDZi
+Y2IwZmQ5Njc0YjZjYjM0YjNlMjAzZTg2NSIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiG0xvZ2dlZCBp
+biBzdWNjZXNzZnVsbHkGOgpAdXNlZHsGOwlG--8f4193be66997c6e6995b10bf4aaba1f5713ff1e
+  Parameters: {"action"=>"home", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/home
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.01200 (75%) | DB: 0.00400 (24%) | 200 OK [http://209.20.88.152/]
+
+
+Processing UsersController#index (for 64.113.241.82 at 2008-09-16 22:18:48) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTA1NTQ2YmNiMGZkOTY3NGI2
+Y2IzNGIzZTIwM2U4NjU6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiG0xvZ2dlZCBp
+biBzdWNjZXNzZnVsbHkGOgpAdXNlZHsGOwlU--2ccb1d429a822c28063f6d49b351cff1762e8a36
+  Parameters: {"action"=>"index", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/index
+Completed in 0.01600 (62 reqs/sec) | Rendering: 0.00800 (50%) | DB: 0.00800 (49%) | 200 OK [http://209.20.88.152/users]
+
+
+Processing UsersController#show (for 64.113.241.82 at 2008-09-16 22:18:50) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMdXNlcl9pZGkHOgxjc3JmX2lkIiVhMDU1NDZi
+Y2IwZmQ5Njc0YjZjYjM0YjNlMjAzZTg2NSIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--2b3b25965a4aebf5c14c2cf50e45d95f2903f789
+  Parameters: {"action"=>"show", "id"=>"2_Mike_Schwab", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/show
+Completed in 0.19201 (5 reqs/sec) | Rendering: 0.13601 (70%) | DB: 0.05200 (27%) | 200 OK [http://209.20.88.152/users/2_Mike_Schwab]
+
+
+Processing CitiesController#index (for 64.113.241.82 at 2008-09-16 22:28:42) [GET]
+  Session ID: BAh7CToOcmV0dXJuX3RvMDoMY3NyZl9pZCIlYTA1NTQ2YmNiMGZkOTY3NGI2
+Y2IzNGIzZTIwM2U4NjU6DHVzZXJfaWRpByIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--9d07abb281fecb0ce2f9bdf8e540ed8e98186fcb
+  Parameters: {"action"=>"index", "controller"=>"cities"}
+Rendering template within layouts/application
+Rendering cities/index
+Completed in 0.14801 (6 reqs/sec) | Rendering: 0.11201 (75%) | DB: 0.01200 (8%) | 200 OK [http://209.20.88.152/cities]
+
+
+Processing UsersController#home (for 32.142.144.30 at 2008-09-16 22:57:09) [GET]
+  Session ID: 4471bb3b6ceb5940c9b5a9d4131ead85
+  Parameters: {"action"=>"home", "controller"=>"users"}
+Redirected to http://209.20.88.152/session/new
+Filter chain halted as [:login_required] rendered_or_redirected.
+Completed in 0.00400 (249 reqs/sec) | DB: 0.00000 (0%) | 302 Found [http://209.20.88.152/]
+
+
+Processing SessionsController#new (for 32.142.144.30 at 2008-09-16 22:57:27) [GET]
+  Session ID: BAh7BzoOcmV0dXJuX3RvIgYvIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVy
+OjpGbGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA--285f8a37a85c6dea0b6823e564548e2dd46613ec
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 0.02000 (49 reqs/sec) | Rendering: 0.01200 (60%) | DB: 0.00000 (0%) | 200 OK [http://209.20.88.152/session/new]
+
+
+Processing SessionsController#create (for 32.142.247.54 at 2008-09-16 22:58:29) [POST]
+  Session ID: BAh7CDoMY3NyZl9pZCIlOGZlMGU1NTUyZTVhODQxYjM5MGU2YjJlOTE0MmQz
+ZDM6DnJldHVybl90byIGLyIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6
+Rmxhc2g6OkZsYXNoSGFzaHsABjoKQHVzZWR7AA==--dc040f4b90408db1340067b9f2b3f41496b9a0f2
+  Parameters: {"commit"=>"login now please!", "action"=>"create", "authenticity_token"=>"3172c6cba6ea592391cec25e8a56505ecf9deab7", "controller"=>"sessions", "login"=>"schwabsauce", "password"=>"[FILTERED]", "remember_me"=>"1"}
+Cookie set: auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT
+Cookie set: auth_token=79f77bbc290e2813ab595b685a3b6eb36195e798; path=/; expires=Tue, 30 Sep 2008 22:58:29 GMT
+Redirected to http://209.20.88.152/
+Completed in 0.94405 (1 reqs/sec) | DB: 0.05600 (5%) | 302 Found [http://209.20.88.152/session]
+
+
+Processing UsersController#home (for 32.142.247.54 at 2008-09-16 22:58:53) [GET]
+  Session ID: BAh7CToMdXNlcl9pZGkHOgxjc3JmX2lkIiU4ZmUwZTU1NTJlNWE4NDFiMzkw
+ZTZiMmU5MTQyZDNkMzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiG0xvZ2dlZCBp
+biBzdWNjZXNzZnVsbHkGOgpAdXNlZHsGOwlG--d0f468d483e290c6ad8bf0ead70ec3f74bfd3639
+  Parameters: {"action"=>"home", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/home
+Completed in 0.04000 (24 reqs/sec) | Rendering: 0.01600 (40%) | DB: 0.00400 (9%) | 200 OK [http://209.20.88.152/]
+
+
+Processing UsersController#home (for 32.142.247.54 at 2008-09-16 23:00:36) [GET]
+  Session ID: BAh7CToMY3NyZl9pZCIlOGZlMGU1NTUyZTVhODQxYjM5MGU2YjJlOTE0MmQz
+ZDM6DHVzZXJfaWRpBzoOcmV0dXJuX3RvMCIKZmxhc2hJQzonQWN0aW9uQ29u
+dHJvbGxlcjo6Rmxhc2g6OkZsYXNoSGFzaHsGOgtub3RpY2UiG0xvZ2dlZCBp
+biBzdWNjZXNzZnVsbHkGOgpAdXNlZHsGOwlU--7e040ea7f2ca248ca9489a1fb4bad138cc4e63dd
+  Parameters: {"action"=>"home", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/home
+Completed in 0.00800 (124 reqs/sec) | Rendering: 0.00400 (50%) | DB: 0.00400 (49%) | 200 OK [http://209.20.88.152/]

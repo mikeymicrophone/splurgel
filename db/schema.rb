@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080915015117) do
+ActiveRecord::Schema.define(:version => 20080916172157) do
 
   create_table "address_uses", :force => true do |t|
     t.string   "target_type"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "delta"
   end
 
   create_table "addresses", :force => true do |t|
@@ -34,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "primary_photos"
+    t.boolean  "delta"
   end
 
   create_table "authorizations", :force => true do |t|
@@ -44,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "authorizer_id"
+    t.boolean  "delta"
   end
 
   create_table "brands", :force => true do |t|
@@ -53,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.integer  "administrator_id"
     t.integer  "user_id"
     t.string   "primary_photos"
+    t.boolean  "delta"
   end
 
   create_table "cities", :force => true do |t|
@@ -62,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "primary_photos"
+    t.boolean  "delta"
   end
 
   create_table "comments", :force => true do |t|
@@ -73,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "primary_photos"
+    t.boolean  "delta"
   end
 
   create_table "credit_cards", :force => true do |t|
@@ -85,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.boolean  "delta"
   end
 
   create_table "delivered_notices", :force => true do |t|
@@ -94,6 +101,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "dismissed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "delta"
   end
 
   create_table "followings", :force => true do |t|
@@ -104,6 +112,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.string   "target_type"
     t.string   "follower_type"
     t.integer  "user_id"
+    t.boolean  "delta"
   end
 
   create_table "groups", :force => true do |t|
@@ -114,6 +123,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "primary_photos"
+    t.boolean  "delta"
   end
 
   create_table "image_uses", :force => true do |t|
@@ -123,6 +133,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.boolean  "delta"
   end
 
   create_table "images", :force => true do |t|
@@ -137,6 +148,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "name"
+    t.boolean  "delta"
   end
 
   create_table "listings", :force => true do |t|
@@ -149,6 +161,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "primary_photos"
+    t.boolean  "delta"
   end
 
   create_table "locations", :force => true do |t|
@@ -162,6 +175,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.string   "name"
     t.string   "primary_photos"
     t.integer  "primary_phone_id"
+    t.boolean  "delta"
   end
 
   create_table "memberships", :force => true do |t|
@@ -169,6 +183,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "delta"
   end
 
   create_table "messages", :force => true do |t|
@@ -179,6 +194,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "recipient_id"
+    t.boolean  "delta"
   end
 
   create_table "network_memberships", :force => true do |t|
@@ -186,6 +202,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.integer  "network_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "delta"
   end
 
   create_table "networks", :force => true do |t|
@@ -196,6 +213,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "administrator_id"
+    t.boolean  "delta"
   end
 
   create_table "notices", :force => true do |t|
@@ -210,6 +228,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.string   "private"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "delta"
   end
 
   create_table "offerings", :force => true do |t|
@@ -219,6 +238,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "primary_photos"
+    t.boolean  "delta"
   end
 
   create_table "phone_uses", :force => true do |t|
@@ -228,6 +248,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "delta"
   end
 
   create_table "phones", :force => true do |t|
@@ -235,6 +256,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.boolean  "delta"
   end
 
   create_table "prices", :force => true do |t|
@@ -246,6 +268,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.integer  "user_id"
     t.float    "point"
     t.datetime "start_date"
+    t.boolean  "delta"
   end
 
   create_table "products", :force => true do |t|
@@ -255,6 +278,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "primary_photos"
+    t.boolean  "delta"
   end
 
   create_table "purchases", :force => true do |t|
@@ -287,6 +311,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.boolean  "delta"
   end
 
   create_table "states", :force => true do |t|
@@ -296,6 +321,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.integer  "user_id"
     t.string   "primary_photos"
     t.string   "abbreviation"
+    t.boolean  "delta"
   end
 
   create_table "stocks", :force => true do |t|
@@ -304,6 +330,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "delta"
   end
 
   create_table "stores", :force => true do |t|
@@ -314,6 +341,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "primary_photos"
+    t.boolean  "delta"
   end
 
   create_table "styles", :force => true do |t|
@@ -323,6 +351,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "delta"
   end
 
   create_table "taggings", :force => true do |t|
@@ -333,6 +362,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "primary_photos"
+    t.boolean  "delta"
   end
 
   create_table "tags", :force => true do |t|
@@ -340,6 +370,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.boolean  "delta"
   end
 
   create_table "users", :force => true do |t|
@@ -359,6 +390,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
     t.string   "primary_photos"
+    t.boolean  "delta"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
@@ -370,6 +402,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.boolean  "delta"
   end
 
   create_table "websites", :force => true do |t|
@@ -379,6 +412,7 @@ ActiveRecord::Schema.define(:version => 20080915015117) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "primary_photos"
+    t.boolean  "delta"
   end
 
 end
