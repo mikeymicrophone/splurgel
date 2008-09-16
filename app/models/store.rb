@@ -1,4 +1,5 @@
 class Store < ActiveRecord::Base
+  belongs_to :user
   has_many :locations
   has_many :address_uses, :as => :target
   has_many :addresses, :through => :address_uses, :source => :address, :conditions => "address_uses.target_type = 'Store'"

@@ -3,9 +3,7 @@
 <table>
 <% for tag in @tags %>
   <tr>
-    <td><%=h tag.name %></td>
-    <td><%= link_to 'show', tag %></td>
-    <td><%= link_to 'edit', edit_tag_path(tag) %></td>
+    <td><%= link_to_name tag %></td>
     <td><%= link_to 'uses', tag_taggings_path(tag) %></td>
   </tr>
 <% end %>

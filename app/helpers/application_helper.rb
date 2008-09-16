@@ -38,6 +38,10 @@ module ApplicationHelper
     link_to 'join', network_memberships_path(:network_membership => {:network_id => net.id, :user_id => current_user.id}), :method => :post unless !logged_in? || current_user.is_a_member_of(net)
   end
   
+  def join_group_link grp
+    link_to 'join group', memberships_path(:membership => {:group_id => grp}), :method => :post unless current_user.is_a_member_of(grp)
+  end
+  
   def notifications_for usr
     usr.delivered_notices.unread.map { |n| n.notice.body + link_to('see details', n.notice) }.join('<br>')
   end
