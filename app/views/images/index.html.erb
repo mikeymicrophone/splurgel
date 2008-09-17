@@ -1,4 +1,4 @@
-<h1>images</h1>
+<h1>images<%= ' for ' + @group.name if @group %></h1>
 
 <% for image in @images %>
   <% content_tag_for :div, image do %>
@@ -6,7 +6,6 @@
       <%= image_tag image.public_filename %>
     <% end %>
     <%= link_to 'show', image %>
-    <%= link_to 'edit', edit_image_path(image) %>
     <%= attach_image_link image %><%= attach_image_link nil, image %>
   <% end %>
 <% end %>

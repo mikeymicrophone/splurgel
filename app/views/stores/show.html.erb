@@ -1,6 +1,5 @@
 <h1><%=h @store.name %></h1>
 <%= follow_link @store %><br>
-<%= link_to 'stores', stores_path %>
 <%= image_tag @store.primary_photo.public_filename if @store.primary_photo %><br>
 <%= attach_image_link @store %><br>
 <%= lists @store %><hr>

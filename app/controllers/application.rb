@@ -46,6 +46,16 @@ end
 
 class ActiveRecord::Base
   
+  def self.scope_down parameters, *condition
+    set = nil
+    condition.each do |c|
+      if set.nil? && parameters["#{c}_id"]
+        set = instance_variable_set("@#{c}", c.capitalize.constantize.send(:find, parameters["#{c}_id"])).send(self.name.downcase.pluralize)
+      end
+    end
+    return set || all
+  end
+  
   def make_known body, targets = nil, short_version = nil
     if targets && targets.is_a?(Array) && targets.length > 1
       primary_target = targets.shift

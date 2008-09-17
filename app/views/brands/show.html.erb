@@ -1,14 +1,12 @@
-  <%= primary_image @brand %>
-<h1>  <%=h @brand.name %>  </h1>
-  <%=h @brand.phone %><br>
-  <%= attach_image_link @brand %>
-  <%= @brand.products.count %> products<br>
-  <%= lists @brand %>
+<%= primary_image @brand %>
+<h1>  <%=h @brand.name %>  </h1><%= follow_link @brand %> to get alerts about new products
+<%=h @brand.phone %><br>
+<%= attach_image_link @brand %>
+<%= link_to_scoped_collection 'products', @brand %><br>
+<%= lists @brand %>
 
-  <%= attachable_sites @brand %>
+<%= attachable_sites @brand %>
 <%= link_to 'brands', brands_path %>
-
-<%= follow_link @brand %>
 <br>
 <%= link_to "new product for #{@brand.name}", new_brand_product_path(@brand) %>
 <br>

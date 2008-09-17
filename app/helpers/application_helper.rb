@@ -3,6 +3,10 @@ module ApplicationHelper
   def attach_site_path obj
     super(:class_name => obj.class.name.downcase, :id => obj.to_param)
   end
+  
+  def link_to_scoped_collection collection, scope
+    link_to pluralize(scope.send(collection).count, collection.singularize), send("#{scope.class.name.downcase}_#{collection}_path", scope)
+  end
 
   def authorize_links usr = nil, thing = nil
     [1, 2, 10, 20].map do |typ|

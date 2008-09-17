@@ -60,6 +60,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :groups do |group|
     group.resources :memberships
     group.resources :users
+    group.resources :images
+    group.resources :comments
+    group.resources :tags
   end
 
   map.resources :listings, :member => {:publicize => :post, :privatize => :post}
@@ -100,6 +103,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :stores do |store|
     store.resources :locations
+    store.resources :products
   end
     
   map.resources :users, :member => {:admin_activate => :post} do |user|

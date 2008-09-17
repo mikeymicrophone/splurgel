@@ -1,4 +1,4 @@
-<h1>networks</h1>
+<h1>networks<%= ' tagged with ' + @tag.name if @tag %></h1>
 
 <table>
 <% for network in @networks %>

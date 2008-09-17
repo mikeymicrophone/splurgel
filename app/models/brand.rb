@@ -37,4 +37,15 @@ class Brand < ActiveRecord::Base
     phones.first.number if phones.first
   end
   
+  def self.most_wanted
+    Listing.find_all_by_list_type(2).select(&:brand_id).group_by(&:brand).first.first
+  end
+  
+  def self.most_liked
+    Listing.find_all_by_list_type(1).select(&:brand_id).group_by(&:brand).first.first
+  end
+  
+  def self.most_owned
+    Listing.find_all_by_list_type(3).select(&:brand_id).group_by(&:brand).first.first
+  end
 end

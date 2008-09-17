@@ -5,7 +5,10 @@
 <% for group in @groups %>
   <tr>
     <td><%= link_to_name group %></td>
-		<td><%= link_to pluralize(group.memberships.count, 'member'), group_users_path(@group) %></td>
+		<td><%= link_to pluralize(group.memberships.count, 'member'), group_users_path(group) %></td>
+		<td><%= link_to_scoped_collection 'images', group %></td>
+		<td><%= link_to_scoped_collection 'comments', group %></td>
+		<td><%= link_to_scoped_collection 'tags', group %>
     <td><%= attach_image_link group %></td>
   </tr>
 <% end %>

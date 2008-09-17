@@ -5,6 +5,7 @@
   <tr>
     <td><%= link_to_name store %></td>
 		<td><%= link_to pluralize(store.locations.count, 'location'), store_locations_path(store) %></td>
+		<td><%= link_to pluralize(store.products.length, 'product'), store_products_path(store) %>
     <td><%= link_to 'edit', edit_store_path(store) if current_user == store.user %></td>
     <td><%= attach_image_link store %></td>
     <td><%= link_to 'new branch', new_store_location_path(store) if current_user.is_authorized_to_create_locations_of(store) %></td>

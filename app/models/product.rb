@@ -43,6 +43,18 @@ class Product < ActiveRecord::Base
     prices.select(&:active?).sort_by(&:point).last
   end
   
+  def self.most_wanted
+    Listing.find_all_by_list_type(2).select(&:product_id).group_by(&:product).first.first
+  end
+  
+  def self.most_liked
+    Listing.find_all_by_list_type(1).select(&:product_id).group_by(&:product).first.first
+  end
+  
+  def self.most_owned
+    Listing.find_all_by_list_type(3).select(&:product_id).group_by(&:product).first.first
+  end
+  
   def notify_brand
     brand.make_known("#{name} is the newest product from #{brand.name}.", [self, brand])
   end

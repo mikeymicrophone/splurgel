@@ -38,4 +38,16 @@ class Store < ActiveRecord::Base
   def prices
     products.map &:price
   end
+  
+  def self.most_wanted
+    Listing.find_all_by_list_type(2).select(&:store_id).group_by(&:store).first.first
+  end
+  
+  def self.most_liked
+    Listing.find_all_by_list_type(1).select(&:store_id).group_by(&:store).first.first
+  end
+  
+  def self.most_owned
+    Listing.find_all_by_list_type(3).select(&:store_id).group_by(&:store).first.first
+  end
 end

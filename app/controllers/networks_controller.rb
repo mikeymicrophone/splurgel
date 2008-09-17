@@ -1,6 +1,6 @@
 class NetworksController < ApplicationController
   def index
-    @networks = Network.find :all
+    @networks = Network.scope_down params, 'tag'
 
     respond_to do |format|
       format.html # index.html.erb

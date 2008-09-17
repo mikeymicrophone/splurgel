@@ -1,6 +1,10 @@
 class TagsController < ApplicationController
   def index
-    @tags = Tag.find :all
+    @tags = if params[:group_id]
+      (@group = Group.find(params[:group_id])).tags
+    else
+      Tag.find :all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

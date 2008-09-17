@@ -4,7 +4,11 @@ class CommentsController < ApplicationController
   end
   
   def index
-    @comments = Comment.find :all
+    @comments = if params[:group_id]
+      (@group = Group.find(params[:group_id])).comments
+    else
+      Comment.find :all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

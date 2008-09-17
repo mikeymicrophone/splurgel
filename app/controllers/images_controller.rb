@@ -1,6 +1,10 @@
 class ImagesController < ApplicationController
   def index
-    @images = Image.find :all
+    @images = if params[:group_id]
+      (@group = Group.find(params[:group_id])).images
+    else
+      Image.find :all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

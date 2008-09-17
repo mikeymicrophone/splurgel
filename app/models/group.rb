@@ -10,6 +10,8 @@ class Group < ActiveRecord::Base
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses
   has_many :comments, :as => :target
+  has_many :image_uses, :as => :target
+  has_many :images, :through => :image_uses
   has_many :followings, :as => :target
   has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Group' and followings.follower_type = 'User'", :as => :target
   has_many :follower_groups, :through => :followings, :source => :group, :conditions => "followings.target_type = 'Group' and followings.follower_type = 'Group'", :as => :target

@@ -1,4 +1,4 @@
-<h1>tags</h1>
+<h1>tags<%= ' on ' + @group.name if @group %></h1>
 
 <table>
 <% for tag in @tags %>

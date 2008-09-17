@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
       end
     elsif params[:location_id]
       (@location = Location.find(params[:location_id])).products
+    elsif params[:store_id]
+      (@store = Store.find(params[:store_id])).products
     else
       Product.find :all
     end
