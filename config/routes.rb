@@ -99,7 +99,7 @@ ActionController::Routing::Routes.draw do |map|
     store.resources :locations
   end
     
-  map.resources :users do |user|
+  map.resources :users, :member => {:admin_activate => :post} do |user|
     user.resources :followings
   end
 

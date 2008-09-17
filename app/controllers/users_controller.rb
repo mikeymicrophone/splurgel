@@ -66,4 +66,10 @@ class UsersController < ApplicationController
       redirect_back_or_default('/')
     end
   end
+  
+  def admin_activate
+    user = User.find params[:id]
+    user.activate!
+    redirect_to users_path
+  end
 end

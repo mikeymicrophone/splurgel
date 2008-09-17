@@ -1,3 +1,7 @@
 <% @users.each do |u| %>
-  <%= link_to_name u, 'login' %><br>
+  <%= link_to_name u, 'login' %>
+	<% if current_user.admin? %>
+	  <%= link_to 'activate', admin_activate_user_path(u), :method => :post unless u.active? %>
+	<% end %>
+	<br>
 <% end %>
