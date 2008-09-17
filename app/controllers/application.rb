@@ -131,7 +131,7 @@ class ActiveRecord::Base
   before_create :credit_creator
   
   def to_param
-    "#{id}_#{name.for_url if name}"
+    "#{id}#{'_' + name.for_url if name}"
   end
   
 end
@@ -157,7 +157,7 @@ end
 class String
   def for_url
     safe = dup
-    unsafe_chars = /\#\/\$\&\+\,\:\;\=\?\@\<\>\%\{\}\|\\\^\~\[\]\`\'\"/
+    unsafe_chars = /[\#\/\$\&\+\,\.\:\;\=\?\@\<\>\%\{\}\|\\\^\~\[\]\`\'\"]/
     safe.gsub! unsafe_chars, '-'
     safe.gsub! ' ', '_'
     safe.gsub! '--', '-' while self =~ /--/

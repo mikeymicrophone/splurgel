@@ -35,6 +35,14 @@ class Product < ActiveRecord::Base
     set_property :delta => true
   end
   
+  def low_price
+    prices.select(&:active?).sort_by(&:point).first
+  end
+  
+  def high_price
+    prices.select(&:active?).sort_by(&:point).last
+  end
+  
   def notify_brand
     brand.make_known("#{name} is the newest product from #{brand.name}.", [self, brand])
   end

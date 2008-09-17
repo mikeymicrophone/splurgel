@@ -5,5 +5,5 @@
 <%= attachable_sites @group %>
   
 <h2>tags</h2><%= render :partial => 'tags/tag_form', :locals => {:obj => @group} %>
-<h2>comments</h2><%= render :partial => 'comments/comment_form', :locals => {:obj => @group} %>
+<h2>comments</h2><%= render :partial => 'comments/comment_display', :locals => {:obj => @group} %>
 

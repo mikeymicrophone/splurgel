@@ -56,6 +56,10 @@ class Tagging < ActiveRecord::Base
       %w!address address_use brand city comment following group image image_use listing location
       membership message network network_membership offering price product purchase schedule
       state store tagged_tag tagged_user website website_use!
+    when :lowercase
+      %w!address address_use brand city comment following group image image_use listing location
+      membership message network network_membership offering price product purchase schedule
+      state store tag user website website_use!
     end
   end
   

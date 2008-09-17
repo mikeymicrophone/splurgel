@@ -4,7 +4,7 @@
 <% for tag in @tags %>
   <tr>
     <td><%= link_to_name tag %></td>
-    <td><%= link_to 'uses', tag_taggings_path(tag) %></td>
+    <td><%= link_to pluralize(tag.taggings.count, 'use'), tag_taggings_path(tag) %></td>
   </tr>
 <% end %>
 </table>

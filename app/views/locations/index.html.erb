@@ -1,25 +1,16 @@
-<h1>a location is a particular branch of a store</h1>
+<h1>locations<%= ' of ' + @store.name if @store %></h1>
 
 <table>
-  <tr>
-    <th>Store</th>
-    <th>Schedule</th>
-    <th>Address</th>
-    <td>phone</td>
-  </tr>
-
 <% for location in @locations %>
   <tr>
-    <td><%= link_to_name location.store %></td>
-    <td><%=h location.schedule.display %></td>
-    <td><%= link_to_name location.address %></td>
-    <td><%= location.primary_phone.number if location.primary_phone %></td>
-    <td><%= link_to 'show', location %></td>
-    <td><%= link_to 'edit', edit_location_path(location) if logged_in? && current_user.administers?(location) %></td>
+    <td><%= link_to_name location %></td>
+		<td><%= link_to "offering #{pluralize(location.offerings.count, 'product')}", location_products_path(location) %></td>
+    <td><%= link_to "all #{pluralize(location.store.locations.count, location.store.name)}", store_locations_path(location.store) if !@store && location.store.locations.count > 1 %></td>
+    <td><%= link_to 'edit', edit_location_path(location) if current_user.is_authorized_to_edit_locations_of(location.store) %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'new location', (params[:store_id] ? new_store_location_path(params[:store_id]) : new_location_path) %>
+<%= link_to "new location#{' of ' + @store.name if @store}", (params[:store_id] ? new_store_location_path(params[:store_id]) : new_location_path) if current_user.is_authorized_to_create_locations %>

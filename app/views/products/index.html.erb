@@ -1,12 +1,14 @@
-<h1>products<%= ' at ' + @location.name if @location %></h1>
+<h1>products<%= ' by ' + @brand.name if @brand %><%= ' at ' + @location.name if @location %></h1>
 
 <% @products.each do |product| %>
   <% content_tag_for :div, product do %>
     <%= primary_image product %>
     <%= @location ? link_to(product.name, location_product_path(@location, product)) : link_to_name(product) %>
-    <%= link_to_name product.brand %>
+    <%= link_to_name product.brand unless @brand %>
+		<%= link_to "at #{pluralize(product.offerings.count, 'location')}", product_locations_path(product) %>
 		<% stock = Stock.find_by_product_and_location(product, @location) %>
 		<%= stock.length.to_s + ' in stock' unless stock.blank? %>
+		<%= low_price_link product %>-<%= high_price_link product %>
 		<%= link_to 'stock more', new_location_stock_path(@location, :product_id => product.id) if @location && current_user.is_authorized_to_edit_offerings_at(@location) %>
     <%= link_to 'edit', edit_product_path(product) %>
     <%= attach_image_link product %>

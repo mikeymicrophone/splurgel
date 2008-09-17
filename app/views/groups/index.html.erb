@@ -5,8 +5,7 @@
 <% for group in @groups %>
   <tr>
     <td><%= link_to_name group %></td>
-    <td><%= link_to_name group.administrator %></td>
-    <td><%= link_to 'edit', edit_group_path(group) %></td>
+		<td><%= link_to pluralize(group.memberships.count, 'member'), group_users_path(@group) %></td>
     <td><%= attach_image_link group %></td>
   </tr>
 <% end %>

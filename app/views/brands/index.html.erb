@@ -1,15 +1,10 @@
-<h1>brands</h1>
+<h1>brands discussed at Splurgel</h1>
 
 <table>
-  <tr>
-    <th>Name</th>
-    <th>Phone</th>
-  </tr>
-
 <% for brand in @brands %>
   <tr>
     <td><%= link_to_name brand %></td>
-    <td><%=h brand.phone %></td>
+    <td><%= link_to pluralize(brand.products.count, 'product'), brand_products_path(brand) %></td>
     <td><%= attach_image_link brand %></td>
   </tr>
 <% end %>

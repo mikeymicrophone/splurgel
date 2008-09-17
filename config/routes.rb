@@ -52,12 +52,14 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :tags do |tag|
     tag.resources :taggings
+    tag.resources *Tagging.targets(:lowercase).map { |t| t.pluralize.to_sym }
   end
 
   map.resources :memberships
 
   map.resources :groups do |group|
     group.resources :memberships
+    group.resources :users
   end
 
   map.resources :listings, :member => {:publicize => :post, :privatize => :post}
@@ -76,6 +78,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :products do |product|
     product.resources :offerings
     product.resources :styles
+    product.resources :locations
   end
 
   map.resources :brands do |brand|

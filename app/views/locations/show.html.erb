@@ -1,10 +1,8 @@
-<h1><%= @location.name %></h1>
-<%= link_to_name @location.store %><br>
+<h1><%= @location.name %></h1><%= follow_link @location %> to receive updates on new products<br>
+<%= link_to_name @location.store %><%= link_to pluralize(@location.store.locations.count, 'location'), store_locations_path(@location.store) %><br>
 <%= @location.schedule.display if @location.schedule %><br>
 <%= attach_image_link @location %>
 <%= attachable_sites @location %>
-<%= follow_link @location %><br>
-<%= link_to 'locations', locations_path %>
 <%=h @location.address.display if @location.address %><br>
 <%=h @location.primary_phone.number if @location.primary_phone %><br>
 <h2><%= link_to 'brands', location_brands_path(@location) %> at this location</h2>

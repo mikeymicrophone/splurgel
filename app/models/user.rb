@@ -102,6 +102,10 @@ class User < ActiveRecord::Base
     Authorization.find_by_authorization_type_and_target_id_and_target_type_and_user_id(1, store, 'Store', id)
   end
   
+  def is_authorized_to_create_locations
+    Authorization.find_by_authorization_type_and_user_id(1, id) || !stores.blank?
+  end
+  
   # true if the user is allowed to edit locations of the passed store (or store id)
   # this is allowed if the user is allowed to create locations for the store, or an authorization object exists that allows it
   def is_authorized_to_edit_locations_of store

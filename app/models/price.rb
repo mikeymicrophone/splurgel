@@ -10,6 +10,10 @@ class Price < ActiveRecord::Base
     set_property :delta => true
   end
   
+  def active?
+    self == offering.price
+  end
+  
   def current?
     return false if start_date? && start_date > Time.now
     return false if end_date? && end_date < Time.now

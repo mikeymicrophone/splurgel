@@ -1,8 +1,5 @@
-  <%=h @city.name %><br>
-  <%=h @city.state.name %>
-  <%= attach_image_link @city %>
-  <%= attachable_sites @city %>
-  <%= follow_link @city %>
-<%= link_to 'edit', edit_city_path(@city) %> |
-<%= link_to 'cities', cities_path %>
+<h1><%=h @city.name %></h1><%= follow_link @city %><br>
+<%= link_to pluralize(@city.state.cities.count, 'city'), state_cities_path(@city.state) %> have Splurgel status in <%= link_to_name @city.state %>
+<%= attach_image_link @city %>
+<%= attachable_sites @city %>
 

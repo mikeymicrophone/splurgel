@@ -1,7 +1,7 @@
-  <h1><%=h @tag.name %></h1>
+<h1><%=h @tag.name %></h1><%= follow_link @tag %> to get alerts when stuff gets tagged<br>
 
-  <%= @tag.targets.map { |t| link_to_name t }.join(':::::') %><br>
-<%= follow_link @tag %>
-<%= link_to 'edit', edit_tag_path(@tag) %> |
-<%= link_to 'tags', tags_path %>
+<%= @tag.targets.map { |t| link_to_name t }.join(':::::') %><br>
 
+<% Tagging.targets(:lowercase).each do |set| %>
+  <%= tag_class_link @tag, set if @tag.send(set.pluralize).count > 0 %>
+<% end %>

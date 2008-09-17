@@ -7,7 +7,11 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.all
+    @users = if params[:group_id]
+      Group.find(params[:group_id]).users
+    else
+      User.all
+    end
   end
   
   def home
