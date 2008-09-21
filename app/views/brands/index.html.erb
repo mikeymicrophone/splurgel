@@ -4,7 +4,8 @@
 <% for brand in @brands %>
   <tr>
     <td><%= link_to_name brand %></td>
-    <td><%= link_to pluralize(brand.products.count, 'product'), brand_products_path(brand) %></td>
+    <td><%= link_to_scoped_collection 'products', brand %></td>
+		<td><%= link_to_scoped_collection 'stores', brand %></td>
     <td><%= attach_image_link brand %></td>
   </tr>
 <% end %>

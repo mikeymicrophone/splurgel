@@ -1,6 +1,6 @@
 class NetworksController < ApplicationController
   def index
-    @networks = Network.scope_down params, 'tag'
+    @networks = Network.scope_down self, params, 'tag', 'state', 'city'
 
     respond_to do |format|
       format.html # index.html.erb

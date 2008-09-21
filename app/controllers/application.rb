@@ -46,11 +46,11 @@ end
 
 class ActiveRecord::Base
   
-  def self.scope_down parameters, *condition
+  def self.scope_down controller, parameters, *associated_ids
     set = nil
-    condition.each do |c|
+    associated_ids.each do |c|
       if set.nil? && parameters["#{c}_id"]
-        set = instance_variable_set("@#{c}", c.capitalize.constantize.send(:find, parameters["#{c}_id"])).send(self.name.downcase.pluralize)
+        set = controller.instance_variable_set("@#{c}", c.capitalize.constantize.send(:find, parameters["#{c}_id"])).send(self.name.underscore.pluralize)
       end
     end
     return set || all
@@ -69,34 +69,34 @@ class ActiveRecord::Base
   end
   
   def uses_phone phone
-    case phone.class.name
-    when 'Phone'
+    case phone
+    when Phone
       phone.is_used_by self
-    when 'PhoneUse'
+    when PhoneUse
       phone.phone.is_used_by self
-    when 'String'
+    when String
       return if phone.blank?
       Phone.find_or_create_by_number(phone).is_used_by self
     end
   end
   
   def uses_site site
-    case site.class.name
-    when 'Website'
+    case site
+    when Website
       site.is_used_by self
-    when 'WebsiteUse'
+    when WebsiteUse
       site.website.is_used_by self
-    when 'String'
+    when String
       return if site.blank?
       Website.find_or_create_by_href(site).is_used_by self
     end
   end
   
   def uses_image image
-    case image.class.name
-    when 'Image'
+    case image
+    when Image
       image.is_used_by self
-    when 'ImageUse'
+    when ImageUse
       image.image.is_used_by self
     end
   end

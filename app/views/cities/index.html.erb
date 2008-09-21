@@ -1,11 +1,11 @@
-<h1>cities</h1>
+<h1>cities<%= ' in ' + @state.name if @state %></h1>
 
 <table>
 <% for city in @cities %>
   <tr>
     <td><%= link_to_name city %></td>
     <td><%= link_to_name city.state %></td>
-    <td><%= link_to 'edit', edit_city_path(city) %></td>
+		<td><%= link_to_scoped_collection 'networks', city %></td>
     <td><%= attach_image_link city %></td>
   </tr>
 <% end %>

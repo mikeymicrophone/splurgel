@@ -1,4 +1,4 @@
-<h1>locations<%= ' of ' + @store.name if @store %></h1>
+<h1>locations<%= ' of ' + @store.name if @store %><%= ' in ' + @city.name if @city %><%= ' with ' + @product.name if @product %></h1>
 
 <table>
 <% for location in @locations %>

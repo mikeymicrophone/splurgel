@@ -2,11 +2,11 @@ class ImageUsesController < ApplicationController
   def prioritize
     @image_use = ImageUse.find params[:id]
     @image_use.target.add_primary_photo @image_use.image_id
-    render :text => 'prioritized.!' 
+    render :text => 'prioritized.!'
   end
   
   def index
-    @image_uses = ImageUse.find :all
+    @image_uses = ImageUse.scope_down self, params, *ImageUse.targets(:lowercase)
 
     respond_to do |format|
       format.html # index.html.erb

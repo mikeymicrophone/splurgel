@@ -7,8 +7,13 @@ class ImageUse < ActiveRecord::Base
   has_many :tags, :through => :taggings
   has_many :comments, :as => :target
   
-  def self.targets
-    ['Address', 'Brand', 'City', 'Comment', 'Group', 'Listing', 'Location', 'Offering', 'Product', 'State', 'Store', 'Tagging', 'User', 'Website']
+  def self.targets format = :capitalized
+    case format
+    when :lowercase
+      ['address', 'brand', 'city', 'comment', 'group', 'listing', 'location', 'offering', 'product', 'state', 'store', 'tagging', 'user', 'website']
+    else
+      ['Address', 'Brand', 'City', 'Comment', 'Group', 'Listing', 'Location', 'Offering', 'Product', 'State', 'Store', 'Tagging', 'User', 'Website']
+    end
   end
   
   def primary?

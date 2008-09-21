@@ -82,10 +82,12 @@ ActionController::Routing::Routes.draw do |map|
     product.resources :offerings
     product.resources :styles
     product.resources :locations
+    product.resources :image_uses
   end
 
   map.resources :brands do |brand|
     brand.resources :products
+    brand.resources :stores
   end
 
   map.resources :locations do |location|
@@ -97,13 +99,20 @@ ActionController::Routing::Routes.draw do |map|
     end
   end
 
-  map.resources :cities
+  map.resources :cities do |city|
+    city.resources :networks
+    city.resources :locations
+  end
 
-  map.resources :states
+  map.resources :states do |state|
+    state.resources :cities
+    state.resources :networks
+  end
 
   map.resources :stores do |store|
     store.resources :locations
     store.resources :products
+    store.resources :image_uses
   end
     
   map.resources :users, :member => {:admin_activate => :post} do |user|

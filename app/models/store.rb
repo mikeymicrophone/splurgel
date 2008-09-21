@@ -10,6 +10,8 @@ class Store < ActiveRecord::Base
   has_many :phones, :through => :phone_uses
   has_many :website_uses, :as => :target
   has_many :websites, :through => :website_uses
+  has_many :image_uses, :as => :target
+  has_many :images, :through => :image_uses
   has_many :offerings, :through => :locations
   has_many :followings, :as => :target
   has_many :followers, :through => :followings, :source => :user, :conditions => "followings.target_type = 'Store' and followings.follower_type = 'User'", :as => :target

@@ -2,5 +2,9 @@
   <% websites.each do |w| %>
     <%= link_to_remote (w.name.blank? ? w.href : w.name), :url => website_uses_path(:website_use => {:website_id => w.id, :target_type => class_name, :target_id => id}), :loading => "site_chosen()" %>
   <% end %>
-  <%= link_to_function '+', 'multiple_sites_being_chosen(multiple_sites_being_chosen)', :id => 'multiple_sites_toggle' %>
+	<% form_for Website.new do |f| %>
+	  <%= f.text_field :href, :size => 30 %>
+	  <%= f.submit :add %>
+	<% end %>
+  <%#= link_to_function '+', 'multiple_sites_being_chosen(multiple_sites_being_chosen)', :id => 'multiple_sites_toggle' %>
 </div>

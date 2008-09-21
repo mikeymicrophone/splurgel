@@ -5,7 +5,9 @@ module ApplicationHelper
   end
   
   def link_to_scoped_collection collection, scope
-    link_to pluralize(scope.send(collection).count, collection.singularize), send("#{scope.class.name.downcase}_#{collection}_path", scope)
+    c = scope.send(collection)
+    count = c.respond_to?(:count) ? c.count : c.length
+    link_to pluralize(count, collection.singularize), send("#{scope.class.name.downcase}_#{collection}_path", scope)
   end
 
   def authorize_links usr = nil, thing = nil
@@ -115,8 +117,12 @@ module ApplicationHelper
     return '' if obj.nil?
     unless method
       if obj.respond_to?(:name)
-        if obj.name.blank? && obj.is_a?(Website)
+        if obj == current_user
+          link_to 'you', obj, :class => "name #{obj.class.name.downcase}"
+        elsif obj.name.blank? && obj.is_a?(Website)
           link_to obj.href, obj, :class => "name #{obj.class.name.downcase}"
+        elsif obj.name.blank? && obj.is_a?(User)
+          link_to obj.login, obj, :class => "name #{obj.class.name.downcase}"
         else
           link_to obj.name, obj, :class => "name #{obj.class.name.downcase}"
         end

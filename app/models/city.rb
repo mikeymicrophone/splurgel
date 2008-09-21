@@ -1,6 +1,8 @@
 class City < ActiveRecord::Base
   belongs_to :state
   has_many :addresses
+  has_many :locations, :through => :addresses
+  has_many :networks
   has_many :phone_uses, :as => :target
   has_many :phones, :through => :phone_uses
   has_many :taggings, :as => :target

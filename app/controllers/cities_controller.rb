@@ -1,6 +1,6 @@
 class CitiesController < ApplicationController
   def index
-    @cities = City.find :all
+    @cities = City.scope_down self, params, 'state'
 
     respond_to do |format|
       format.html # index.html.erb

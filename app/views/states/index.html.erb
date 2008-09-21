@@ -4,7 +4,8 @@
 <% for state in @states %>
   <tr>
     <td><%= link_to_name state %></td>
-    <%= attach_image_link state %>
+		<td><%= link_to_scoped_collection 'networks', state %></td>
+    <td><%= attach_image_link state %></td>
   </tr>
 <% end %>
 </table>

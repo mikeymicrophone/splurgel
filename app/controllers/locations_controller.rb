@@ -3,7 +3,9 @@ class LocationsController < ApplicationController
     @locations = if params[:store_id]
       (@store = Store.find(params[:store_id])).locations
     elsif params[:product_id]
-      Product.find(params[:product_id]).locations
+      (@product = Product.find(params[:product_id])).locations
+    elsif params[:city_id]
+      (@city = City.find(params[:city_id])).locations
     else
       Location.find :all
     end

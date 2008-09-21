@@ -1,6 +1,7 @@
 class State < ActiveRecord::Base
   has_many :cities
   has_many :addresses
+  has_many :networks
   has_many :taggings, :as => :target
   has_many :tags, :through => :taggings
   has_many :website_uses, :as => :target

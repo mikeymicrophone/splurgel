@@ -127,6 +127,10 @@ class User < ActiveRecord::Base
     @a && [1, 2, 10].include(@a.authorization_type)
   end
   
+  def is_authorized_to_create_offerings
+    Authorization.find_by_user_id(id, :conditions => ['authorization_type < 20']) || !locations.blank? || !stores.blank?
+  end
+  
   # true if the user is allowed to edit offerings at the passed location or store (or location id)
   # this is allowed if the user meets any of the criteria for editing offerings there, or if an authorization object exists that allows it
   def is_authorized_to_edit_offerings_at location
