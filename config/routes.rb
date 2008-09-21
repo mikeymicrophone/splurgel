@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :post_topics
+
+  map.resources :blog_posts
+
+  map.resources :blogs
+
+  map.resources :posts
+
   map.resources :stocks
 
   map.resources :styles

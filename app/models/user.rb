@@ -35,6 +35,10 @@ class User < ActiveRecord::Base
     :conditions => "followings.target_type = 'User' and followings.follower_type = 'Location'", :as => :target
   has_many :incoming_messages, :class_name => 'Message', :foreign_key => :recipient_id
   has_many :credit_cards
+  has_many :blogs
+  has_many :posts
+  has_many :blog_posts
+  has_many :post_topics
   serialize :primary_photos, Array
   
   define_index do

@@ -1,0 +1,23 @@
+<p>
+  <b>Post:</b>
+  <%=h @post_topic.post_id %>
+</p>
+
+<p>
+  <b>Target:</b>
+  <%=h @post_topic.target_id %>
+</p>
+
+<p>
+  <b>Target type:</b>
+  <%=h @post_topic.target_type %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @post_topic.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_topic_path(@post_topic) %> |
+<%= link_to 'Back', post_topics_path %>

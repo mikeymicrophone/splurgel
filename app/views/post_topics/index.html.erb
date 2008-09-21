@@ -1,0 +1,26 @@
+<h1>Listing post_topics</h1>
+
+<table>
+  <tr>
+    <th>Post</th>
+    <th>Target</th>
+    <th>Target type</th>
+    <th>User</th>
+  </tr>
+
+<% for post_topic in @post_topics %>
+  <tr>
+    <td><%=h post_topic.post_id %></td>
+    <td><%=h post_topic.target_id %></td>
+    <td><%=h post_topic.target_type %></td>
+    <td><%=h post_topic.user_id %></td>
+    <td><%= link_to 'Show', post_topic %></td>
+    <td><%= link_to 'Edit', edit_post_topic_path(post_topic) %></td>
+    <td><%= link_to 'Destroy', post_topic, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New post_topic', new_post_topic_path %>
